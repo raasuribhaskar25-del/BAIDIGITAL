@@ -6,60 +6,72 @@
 <title>BAIDIGITAL — AI + Digital Marketing</title>
 
 <!-- యాప్ ఐకాన్ & ఇన్‌స్టాల్ సెట్టింగ్స్ -->
-<link rel="icon" type="image/png" href="1000322657.png">
-<link rel="apple-touch-icon" href="1000322657.png">
+<link rel="icon" type="image/png" href="https://img.icons8.com/fluency/192/b.png">
+<link rel="apple-touch-icon" href="https://img.icons8.com/fluency/192/b.png">
 <link rel="manifest" href="manifest.json">
 
 <style>
-:root{--bg:#070a12;--panel:#101525;--text:#f7f8ff;--muted:#aab1c5;--line:#232a3e;--a:#7c5cff;--b:#00d4ff}
+:root{--bg:#070a12;--panel:#101525;--text:#f7f8ff;--muted:#aab1c5;--line:#232a3e;--a:#7c5cff;--b:#00d4ff;--pink:#e024c3}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);padding-bottom:80px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);padding-bottom:85px}
 a{text-decoration:none;color:inherit}
+
+/* Header & Nav */
 .nav{position:sticky;top:0;z-index:5;background:rgba(7,10,18,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.navin{max-width:1120px;margin:auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center}
+.navin{max-width:1120px;margin:auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
 .brand{display:flex;align-items:center;gap:12px}
-.brand img{height:42px;width:42px;border-radius:10px;object-fit:cover;border:1px solid var(--line)}
-.logo{font-size:22px;font-weight:900;letter-spacing:1.5px}
-.logo span{color:var(--b)}
+.nav-badge{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#121b33,#060913);border:1px solid #324068;display:flex;align-items:center;justify-content:center;box-shadow:0 0 15px rgba(0,212,255,0.2)}
+.nav-badge svg{width:26px;height:26px}
+.logo-text{font-size:22px;font-weight:900;letter-spacing:1.5px;color:#fff}
+.logo-text span{color:var(--b)}
 .links{display:flex;gap:24px;color:#d8dcef;font-size:14px}
-.hero{max-width:1120px;margin:auto;padding:75px 22px 65px;display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
+
+/* Hero Section */
+.hero{max-width:1120px;margin:auto;padding:65px 22px 55px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
 .eyebrow{color:var(--b);font-weight:800;letter-spacing:3px;font-size:12px}
-.hero h1{font-size:clamp(42px,6.5vw,76px);line-height:1;margin:16px 0;background:linear-gradient(90deg,#fff,#a9b8ff,#00d4ff);-webkit-background-clip:text;color:transparent}
-.hero p{color:var(--muted);font-size:17px;line-height:1.7;max-width:650px}
+.hero h1{font-size:clamp(40px,6.5vw,72px);line-height:1;margin:16px 0;background:linear-gradient(90deg,#fff,#a9b8ff,#00d4ff);-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:17px;line-height:1.7;max-width:620px}
 .btns{display:flex;gap:13px;flex-wrap:wrap;margin-top:26px}
-.btn{padding:14px 22px;border-radius:12px;font-weight:800;border:1px solid var(--line);background:#151b2d;cursor:pointer}
+.btn{padding:14px 22px;border-radius:12px;font-weight:800;border:1px solid var(--line);background:#151b2d;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
 .primary{background:linear-gradient(100deg,var(--a),var(--b));border:0;color:#fff}
 
-/* Hero Section లో లోగో డిస్‌ప్లే */
-.hero-logo-box{border-radius:32px;border:1px solid #2d3551;overflow:hidden;box-shadow:0 0 80px rgba(0,212,255,.18);background:#0d1120;display:flex;align-items:center;justify-content:center}
-.hero-logo-box img{width:100%;height:auto;max-height:350px;object-fit:contain;display:block}
+/* Logo Showcase Card */
+.logo-card{background:linear-gradient(145deg,#0d1326,#070a14);border:1px solid #2d3858;border-radius:30px;padding:35px 25px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 60px rgba(0,212,255,0.15)}
+.logo-card svg{width:140px;height:140px;margin-bottom:15px;filter:drop-shadow(0 0 20px rgba(0,212,255,0.35))}
+.card-brand{font-size:32px;font-weight:900;letter-spacing:3px;color:#fff;margin:0}
+.card-brand span{color:var(--b)}
+.card-tags{color:var(--muted);font-size:11px;font-weight:700;letter-spacing:3px;margin:10px 0 12px;display:flex;gap:8px;align-items:center}
+.card-tags span{color:var(--pink)}
+.card-slogan{color:#6c7a9c;font-size:13px;font-style:italic}
 
-.section{max-width:1120px;margin:auto;padding:75px 22px}
-.title{text-align:center;font-size:36px;margin:0 0 12px}
-.sub{text-align:center;color:var(--muted);max-width:650px;margin:0 auto 38px;line-height:1.7}
+/* Sections */
+.section{max-width:1120px;margin:auto;padding:65px 22px}
+.title{text-align:center;font-size:35px;margin:0 0 12px}
+.sub{text-align:center;color:var(--muted);max-width:650px;margin:0 auto 35px;line-height:1.7}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.card{background:linear-gradient(180deg,#11172a,#0d1220);border:1px solid var(--line);border-radius:20px;padding:25px;min-height:200px}
+.card{background:linear-gradient(180deg,#11172a,#0d1220);border:1px solid var(--line);border-radius:20px;padding:24px;min-height:190px}
 .icon{font-size:28px}
-.card h3{margin:16px 0 8px}
+.card h3{margin:15px 0 8px}
 .card p{color:var(--muted);line-height:1.6;font-size:14px}
 
 /* Portfolio Gallery */
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .portfolio-card{background:#0e1424;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform 0.2s}
 .portfolio-card:hover{transform:translateY(-5px);border-color:var(--b)}
-.portfolio-thumb{height:180px;background:linear-gradient(135deg,#182138,#0b1122);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--line)}
+.portfolio-thumb{height:175px;background:linear-gradient(135deg,#161e36,#0a0f1e);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--line)}
 .badge{position:absolute;top:12px;left:12px;background:rgba(7,10,18,0.85);backdrop-filter:blur(6px);border:1px solid var(--line);color:var(--b);font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px}
 .portfolio-info{padding:18px}
 .portfolio-info h4{margin:0 0 6px;font-size:17px}
 .portfolio-info p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
 
+/* Campaigns */
 .campaign{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.panel{padding:32px;border:1px solid var(--line);border-radius:24px;background:#0e1424}
+.panel{padding:30px;border:1px solid var(--line);border-radius:24px;background:#0e1424}
 .panel h3{font-size:24px;margin-top:0}
 .panel p{color:var(--muted);line-height:1.8}
 
-/* Contact & Inquiry Form */
-.contact-container{background:linear-gradient(135deg,#11152b,#0b1925);border:1px solid var(--line);border-radius:28px;padding:45px 22px;max-width:700px;margin:0 auto}
+/* Contact & Form */
+.contact-container{background:linear-gradient(135deg,#11152b,#0b1925);border:1px solid var(--line);border-radius:28px;padding:45px 22px;max-width:680px;margin:0 auto}
 .enquiry-form{display:flex;flex-direction:column;gap:15px;text-align:left;margin-top:25px}
 .form-group{display:flex;flex-direction:column;gap:6px}
 .form-group label{font-size:13px;color:var(--muted);font-weight:600}
@@ -67,10 +79,10 @@ a{text-decoration:none;color:inherit}
 .form-input:focus{border-color:var(--b)}
 textarea.form-input{resize:vertical;min-height:85px}
 
-/* Floating WhatsApp Button */
-.floating-whatsapp{position:fixed;bottom:85px;right:22px;background:#25d366;color:#fff;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 24px rgba(37,211,102,0.4);z-index:998}
+/* Floating WhatsApp */
+.floating-whatsapp{position:fixed;bottom:85px;right:20px;background:#25d366;color:#fff;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 24px rgba(37,211,102,0.4);z-index:998}
 
-/* Bottom Navigation Bar */
+/* Mobile Bottom Bar */
 .bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(10,14,26,0.96);backdrop-filter:blur(15px);border-top:1px solid var(--line);padding:8px 8px;z-index:999;justify-content:space-around;align-items:center}
 .bottom-nav a{display:flex;flex-direction:column;align-items:center;color:var(--muted);font-size:10px;font-weight:600;gap:4px}
 .bottom-nav a:hover, .bottom-nav a:active{color:var(--b)}
@@ -90,17 +102,34 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px;color:#7e
 @media(max-width:540px){
   .grid{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:1fr}
-  .hero h1{font-size:46px}
+  .hero h1{font-size:44px}
 }
 </style>
 </head>
 <body id="top">
 
+<!-- Header Navigation -->
 <nav class="nav">
   <div class="navin">
     <a href="#top" class="brand">
-      <img src="1000322657.png" alt="BAIDIGITAL Logo">
-      <div class="logo">BAI<span>DIGITAL</span></div>
+      <div class="nav-badge">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#00d4ff"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00d4ff"/>
+              <stop offset="100%" stop-color="#e024c3"/>
+            </linearGradient>
+          </defs>
+          <path d="M22 20 h28 a18 18 0 0 1 0 30 h-28 z" fill="url(#g1)"/>
+          <path d="M40 20 h22 a28 28 0 0 1 0 58 h-22 z" fill="url(#g2)" opacity="0.9"/>
+          <polygon points="33,38 48,46 33,54" fill="#00d4ff"/>
+        </svg>
+      </div>
+      <div class="logo-text">BAI<span>DIGITAL</span></div>
     </a>
     <div class="links">
       <a href="#services">Services</a>
@@ -112,6 +141,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px;color:#7e
   </div>
 </nav>
 
+<!-- Hero Section with BD Logo -->
 <section class="hero">
   <div>
     <div class="eyebrow">AI • DIGITAL • CREATIVE</div>
@@ -122,8 +152,36 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px;color:#7e
       <a class="btn" href="https://wa.me/917702908818">WhatsApp Us</a>
     </div>
   </div>
-  <div class="hero-logo-box">
-    <img src="1000322657.png" alt="BAIDIGITAL Logo Showcase">
+
+  <!-- Central Logo Showcase Card -->
+  <div class="logo-card">
+    <svg viewBox="0 0 120 120">
+      <defs>
+        <linearGradient id="bdA" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="50%" stop-color="#d1d9ff"/>
+          <stop offset="100%" stop-color="#00d4ff"/>
+        </linearGradient>
+        <linearGradient id="bdB" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#00d4ff"/>
+          <stop offset="100%" stop-color="#e024c3"/>
+        </linearGradient>
+      </defs>
+      <!-- "B" Structure -->
+      <path d="M 24 22 L 54 22 C 65 22 72 29 72 39 C 72 48 65 54 54 54 L 24 54 Z" fill="url(#bdA)"/>
+      <path d="M 24 54 L 56 54 C 68 54 76 62 76 73 C 76 84 68 92 56 92 L 24 92 Z" fill="url(#bdA)"/>
+      <!-- "D" Arc -->
+      <path d="M 48 22 C 78 22 98 42 98 62 C 98 82 78 92 52 92" fill="none" stroke="url(#bdB)" stroke-width="14" stroke-linecap="round"/>
+      <!-- Play Button inside B -->
+      <polygon points="38,36 52,45 38,54" fill="#00d4ff"/>
+      <!-- Cyber Pixels -->
+      <rect x="94" y="24" width="6" height="6" fill="#00d4ff"/>
+      <rect x="103" y="24" width="6" height="6" fill="#00d4ff"/>
+      <rect x="103" y="33" width="6" height="6" fill="#e024c3"/>
+    </svg>
+    <div class="card-brand">BAI<span>DIGITAL</span></div>
+    <div class="card-tags">AI <span>•</span> DIGITAL <span>•</span> MEDIA <span>•</span> CREATIVE</div>
+    <div class="card-slogan">Powered by AI. Driven by Creativity.</div>
   </div>
 </section>
 
@@ -142,18 +200,18 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px;color:#7e
 <!-- Portfolio Section -->
 <section class="section" id="portfolio">
   <h2 class="title">Our Work Showcase</h2>
-  <p class="sub">Recent AI creatives, commercial promotional videos and political campaign assets.</p>
+  <p class="sub">Take a look at our recent AI creatives, commercial promotional videos and political campaign assets.</p>
   <div class="gallery-grid">
     <div class="portfolio-card">
-      <div class="portfolio-thumb"><span class="badge">🎬 Promo Video</span><span style="font-size:40px;">🎥</span></div>
+      <div class="portfolio-thumb"><span class="badge">🎬 Promo Video</span><span style="font-size:42px;">🎥</span></div>
       <div class="portfolio-info"><h4>Commercial Brand Reel</h4><p>Dynamic AI cinematic promo created for brand reach and high engagement.</p></div>
     </div>
     <div class="portfolio-card">
-      <div class="portfolio-thumb"><span class="badge">🗳 Campaign Creative</span><span style="font-size:40px;">📢</span></div>
+      <div class="portfolio-thumb"><span class="badge">🗳 Campaign Creative</span><span style="font-size:42px;">📢</span></div>
       <div class="portfolio-info"><h4>Political Outreach Banner</h4><p>Impactful visual poster communication designed for local election campaigns.</p></div>
     </div>
     <div class="portfolio-card">
-      <div class="portfolio-thumb"><span class="badge">🤖 AI 3D Motion</span><span style="font-size:40px;">✨</span></div>
+      <div class="portfolio-thumb"><span class="badge">🤖 AI 3D Motion</span><span style="font-size:42px;">✨</span></div>
       <div class="portfolio-info"><h4>3D Typography & Motion</h4><p>Golden title animations and futuristic visual concepts crafted with AI.</p></div>
     </div>
   </div>
@@ -181,7 +239,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px;color:#7e
 <section class="section" id="contact">
   <div class="contact-container" style="text-align:center;">
     <h2 style="font-size:34px;margin:0 0 10px;">Let’s Create Something Powerful.</h2>
-    <p style="color:var(--muted);margin:0 0 20px;">Have a business promotion or campaign idea? Fill in the details below to connect with us on WhatsApp.</p>
+    <p style="color:var(--muted);margin:0 0 20px;">Have a business promotion or campaign idea? Fill in the details below to connect directly with us.</p>
 
     <form class="enquiry-form" onsubmit="sendToWhatsApp(event)">
       <div class="form-group">
@@ -190,7 +248,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px;color:#7e
       </div>
 
       <div class="form-group">
-        <label>Phone Number *</label>
+        <label>Phone / WhatsApp Number *</label>
         <input type="tel" id="clientPhone" class="form-input" placeholder="e.g. 9876543210" required>
       </div>
 
