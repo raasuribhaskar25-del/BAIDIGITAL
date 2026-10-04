@@ -40,7 +40,7 @@
       overflow-x: hidden;
     }
 
-    /* Top Utility Bar (Language & Settings) */
+    /* Top Utility Bar (Language Selector) */
     .top-bar {
       background: #070d18;
       padding: 6px 16px;
@@ -105,11 +105,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
     .menu-toggle-btn {
       background: #0f172a;
       border: 1px solid var(--card-border);
@@ -118,9 +113,6 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     /* Side Slide Menu / Settings Drawer */
@@ -347,55 +339,102 @@
       color: #ffffff;
     }
 
-    /* Gallery Section */
-    .gallery-filter {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 14px;
-      padding: 0 20px;
-    }
-    .filter-btn {
-      background: #0f172a;
-      border: 1px solid var(--card-border);
-      color: var(--text-muted);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-    .filter-btn.active {
-      background: var(--primary);
-      color: #000;
-      font-weight: 700;
-    }
-    .gallery-grid {
+    /* Portfolio Section (You can add your own works here) */
+    .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
       padding: 0 20px;
     }
-    .gallery-card {
+    .portfolio-item {
       background: var(--card-bg);
-      border-radius: 12px;
-      padding: 12px;
+      border-radius: 14px;
+      overflow: hidden;
       border: 1px solid var(--card-border);
-      text-align: center;
+      text-align: left;
     }
-    .gallery-card .icon {
-      font-size: 2rem;
-      margin-bottom: 6px;
+    .portfolio-media {
+      width: 100%;
+      height: 120px;
+      background: #111a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
-    .gallery-card h4 {
-      font-size: 0.92rem;
+    .portfolio-media img, .portfolio-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .portfolio-tag {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      background: rgba(0, 212, 255, 0.85);
+      color: #000;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    .portfolio-info {
+      padding: 10px;
+    }
+    .portfolio-info h4 {
+      font-size: 0.86rem;
       color: #fff;
+      margin-bottom: 2px;
     }
-    .gallery-card p {
-      font-size: 0.76rem;
+    .portfolio-info p {
+      font-size: 0.72rem;
       color: var(--text-muted);
     }
 
-    /* Bottom Marketing Services Hub */
+    /* Inquiry Form */
+    .form-box {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 0 20px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+    }
+    .form-group {
+      margin-bottom: 12px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 11px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #030712;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .form-submit-btn {
+      width: 100%;
+      padding: 13px;
+      background: #25d366;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.98rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* Marketing Hub */
     .marketing-hub {
       padding: 0 20px;
       display: grid;
@@ -411,16 +450,13 @@
       font-size: 1.05rem;
       color: #38bdf8;
       margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
     .hub-box p {
       font-size: 0.85rem;
       color: var(--text-muted);
     }
 
-    /* Social Icons Section */
+    /* Professional Social Media SVG Icons Grid */
     .social-section {
       text-align: center;
       padding: 30px 20px 10px;
@@ -431,22 +467,38 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      margin-top: 14px;
+      gap: 14px;
+      margin-top: 16px;
     }
     .social-btn {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background: #0f172a;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.35rem;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.2s, border-color 0.2s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
+    .social-btn:hover {
+      transform: translateY(-4px);
+    }
+    .social-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    /* Brand-Specific Colors */
+    .btn-wa { color: #25d366; border-color: rgba(37, 211, 102, 0.4); }
+    .btn-call { color: #00d4ff; border-color: rgba(0, 212, 255, 0.4); }
+    .btn-insta { color: #e1306c; border-color: rgba(225, 48, 108, 0.4); }
+    .btn-yt { color: #ff0000; border-color: rgba(255, 0, 0, 0.4); }
+    .btn-fb { color: #1877f2; border-color: rgba(24, 119, 242, 0.4); }
+    .btn-mail { color: #ea4335; border-color: rgba(234, 67, 53, 0.4); }
 
     /* Sticky Bottom Actions */
     .sticky-bar {
@@ -507,9 +559,7 @@
       <img src="logo.png" alt="BAIDIGITAL Logo" class="header-logo">
       <div class="brand-title">BAIDIGITAL</div>
     </div>
-    <div class="nav-actions">
-      <button class="menu-toggle-btn" onclick="toggleMenu()" title="Menu">☰</button>
-    </div>
+    <button class="menu-toggle-btn" onclick="toggleMenu()" title="Menu">☰</button>
   </header>
 
   <!-- Side Slide Menu & Settings -->
@@ -522,13 +572,11 @@
     <ul class="drawer-links">
       <li><a href="#services" onclick="toggleMenu()">⚡ సర్వీసెస్ (Services)</a></li>
       <li><a href="#pricing" onclick="toggleMenu()">🏷️ ప్యాకేజీలు (Plans)</a></li>
-      <li><a href="#gallery" onclick="toggleMenu()">🖼️ గ్యాలరీ (Portfolio)</a></li>
+      <li><a href="#portfolio" onclick="toggleMenu()">🖼️️ నా వర్క్స్ (My Portfolio)</a></li>
+      <li><a href="#inquiry" onclick="toggleMenu()">📝 క్విక్ ఎంక్వైరీ (Inquiry Form)</a></li>
       <li><a href="#marketing" onclick="toggleMenu()">📈 మార్కెటింగ్ హబ్ (Marketing Hub)</a></li>
-      <li><a href="#social" onclick="toggleMenu()">🌐 సోషల్ లింకులు (Social Links)</a></li>
+      <li><a href="#social" onclick="toggleMenu()">🌐 సోషల్ లింకులు (Social Media)</a></li>
     </ul>
-    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--card-border);">
-      <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center;">BAIDIGITAL Platform v4.0</p>
-    </div>
   </div>
 
   <!-- Hero Section -->
@@ -574,7 +622,7 @@
       <a href="https://wa.me/919951336425?text=Hello%20BAIDIGITAL,%20I%20want%20Basic%20Plan%20(₹1,999)" class="plan-btn" style="background: #334155;">బేసిక్ ప్లాన్ ఎంచుకోండి</a>
     </div>
 
-    <!-- 2. Normal / Standard Plan -->
+    <!-- 2. Normal Plan -->
     <div class="pricing-card normal">
       <div class="plan-badge">Most Popular</div>
       <div class="plan-name" id="p2-name">నార్మల్ ప్లాన్ (Normal Plan)</div>
@@ -604,70 +652,153 @@
 
   </div>
 
-  <!-- Gallery Section with Filters -->
-  <h2 class="section-title" id="gallery">🖼️ వర్క్స్ గ్యాలరీ</h2>
-  <div class="gallery-filter">
-    <button class="filter-btn active">అన్నీ (All)</button>
-    <button class="filter-btn">AI రీల్స్</button>
-    <button class="filter-btn">పోస్టర్లు</button>
+  <!-- My Portfolio Section (You can add your own work here) -->
+  <h2 class="section-title" id="portfolio">🖼️ నేను క్రియేట్ చేసిన వర్క్స్</h2>
+  <div class="portfolio-grid">
+    
+    <!-- Item 1: AI Promo Reel -->
+    <div class="portfolio-item">
+      <div class="portfolio-media">
+        <span class="portfolio-tag">AI Reel</span>
+        <!-- మీ వీడియో ఉంటే src మార్చుకోవచ్చు -->
+        <video autoplay loop muted playsinline poster="logo.png">
+          <source src="gemini_generated_video_a3bef7d7.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-info">
+        <h4>AI బ్రాండ్ ప్రమోషన్</h4>
+        <p>సినిమాటిక్ AI రీల్</p>
+      </div>
+    </div>
+
+    <!-- Item 2: 3D Logo Motion -->
+    <div class="portfolio-item">
+      <div class="portfolio-media">
+        <span class="portfolio-tag">3D Logo</span>
+        <img src="logo.png" alt="3D Logo">
+      </div>
+      <div class="portfolio-info">
+        <h4>3D లోగో యానిమేషన్</h4>
+        <p>బ్రాండింగ్ డిజైన్</p>
+      </div>
+    </div>
+
+    <!-- Item 3: Political Design -->
+    <div class="portfolio-item">
+      <div class="portfolio-media">
+        <span class="portfolio-tag">Campaign</span>
+        <img src="logo.png" alt="Political Poster">
+      </div>
+      <div class="portfolio-info">
+        <h4>పొలిటికల్ పోస్టర్స్</h4>
+        <p>డైలీ విషెస్ & బ్యానర్స్</p>
+      </div>
+    </div>
+
+    <!-- Item 4: Business Ads -->
+    <div class="portfolio-item">
+      <div class="portfolio-media">
+        <span class="portfolio-tag">Meta Ads</span>
+        <img src="logo.png" alt="Business Ads">
+      </div>
+      <div class="portfolio-info">
+        <h4>లోకల్ లీడ్ యాడ్స్</h4>
+        <p>కస్టమర్ కాల్స్ గ్రోత్</p>
+      </div>
+    </div>
+
   </div>
-  <div class="gallery-grid">
-    <div class="gallery-card">
-      <div class="icon">✨</div>
-      <h4>AI సినిమాటిక్ రీల్స్</h4>
-      <p>వైరల్ వీడియోస్</p>
-    </div>
-    <div class="gallery-card">
-      <div class="icon">🏛️</div>
-      <h4>పొలిటికల్ డిజైన్స్</h4>
-      <p>స్పీచ్ కట్స్ & బ్యానర్లు</p>
-    </div>
-    <div class="gallery-card">
-      <div class="icon">🎨</div>
-      <h4>3D లోగో యానిమేషన్స్</h4>
-      <p>బ్రాండ్ ఐడెంటిటీ</p>
-    </div>
-    <div class="gallery-card">
-      <div class="icon">📊</div>
-      <h4>లీడ్ యాడ్స్ క్రియేటివ్స్</h4>
-      <p>కస్టమర్ సేల్స్ గ్రోత్</p>
-    </div>
+
+  <!-- Quick Inquiry Form -->
+  <h2 class="section-title" id="inquiry">📝 క్విక్ ఆర్డర్ & ఎంక్వైరీ ఫారమ్</h2>
+  <div class="form-box">
+    <form id="inquiryForm" onsubmit="sendWhatsApp(event)">
+      <div class="form-group">
+        <label>మీ పేరు (Name):</label>
+        <input type="text" id="custName" placeholder="మీ పేరు రాయండి" required>
+      </div>
+      <div class="form-group">
+        <label>ఫోన్ నంబర్ (Mobile Number):</label>
+        <input type="tel" id="custPhone" placeholder="మీ మొబైల్ నంబర్" required>
+      </div>
+      <div class="form-group">
+        <label>వ్యాపారం / రాజకీయ హోదా (Business / Political Role):</label>
+        <input type="text" id="custBusiness" placeholder="ఉదా: రెస్టారెంట్ లేదా నియోజకవర్గ నాయకుడు" required>
+      </div>
+      <div class="form-group">
+        <label>కావాల్సిన ప్లాన్ (Select Plan):</label>
+        <select id="custService">
+          <option>బేసిక్ ప్లాన్ (₹1,999 / నెల)</option>
+          <option>నార్మల్ ప్లాన్ (₹4,999 / నెల)</option>
+          <option>ప్రీమియం ప్లాన్ (₹14,999 / నెల)</option>
+          <option>AI వీడియోస్ & రీల్స్ మాత్రమే</option>
+          <option>కస్టమ్ స్పెషల్ ప్లాన్</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>మీ సందేశం / అవసరాలు (Message):</label>
+        <textarea id="custMsg" rows="3" placeholder="మీకు కావలసిన వివరాలు ఇక్కడ రాయండి..."></textarea>
+      </div>
+      <button type="submit" class="form-submit-btn">
+        <svg style="width:20px; height:20px; fill:#fff;" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.227-.556-1.585-.658-2.613-2.28-2.692-2.387-.079-.107-.648-.862-.648-1.644 0-.783.411-1.168.556-1.326.144-.159.313-.198.418-.198.106 0 .211.002.302.008.097.006.228-.037.357.272.132.318.45 1.096.49 1.176.04.079.066.172.013.278-.053.106-.079.172-.158.265-.08.093-.168.208-.24.279-.08.079-.163.165-.07.324.093.159.412.68 1.002 1.207.76.679 1.401.889 1.599.988.198.099.313.086.429-.047.116-.132.496-.58.628-.779.132-.198.264-.165.443-.099.179.066 1.137.536 1.334.635.198.099.33.146.377.232.048.086.048.502-.096.907z"/></svg>
+        వాట్సాప్‌లో ఆర్డర్ పంపండి 🚀
+      </button>
+    </form>
   </div>
 
   <!-- Bottom Marketing Services Hub -->
   <h2 class="section-title" id="marketing">🚀 మార్కెటింగ్ సర్వీసెస్ హబ్</h2>
   <div class="marketing-hub">
     <div class="hub-box">
-      <h3>📈 మెటా & ఇన్‌స్టాగ్రామ్ యాడ్స్ (Paid Ads)</h3>
-      <p>మీ లోకల్ ఏరియా ప్రజలను లేదా కస్టమర్లను టార్గెట్ చేసి నేరుగా వాట్సాప్ మెసేజ్‌లు, కాల్స్ వచ్చేలా ప్రమోషన్ చేస్తాము.</p>
+      <h3>📈 మెటా & ఇన్‌స్టాగ్రామ్ లీడ్ యాడ్స్</h3>
+      <p>మీ లోకల్ ఏరియా ప్రజలను టార్గెట్ చేసి నేరుగా వాట్సాప్ మెసేజ్‌లు, కాల్స్ వచ్చేలా హై-కన్వర్షన్ క్యాంపెయిన్స్ సెటప్ చేస్తాము.</p>
     </div>
     <div class="hub-box">
       <h3>📍 Google My Business లోకల్ ర్యాంకింగ్</h3>
-      <p>గూగుల్ మ్యాప్స్‌లో మీ షాప్ లేదా ఆఫీస్ మొదటి స్థానంలో కనిపించేలా లోకల్ SEO సెటప్ చేస్తాము.</p>
+      <p>గూగుల్ మ్యాప్స్‌లో మీ షాప్ లేదా ఆఫీస్ టాప్ లో కనిపించేలా లోకల్ SEO మరియు రివ్యూస్ మేనేజ్‌మెంట్ సపోర్ట్.</p>
     </div>
     <div class="hub-box">
       <h3>🗳️ పొలిటికల్ డిజిటల్ వార్ రూమ్</h3>
-      <p>ఎన్నికలు లేదా నియోజకవర్గ ప్రచారాల కోసం సమగ్ర సోషల్ మీడియా కంటెంట్ ప్లానింగ్ మరియు ఎగ్జిక్యూషన్.</p>
+      <p>నియోజకవర్గ ప్రచారాల కోసం సమగ్ర సోషల్ మీడియా కంటెంట్ ప్లానింగ్, స్పీచ్ ఎడిటింగ్ మరియు బూస్టింగ్.</p>
     </div>
   </div>
 
-  <!-- Direct Social Media Icons Section -->
+  <!-- Professional Social Media Direct Links (Vector SVG Icons) -->
   <div class="social-section" id="social">
-    <h3 style="font-size: 1.1rem; color: #fff; margin-bottom: 6px;">అన్ని సోషల్ మీడియా లింకులు</h3>
-    <p style="font-size: 0.8rem; color: var(--text-muted);">నేరుగా మాతో కనెక్ట్ అవ్వండి:</p>
+    <h3 style="font-size: 1.1rem; color: #fff; margin-bottom: 4px;">మా అధికారిక సోషల్ మీడియా లింకులు</h3>
+    <p style="font-size: 0.8rem; color: var(--text-muted);">ఒక్క క్లిక్‌తో మాతో కనెక్ట్ అవ్వండి:</p>
     <div class="social-icons-grid">
-      <!-- WhatsApp Direct -->
-      <a href="https://wa.me/919951336425" target="_blank" class="social-btn" title="WhatsApp" style="color: #25d366;">💬</a>
-      <!-- Phone Call Direct -->
-      <a href="tel:+919951336425" class="social-btn" title="Direct Call" style="color: #38bdf8;">📞</a>
-      <!-- Instagram Direct -->
-      <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram" style="color: #e1306c;">📸</a>
-      <!-- YouTube Direct -->
-      <a href="https://youtube.com" target="_blank" class="social-btn" title="YouTube" style="color: #ff0000;">▶️</a>
-      <!-- Facebook Direct -->
-      <a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook" style="color: #1877f2;">👥</a>
-      <!-- Email Direct -->
-      <a href="mailto:raasuribhaskar25@gmail.com" class="social-btn" title="Email Us" style="color: #ea4335;">✉️</a>
+      
+      <!-- WhatsApp -->
+      <a href="https://wa.me/919951336425" target="_blank" class="social-btn btn-wa" title="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.227-.556-1.585-.658-2.613-2.28-2.692-2.387-.079-.107-.648-.862-.648-1.644 0-.783.411-1.168.556-1.326.144-.159.313-.198.418-.198.106 0 .211.002.302.008.097.006.228-.037.357.272.132.318.45 1.096.49 1.176.04.079.066.172.013.278-.053.106-.079.172-.158.265-.08.093-.168.208-.24.279-.08.079-.163.165-.07.324.093.159.412.68 1.002 1.207.76.679 1.401.889 1.599.988.198.099.313.086.429-.047.116-.132.496-.58.628-.779.132-.198.264-.165.443-.099.179.066 1.137.536 1.334.635.198.099.33.146.377.232.048.086.048.502-.096.907z"/></svg>
+      </a>
+
+      <!-- Direct Phone Call -->
+      <a href="tel:+919951336425" class="social-btn btn-call" title="Call Now">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com" target="_blank" class="social-btn btn-insta" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://youtube.com" target="_blank" class="social-btn btn-yt" title="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://facebook.com" target="_blank" class="social-btn btn-fb" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+
+      <!-- Gmail Direct -->
+      <a href="mailto:raasuribhaskar25@gmail.com" class="social-btn btn-mail" title="Email Us">
+        <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.272H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L12 9.545l8.073-6.052C21.69 2.279 24 3.434 24 5.457z"/></svg>
+      </a>
+
     </div>
     <div style="font-size: 0.72rem; color: #64748b; margin-top: 18px;">
       © 2026 BAIDIGITAL Agency. All Rights Reserved.
@@ -677,10 +808,11 @@
   <!-- Sticky Bottom Actions -->
   <div class="sticky-bar">
     <a href="https://wa.me/919951336425?text=Hello%20BAIDIGITAL,%20I%20need%20marketing%20services" class="whatsapp-btn">
-      <span>💬 WhatsApp లో మాట్లాడండి</span>
+      <svg style="width:20px; height:20px; fill:#fff;" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.227-.556-1.585-.658-2.613-2.28-2.692-2.387-.079-.107-.648-.862-.648-1.644 0-.783.411-1.168.556-1.326.144-.159.313-.198.418-.198.106 0 .211.002.302.008.097.006.228-.037.357.272.132.318.45 1.096.49 1.176.04.079.066.172.013.278-.053.106-.079.172-.158.265-.08.093-.168.208-.24.279-.08.079-.163.165-.07.324.093.159.412.68 1.002 1.207.76.679 1.401.889 1.599.988.198.099.313.086.429-.047.116-.132.496-.58.628-.779.132-.198.264-.165.443-.099.179.066 1.137.536 1.334.635.198.099.33.146.377.232.048.086.048.502-.096.907z"/></svg>
+      <span>WhatsApp లో మాట్లాడండి</span>
     </a>
     <a href="tel:+919951336425" class="call-btn" title="Call Now">
-      <span>📞</span>
+      <svg style="width:20px; height:20px; fill:#00d4ff;" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
     </a>
   </div>
 
@@ -709,6 +841,25 @@
         polBtn.classList.add('active');
         bizBtn.classList.remove('active');
       }
+    }
+
+    // WhatsApp Inquiry Form Submission
+    function sendWhatsApp(event) {
+      event.preventDefault();
+      var name = document.getElementById('custName').value;
+      var phone = document.getElementById('custPhone').value;
+      var biz = document.getElementById('custBusiness').value;
+      var service = document.getElementById('custService').value;
+      var msg = document.getElementById('custMsg').value;
+
+      var text = "🚀 *BAIDIGITAL కొత్త ఎంక్వైరీ ఆర్డర్:*%0A%0A" +
+                 "👤 *పేరు:* " + encodeURIComponent(name) + "%0A" +
+                 "📱 *మొబైల్:* " + encodeURIComponent(phone) + "%0A" +
+                 "🏢 *బిజినెస్/హోదా:* " + encodeURIComponent(biz) + "%0A" +
+                 "📦 *ఎంచుకున్న ప్లాన్:* " + encodeURIComponent(service) + "%0A" +
+                 "💬 *సందేశం:* " + encodeURIComponent(msg);
+
+      window.open("https://wa.me/919951336425?text=" + text, "_blank");
     }
 
     // Language Toggle (Telugu / English)
