@@ -6,12 +6,12 @@
 <title>BAIDIGITAL — AI + Digital Marketing</title>
 
 <!-- యాప్ ఐకాన్ & ఇన్‌స్టాల్ సెట్టింగ్స్ -->
-<link rel="icon" type="image/png" href="https://img.icons8.com/fluency/192/b.png">
-<link rel="apple-touch-icon" href="https://img.icons8.com/fluency/192/b.png">
+<link rel="icon" type="image/png" href="file_000000008d8882119d20de75ce2c4347.png">
+<link rel="apple-touch-icon" href="file_000000008d8882119d20de75ce2c4347.png">
 <link rel="manifest" href="manifest.json">
 
 <style>
-:root{--bg:#070a12;--panel:#101525;--text:#f7f8ff;--muted:#aab1c5;--line:#232a3e;--a:#7c5cff;--b:#00d4ff;--pink:#e024c3}
+:root{--bg:#070a12;--panel:#101525;--text:#f7f8ff;--muted:#aab1c5;--line:#232a3e;--a:#7c5cff;--b:#00d4ff}
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);padding-bottom:85px}
 a{text-decoration:none;color:inherit}
@@ -20,8 +20,7 @@ a{text-decoration:none;color:inherit}
 .nav{position:sticky;top:0;z-index:5;background:rgba(7,10,18,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .navin{max-width:1120px;margin:auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
 .brand{display:flex;align-items:center;gap:12px}
-.nav-badge{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#121b33,#060913);border:1px solid #324068;display:flex;align-items:center;justify-content:center;box-shadow:0 0 15px rgba(0,212,255,0.2)}
-.nav-badge svg{width:26px;height:26px}
+.nav-logo-img{width:42px;height:42px;border-radius:10px;object-fit:cover;border:1px solid #324068;box-shadow:0 0 15px rgba(0,212,255,0.25)}
 .logo-text{font-size:22px;font-weight:900;letter-spacing:1.5px;color:#fff}
 .logo-text span{color:var(--b)}
 .links{display:flex;gap:24px;color:#d8dcef;font-size:14px}
@@ -35,14 +34,9 @@ a{text-decoration:none;color:inherit}
 .btn{padding:14px 22px;border-radius:12px;font-weight:800;border:1px solid var(--line);background:#151b2d;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
 .primary{background:linear-gradient(100deg,var(--a),var(--b));border:0;color:#fff}
 
-/* Logo Showcase Card */
-.logo-card{background:linear-gradient(145deg,#0d1326,#070a14);border:1px solid #2d3858;border-radius:30px;padding:35px 25px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 60px rgba(0,212,255,0.15)}
-.logo-card svg{width:140px;height:140px;margin-bottom:15px;filter:drop-shadow(0 0 20px rgba(0,212,255,0.35))}
-.card-brand{font-size:32px;font-weight:900;letter-spacing:3px;color:#fff;margin:0}
-.card-brand span{color:var(--b)}
-.card-tags{color:var(--muted);font-size:11px;font-weight:700;letter-spacing:3px;margin:10px 0 12px;display:flex;gap:8px;align-items:center}
-.card-tags span{color:var(--pink)}
-.card-slogan{color:#6c7a9c;font-size:13px;font-style:italic}
+/* Original Logo Display Card */
+.hero-logo-container{background:radial-gradient(circle at center, rgba(0,212,255,0.1) 0%, rgba(13,19,38,0.8) 70%);border:1px solid #2d3858;border-radius:32px;padding:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 70px rgba(0,212,255,0.2);overflow:hidden}
+.hero-logo-img{width:100%;max-width:320px;height:auto;border-radius:24px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
 
 /* Sections */
 .section{max-width:1120px;margin:auto;padding:65px 22px}
@@ -112,23 +106,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px;color:#7e
 <nav class="nav">
   <div class="navin">
     <a href="#top" class="brand">
-      <div class="nav-badge">
-        <svg viewBox="0 0 100 100">
-          <defs>
-            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="100%" stop-color="#00d4ff"/>
-            </linearGradient>
-            <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#00d4ff"/>
-              <stop offset="100%" stop-color="#e024c3"/>
-            </linearGradient>
-          </defs>
-          <path d="M22 20 h28 a18 18 0 0 1 0 30 h-28 z" fill="url(#g1)"/>
-          <path d="M40 20 h22 a28 28 0 0 1 0 58 h-22 z" fill="url(#g2)" opacity="0.9"/>
-          <polygon points="33,38 48,46 33,54" fill="#00d4ff"/>
-        </svg>
-      </div>
+      <img src="file_000000008d8882119d20de75ce2c4347.png" alt="Logo" class="nav-logo-img">
       <div class="logo-text">BAI<span>DIGITAL</span></div>
     </a>
     <div class="links">
@@ -141,7 +119,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px;color:#7e
   </div>
 </nav>
 
-<!-- Hero Section with BD Logo -->
+<!-- Hero Section with Your Original Logo -->
 <section class="hero">
   <div>
     <div class="eyebrow">AI • DIGITAL • CREATIVE</div>
@@ -153,35 +131,8 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px;color:#7e
     </div>
   </div>
 
-  <!-- Central Logo Showcase Card -->
-  <div class="logo-card">
-    <svg viewBox="0 0 120 120">
-      <defs>
-        <linearGradient id="bdA" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#ffffff"/>
-          <stop offset="50%" stop-color="#d1d9ff"/>
-          <stop offset="100%" stop-color="#00d4ff"/>
-        </linearGradient>
-        <linearGradient id="bdB" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#00d4ff"/>
-          <stop offset="100%" stop-color="#e024c3"/>
-        </linearGradient>
-      </defs>
-      <!-- "B" Structure -->
-      <path d="M 24 22 L 54 22 C 65 22 72 29 72 39 C 72 48 65 54 54 54 L 24 54 Z" fill="url(#bdA)"/>
-      <path d="M 24 54 L 56 54 C 68 54 76 62 76 73 C 76 84 68 92 56 92 L 24 92 Z" fill="url(#bdA)"/>
-      <!-- "D" Arc -->
-      <path d="M 48 22 C 78 22 98 42 98 62 C 98 82 78 92 52 92" fill="none" stroke="url(#bdB)" stroke-width="14" stroke-linecap="round"/>
-      <!-- Play Button inside B -->
-      <polygon points="38,36 52,45 38,54" fill="#00d4ff"/>
-      <!-- Cyber Pixels -->
-      <rect x="94" y="24" width="6" height="6" fill="#00d4ff"/>
-      <rect x="103" y="24" width="6" height="6" fill="#00d4ff"/>
-      <rect x="103" y="33" width="6" height="6" fill="#e024c3"/>
-    </svg>
-    <div class="card-brand">BAI<span>DIGITAL</span></div>
-    <div class="card-tags">AI <span>•</span> DIGITAL <span>•</span> MEDIA <span>•</span> CREATIVE</div>
-    <div class="card-slogan">Powered by AI. Driven by Creativity.</div>
+  <div class="hero-logo-container">
+    <img src="file_000000008d8882119d20de75ce2c4347.png" alt="BAIDIGITAL Official Logo" class="hero-logo-img">
   </div>
 </section>
 
@@ -200,7 +151,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px;color:#7e
 <!-- Portfolio Section -->
 <section class="section" id="portfolio">
   <h2 class="title">Our Work Showcase</h2>
-  <p class="sub">Take a look at our recent AI creatives, commercial promotional videos and political campaign assets.</p>
+  <p class="sub">Recent AI creatives, commercial promotional videos and political campaign assets.</p>
   <div class="gallery-grid">
     <div class="portfolio-card">
       <div class="portfolio-thumb"><span class="badge">🎬 Promo Video</span><span style="font-size:42px;">🎥</span></div>
@@ -239,7 +190,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:26px;color:#7e
 <section class="section" id="contact">
   <div class="contact-container" style="text-align:center;">
     <h2 style="font-size:34px;margin:0 0 10px;">Let’s Create Something Powerful.</h2>
-    <p style="color:var(--muted);margin:0 0 20px;">Have a business promotion or campaign idea? Fill in the details below to connect directly with us.</p>
+    <p style="color:var(--muted);margin:0 0 20px;">Have a business promotion or campaign idea? Fill in the details below to connect with us on WhatsApp.</p>
 
     <form class="enquiry-form" onsubmit="sendToWhatsApp(event)">
       <div class="form-group">
