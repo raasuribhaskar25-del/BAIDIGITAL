@@ -9,7 +9,7 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#030712">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -17,6 +17,7 @@
       --primary: #00d4ff;
       --secondary: #7928ca;
       --accent: #25d366;
+      --gold: #fbbf24;
       --bg-dark: #030712;
       --card-bg: #0b1120;
       --card-border: rgba(255, 255, 255, 0.08);
@@ -40,7 +41,7 @@
       overflow-x: hidden;
     }
 
-    /* Top Utility Bar (Language Selector) */
+    /* Top Utility Bar */
     .top-bar {
       background: #070d18;
       padding: 8px 16px;
@@ -97,11 +98,6 @@
       object-fit: contain;
       background: #000;
       border: 1.5px solid rgba(0, 212, 255, 0.4);
-      animation: logoGlow 3s infinite alternate;
-    }
-    @keyframes logoGlow {
-      0% { box-shadow: 0 0 5px rgba(0, 212, 255, 0.3); }
-      100% { box-shadow: 0 0 15px rgba(0, 212, 255, 0.8); }
     }
     .brand-title {
       font-size: 1.25rem;
@@ -120,7 +116,7 @@
       font-size: 1.1rem;
     }
 
-    /* Side Slide Menu / Settings Drawer */
+    /* Side Slide Menu */
     .menu-overlay {
       position: fixed;
       top: 0;
@@ -195,12 +191,6 @@
       font-weight: 700;
       border: 1px solid rgba(0, 212, 255, 0.25);
       margin-bottom: 12px;
-      animation: pulseAnim 2s infinite;
-    }
-    @keyframes pulseAnim {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.04); }
-      100% { transform: scale(1); }
     }
     .hero h1 {
       font-size: 1.85rem;
@@ -217,7 +207,7 @@
       margin-bottom: 20px;
     }
 
-    /* 3D Animated Video Screen Container */
+    /* Video Frames */
     .video-stage {
       max-width: 440px;
       margin: 0 auto 24px;
@@ -233,14 +223,8 @@
       animation: floatFrame 4s ease-in-out infinite alternate;
     }
     @keyframes floatFrame {
-      0% {
-        transform: translateY(0px) rotateX(1deg);
-        box-shadow: 0 10px 25px rgba(0, 212, 255, 0.25);
-      }
-      100% {
-        transform: translateY(-8px) rotateX(-1deg);
-        box-shadow: 0 20px 40px rgba(0, 212, 255, 0.4), 0 0 25px rgba(168, 85, 247, 0.35);
-      }
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-8px); }
     }
     .video-frame video, .video-frame img {
       width: 100%;
@@ -248,6 +232,58 @@
       border-radius: 14px;
       display: block;
       background: #000;
+    }
+
+    /* VIP Founder Card Section */
+    .founder-card {
+      margin: 0 20px 28px;
+      background: radial-gradient(circle at top, #1e1b4b 0%, #0b1120 100%);
+      border-radius: 20px;
+      padding: 20px;
+      border: 1.5px solid rgba(251, 191, 36, 0.4);
+      box-shadow: 0 12px 35px rgba(251, 191, 36, 0.15);
+      text-align: center;
+    }
+    .founder-badge {
+      display: inline-block;
+      background: rgba(251, 191, 36, 0.15);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .founder-video-box {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid rgba(251, 191, 36, 0.35);
+      background: #000;
+      margin-bottom: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+    .founder-video-box video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .founder-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .founder-card .role {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .founder-card p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
     }
 
     /* Switch Tabs */
@@ -293,7 +329,7 @@
       gap: 8px;
     }
 
-    /* 3-Tier Pricing (Basic, Normal, Premium) */
+    /* 3-Tier Pricing */
     .pricing-wrap {
       padding: 0 20px;
       display: flex;
@@ -306,10 +342,6 @@
       padding: 20px;
       border: 1px solid var(--card-border);
       position: relative;
-      transition: transform 0.3s;
-    }
-    .pricing-card:hover {
-      transform: translateY(-4px);
     }
     .pricing-card.normal {
       border-color: #38bdf8;
@@ -365,58 +397,6 @@
       color: #ffffff;
     }
 
-    /* Portfolio Section */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      padding: 0 20px;
-    }
-    .portfolio-item {
-      background: var(--card-bg);
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--card-border);
-      text-align: left;
-    }
-    .portfolio-media {
-      width: 100%;
-      height: 120px;
-      background: #111a2e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .portfolio-media img, .portfolio-media video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .portfolio-tag {
-      position: absolute;
-      top: 6px;
-      left: 6px;
-      background: rgba(0, 212, 255, 0.85);
-      color: #000;
-      font-size: 0.65rem;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 6px;
-    }
-    .portfolio-info {
-      padding: 10px;
-    }
-    .portfolio-info h4 {
-      font-size: 0.86rem;
-      color: #fff;
-      margin-bottom: 2px;
-    }
-    .portfolio-info p {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-    }
-
     /* Inquiry Form */
     .form-box {
       background: var(--card-bg);
@@ -460,28 +440,6 @@
       gap: 8px;
     }
 
-    /* Marketing Hub */
-    .marketing-hub {
-      padding: 0 20px;
-      display: grid;
-      gap: 12px;
-    }
-    .hub-box {
-      background: #070d18;
-      border-radius: 14px;
-      padding: 16px;
-      border: 1px solid rgba(0, 212, 255, 0.2);
-    }
-    .hub-box h3 {
-      font-size: 1.05rem;
-      color: #38bdf8;
-      margin-bottom: 6px;
-    }
-    .hub-box p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
     /* Social Icons Section */
     .social-section {
       text-align: center;
@@ -506,11 +464,7 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      transition: transform 0.2s;
       box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    }
-    .social-btn:hover {
-      transform: translateY(-4px) scale(1.08);
     }
     .social-btn svg {
       width: 24px;
@@ -595,22 +549,21 @@
       <button class="drawer-close" onclick="toggleMenu()">✕</button>
     </div>
     <ul class="drawer-links">
+      <li><a href="#founder" onclick="toggleMenu()" id="m-fnd">👑 ఫౌండర్ ప్రొఫైల్ (Founder)</a></li>
       <li><a href="#services" onclick="toggleMenu()" id="m-serv">⚡ సర్వీసెస్ (Services)</a></li>
       <li><a href="#pricing" onclick="toggleMenu()" id="m-plans">🏷️ ప్యాకేజీలు (Plans)</a></li>
-      <li><a href="#portfolio" onclick="toggleMenu()" id="m-port">🖼️ నా వర్క్స్ (My Portfolio)</a></li>
       <li><a href="#inquiry" onclick="toggleMenu()" id="m-inq">📝 క్విక్ ఎంక్వైరీ (Inquiry Form)</a></li>
-      <li><a href="#marketing" onclick="toggleMenu()" id="m-hub">📈 మార్కెటింగ్ హబ్ (Marketing Hub)</a></li>
       <li><a href="#social" onclick="toggleMenu()" id="m-soc">🌐 సోషల్ లింకులు (Social Media)</a></li>
     </ul>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Logo Video) -->
   <section class="hero">
     <div class="hero-tag" id="t-tag">Next-Gen AI & Political Media</div>
     <h1 id="t-title">వ్యాపారాలు & రాజకీయాలకు<br>AI పవర్డ్ ప్రమోషన్</h1>
     <p id="t-subtitle">AI వీడియోలు, సినిమాటిక్ రీల్స్, సోషల్ మీడియా క్యాంపెయిన్స్ ద్వారా కస్టమర్లు మరియు ప్రజల్లో తిరుగులేని బ్రాండ్ నిర్మించండి.</p>
 
-    <!-- 3D Video Cinematic Screen -->
+    <!-- 3D Brand Logo Video -->
     <div class="video-stage">
       <div class="video-frame">
         <video autoplay loop muted playsinline poster="logo.png">
@@ -622,6 +575,24 @@
     </div>
   </section>
 
+  <!-- VIP Founder Section (Your Name Animation Video) -->
+  <div class="founder-card" id="founder">
+    <div class="founder-badge" id="f-badge">Leadership & Vision</div>
+    
+    <!-- Founder Name 3D Animation Video -->
+    <div class="founder-video-box">
+      <video autoplay loop muted playsinline poster="logo.png">
+        <source src="founder_video.mp4" type="video/mp4">
+        <source src="bhaskar_name.mp4" type="video/mp4">
+        <img src="logo.png" alt="Founder Logo">
+      </video>
+    </div>
+
+    <h3 id="f-name">రాసూరి భాస్కర్</h3>
+    <div class="role" id="f-role">ఫౌండర్ & డిజిటల్ క్యాంపెయిన్ స్ట్రాటజిస్ట్</div>
+    <p id="f-bio">వ్యాపారాలు మరియు రాజకీయ నాయకులకు ఆధునిక AI టెక్నాలజీతో కూడిన అత్యుత్తమ డిజిటల్ ప్రమోషన్ అందించడమే మా లక్ష్యం.</p>
+  </div>
+
   <!-- Switch Tabs (Business / Politics) -->
   <div class="tab-container" id="services">
     <div class="tab-buttons">
@@ -632,7 +603,7 @@
 
   <!-- 3-Tier Packages (Basic, Normal, Premium) -->
   <h2 class="section-title" id="t-plans-heading">🏷️ సర్వీస్ ప్యాకేజీలు</h2>
-  <div class="pricing-wrap">
+  <div class="pricing-wrap" id="pricing">
     
     <!-- 1. Basic Plan -->
     <div class="pricing-card">
@@ -677,59 +648,9 @@
 
   </div>
 
-  <!-- Portfolio Section -->
-  <h2 class="section-title" id="t-port-heading">🖼️ నేను క్రియేట్ చేసిన వర్క్స్</h2>
-  <div class="portfolio-grid">
-    <div class="portfolio-item">
-      <div class="portfolio-media">
-        <span class="portfolio-tag">AI Reel</span>
-        <video autoplay loop muted playsinline poster="logo.png">
-          <source src="gemini_generated_video_a3bef7d7.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="portfolio-info">
-        <h4 id="po1-title">AI బ్రాండ్ ప్రమోషన్</h4>
-        <p id="po1-desc">సినిమాటిక్ AI రీల్</p>
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="portfolio-media">
-        <span class="portfolio-tag">3D Logo</span>
-        <img src="logo.png" alt="3D Logo">
-      </div>
-      <div class="portfolio-info">
-        <h4 id="po2-title">3D లోగో యానిమేషన్</h4>
-        <p id="po2-desc">బ్రాండింగ్ డిజైన్</p>
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="portfolio-media">
-        <span class="portfolio-tag">Campaign</span>
-        <img src="logo.png" alt="Political Poster">
-      </div>
-      <div class="portfolio-info">
-        <h4 id="po3-title">పొలిటికల్ పోస్టర్స్</h4>
-        <p id="po3-desc">డైలీ విషెస్ & బ్యానర్స్</p>
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="portfolio-media">
-        <span class="portfolio-tag">Meta Ads</span>
-        <img src="logo.png" alt="Business Ads">
-      </div>
-      <div class="portfolio-info">
-        <h4 id="po4-title">లోకల్ లీడ్ యాడ్స్</h4>
-        <p id="po4-desc">కస్టమర్ సేల్స్ గ్రోత్</p>
-      </div>
-    </div>
-  </div>
-
   <!-- Quick Inquiry Form -->
   <h2 class="section-title" id="t-form-heading">📝 క్విక్ ఆర్డర్ & ఎంక్వైరీ ఫారమ్</h2>
-  <div class="form-box">
+  <div class="form-box" id="inquiry">
     <form id="inquiryForm" onsubmit="sendWhatsApp(event)">
       <div class="form-group">
         <label id="lbl-name">మీ పేరు (Name):</label>
@@ -762,23 +683,6 @@
         వాట్సాప్‌లో ఆర్డర్ పంపండి 🚀
       </button>
     </form>
-  </div>
-
-  <!-- Bottom Marketing Services Hub -->
-  <h2 class="section-title" id="t-mkt-heading">🚀 మార్కెటింగ్ సర్వీసెస్ హబ్</h2>
-  <div class="marketing-hub">
-    <div class="hub-box">
-      <h3 id="hub1-title">📈 మెటా & ఇన్‌స్టాగ్రామ్ లీడ్ యాడ్స్</h3>
-      <p id="hub1-desc">మీ లోకల్ ఏరియా ప్రజలను టార్గెట్ చేసి నేరుగా వాట్సాప్ మెసేజ్‌లు, కాల్స్ వచ్చేలా హై-కన్వర్షన్ క్యాంపెయిన్స్ సెటప్ చేస్తాము.</p>
-    </div>
-    <div class="hub-box">
-      <h3 id="hub2-title">📍 Google My Business లోకల్ ర్యాంకింగ్</h3>
-      <p id="hub2-desc">గూగుల్ మ్యాప్స్‌లో మీ షాప్ లేదా ఆఫీస్ టాప్ లో కనిపించేలా లోకల్ SEO మరియు రివ్యూస్ మేనేజ్‌మెంట్ సపోర్ట్.</p>
-    </div>
-    <div class="hub-box">
-      <h3 id="hub3-title">🗳️ పొలిటికల్ డిజిటల్ వార్ రూమ్</h3>
-      <p id="hub3-desc">నియోజకవర్గ ప్రచారాల కోసం సమగ్ర సోషల్ మీడియా కంటెంట్ ప్లానింగ్, స్పీచ్ ఎడిటింగ్ మరియు బూస్టింగ్.</p>
-    </div>
   </div>
 
   <!-- Direct Social Media Icons Section -->
@@ -835,7 +739,7 @@
       }
     }
 
-    // Switch Tabs (Business / Politics)
+    // Switch Tabs
     function switchTab(type) {
       const bizBtn = document.getElementById('tab-biz');
       const polBtn = document.getElementById('tab-pol');
@@ -848,20 +752,23 @@
       }
     }
 
-    // Complete Language Switcher (Telugu ⇄ English)
+    // Language Toggle (Telugu ⇄ English)
     const langData = {
       te: {
         tag: "Next-Gen AI & Political Media",
         title: "వ్యాపారాలు & రాజకీయాలకు<br>AI పవర్డ్ ప్రమోషన్",
         subtitle: "AI వీడియోలు, సినిమాటిక్ రీల్స్, సోషల్ మీడియా క్యాంపెయిన్స్ ద్వారా కస్టమర్లు మరియు ప్రజల్లో తిరుగులేని బ్రాండ్ నిర్మించండి.",
+        fBadge: "LEADERSHIP & VISION",
+        fName: "రాసూరి భాస్కర్",
+        fRole: "ఫౌండర్ & డిజిటల్ క్యాంపెయిన్ స్ట్రాటజిస్ట్",
+        fBio: "వ్యాపారాలు మరియు రాజకీయ నాయకులకు ఆధునిక AI టెక్నాలజీతో కూడిన అత్యుత్తమ డిజిటల్ ప్రమోషన్ అందించడమే మా లక్ష్యం.",
         tabBiz: "🏢 బిజినెస్ సొల్యూషన్స్",
         tabPol: "🏛️ పొలిటికల్ ప్రమోషన్",
         mTitle: "మెనూ & సెట్టింగ్స్",
+        mFnd: "👑 ఫౌండర్ ప్రొఫైల్ (Founder)",
         mServ: "⚡ సర్వీసెస్ (Services)",
         mPlans: "🏷️ ప్యాకేజీలు (Plans)",
-        mPort: "🖼️ నా వర్క్స్ (My Portfolio)",
         mInq: "📝 క్విక్ ఎంక్వైరీ (Inquiry Form)",
-        mHub: "📈 మార్కెటింగ్ హబ్ (Marketing Hub)",
         mSoc: "🌐 సోషల్ లింకులు (Social Media)",
         plansHeading: "🏷️ సర్వీస్ ప్యాకేజీలు",
         p1Name: "బేసిక్ ప్లాన్ (Basic Plan)",
@@ -876,7 +783,6 @@
         p3Price: "₹14,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ నెల</span>",
         p3Features: "<li>✓ డైలీ విషెస్ & పొలిటికల్ / బిజినెస్ పోస్టర్లు</li><li>✓ వీక్లీ 3 పవర్ ఫుల్ స్పీచ్ / బ్రాండ్ రీల్స్</li><li>✓ నియోజకవర్గ & లోకల్ టార్గెటెడ్ యాడ్స్ బూస్టింగ్</li><li>✓ సోషల్ మీడియా పూర్తి నిర్వహణ & వార్ రూమ్</li>",
         p3Btn: "ప్రీమియం ప్లాన్ తీసుకోండి",
-        portHeading: "🖼️ నేను క్రియేట్ చేసిన వర్క్స్",
         formHeading: "📝 క్విక్ ఆర్డర్ & ఎంక్వైరీ ఫారమ్",
         lblName: "మీ పేరు (Name):",
         lblPhone: "ఫోన్ నంబర్ (Mobile Number):",
@@ -884,13 +790,6 @@
         lblPlan: "కావాల్సిన ప్లాన్ (Select Plan):",
         lblMsg: "మీ సందేశం / అవసరాలు (Message):",
         btnSubmit: "వాట్సాప్‌లో ఆర్డర్ పంపండి 🚀",
-        mktHeading: "🚀 మార్కెటింగ్ సర్వీసెస్ హబ్",
-        hub1Title: "📈 మెటా & ఇన్‌స్టాగ్రామ్ లీడ్ యాడ్స్",
-        hub1Desc: "మీ లోకల్ ఏరియా ప్రజలను టార్గెట్ చేసి నేరుగా వాట్సాప్ మెసేజ్‌లు, కాల్స్ వచ్చేలా హై-కన్వర్షన్ క్యాంపెయిన్స్ సెటప్ చేస్తాము.",
-        hub2Title: "📍 Google My Business లోకల్ ర్యాంకింగ్",
-        hub2Desc: "గూగుల్ మ్యాప్స్‌లో మీ షాప్ లేదా ఆఫీస్ టాప్ లో కనిపించేలా లోకల్ SEO మరియు రివ్యూస్ మేనేజ్‌మెంట్ సపోర్ట్.",
-        hub3Title: "🗳️ పొలిటికల్ డిజిటల్ వార్ రూమ్",
-        hub3Desc: "నియోజకవర్గ ప్రచారాల కోసం సమగ్ర సోషల్ మీడియా కంటెంట్ ప్లానింగ్, స్పీచ్ ఎడిటింగ్ మరియు బూస్టింగ్.",
         socHeading: "మా అధికారిక సోషల్ మీడియా లింకులు",
         socSub: "ఒక్క క్లిక్‌తో మాతో కనెక్ట్ అవ్వండి:",
         stickyWa: "WhatsApp లో మాట్లాడండి"
@@ -899,14 +798,17 @@
         tag: "Next-Gen AI & Political Media Agency",
         title: "AI Powered Promotion for<br>Business & Politics",
         subtitle: "Attract customers and voters with AI cinematic reels, trending videos, and strategic digital campaigns.",
+        fBadge: "LEADERSHIP & VISION",
+        fName: "Raasuri Bhaskar",
+        fRole: "Founder & Digital Campaign Strategist",
+        fBio: "Empowering businesses and public leaders with cutting-edge AI creative marketing and viral campaign narratives.",
         tabBiz: "🏢 Business Solutions",
         tabPol: "🏛️ Political Campaigns",
         mTitle: "Menu & Settings",
+        mFnd: "👑 Founder Profile",
         mServ: "⚡ Services",
-        mPlans: "🏷️ Pricing Plans",
-        mPort: "🖼️ My Portfolio",
+        mPlans: "🏷️️ Pricing Plans",
         mInq: "📝 Quick Inquiry Form",
-        mHub: "📈 Marketing Hub",
         mSoc: "🌐 Social Media Links",
         plansHeading: "🏷️ Service Pricing Packages",
         p1Name: "Basic Plan",
@@ -921,7 +823,6 @@
         p3Price: "₹14,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ Month</span>",
         p3Features: "<li>✓ Daily Wishes & Political/Biz Posters</li><li>✓ Weekly 3 Powerful Speech/Brand Reels</li><li>✓ Constituency & Local Paid Ads Boosting</li><li>✓ Full Social Media Management & War Room</li>",
         p3Btn: "Get Premium VIP Plan",
-        portHeading: "🖼️ My Featured Works",
         formHeading: "📝 Quick Order & Inquiry Form",
         lblName: "Your Name:",
         lblPhone: "Phone Number:",
@@ -929,13 +830,6 @@
         lblPlan: "Select Plan:",
         lblMsg: "Your Message / Needs:",
         btnSubmit: "Send Order on WhatsApp 🚀",
-        mktHeading: "🚀 Marketing Growth Hub",
-        hub1Title: "📈 Meta & Instagram Paid Ads",
-        hub1Desc: "Target customers and voters in your constituency/area to generate direct phone calls and inquiries.",
-        hub2Title: "📍 Google My Business Ranking",
-        hub2Desc: "Local SEO optimization to rank your business or campaign office at the top of Google Maps.",
-        hub3Title: "🗳️ Political Digital War Room",
-        hub3Desc: "Complete strategy, viral speech cuts, and 24/7 narrative management for public leaders.",
         socHeading: "Our Official Social Links",
         socSub: "Connect with us instantly:",
         stickyWa: "Chat on WhatsApp"
@@ -950,14 +844,17 @@
       document.getElementById('t-tag').innerText = d.tag;
       document.getElementById('t-title').innerHTML = d.title;
       document.getElementById('t-subtitle').innerText = d.subtitle;
+      document.getElementById('f-badge').innerText = d.fBadge;
+      document.getElementById('f-name').innerText = d.fName;
+      document.getElementById('f-role').innerText = d.fRole;
+      document.getElementById('f-bio').innerText = d.fBio;
       document.getElementById('tab-biz').innerText = d.tabBiz;
       document.getElementById('tab-pol').innerText = d.tabPol;
       document.getElementById('m-title').innerText = d.mTitle;
+      document.getElementById('m-fnd').innerText = d.mFnd;
       document.getElementById('m-serv').innerText = d.mServ;
       document.getElementById('m-plans').innerText = d.mPlans;
-      document.getElementById('m-port').innerText = d.mPort;
       document.getElementById('m-inq').innerText = d.mInq;
-      document.getElementById('m-hub').innerText = d.mHub;
       document.getElementById('m-soc').innerText = d.mSoc;
       document.getElementById('t-plans-heading').innerText = d.plansHeading;
       document.getElementById('p1-name').innerText = d.p1Name;
@@ -972,7 +869,6 @@
       document.getElementById('p3-price').innerHTML = d.p3Price;
       document.getElementById('p3-features').innerHTML = d.p3Features;
       document.getElementById('p3-btn').innerText = d.p3Btn;
-      document.getElementById('t-port-heading').innerText = d.portHeading;
       document.getElementById('t-form-heading').innerText = d.formHeading;
       document.getElementById('lbl-name').innerText = d.lblName;
       document.getElementById('lbl-phone').innerText = d.lblPhone;
@@ -980,13 +876,6 @@
       document.getElementById('lbl-plan').innerText = d.lblPlan;
       document.getElementById('lbl-msg').innerText = d.lblMsg;
       document.getElementById('btn-submit').innerHTML = `<svg style="width:20px; height:20px; fill:#fff;" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.227-.556-1.585-.658-2.613-2.28-2.692-2.387-.079-.107-.648-.862-.648-1.644 0-.783.411-1.168.556-1.326.144-.159.313-.198.418-.198.106 0 .211.002.302.008.097.006.228-.037.357.272.132.318.45 1.096.49 1.176.04.079.066.172.013.278-.053.106-.079.172-.158.265-.08.093-.168.208-.24.279-.08.079-.163.165-.07.324.093.159.412.68 1.002 1.207.76.679 1.401.889 1.599.988.198.099.313.086.429-.047.116-.132.496-.58.628-.779.132-.198.264-.165.443-.099.179.066 1.137.536 1.334.635.198.099.33.146.377.232.048.086.048.502-.096.907z"/></svg> ${d.btnSubmit}`;
-      document.getElementById('t-mkt-heading').innerText = d.mktHeading;
-      document.getElementById('hub1-title').innerText = d.hub1Title;
-      document.getElementById('hub1-desc').innerText = d.hub1Desc;
-      document.getElementById('hub2-title').innerText = d.hub2Title;
-      document.getElementById('hub2-desc').innerText = d.hub2Desc;
-      document.getElementById('hub3-title').innerText = d.hub3Title;
-      document.getElementById('hub3-desc').innerText = d.hub3Desc;
       document.getElementById('t-soc-heading').innerText = d.socHeading;
       document.getElementById('t-soc-sub').innerText = d.socSub;
       document.getElementById('btn-sticky-wa').innerText = d.stickyWa;
