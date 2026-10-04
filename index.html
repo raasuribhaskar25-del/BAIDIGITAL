@@ -23,7 +23,7 @@
       background-color: #030712;
       color: #f3f4f6;
       line-height: 1.6;
-      padding-bottom: 90px;
+      padding-bottom: 95px;
       overflow-x: hidden;
     }
     header {
@@ -94,26 +94,43 @@
       color: #9ca3af;
       margin-bottom: 20px;
     }
+    
+    /* 3D Animation Video Card */
     .media-card {
       background: #0b0f19;
       border-radius: 16px;
       padding: 8px;
       margin: 0 auto 24px;
       max-width: 420px;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.08);
+      border: 1px solid rgba(0, 212, 255, 0.35);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+      perspective: 1000px;
     }
     .media-card video, .media-card img {
       width: 100%;
       border-radius: 12px;
       display: block;
+      animation: float3D 4s ease-in-out infinite alternate;
     }
+    @keyframes float3D {
+      0% {
+        transform: rotateY(-5deg) rotateX(3deg) scale(0.98);
+      }
+      100% {
+        transform: rotateY(5deg) rotateX(-3deg) scale(1.02);
+      }
+    }
+
     .section-title {
       font-size: 1.3rem;
       font-weight: 700;
       text-align: center;
       margin: 32px 0 16px;
       color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
     .services-grid {
       display: grid;
@@ -212,24 +229,25 @@
     .gallery-item {
       background: #0f172a;
       border-radius: 12px;
-      padding: 12px;
+      padding: 14px;
       border: 1px solid rgba(255,255,255,0.06);
       text-align: center;
     }
     .gallery-item .icon {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 6px;
     }
     .gallery-item h4 {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: #fff;
+      margin-bottom: 4px;
     }
     .gallery-item p {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: #94a3b8;
     }
 
-    /* Testimonials */
+    /* Testimonials / Reviews */
     .reviews-wrap {
       padding: 0 20px;
       display: flex;
@@ -239,55 +257,55 @@
     .review-card {
       background: #0b0f19;
       border-radius: 14px;
-      padding: 14px;
+      padding: 16px;
       border: 1px solid rgba(255,255,255,0.06);
     }
     .stars {
       color: #fbbf24;
-      font-size: 0.9rem;
-      margin-bottom: 4px;
+      font-size: 1rem;
+      margin-bottom: 6px;
     }
     .review-card p {
-      font-size: 0.84rem;
+      font-size: 0.86rem;
       color: #cbd5e1;
       font-style: italic;
     }
     .client-name {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: #38bdf8;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
-    /* Inquiry Form */
+    /* Form Section */
     .form-box {
       background: #0f172a;
       border-radius: 16px;
       padding: 20px;
       margin: 0 20px;
-      border: 1px solid rgba(0, 212, 255, 0.2);
+      border: 1px solid rgba(0, 212, 255, 0.25);
     }
     .form-group {
       margin-bottom: 12px;
     }
     .form-group label {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: #94a3b8;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
     .form-group input, .form-group select {
       width: 100%;
-      padding: 10px;
+      padding: 11px;
       border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12);
       background: #030712;
       color: #fff;
       font-size: 0.9rem;
     }
     .form-submit-btn {
       width: 100%;
-      padding: 12px;
+      padding: 13px;
       background: #25d366;
       color: #fff;
       font-weight: 700;
@@ -295,9 +313,10 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 0.95rem;
+      margin-top: 6px;
     }
 
-    /* FAQ */
+    /* FAQ Section */
     .faq-wrap {
       padding: 0 20px;
       display: flex;
@@ -307,21 +326,63 @@
     details {
       background: #0f172a;
       border-radius: 10px;
-      padding: 12px 14px;
+      padding: 14px;
       border: 1px solid rgba(255,255,255,0.06);
     }
     summary {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: #f3f4f6;
       cursor: pointer;
     }
     details p {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: #94a3b8;
       margin-top: 8px;
-      padding-top: 6px;
+      padding-top: 8px;
       border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Social Icons & Footer Section */
+    .footer-section {
+      text-align: center;
+      padding: 30px 20px 20px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #94a3b8;
+      margin-bottom: 14px;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .social-icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0f172a;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.25rem;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .social-icon-btn:hover {
+      transform: translateY(-3px);
+      background: #1e293b;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: #64748b;
     }
 
     /* Sticky Bottom Actions */
@@ -356,7 +417,7 @@
     .call-btn {
       background: #1e293b;
       color: #ffffff;
-      padding: 12px 16px;
+      padding: 12px 18px;
       border-radius: 12px;
       text-decoration: none;
       display: flex;
@@ -381,7 +442,7 @@
     <h1>మీ వ్యాపారానికి<br>AI పవర్డ్ ప్రమోషన్</h1>
     <p>AI వీడియోలు, సినిమాటిక్ రీల్స్ మరియు ఆధునిక పొలిటికల్ డిజిటల్ క్యాంపెయిన్స్ ద్వారా కస్టమర్లను ఆకర్షించండి.</p>
 
-    <!-- 3D Logo / Video Container -->
+    <!-- 3D Video / Floating Card Container -->
     <div class="media-card">
       <video autoplay loop muted playsinline poster="logo.png">
         <source src="logo_3d.mp4" type="video/mp4">
@@ -390,37 +451,12 @@
     </div>
   </section>
 
-  <!-- Quick Inquiry Form -->
-  <h2 class="section-title">క్విక్ ఎంక్వైరీ (WhatsApp)</h2>
-  <div class="form-box">
-    <form id="inquiryForm" onsubmit="sendWhatsApp(event)">
-      <div class="form-group">
-        <label>మీ పేరు:</label>
-        <input type="text" id="custName" placeholder="పేరు రాయండి" required>
-      </div>
-      <div class="form-group">
-        <label>మీ వ్యాపారం / కేటగిరీ:</label>
-        <input type="text" id="custBusiness" placeholder="వ్యాపారం పేరు" required>
-      </div>
-      <div class="form-group">
-        <label>అవసరమైన సర్వీస్:</label>
-        <select id="custService">
-          <option>AI ప్రమోషన్ రీల్స్</option>
-          <option>బిజినెస్ ప్యాకేజ్ (₹4,999)</option>
-          <option>పొలిటికల్ ప్యాకేజ్ (₹14,999)</option>
-          <option>డిజిటల్ మార్కెటింగ్</option>
-        </select>
-      </div>
-      <button type="submit" class="form-submit-btn">వాట్సాప్‌లో పంపండి 🚀</button>
-    </form>
-  </div>
-
   <!-- Services Section -->
-  <h2 class="section-title">మా ప్రధాన సర్వీసెస్</h2>
+  <h2 class="section-title">⚡ మా ప్రధాన సర్వీసెస్</h2>
   <div class="services-grid">
     <div class="service-box">
       <h3>🎬 AI వీడియోస్ & వైరల్ రీల్స్</h3>
-      <p>ఇన్‌స్టాగ్రామ్, యూట్యూబ్ షార్ట్స్ కోసం ట్రెండింగ్ AI అవతార్ వీడియోలు మరియు వాయిస్ ఓవర్లు.</p>
+      <p>ఇన్‌‌స్టాగ్రామ్, యూట్యూబ్ షార్ట్స్ కోసం ట్రెండింగ్ AI అవతార్ వీడియోలు మరియు వాయిస్ ఓవర్లు.</p>
     </div>
     <div class="service-box">
       <h3>🏛️ పొలిటికల్ డిజిటల్ ప్రమోషన్</h3>
@@ -433,7 +469,7 @@
   </div>
 
   <!-- Samples Gallery -->
-  <h2 class="section-title">మా వర్క్స్ శాంపిల్స్</h2>
+  <h2 class="section-title">💎 మా వర్క్స్ శాంపిల్స్</h2>
   <div class="gallery-grid">
     <div class="gallery-item">
       <div class="icon">✨</div>
@@ -458,7 +494,7 @@
   </div>
 
   <!-- Pricing Section -->
-  <h2 class="section-title">బెస్ట్ ప్యాకేజీలు</h2>
+  <h2 class="section-title">🏷️ బెస్ట్ ప్యాకేజీలు</h2>
   <div class="pricing-wrap">
     <div class="pricing-card">
       <div class="plan-name">బిజినెస్ ప్యాకేజ్</div>
@@ -486,8 +522,33 @@
     </div>
   </div>
 
+  <!-- Quick Inquiry Form -->
+  <h2 class="section-title">📝 క్విక్ ఎంక్వైరీ ఫారమ్</h2>
+  <div class="form-box">
+    <form id="inquiryForm" onsubmit="sendWhatsApp(event)">
+      <div class="form-group">
+        <label>మీ పేరు:</label>
+        <input type="text" id="custName" placeholder="మీ పేరు నమోదు చేయండి" required>
+      </div>
+      <div class="form-group">
+        <label>మీ వ్యాపారం / కేటగిరీ:</label>
+        <input type="text" id="custBusiness" placeholder="వ్యాపారం పేరు" required>
+      </div>
+      <div class="form-group">
+        <label>అవసరమైన సర్వీస్:</label>
+        <select id="custService">
+          <option>AI ప్రమోషన్ రీల్స్</option>
+          <option>బిజినెస్ ప్యాకేజ్ (₹4,999)</option>
+          <option>పొలిటికల్ ప్యాకేజ్ (₹14,999)</option>
+          <option>డిజిటల్ మార్కెటింగ్</option>
+        </select>
+      </div>
+      <button type="submit" class="form-submit-btn">వాట్సాప్‌లో పంపండి 🚀</button>
+    </form>
+  </div>
+
   <!-- Reviews Section -->
-  <h2 class="section-title">క్లయింట్ రివ్యూలు</h2>
+  <h2 class="section-title">⭐ కస్టమర్ రివ్యూలు</h2>
   <div class="reviews-wrap">
     <div class="review-card">
       <div class="stars">★★★★★</div>
@@ -496,13 +557,13 @@
     </div>
     <div class="review-card">
       <div class="stars">★★★★★</div>
-      <p>"పొలిటికల్ క్యాంపెయిన్ కోసం డైలీ పోస్టర్లు, రీల్స్ చాలా ప్రొఫెషనల్‌‌గా డిజైన్ చేసి ఇస్తున్నారు."</p>
+      <p>"పొలిటికల్ క్యాంపెయిన్ కోసం డైలీ పోస్టర్లు, రీల్స్ చాలా ప్రొఫెషనల్‌గా డిజైన్ చేసి ఇస్తున్నారు."</p>
       <div class="client-name">- రమేష్ బాబు (సోషల్ యాక్టివిస్ట్)</div>
     </div>
   </div>
 
   <!-- FAQ Section -->
-  <h2 class="section-title">తరచూ అడిగే ప్రశ్నలు (FAQ)</h2>
+  <h2 class="section-title">❓ తరచూ అడిగే ప్రశ్నలు (FAQ)</h2>
   <div class="faq-wrap">
     <details>
       <summary>వీడియో డెలివరీకి ఎంత సమయం పడుతుంది?</summary>
@@ -512,9 +573,31 @@
       <summary>మేము ఇచ్చే కంటెంట్‌తోనే వీడియోలు చేస్తారా?</summary>
       <p>అవును, మీ బిజినెస్ వివరాలు లేదా స్క్రిప్ట్ ఆధారంగానే మేము ఆకర్షణీయమైన AI వాయిస్ మరియు వీడియోలను రూపొందిస్తాము.</p>
     </details>
+    <details>
+      <summary>ప్యాకేజీలను కస్టమైజ్ చేసుకోవచ్చా?</summary>
+      <p>తప్పకుండా! మీ బడ్జెట్ మరియు అవసరాలకు అనుగుణంగా ప్రత్యేక ప్యాకేజీని ప్లాన్ చేస్తాము.</p>
+    </details>
   </div>
 
-  <!-- Sticky Contact Bar -->
+  <!-- Social Icons & Footer Section -->
+  <footer class="footer-section">
+    <div class="footer-title">మాతో కనెక్ట్ అవ్వండి</div>
+    <div class="social-icons">
+      <!-- WhatsApp Icon -->
+      <a href="https://wa.me/919951336425" class="social-icon-btn" title="WhatsApp" style="color: #25d366;">💬</a>
+      <!-- Call Icon -->
+      <a href="tel:+919951336425" class="social-icon-btn" title="Phone Call" style="color: #38bdf8;">📞</a>
+      <!-- Instagram Icon -->
+      <a href="https://instagram.com" target="_blank" class="social-icon-btn" title="Instagram" style="color: #e1306c;">📸</a>
+      <!-- YouTube Icon -->
+      <a href="https://youtube.com" target="_blank" class="social-icon-btn" title="YouTube" style="color: #ff0000;">▶️</a>
+      <!-- Email Icon -->
+      <a href="mailto:raasuribhaskar25@gmail.com" class="social-icon-btn" title="Email" style="color: #ea4335;">✉️</a>
+    </div>
+    <div class="footer-copy">© 2026 BAIDIGITAL. All Rights Reserved.</div>
+  </footer>
+
+  <!-- Sticky Bottom Actions -->
   <div class="sticky-bar">
     <a href="https://wa.me/919951336425?text=Hello%20BAIDIGITAL,%20I%20need%20marketing%20services" class="whatsapp-btn">
       <span>💬 WhatsApp లో మాట్లాడండి</span>
