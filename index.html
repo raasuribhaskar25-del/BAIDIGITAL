@@ -13,7 +13,7 @@
 <style>
 :root{--bg:#070a12;--panel:#101525;--text:#f7f8ff;--muted:#aab1c5;--line:#232a3e;--a:#7c5cff;--b:#00d4ff}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);padding-bottom:75px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);padding-bottom:80px}
 a{text-decoration:none;color:inherit}
 .nav{position:sticky;top:0;z-index:5;background:rgba(7,10,18,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .navin{max-width:1120px;margin:auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center}
@@ -37,6 +37,17 @@ a{text-decoration:none;color:inherit}
 .icon{font-size:28px}
 .card h3{margin:18px 0 8px}
 .card p{color:var(--muted);line-height:1.6;font-size:14px}
+
+/* Portfolio Gallery Styling */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.portfolio-card{background:#0e1424;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform 0.2s, border-color 0.2s}
+.portfolio-card:hover{transform:translateY(-5px);border-color:var(--b)}
+.portfolio-thumb{height:190px;background:linear-gradient(135deg,#182138,#0b1122);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--line)}
+.badge{position:absolute;top:12px;left:12px;background:rgba(7,10,18,0.85);backdrop-filter:blur(6px);border:1px solid var(--line);color:var(--b);font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px}
+.portfolio-info{padding:20px}
+.portfolio-info h4{margin:0 0 8px;font-size:18px}
+.portfolio-info p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+
 .campaign{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .panel{padding:34px;border:1px solid var(--line);border-radius:24px;background:#0e1424}
 .panel h3{font-size:26px;margin-top:0}
@@ -47,23 +58,25 @@ a{text-decoration:none;color:inherit}
 footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e879d;font-size:13px}
 
 /* Mobile Bottom Navigation Bar */
-.bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(10,14,26,0.96);backdrop-filter:blur(15px);border-top:1px solid var(--line);padding:8px 12px;z-index:999;justify-content:space-around;align-items:center}
-.bottom-nav a{display:flex;flex-direction:column;align-items:center;color:var(--muted);font-size:11px;font-weight:600;gap:4px}
+.bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(10,14,26,0.96);backdrop-filter:blur(15px);border-top:1px solid var(--line);padding:8px 8px;z-index:999;justify-content:space-around;align-items:center}
+.bottom-nav a{display:flex;flex-direction:column;align-items:center;color:var(--muted);font-size:10px;font-weight:600;gap:4px}
 .bottom-nav a:hover, .bottom-nav a:active{color:var(--b)}
-.bottom-nav .nav-icon{font-size:20px;line-height:1}
+.bottom-nav .nav-icon{font-size:18px;line-height:1}
 .bottom-nav .whatsapp-nav{color:#25d366}
 
-@media(max-width:800px){
+@media(max-width:850px){
   .links{display:none}
   .hero{grid-template-columns:1fr;padding-top:60px}
   .orb{height:230px}
   .grid{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
   .campaign{grid-template-columns:1fr}
   .bottom-nav{display:flex}
 }
-@media(max-width:520px){
+@media(max-width:540px){
   .grid{grid-template-columns:1fr}
-  .hero h1{font-size:52px}
+  .gallery-grid{grid-template-columns:1fr}
+  .hero h1{font-size:50px}
 }
 </style>
 </head>
@@ -74,6 +87,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e
     <div class="logo">BAI<span>DIGITAL</span></div>
     <div class="links">
       <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#campaigns">Campaigns</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -94,6 +108,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e
   <div class="orb"><strong>BAI<br>DIGITAL</strong></div>
 </section>
 
+<!-- Services Section -->
 <section class="section" id="services">
   <h2 class="title">What We Do</h2>
   <p class="sub">Creative digital solutions designed for attention, reach and measurable impact.</p>
@@ -105,6 +120,51 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e
   </div>
 </section>
 
+<!-- Portfolio / Work Gallery Section -->
+<section class="section" id="portfolio">
+  <h2 class="title">Our Work Showcase</h2>
+  <p class="sub">Take a look at our recent AI creatives, commercial promotional videos and political campaign assets.</p>
+  
+  <div class="gallery-grid">
+    <!-- Item 1: Commercial Reel -->
+    <div class="portfolio-card">
+      <div class="portfolio-thumb">
+        <span class="badge">🎬 Promo Video</span>
+        <span style="font-size:42px;">🎥</span>
+      </div>
+      <div class="portfolio-info">
+        <h4>Commercial Brand Reel</h4>
+        <p>Dynamic AI cinematic promo created for brand reach and high engagement.</p>
+      </div>
+    </div>
+
+    <!-- Item 2: Political Campaign Poster -->
+    <div class="portfolio-card">
+      <div class="portfolio-thumb">
+        <span class="badge">🗳 Campaign Creative</span>
+        <span style="font-size:42px;">📢</span>
+      </div>
+      <div class="portfolio-info">
+        <h4>Political Outreach Banner</h4>
+        <p>Impactful visual poster communication designed for local election campaigns.</p>
+      </div>
+    </div>
+
+    <!-- Item 3: 3D / AI Motion Concept -->
+    <div class="portfolio-card">
+      <div class="portfolio-thumb">
+        <span class="badge">🤖 AI 3D Motion</span>
+        <span style="font-size:42px;">✨</span>
+      </div>
+      <div class="portfolio-info">
+        <h4>3D Typography & Motion</h4>
+        <p>Golden title animations and futuristic visual concepts crafted with AI.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Campaigns Section -->
 <section class="section" id="campaigns">
   <h2 class="title">Two Worlds. One Digital Engine.</h2>
   <p class="sub">Specialized creative communication for business growth and political outreach.</p>
@@ -114,6 +174,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e
   </div>
 </section>
 
+<!-- About Section -->
 <section class="section" id="about">
   <div class="panel">
     <h2>About BAIDIGITAL</h2>
@@ -121,6 +182,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e
   </div>
 </section>
 
+<!-- Contact Section -->
 <section class="section" id="contact">
   <div class="contact">
     <h2>Let’s Create Something Powerful.</h2>
@@ -139,6 +201,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e
 <div class="bottom-nav">
   <a href="#top"><span class="nav-icon">🏠</span><span>Home</span></a>
   <a href="#services"><span class="nav-icon">⚡</span><span>Services</span></a>
+  <a href="#portfolio"><span class="nav-icon">💼</span><span>Work</span></a>
   <a href="#campaigns"><span class="nav-icon">🎯</span><span>Campaigns</span></a>
   <a href="#contact"><span class="nav-icon">📞</span><span>Contact</span></a>
   <a href="https://wa.me/917702908818" class="whatsapp-nav"><span class="nav-icon">💬</span><span>WhatsApp</span></a>
