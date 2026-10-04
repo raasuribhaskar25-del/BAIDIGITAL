@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BAIDIGITAL | AI & Political Digital Agency</title>
   <meta name="description" content="AI బిజినెస్ ప్రమోషన్ మరియు పొలిటికల్ డిజిటల్ క్యాంపెయిన్స్ - A to Z సర్వీసెస్.">
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#030712">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,9 +40,9 @@
       overflow-x: hidden;
     }
 
-    /* Header */
+    /* Header with Brand Logo */
     header {
-      padding: 14px 20px;
+      padding: 12px 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -52,8 +53,21 @@
       z-index: 1000;
       border-bottom: 1px solid var(--card-border);
     }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: #000;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+    }
     .brand-title {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: 800;
       background: linear-gradient(135deg, #00d4ff, #a855f7);
       -webkit-background-clip: text;
@@ -66,9 +80,9 @@
       gap: 6px;
       background: rgba(37, 211, 102, 0.12);
       color: #25d366;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 4px 9px;
       border-radius: 20px;
       border: 1px solid rgba(37, 211, 102, 0.3);
     }
@@ -494,9 +508,12 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header with Brand Logo and Title -->
   <header>
-    <div class="brand-title">BAIDIGITAL</div>
+    <div class="brand-wrap">
+      <img src="logo.png" alt="BAIDIGITAL Logo" class="header-logo">
+      <div class="brand-title">BAIDIGITAL</div>
+    </div>
     <div class="live-badge">
       <div class="dot-pulse"></div>
       Active Agency
@@ -513,7 +530,6 @@
     <div class="video-stage">
       <div class="video-frame">
         <video autoplay loop muted playsinline poster="logo.png">
-          <!-- మీ రిపోజిటరీలోని ఖచ్చితమైన వీడియో ఫైల్ పేరు -->
           <source src="gemini_generated_video_a3bef7d7.mp4" type="video/mp4">
           <source src="logo_3d.mp4" type="video/mp4">
           <img src="logo.png" alt="BAIDIGITAL Logo">
@@ -542,7 +558,7 @@
   <div class="tab-container">
     <div class="tab-buttons">
       <button class="tab-btn active" onclick="switchTab('business')">🏢 బిజినెస్ సొల్యూషన్స్</button>
-      <button class="tab-btn" onclick="switchTab('political')">🏛️ పొలిటికల్ ప్రమోషన్</button>
+      <button class="tab-btn" onclick="switchTab('political')">🏛️️ పొలిటికల్ ప్రమోషన్</button>
     </div>
   </div>
 
@@ -585,7 +601,7 @@
 
   <!-- Political Content Section -->
   <div id="politicalSection" style="display: none;">
-    <h2 class="section-title">🏛️ పొలిటికల్ డిజిటల్ క్యాంపెయిన్స్</h2>
+    <h2 class="section-title">🏛️️ పొలిటికల్ డిజిటల్ క్యాంపెయిన్స్</h2>
     <div class="services-grid">
       <div class="service-box">
         <h3>🎙️ ప్రసంగాల కట్స్ & హై-ఇంపాక్ట్ రీల్స్</h3>
@@ -597,7 +613,7 @@
       </div>
       <div class="service-box">
         <h3>👥 నియోజకవర్గ స్థాయి సోషల్ వార్ రూమ్</h3>
-        <p>మీ నియోజకవర్గ ఓటర్లను లక్ష్యంగా చేసుకుని ఫేస్‌బుక్, ఇన్‌స్టాగ్రామ్ పేజీల నిర్వహణ మరియు బూస్టింగ్.</p>
+        <p>మీ నియోజకవర్గ ఓటర్లను లక్ష్యంగా చేసుకుని ఫేస్‌బుక్, ఇన్‌‌స్టాగ్రామ్ పేజీల నిర్వహణ మరియు బూస్టింగ్.</p>
       </div>
     </div>
 
@@ -629,7 +645,7 @@
       <p>4K క్వాలిటీ విజువల్స్</p>
     </div>
     <div class="gallery-item">
-      <div class="icon">🎙️</div>
+      <div class="icon">🎙️️</div>
       <h4>AI వాయిస్ ఓవర్స్</h4>
       <p>సినిమాటిక్ సౌండ్</p>
     </div>
