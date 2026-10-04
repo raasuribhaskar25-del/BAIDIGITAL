@@ -1,7 +1,8 @@
 {
   "name": "BAIDIGITAL",
   "short_name": "BAIDIGITAL",
-  "start_url": "index.html",
+  "start_url": "/BAIDIGITAL/",
+  "scope": "/BAIDIGITAL/",
   "display": "standalone",
   "background_color": "#030712",
   "theme_color": "#030712",
