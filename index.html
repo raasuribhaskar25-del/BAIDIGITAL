@@ -25,7 +25,7 @@ a{text-decoration:none;color:inherit}
 .hero h1{font-size:clamp(45px,7vw,82px);line-height:.95;margin:16px 0;background:linear-gradient(90deg,#fff,#a9b8ff,#00d4ff);-webkit-background-clip:text;color:transparent}
 .hero p{color:var(--muted);font-size:18px;line-height:1.7;max-width:650px}
 .btns{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
-.btn{padding:14px 21px;border-radius:12px;font-weight:800;border:1px solid var(--line);background:#151b2d}
+.btn{padding:14px 21px;border-radius:12px;font-weight:800;border:1px solid var(--line);background:#151b2d;cursor:pointer}
 .primary{background:linear-gradient(100deg,var(--a),var(--b));border:0;color:#fff}
 .orb{height:330px;border-radius:35px;background:radial-gradient(circle at 55% 35%,#3b2a98 0,#17133d 38%,#0d1120 70%);border:1px solid #2d3551;display:flex;align-items:center;justify-content:center;box-shadow:0 0 90px rgba(0,212,255,.12)}
 .orb strong{font-size:54px;letter-spacing:5px}
@@ -52,10 +52,19 @@ a{text-decoration:none;color:inherit}
 .panel{padding:34px;border:1px solid var(--line);border-radius:24px;background:#0e1424}
 .panel h3{font-size:26px;margin-top:0}
 .panel p{color:var(--muted);line-height:1.8}
-.contact{text-align:center;background:linear-gradient(135deg,#11152b,#0b1925);border:1px solid var(--line);border-radius:28px;padding:50px 20px}
-.contact h2{font-size:40px;margin:0 0 12px}
-.contact p{color:var(--muted)}
-footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e879d;font-size:13px}
+
+/* Contact & Enquiry Form Styling */
+.contact-container{background:linear-gradient(135deg,#11152b,#0b1925);border:1px solid var(--line);border-radius:28px;padding:50px 24px;max-width:700px;margin:0 auto}
+.enquiry-form{display:flex;flex-direction:column;gap:16px;text-align:left;margin-top:30px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:13px;color:var(--muted);font-weight:600}
+.form-input{background:#080c16;border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--text);font-size:15px;outline:none;transition:border-color 0.2s}
+.form-input:focus{border-color:var(--b)}
+textarea.form-input{resize:vertical;min-height:90px}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp{position:fixed;bottom:85px;right:22px;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 8px 24px rgba(37,211,102,0.4);z-index:998;transition:transform 0.2s}
+.floating-whatsapp:hover{transform:scale(1.08)}
 
 /* Mobile Bottom Navigation Bar */
 .bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(10,14,26,0.96);backdrop-filter:blur(15px);border-top:1px solid var(--line);padding:8px 8px;z-index:999;justify-content:space-around;align-items:center}
@@ -63,6 +72,8 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e
 .bottom-nav a:hover, .bottom-nav a:active{color:var(--b)}
 .bottom-nav .nav-icon{font-size:18px;line-height:1}
 .bottom-nav .whatsapp-nav{color:#25d366}
+
+footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e879d;font-size:13px}
 
 @media(max-width:850px){
   .links{display:none}
@@ -72,6 +83,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e
   .gallery-grid{grid-template-columns:1fr 1fr}
   .campaign{grid-template-columns:1fr}
   .bottom-nav{display:flex}
+  .floating-whatsapp{bottom:80px;right:18px;width:52px;height:52px;font-size:28px}
 }
 @media(max-width:540px){
   .grid{grid-template-columns:1fr}
@@ -120,46 +132,22 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e
   </div>
 </section>
 
-<!-- Portfolio / Work Gallery Section -->
+<!-- Portfolio Showcase Section -->
 <section class="section" id="portfolio">
   <h2 class="title">Our Work Showcase</h2>
   <p class="sub">Take a look at our recent AI creatives, commercial promotional videos and political campaign assets.</p>
-  
   <div class="gallery-grid">
-    <!-- Item 1: Commercial Reel -->
     <div class="portfolio-card">
-      <div class="portfolio-thumb">
-        <span class="badge">🎬 Promo Video</span>
-        <span style="font-size:42px;">🎥</span>
-      </div>
-      <div class="portfolio-info">
-        <h4>Commercial Brand Reel</h4>
-        <p>Dynamic AI cinematic promo created for brand reach and high engagement.</p>
-      </div>
+      <div class="portfolio-thumb"><span class="badge">🎬 Promo Video</span><span style="font-size:42px;">🎥</span></div>
+      <div class="portfolio-info"><h4>Commercial Brand Reel</h4><p>Dynamic AI cinematic promo created for brand reach and high engagement.</p></div>
     </div>
-
-    <!-- Item 2: Political Campaign Poster -->
     <div class="portfolio-card">
-      <div class="portfolio-thumb">
-        <span class="badge">🗳 Campaign Creative</span>
-        <span style="font-size:42px;">📢</span>
-      </div>
-      <div class="portfolio-info">
-        <h4>Political Outreach Banner</h4>
-        <p>Impactful visual poster communication designed for local election campaigns.</p>
-      </div>
+      <div class="portfolio-thumb"><span class="badge">🗳 Campaign Creative</span><span style="font-size:42px;">📢</span></div>
+      <div class="portfolio-info"><h4>Political Outreach Banner</h4><p>Impactful visual poster communication designed for local election campaigns.</p></div>
     </div>
-
-    <!-- Item 3: 3D / AI Motion Concept -->
     <div class="portfolio-card">
-      <div class="portfolio-thumb">
-        <span class="badge">🤖 AI 3D Motion</span>
-        <span style="font-size:42px;">✨</span>
-      </div>
-      <div class="portfolio-info">
-        <h4>3D Typography & Motion</h4>
-        <p>Golden title animations and futuristic visual concepts crafted with AI.</p>
-      </div>
+      <div class="portfolio-thumb"><span class="badge">🤖 AI 3D Motion</span><span style="font-size:42px;">✨</span></div>
+      <div class="portfolio-info"><h4>3D Typography & Motion</h4><p>Golden title animations and futuristic visual concepts crafted with AI.</p></div>
     </div>
   </div>
 </section>
@@ -182,20 +170,62 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e
   </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact & Inquiry Form Section -->
 <section class="section" id="contact">
-  <div class="contact">
-    <h2>Let’s Create Something Powerful.</h2>
-    <p>Have a business promotion or digital campaign idea?</p>
-    <div class="btns" style="justify-content:center">
-      <a class="btn primary" href="https://wa.me/917702908818">WhatsApp: 7702908818</a>
-      <a class="btn" href="tel:+919492255151">Call: 9492255151</a>
+  <div class="contact-container" style="text-align:center;">
+    <h2 style="font-size:36px;margin:0 0 10px;">Let’s Create Something Powerful.</h2>
+    <p style="color:var(--muted);margin:0 0 20px;">Have a business project or digital campaign idea? Fill out the details below to connect with us directly.</p>
+
+    <!-- Client Lead / Inquiry Form -->
+    <form class="enquiry-form" onsubmit="sendToWhatsApp(event)">
+      <div class="form-group">
+        <label>Your Name *</label>
+        <input type="text" id="clientName" class="form-input" placeholder="e.g. Ramesh Reddy" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone / WhatsApp Number *</label>
+        <input type="tel" id="clientPhone" class="form-input" placeholder="e.g. 9876543210" required>
+      </div>
+
+      <div class="form-group">
+        <label>Service Needed *</label>
+        <select id="clientService" class="form-input" required>
+          <option value="Commercial Business Promotion">Commercial Business Promotion</option>
+          <option value="Political Digital Campaign">Political Digital Campaign</option>
+          <option value="AI Video / Reel Production">AI Video / Reel Production</option>
+          <option value="Poster & Graphic Design">Poster & Graphic Design</option>
+          <option value="Website & Portfolio Setup">Website & Portfolio Setup</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Project Details / Message</label>
+        <textarea id="clientMessage" class="form-input" placeholder="Briefly describe what you need..."></textarea>
+      </div>
+
+      <button type="submit" class="btn primary" style="padding:16px;font-size:16px;margin-top:10px;">
+        🚀 Send Inquiry on WhatsApp
+      </button>
+    </form>
+
+    <div style="margin-top:30px;border-top:1px solid var(--line);padding-top:20px;">
+      <p style="color:var(--muted);font-size:14px;margin-bottom:12px;">Or contact directly:</p>
+      <div class="btns" style="justify-content:center;margin-top:0;">
+        <a class="btn primary" href="https://wa.me/917702908818">WhatsApp: 7702908818</a>
+        <a class="btn" href="tel:+919492255151">Call: 9492255151</a>
+      </div>
+      <p style="color:var(--muted);font-size:13px;margin-top:16px;">Madanapalle, Andhra Pradesh</p>
     </div>
-    <p style="margin-top:18px">Madanapalle, Andhra Pradesh</p>
   </div>
 </section>
 
 <footer>© 2026 BAIDIGITAL. AI + Digital Marketing + Creative Campaigns.</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/917702908818" class="floating-whatsapp" title="Chat on WhatsApp" aria-label="WhatsApp">
+  💬
+</a>
 
 <!-- Mobile Bottom Navigation Bar -->
 <div class="bottom-nav">
@@ -206,6 +236,26 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px;color:#7e
   <a href="#contact"><span class="nav-icon">📞</span><span>Contact</span></a>
   <a href="https://wa.me/917702908818" class="whatsapp-nav"><span class="nav-icon">💬</span><span>WhatsApp</span></a>
 </div>
+
+<!-- JavaScript to convert Form Data to WhatsApp Message -->
+<script>
+function sendToWhatsApp(e) {
+  e.preventDefault();
+  const name = document.getElementById('clientName').value.trim();
+  const phone = document.getElementById('clientPhone').value.trim();
+  const service = document.getElementById('clientService').value;
+  const msg = document.getElementById('clientMessage').value.trim();
+
+  const formattedMsg = `*New Inquiry via BAIDIGITAL Web App*%0A%0A` +
+                       `*Name:* ${encodeURIComponent(name)}%0A` +
+                       `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                       `*Service Required:* ${encodeURIComponent(service)}%0A` +
+                       `*Message:* ${encodeURIComponent(msg || 'No additional message')}`;
+
+  const whatsappURL = `https://wa.me/917702908818?text=${formattedMsg}`;
+  window.open(whatsappURL, '_blank');
+}
+</script>
 
 </body>
 </html>
