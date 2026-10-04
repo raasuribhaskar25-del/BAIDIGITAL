@@ -2,12 +2,18 @@
 <html lang="te">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>BAIDIGITAL | AI Marketing & Political Campaigns</title>
   <meta name="description" content="AI బిజినెస్ ప్రమోషన్ మరియు పొలిటికల్ డిజిటల్ క్యాంపెయిన్స్ - A to Z సర్వీసెస్.">
+  
+  <!-- App Icons and Home Screen Standalone Fix -->
   <link rel="icon" type="image/png" href="logo.png">
-  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="logo.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#030712">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -207,7 +213,7 @@
       margin-bottom: 20px;
     }
 
-    /* Video Frames */
+    /* Video Stage */
     .video-stage {
       max-width: 440px;
       margin: 0 auto 24px;
@@ -234,7 +240,7 @@
       background: #000;
     }
 
-    /* Founder Card */
+    /* VIP Founder Card */
     .founder-card {
       margin: 0 20px 28px;
       background: radial-gradient(circle at top, #1e1b4b 0%, #0b1120 100%);
@@ -285,6 +291,70 @@
       color: var(--text-muted);
     }
 
+    /* Timelines & Hours */
+    .timeline-wrap {
+      padding: 0 20px;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .timeline-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .time-icon {
+      font-size: 1.8rem;
+      background: #070d18;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+    }
+    .time-details h4 {
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .time-details p {
+      font-size: 0.8rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .hours-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px;
+      margin: 0 20px 24px;
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+    .hours-day {
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+    .hours-time {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
     /* Switch Tabs */
     .tab-container {
       padding: 0 20px;
@@ -326,71 +396,6 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-    }
-
-    /* Timeline & Delivery Time Cards */
-    .timeline-wrap {
-      padding: 0 20px;
-      display: grid;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .timeline-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(0, 212, 255, 0.2);
-      border-radius: 14px;
-      padding: 16px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .time-icon {
-      font-size: 1.8rem;
-      background: #070d18;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      border: 1px solid rgba(0, 212, 255, 0.3);
-    }
-    .time-details h4 {
-      font-size: 0.95rem;
-      color: #fff;
-      margin-bottom: 2px;
-    }
-    .time-details p {
-      font-size: 0.8rem;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    /* Working Hours Table */
-    .hours-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 18px;
-      margin: 0 20px 24px;
-    }
-    .hours-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.85rem;
-    }
-    .hours-row:last-child {
-      border-bottom: none;
-    }
-    .hours-day {
-      color: #cbd5e1;
-      font-weight: 600;
-    }
-    .hours-time {
-      color: var(--primary);
-      font-weight: 700;
     }
 
     /* Pricing Section */
@@ -659,7 +664,6 @@
   <div id="timings">
     <h2 class="section-title" id="t-time-heading">⏰ ప్రాజెక్ట్ డెలివరీ & బిజినెస్ టైమింగ్స్</h2>
     
-    <!-- Delivery Timelines -->
     <div class="timeline-wrap">
       <div class="timeline-card">
         <div class="time-icon">⚡</div>
@@ -684,7 +688,6 @@
       </div>
     </div>
 
-    <!-- Working Hours Card -->
     <div class="hours-card">
       <div class="hours-row">
         <span class="hours-day" id="h-week">సోమవారం – శనివారం:</span>
@@ -701,7 +704,7 @@
     </div>
   </div>
 
-  <!-- Switch Tabs (Business / Politics) -->
+  <!-- Switch Tabs -->
   <div class="tab-container" id="services">
     <div class="tab-buttons">
       <button class="tab-btn active" id="tab-biz" onclick="switchTab('business')">🏢 బిజినెస్ సొల్యూషన్స్</button>
@@ -751,7 +754,7 @@
     </div>
   </div>
 
-  <!-- Quick Inquiry Form with Delivery Urgency -->
+  <!-- Quick Inquiry Form -->
   <h2 class="section-title" id="t-form-heading">📝 క్విక్ ఆర్డర్ & ఎంక్వైరీ ఫారమ్</h2>
   <div class="form-box" id="inquiry">
     <form id="inquiryForm" onsubmit="sendWhatsApp(event)">
@@ -797,7 +800,7 @@
     </form>
   </div>
 
-  <!-- Direct Social Media Icons Section -->
+  <!-- Social Media Icons Section -->
   <div class="social-section" id="social">
     <h3 style="font-size: 1.1rem; color: #fff; margin-bottom: 4px;" id="t-soc-heading">మా అధికారిక సోషల్ మీడియా లింకులు</h3>
     <p style="font-size: 0.8rem; color: var(--text-muted);" id="t-soc-sub">ఒక్క క్లిక్‌తో మాతో కనెక్ట్ అవ్వండి:</p>
@@ -1029,7 +1032,7 @@
       document.getElementById('btn-sticky-wa').innerText = d.stickyWa;
     }
 
-    // WhatsApp Inquiry Form Submission with Timeframe
+    // WhatsApp Inquiry
     function sendWhatsApp(event) {
       event.preventDefault();
       var name = document.getElementById('custName').value;
