@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BAIDIGITAL | AI & Political Digital Agency</title>
+  <title>BAIDIGITAL | AI Marketing & Political Campaigns</title>
   <meta name="description" content="AI బిజినెస్ ప్రమోషన్ మరియు పొలిటికల్ డిజిటల్ క్యాంపెయిన్స్ - A to Z సర్వీసెస్.">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="manifest" href="manifest.json">
@@ -40,7 +40,39 @@
       overflow-x: hidden;
     }
 
-    /* Header with Brand Logo */
+    /* Top Utility Bar (Language & Settings) */
+    .top-bar {
+      background: #070d18;
+      padding: 6px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.78rem;
+    }
+    .lang-switcher {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-muted);
+      padding: 2px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .lang-btn.active {
+      background: var(--primary);
+      color: #000;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Header */
     header {
       padding: 12px 18px;
       display: flex;
@@ -59,12 +91,12 @@
       gap: 10px;
     }
     .header-logo {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 8px;
       object-fit: contain;
       background: #000;
-      border: 1px solid rgba(0, 212, 255, 0.3);
+      border: 1.5px solid rgba(0, 212, 255, 0.4);
     }
     .brand-title {
       font-size: 1.25rem;
@@ -72,26 +104,83 @@
       background: linear-gradient(135deg, #00d4ff, #a855f7);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: 0.5px;
     }
-    .live-badge {
+    .nav-actions {
       display: flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(37, 211, 102, 0.12);
-      color: #25d366;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 4px 9px;
-      border-radius: 20px;
-      border: 1px solid rgba(37, 211, 102, 0.3);
+      gap: 10px;
     }
-    .dot-pulse {
-      width: 7px;
-      height: 7px;
-      background: #25d366;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #25d366;
+    .menu-toggle-btn {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Side Slide Menu / Settings Drawer */
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: none;
+    }
+    .menu-drawer {
+      position: fixed;
+      top: 0;
+      right: -280px;
+      width: 280px;
+      height: 100%;
+      background: #090e1a;
+      border-left: 1px solid rgba(0, 212, 255, 0.2);
+      z-index: 2001;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.3s ease;
+    }
+    .menu-drawer.open {
+      right: 0;
+    }
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .drawer-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    .drawer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .drawer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.98rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     /* Hero Section */
@@ -147,31 +236,6 @@
       background: #000;
     }
 
-    /* Stats Counter Bar */
-    .stats-bar {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      padding: 0 20px;
-      margin-bottom: 24px;
-    }
-    .stat-item {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 10px 5px;
-      text-align: center;
-    }
-    .stat-num {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-    .stat-lbl {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-    }
-
     /* Switch Tabs */
     .tab-container {
       padding: 0 20px;
@@ -202,12 +266,12 @@
       color: #fff;
     }
 
-    /* Section Heading */
+    /* Section Title */
     .section-title {
       font-size: 1.3rem;
       font-weight: 800;
       text-align: center;
-      margin: 30px 0 16px;
+      margin: 32px 0 16px;
       color: #ffffff;
       display: flex;
       align-items: center;
@@ -215,32 +279,7 @@
       gap: 8px;
     }
 
-    /* Services Grid */
-    .services-grid {
-      display: grid;
-      gap: 12px;
-      padding: 0 20px;
-    }
-    .service-box {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 16px;
-    }
-    .service-box h3 {
-      font-size: 1.05rem;
-      color: #38bdf8;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .service-box p {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-    }
-
-    /* Pricing Section */
+    /* 3-Tier Pricing (Basic, Normal, Premium) */
     .pricing-wrap {
       padding: 0 20px;
       display: flex;
@@ -254,9 +293,13 @@
       border: 1px solid var(--card-border);
       position: relative;
     }
-    .pricing-card.popular {
+    .pricing-card.normal {
       border-color: #38bdf8;
       background: linear-gradient(180deg, rgba(14, 165, 233, 0.1) 0%, #0b1120 100%);
+    }
+    .pricing-card.premium {
+      border-color: #a855f7;
+      background: linear-gradient(180deg, rgba(168, 85, 247, 0.12) 0%, #0b1120 100%);
     }
     .plan-badge {
       position: absolute;
@@ -304,164 +347,105 @@
       color: #ffffff;
     }
 
-    /* Samples Grid */
+    /* Gallery Section */
+    .gallery-filter {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding: 0 20px;
+    }
+    .filter-btn {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .filter-btn.active {
+      background: var(--primary);
+      color: #000;
+      font-weight: 700;
+    }
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
       padding: 0 20px;
     }
-    .gallery-item {
+    .gallery-card {
       background: var(--card-bg);
       border-radius: 12px;
-      padding: 14px;
+      padding: 12px;
       border: 1px solid var(--card-border);
       text-align: center;
     }
-    .gallery-item .icon {
+    .gallery-card .icon {
       font-size: 2rem;
       margin-bottom: 6px;
     }
-    .gallery-item h4 {
+    .gallery-card h4 {
       font-size: 0.92rem;
       color: #fff;
-      margin-bottom: 3px;
     }
-    .gallery-item p {
-      font-size: 0.75rem;
+    .gallery-card p {
+      font-size: 0.76rem;
       color: var(--text-muted);
     }
 
-    /* Form Section */
-    .form-box {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 20px;
-      margin: 0 20px;
-      border: 1px solid rgba(0, 212, 255, 0.3);
-    }
-    .form-group {
-      margin-bottom: 12px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-bottom: 5px;
-    }
-    .form-group input, .form-group select {
-      width: 100%;
-      padding: 11px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: #030712;
-      color: #fff;
-      font-size: 0.9rem;
-    }
-    .form-submit-btn {
-      width: 100%;
-      padding: 13px;
-      background: #25d366;
-      color: #fff;
-      font-weight: 700;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.98rem;
-    }
-
-    /* Reviews Section */
-    .reviews-wrap {
+    /* Bottom Marketing Services Hub */
+    .marketing-hub {
       padding: 0 20px;
-      display: flex;
-      flex-direction: column;
+      display: grid;
       gap: 12px;
     }
-    .review-card {
+    .hub-box {
       background: #070d18;
       border-radius: 14px;
       padding: 16px;
-      border: 1px solid var(--card-border);
+      border: 1px solid rgba(0, 212, 255, 0.2);
     }
-    .stars {
-      color: #fbbf24;
-      font-size: 1rem;
-      margin-bottom: 6px;
-    }
-    .review-card p {
-      font-size: 0.86rem;
-      color: #cbd5e1;
-      font-style: italic;
-    }
-    .client-name {
-      font-size: 0.82rem;
-      font-weight: 700;
+    .hub-box h3 {
+      font-size: 1.05rem;
       color: #38bdf8;
-      margin-top: 8px;
-    }
-
-    /* FAQ Section */
-    .faq-wrap {
-      padding: 0 20px;
+      margin-bottom: 6px;
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      align-items: center;
+      gap: 8px;
     }
-    details {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 14px;
-      border: 1px solid var(--card-border);
-    }
-    summary {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #f3f4f6;
-      cursor: pointer;
-    }
-    details p {
-      font-size: 0.84rem;
+    .hub-box p {
+      font-size: 0.85rem;
       color: var(--text-muted);
-      margin-top: 8px;
-      padding-top: 8px;
-      border-top: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* Social Icons & Footer */
-    .footer-section {
+    /* Social Icons Section */
+    .social-section {
       text-align: center;
-      padding: 30px 20px 20px;
+      padding: 30px 20px 10px;
       margin-top: 25px;
       border-top: 1px solid var(--card-border);
     }
-    .footer-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
-    .social-icons {
+    .social-icons-grid {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 14px;
-      margin-bottom: 18px;
+      gap: 12px;
+      margin-top: 14px;
     }
-    .social-icon-btn {
-      width: 44px;
-      height: 44px;
+    .social-btn {
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: #0f172a;
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       text-decoration: none;
-    }
-    .footer-copy {
-      font-size: 0.75rem;
-      color: #64748b;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     /* Sticky Bottom Actions */
@@ -508,23 +492,50 @@
 </head>
 <body>
 
-  <!-- Header with Brand Logo and Title -->
+  <!-- Top Utility Bar (Language Selector) -->
+  <div class="top-bar">
+    <span style="color: var(--text-muted); font-size: 0.72rem;">🌐 Official Digital Agency</span>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLanguage('te')">తెలుగు</button>
+      <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header>
     <div class="brand-wrap">
       <img src="logo.png" alt="BAIDIGITAL Logo" class="header-logo">
       <div class="brand-title">BAIDIGITAL</div>
     </div>
-    <div class="live-badge">
-      <div class="dot-pulse"></div>
-      Active Agency
+    <div class="nav-actions">
+      <button class="menu-toggle-btn" onclick="toggleMenu()" title="Menu">☰</button>
     </div>
   </header>
 
-  <!-- Hero Section with Exact Video File -->
+  <!-- Side Slide Menu & Settings -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <div class="menu-drawer" id="menuDrawer">
+    <div class="drawer-header">
+      <h3 style="font-size: 1.1rem; color: #fff;">మెనూ & సెట్టింగ్స్</h3>
+      <button class="drawer-close" onclick="toggleMenu()">✕</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#services" onclick="toggleMenu()">⚡ సర్వీసెస్ (Services)</a></li>
+      <li><a href="#pricing" onclick="toggleMenu()">🏷️ ప్యాకేజీలు (Plans)</a></li>
+      <li><a href="#gallery" onclick="toggleMenu()">🖼️ గ్యాలరీ (Portfolio)</a></li>
+      <li><a href="#marketing" onclick="toggleMenu()">📈 మార్కెటింగ్ హబ్ (Marketing Hub)</a></li>
+      <li><a href="#social" onclick="toggleMenu()">🌐 సోషల్ లింకులు (Social Links)</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--card-border);">
+      <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center;">BAIDIGITAL Platform v4.0</p>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-tag">Next-Gen AI Media Agency</div>
-    <h1>వ్యాపారాలు & రాజకీయాలకు<br>AI పవర్డ్ ప్రమోషన్</h1>
-    <p>AI వీడియోలు, సినిమాటిక్ రీల్స్, సోషల్ మీడియా క్యాంపెయిన్స్ ద్వారా కస్టమర్లు మరియు ప్రజల్లో తిరుగులేని బ్రాండ్ నిర్మించండి.</p>
+    <div class="hero-tag" id="t-tag">Next-Gen AI & Political Media</div>
+    <h1 id="t-title">వ్యాపారాలు & రాజకీయాలకు<br>AI పవర్డ్ ప్రమోషన్</h1>
+    <p id="t-subtitle">AI వీడియోలు, సినిమాటిక్ రీల్స్, సోషల్ మీడియా క్యాంపెయిన్స్ ద్వారా కస్టమర్లు మరియు ప్రజల్లో తిరుగులేని బ్రాండ్ నిర్మించండి.</p>
 
     <!-- 3D Video Cinematic Screen -->
     <div class="video-stage">
@@ -538,198 +549,130 @@
     </div>
   </section>
 
-  <!-- Stats Counter Bar -->
-  <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-num">50+</div>
-      <div class="stat-lbl">ప్రాజెక్టులు</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">24h</div>
-      <div class="stat-lbl">క్విక్ డెలివరీ</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">100%</div>
-      <div class="stat-lbl">సంతృప్తి</div>
-    </div>
-  </div>
-
   <!-- Switch Tabs (Business / Politics) -->
-  <div class="tab-container">
+  <div class="tab-container" id="services">
     <div class="tab-buttons">
-      <button class="tab-btn active" onclick="switchTab('business')">🏢 బిజినెస్ సొల్యూషన్స్</button>
-      <button class="tab-btn" onclick="switchTab('political')">🏛️️ పొలిటికల్ ప్రమోషన్</button>
+      <button class="tab-btn active" id="tab-biz" onclick="switchTab('business')">🏢 బిజినెస్ సొల్యూషన్స్</button>
+      <button class="tab-btn" id="tab-pol" onclick="switchTab('political')">🏛️ పొలిటికల్ ప్రమోషన్</button>
     </div>
   </div>
 
-  <!-- Business Content Section -->
-  <div id="businessSection">
-    <h2 class="section-title">💼 బిజినెస్ మార్కెటింగ్ సర్వీసెస్</h2>
-    <div class="services-grid">
-      <div class="service-box">
-        <h3>🎬 AI ప్రమోషన్ రీల్స్ & షార్ట్స్</h3>
-        <p>ఇన్‌స్టాగ్రామ్, యూట్యూబ్ షార్ట్స్ కోసం ట్రెండింగ్ AI అవతార్ వాయిస్ మరియు సినిమాటిక్ విజువల్స్‌తో కస్టమర్లను ఆకర్షించే రీల్స్.</p>
-      </div>
-      <div class="service-box">
-        <h3>🛍️ లోకల్ బ్రాండింగ్ & పోస్టర్లు</h3>
-        <p>షాపులు, రెస్టారెంట్లు, రియల్ ఎస్టేట్ మరియు సంస్థలకు డైలీ ఆఫర్ పోస్టర్లు, వాట్సాప్ స్టేటస్ బ్యానర్లు.</p>
-      </div>
-      <div class="service-box">
-        <h3>🎯 మెటా & గూగుల్ లీడ్ యాడ్స్</h3>
-        <p>మీ లోకల్ ఏరియాలో ఎక్కువ మంది కస్టమర్లు నేరుగా కాల్స్ మరియు ఎంక్వైరీలు చేసేలా టార్గెటెడ్ యాడ్ క్యాంపెయిన్స్.</p>
-      </div>
+  <!-- 3-Tier Packages (Basic, Normal, Premium) -->
+  <h2 class="section-title" id="pricing">🏷️ సర్వీస్ ప్యాకేజీలు</h2>
+  <div class="pricing-wrap">
+    
+    <!-- 1. Basic Plan -->
+    <div class="pricing-card">
+      <div class="plan-name" id="p1-name">బేసిక్ ప్లాన్ (Basic Plan)</div>
+      <div class="plan-price">₹1,999 <span style="font-size:0.85rem; color:#94a3b8;">/ నెల</span></div>
+      <ul class="plan-features">
+        <li>✓ 6 హై-క్వాలిటీ సోషల్ మీడియా పోస్టర్లు</li>
+        <li>✓ 1 AI ప్రమోషన్ రీల్</li>
+        <li>✓ WhatsApp స్టేటస్ బ్యానర్లు</li>
+        <li>✓ బేసిక్ బ్రాండింగ్ సపోర్ట్</li>
+      </ul>
+      <a href="https://wa.me/919951336425?text=Hello%20BAIDIGITAL,%20I%20want%20Basic%20Plan%20(₹1,999)" class="plan-btn" style="background: #334155;">బేసిక్ ప్లాన్ ఎంచుకోండి</a>
     </div>
 
-    <!-- Business Pricing -->
-    <h2 class="section-title">🏷️ బిజినెస్ ప్యాకేజీలు</h2>
-    <div class="pricing-wrap">
-      <div class="pricing-card popular">
-        <div class="plan-badge">Best Value</div>
-        <div class="plan-name">బిజినెస్ గ్రోత్ ప్యాకేజ్</div>
-        <div class="plan-price">₹4,999 <span style="font-size:0.9rem; color:#94a3b8;">/ నెలకు</span></div>
-        <ul class="plan-features">
-          <li>✓ 10 ఆకర్షణీయమైన సోషల్ మీడియా పోస్టర్లు</li>
-          <li>✓ 4 AI సినిమాటిక్ ప్రమోషన్ రీల్స్</li>
-          <li>✓ రోజువారీ WhatsApp స్టేటస్ క్రియేటివ్స్</li>
-          <li>✓ గూగుల్ బిజినెస్ ప్రొఫైల్ ఆప్టిమైజేషన్</li>
-          <li>✓ లోకల్ టార్గెట్ ప్రమోషన్ సపోర్ట్</li>
-        </ul>
-        <a href="https://wa.me/919951336425?text=హలో%20BAIDIGITAL,%20నాకు%20బిజినెస్%20ప్యాకేజ్%20కావాలి." class="plan-btn">ఈ ప్యాకేజ్ బుక్ చేయండి</a>
-      </div>
+    <!-- 2. Normal / Standard Plan -->
+    <div class="pricing-card normal">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-name" id="p2-name">నార్మల్ ప్లాన్ (Normal Plan)</div>
+      <div class="plan-price">₹4,999 <span style="font-size:0.85rem; color:#94a3b8;">/ నెల</span></div>
+      <ul class="plan-features">
+        <li>✓ 12 ఆకర్షణీయమైన పోస్టర్లు & క్రియేటివ్స్</li>
+        <li>✓ 4 AI సినిమాటిక్ ప్రమోషన్ రీల్స్</li>
+        <li>✓ AI వాయిస్‌ఓవర్ & ట్రెండింగ్ మ్యూజిక్</li>
+        <li>✓ గూగుల్ బిజినెస్ & లోకల్ మార్కెటింగ్</li>
+      </ul>
+      <a href="https://wa.me/919951336425?text=Hello%20BAIDIGITAL,%20I%20want%20Normal%20Plan%20(₹4,999)" class="plan-btn">నార్మల్ ప్లాన్ బుక్ చేయండి</a>
     </div>
+
+    <!-- 3. Premium Plan -->
+    <div class="pricing-card premium">
+      <div class="plan-badge" style="background:#a855f7;">VIP Executive</div>
+      <div class="plan-name" id="p3-name">ప్రీమియం ప్లాన్ (Premium Plan)</div>
+      <div class="plan-price">₹14,999 <span style="font-size:0.85rem; color:#94a3b8;">/ నెల</span></div>
+      <ul class="plan-features">
+        <li>✓ డైలీ విషెస్ & పొలిటికల్ / బిజినెస్ పోస్టర్లు</li>
+        <li>✓ వీక్లీ 3 పవర్ ఫుల్ స్పీచ్ / బ్రాండ్ రీల్స్</li>
+        <li>✓ నియోజకవర్గ & లోకల్ టార్గెటెడ్ యాడ్స్ బూస్టింగ్</li>
+        <li>✓ సోషల్ మీడియా పూర్తి నిర్వహణ & వార్ రూమ్</li>
+      </ul>
+      <a href="https://wa.me/919951336425?text=Hello%20BAIDIGITAL,%20I%20want%20Premium%20Plan%20(₹14,999)" class="plan-btn" style="background:#a855f7;">ప్రీమియం ప్లాన్ తీసుకోండి</a>
+    </div>
+
   </div>
 
-  <!-- Political Content Section -->
-  <div id="politicalSection" style="display: none;">
-    <h2 class="section-title">🏛️️ పొలిటికల్ డిజిటల్ క్యాంపెయిన్స్</h2>
-    <div class="services-grid">
-      <div class="service-box">
-        <h3>🎙️ ప్రసంగాల కట్స్ & హై-ఇంపాక్ట్ రీల్స్</h3>
-        <p>మీ ప్రసంగాల్లోని కీలకమైన మాటలను హైపర్-ఎడిటింగ్ మరియు బ్యాక్‌గ్రౌండ్ మ్యూజిక్‌‌తో వైరల్ అయ్యేలా తయారుచేస్తాము.</p>
-      </div>
-      <div class="service-box">
-        <h3>📢 డైలీ విషెస్ & పొలిటికల్ పోస్టర్లు</h3>
-        <p>పండుగలు, పుట్టినరోజులు మరియు ప్రభుత్వ ప్రజా సమస్యలపై మీ ఫోటోలతో కూడిన అధికారిక పోస్టర్లు.</p>
-      </div>
-      <div class="service-box">
-        <h3>👥 నియోజకవర్గ స్థాయి సోషల్ వార్ రూమ్</h3>
-        <p>మీ నియోజకవర్గ ఓటర్లను లక్ష్యంగా చేసుకుని ఫేస్‌బుక్, ఇన్‌‌స్టాగ్రామ్ పేజీల నిర్వహణ మరియు బూస్టింగ్.</p>
-      </div>
-    </div>
-
-    <!-- Political Pricing -->
-    <h2 class="section-title">🏷️ పొలిటికల్ ప్యాకేజీలు</h2>
-    <div class="pricing-wrap">
-      <div class="pricing-card popular" style="border-color: #6366f1;">
-        <div class="plan-badge" style="background:#6366f1;">High Impact</div>
-        <div class="plan-name">పొలిటికల్ లీడర్షిప్ ప్యాకేజ్</div>
-        <div class="plan-price">₹14,999 <span style="font-size:0.9rem; color:#94a3b8;">/ నెలకు</span></div>
-        <ul class="plan-features">
-          <li>✓ డైలీ పొలిటికల్ విషెస్ & డెవలప్‌మెంట్ బ్యానర్లు</li>
-          <li>✓ వారానికి 3 పవర్ ఫుల్ స్పీచ్ రీల్స్</li>
-          <li>✓ AI వాయిస్ ఓవర్ క్యాంపెయిన్ వీడియోలు</li>
-          <li>✓ ఫేస్‌బుక్ & ఇన్‌స్టాగ్రామ్ పేజీల పూర్తి నిర్వహణ</li>
-          <li>✓ ఓటర్ల టార్గెట్ ప్రమోషన్ వ్యూహం</li>
-        </ul>
-        <a href="https://wa.me/919951336425?text=హలో%20BAIDIGITAL,%20నాకు%20పొలిటికల్%20ప్యాకేజ్%20కావాలి." class="plan-btn" style="background:#6366f1;">పొలిటికల్ ప్యాకేజ్ బుక్ చేయండి</a>
-      </div>
-    </div>
+  <!-- Gallery Section with Filters -->
+  <h2 class="section-title" id="gallery">🖼️ వర్క్స్ గ్యాలరీ</h2>
+  <div class="gallery-filter">
+    <button class="filter-btn active">అన్నీ (All)</button>
+    <button class="filter-btn">AI రీల్స్</button>
+    <button class="filter-btn">పోస్టర్లు</button>
   </div>
-
-  <!-- Samples Gallery -->
-  <h2 class="section-title">💎 మా వర్క్స్ శాంపిల్స్</h2>
   <div class="gallery-grid">
-    <div class="gallery-item">
+    <div class="gallery-card">
       <div class="icon">✨</div>
-      <h4>AI ప్రమోషన్ రీల్స్</h4>
-      <p>4K క్వాలిటీ విజువల్స్</p>
+      <h4>AI సినిమాటిక్ రీల్స్</h4>
+      <p>వైరల్ వీడియోస్</p>
     </div>
-    <div class="gallery-item">
-      <div class="icon">🎙️️</div>
-      <h4>AI వాయిస్ ఓవర్స్</h4>
-      <p>సినిమాటిక్ సౌండ్</p>
+    <div class="gallery-card">
+      <div class="icon">🏛️</div>
+      <h4>పొలిటికల్ డిజైన్స్</h4>
+      <p>స్పీచ్ కట్స్ & బ్యానర్లు</p>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-card">
       <div class="icon">🎨</div>
-      <h4>బ్రాండ్ పోస్టర్లు</h4>
-      <p>ట్రెండింగ్ డిజైన్లు</p>
+      <h4>3D లోగో యానిమేషన్స్</h4>
+      <p>బ్రాండ్ ఐడెంటిటీ</p>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-card">
       <div class="icon">📊</div>
-      <h4>లీడ్ జనరేషన్</h4>
-      <p>కస్టమర్ కాల్స్ & ఆర్డర్లు</p>
+      <h4>లీడ్ యాడ్స్ క్రియేటివ్స్</h4>
+      <p>కస్టమర్ సేల్స్ గ్రోత్</p>
     </div>
   </div>
 
-  <!-- Quick Inquiry Form -->
-  <h2 class="section-title">📝 క్విక్ ఎంక్వైరీ ఫారమ్</h2>
-  <div class="form-box">
-    <form id="inquiryForm" onsubmit="sendWhatsApp(event)">
-      <div class="form-group">
-        <label>మీ పేరు:</label>
-        <input type="text" id="custName" placeholder="మీ పేరు నమోదు చేయండి" required>
-      </div>
-      <div class="form-group">
-        <label>వ్యాపారం / రాజకీయ హోదా:</label>
-        <input type="text" id="custBusiness" placeholder="ఉదా: రెస్టారెంట్ లేదా నియోజకవర్గ నాయకుడు" required>
-      </div>
-      <div class="form-group">
-        <label>కావాల్సిన సర్వీస్:</label>
-        <select id="custService">
-          <option>బిజినెస్ ప్యాకేజ్ (₹4,999)</option>
-          <option>పొలిటికల్ ప్యాకేజ్ (₹14,999)</option>
-          <option>AI వీడియోస్ & రీల్స్ మాత్రమే</option>
-          <option>ప్రత్యేక కస్టమ్ ప్లాన్</option>
-        </select>
-      </div>
-      <button type="submit" class="form-submit-btn">వాట్సాప్‌లో పంపండి 🚀</button>
-    </form>
-  </div>
-
-  <!-- Reviews Section -->
-  <h2 class="section-title">⭐ క్లయింట్ రివ్యూలు</h2>
-  <div class="reviews-wrap">
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>"మా రెస్టారెంట్‌‌కు AI రీల్స్ ద్వారా విపరీతమైన కస్టమర్లు పెరిగారు. వీడియో ఎడిటింగ్ మరియు వాయిస్ చాలా ప్రొఫెషనల్‌గా ఉన్నాయి!"</p>
-      <div class="client-name">- శ్రీనివాస్ (బిజినెస్ ఓనర్)</div>
+  <!-- Bottom Marketing Services Hub -->
+  <h2 class="section-title" id="marketing">🚀 మార్కెటింగ్ సర్వీసెస్ హబ్</h2>
+  <div class="marketing-hub">
+    <div class="hub-box">
+      <h3>📈 మెటా & ఇన్‌స్టాగ్రామ్ యాడ్స్ (Paid Ads)</h3>
+      <p>మీ లోకల్ ఏరియా ప్రజలను లేదా కస్టమర్లను టార్గెట్ చేసి నేరుగా వాట్సాప్ మెసేజ్‌లు, కాల్స్ వచ్చేలా ప్రమోషన్ చేస్తాము.</p>
     </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>"గత ఎన్నికల క్యాంపెయిన్‌లో వీరు రూపొందించిన రీల్స్, డైలీ బ్యానర్లు నియోజకవర్గ ప్రజల్లో మాకు మంచి గుర్తింపు తెచ్చాయి."</p>
-      <div class="client-name">- రమేష్ బాబు (సోషల్ యాక్టివిస్ట్)</div>
+    <div class="hub-box">
+      <h3>📍 Google My Business లోకల్ ర్యాంకింగ్</h3>
+      <p>గూగుల్ మ్యాప్స్‌లో మీ షాప్ లేదా ఆఫీస్ మొదటి స్థానంలో కనిపించేలా లోకల్ SEO సెటప్ చేస్తాము.</p>
+    </div>
+    <div class="hub-box">
+      <h3>🗳️ పొలిటికల్ డిజిటల్ వార్ రూమ్</h3>
+      <p>ఎన్నికలు లేదా నియోజకవర్గ ప్రచారాల కోసం సమగ్ర సోషల్ మీడియా కంటెంట్ ప్లానింగ్ మరియు ఎగ్జిక్యూషన్.</p>
     </div>
   </div>
 
-  <!-- FAQ Section -->
-  <h2 class="section-title">❓ తరచూ అడిగే ప్రశ్నలు (FAQ)</h2>
-  <div class="faq-wrap">
-    <details>
-      <summary>ఆర్డర్ ఇచ్చిన ఎంత సమయానికి వీడియోలు వస్తాయి?</summary>
-      <p>ఆర్డర్ మరియు వివరాలు అందించిన 24 నుండి 48 గంటల్లో మీ AI రీల్స్ మరియు పోస్టర్లు డెలివరీ చేయబడతాయి.</p>
-    </details>
-    <details>
-      <summary>కంటెంట్ మరియు ఫోటోలు మేమే ఇవ్వాలా?</summary>
-      <p>మీరు మీ ఫోటోలు లేదా ప్రాథమిక వివరాలు ఇస్తే చాలు, ఆకర్షణీయమైన స్క్రిప్ట్, వాయిస్ మరియు డిజైన్ మొత్తం మా బృందమే చేస్తుంది.</p>
-    </details>
-    <details>
-      <summary>పొలిటికల్ క్యాంపెయిన్ ఎలా నిర్వహించబడుతుంది?</summary>
-      <p>మీ నియోజకవర్గం, వార్డు లేదా గ్రామానికి సంబంధించిన ఓటర్లకు మాత్రమే మీ పోస్టర్లు, రీల్స్ చేరేలా టార్గెట్ మార్కెటింగ్ చేయబడుతుంది.</p>
-    </details>
-  </div>
-
-  <!-- Social Icons & Footer Section -->
-  <footer class="footer-section">
-    <div class="footer-title">మాతో కనెక్ట్ అవ్వండి</div>
-    <div class="social-icons">
-      <a href="https://wa.me/919951336425" class="social-icon-btn" title="WhatsApp" style="color: #25d366;">💬</a>
-      <a href="tel:+919951336425" class="social-icon-btn" title="Call" style="color: #38bdf8;">📞</a>
-      <a href="https://instagram.com" target="_blank" class="social-icon-btn" title="Instagram" style="color: #e1306c;">📸</a>
-      <a href="https://youtube.com" target="_blank" class="social-icon-btn" title="YouTube" style="color: #ff0000;">▶️</a>
-      <a href="mailto:raasuribhaskar25@gmail.com" class="social-icon-btn" title="Email" style="color: #ea4335;">✉️</a>
+  <!-- Direct Social Media Icons Section -->
+  <div class="social-section" id="social">
+    <h3 style="font-size: 1.1rem; color: #fff; margin-bottom: 6px;">అన్ని సోషల్ మీడియా లింకులు</h3>
+    <p style="font-size: 0.8rem; color: var(--text-muted);">నేరుగా మాతో కనెక్ట్ అవ్వండి:</p>
+    <div class="social-icons-grid">
+      <!-- WhatsApp Direct -->
+      <a href="https://wa.me/919951336425" target="_blank" class="social-btn" title="WhatsApp" style="color: #25d366;">💬</a>
+      <!-- Phone Call Direct -->
+      <a href="tel:+919951336425" class="social-btn" title="Direct Call" style="color: #38bdf8;">📞</a>
+      <!-- Instagram Direct -->
+      <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram" style="color: #e1306c;">📸</a>
+      <!-- YouTube Direct -->
+      <a href="https://youtube.com" target="_blank" class="social-btn" title="YouTube" style="color: #ff0000;">▶️</a>
+      <!-- Facebook Direct -->
+      <a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook" style="color: #1877f2;">👥</a>
+      <!-- Email Direct -->
+      <a href="mailto:raasuribhaskar25@gmail.com" class="social-btn" title="Email Us" style="color: #ea4335;">✉️</a>
     </div>
-    <div class="footer-copy">© 2026 BAIDIGITAL. All Rights Reserved.</div>
-  </footer>
+    <div style="font-size: 0.72rem; color: #64748b; margin-top: 18px;">
+      © 2026 BAIDIGITAL Agency. All Rights Reserved.
+    </div>
+  </div>
 
   <!-- Sticky Bottom Actions -->
   <div class="sticky-bar">
@@ -742,31 +685,58 @@
   </div>
 
   <script>
-    function switchTab(type) {
-      const biz = document.getElementById('businessSection');
-      const pol = document.getElementById('politicalSection');
-      const btns = document.querySelectorAll('.tab-btn');
-      
-      if (type === 'business') {
-        biz.style.display = 'block';
-        pol.style.display = 'none';
-        btns[0].classList.add('active');
-        btns[1].classList.remove('active');
+    // Menu Drawer Toggle
+    function toggleMenu() {
+      const drawer = document.getElementById('menuDrawer');
+      const overlay = document.getElementById('menuOverlay');
+      if (drawer.classList.contains('open')) {
+        drawer.classList.remove('open');
+        overlay.style.display = 'none';
       } else {
-        biz.style.display = 'none';
-        pol.style.display = 'block';
-        btns[1].classList.add('active');
-        btns[0].classList.remove('active');
+        drawer.classList.add('open');
+        overlay.style.display = 'block';
       }
     }
 
-    function sendWhatsApp(event) {
-      event.preventDefault();
-      var name = document.getElementById('custName').value;
-      var biz = document.getElementById('custBusiness').value;
-      var service = document.getElementById('custService').value;
-      var text = "హలో BAIDIGITAL,%0Aనా పేరు: " + encodeURIComponent(name) + "%0Aవ్యాపారం/హోదా: " + encodeURIComponent(biz) + "%0Aకావాల్సిన సర్వీస్: " + encodeURIComponent(service);
-      window.open("https://wa.me/919951336425?text=" + text, "_blank");
+    // Switch Tabs
+    function switchTab(type) {
+      const bizBtn = document.getElementById('tab-biz');
+      const polBtn = document.getElementById('tab-pol');
+      if (type === 'business') {
+        bizBtn.classList.add('active');
+        polBtn.classList.remove('active');
+      } else {
+        polBtn.classList.add('active');
+        bizBtn.classList.remove('active');
+      }
+    }
+
+    // Language Toggle (Telugu / English)
+    function setLanguage(lang) {
+      const btns = document.querySelectorAll('.lang-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      
+      if (lang === 'en') {
+        btns[1].classList.add('active');
+        document.getElementById('t-tag').innerText = "Next-Gen AI & Political Media";
+        document.getElementById('t-title').innerHTML = "AI Powered Promotion for<br>Business & Politics";
+        document.getElementById('t-subtitle').innerText = "Attract customers and voters with AI cinematic reels, trending videos, and strategic digital campaigns.";
+        document.getElementById('tab-biz').innerText = "🏢 Business Solutions";
+        document.getElementById('tab-pol').innerText = "🏛️ Political Campaigns";
+        document.getElementById('p1-name').innerText = "Basic Plan";
+        document.getElementById('p2-name').innerText = "Normal Plan";
+        document.getElementById('p3-name').innerText = "Premium Plan";
+      } else {
+        btns[0].classList.add('active');
+        document.getElementById('t-tag').innerText = "Next-Gen AI & Political Media";
+        document.getElementById('t-title').innerHTML = "వ్యాపారాలు & రాజకీయాలకు<br>AI పవర్డ్ ప్రమోషన్";
+        document.getElementById('t-subtitle').innerText = "AI వీడియోలు, సినిమాటిక్ రీల్స్, సోషల్ మీడియా క్యాంపెయిన్స్ ద్వారా కస్టమర్లు మరియు ప్రజల్లో తిరుగులేని బ్రాండ్ నిర్మించండి.";
+        document.getElementById('tab-biz').innerText = "🏢 బిజినెస్ సొల్యూషన్స్";
+        document.getElementById('tab-pol').innerText = "🏛️ పొలిటికల్ ప్రమోషన్";
+        document.getElementById('p1-name').innerText = "బేసిక్ ప్లాన్ (Basic Plan)";
+        document.getElementById('p2-name').innerText = "నార్మల్ ప్లాన్ (Normal Plan)";
+        document.getElementById('p3-name').innerText = "ప్రీమియం ప్లాన్ (Premium Plan)";
+      }
     }
   </script>
 </body>
