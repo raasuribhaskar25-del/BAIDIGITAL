@@ -234,7 +234,7 @@
       background: #000;
     }
 
-    /* VIP Founder Card Section */
+    /* Founder Card */
     .founder-card {
       margin: 0 20px 28px;
       background: radial-gradient(circle at top, #1e1b4b 0%, #0b1120 100%);
@@ -262,7 +262,6 @@
       border: 2px solid rgba(251, 191, 36, 0.35);
       background: #000;
       margin-bottom: 14px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     }
     .founder-video-box video {
       width: 100%;
@@ -329,7 +328,72 @@
       gap: 8px;
     }
 
-    /* 3-Tier Pricing */
+    /* Timeline & Delivery Time Cards */
+    .timeline-wrap {
+      padding: 0 20px;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .timeline-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .time-icon {
+      font-size: 1.8rem;
+      background: #070d18;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+    }
+    .time-details h4 {
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .time-details p {
+      font-size: 0.8rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Working Hours Table */
+    .hours-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px;
+      margin: 0 20px 24px;
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+    .hours-day {
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+    .hours-time {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Pricing Section */
     .pricing-wrap {
       padding: 0 20px;
       display: flex;
@@ -523,7 +587,7 @@
 </head>
 <body>
 
-  <!-- Top Utility Bar (Language Selector) -->
+  <!-- Top Utility Bar -->
   <div class="top-bar">
     <span style="color: var(--text-muted); font-size: 0.72rem;">🌐 Official Digital Agency</span>
     <div class="lang-switcher">
@@ -541,7 +605,7 @@
     <button class="menu-toggle-btn" onclick="toggleMenu()" title="Menu">☰</button>
   </header>
 
-  <!-- Side Slide Menu & Settings -->
+  <!-- Side Slide Menu -->
   <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
   <div class="menu-drawer" id="menuDrawer">
     <div class="drawer-header">
@@ -550,6 +614,7 @@
     </div>
     <ul class="drawer-links">
       <li><a href="#founder" onclick="toggleMenu()" id="m-fnd">👑 ఫౌండర్ ప్రొఫైల్ (Founder)</a></li>
+      <li><a href="#timings" onclick="toggleMenu()" id="m-time">⏰ వర్కింగ్ అవర్స్ & డెలివరీ (Timings)</a></li>
       <li><a href="#services" onclick="toggleMenu()" id="m-serv">⚡ సర్వీసెస్ (Services)</a></li>
       <li><a href="#pricing" onclick="toggleMenu()" id="m-plans">🏷️ ప్యాకేజీలు (Plans)</a></li>
       <li><a href="#inquiry" onclick="toggleMenu()" id="m-inq">📝 క్విక్ ఎంక్వైరీ (Inquiry Form)</a></li>
@@ -557,13 +622,13 @@
     </ul>
   </div>
 
-  <!-- Hero Section (Logo Video) -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-tag" id="t-tag">Next-Gen AI & Political Media</div>
     <h1 id="t-title">వ్యాపారాలు & రాజకీయాలకు<br>AI పవర్డ్ ప్రమోషన్</h1>
     <p id="t-subtitle">AI వీడియోలు, సినిమాటిక్ రీల్స్, సోషల్ మీడియా క్యాంపెయిన్స్ ద్వారా కస్టమర్లు మరియు ప్రజల్లో తిరుగులేని బ్రాండ్ నిర్మించండి.</p>
 
-    <!-- 3D Brand Logo Video -->
+    <!-- Brand 3D Video Screen -->
     <div class="video-stage">
       <div class="video-frame">
         <video autoplay loop muted playsinline poster="logo.png">
@@ -575,11 +640,9 @@
     </div>
   </section>
 
-  <!-- VIP Founder Section (Your Name Animation Video) -->
+  <!-- VIP Founder Section -->
   <div class="founder-card" id="founder">
     <div class="founder-badge" id="f-badge">Leadership & Vision</div>
-    
-    <!-- Founder Name 3D Animation Video -->
     <div class="founder-video-box">
       <video autoplay loop muted playsinline poster="logo.png">
         <source src="founder_video.mp4" type="video/mp4">
@@ -587,10 +650,55 @@
         <img src="logo.png" alt="Founder Logo">
       </video>
     </div>
-
     <h3 id="f-name">రాసూరి భాస్కర్</h3>
     <div class="role" id="f-role">ఫౌండర్ & డిజిటల్ క్యాంపెయిన్ స్ట్రాటజిస్ట్</div>
     <p id="f-bio">వ్యాపారాలు మరియు రాజకీయ నాయకులకు ఆధునిక AI టెక్నాలజీతో కూడిన అత్యుత్తమ డిజిటల్ ప్రమోషన్ అందించడమే మా లక్ష్యం.</p>
+  </div>
+
+  <!-- Business Hours & Delivery Timeline Section -->
+  <div id="timings">
+    <h2 class="section-title" id="t-time-heading">⏰ ప్రాజెక్ట్ డెలివరీ & బిజినెస్ టైమింగ్స్</h2>
+    
+    <!-- Delivery Timelines -->
+    <div class="timeline-wrap">
+      <div class="timeline-card">
+        <div class="time-icon">⚡</div>
+        <div class="time-details">
+          <h4 id="td1-title">AI ప్రమోషన్ రీల్స్ & షార్ట్స్</h4>
+          <p id="td1-time">కేవలం 24 - 48 గంటల్లో కంప్లీట్</p>
+        </div>
+      </div>
+      <div class="timeline-card">
+        <div class="time-icon">🎨</div>
+        <div class="time-details">
+          <h4 id="td2-title">సోషల్ మీడియా పోస్టర్లు & బ్యానర్లు</h4>
+          <p id="td2-time">12 - 24 గంటల్లో ఫాస్ట్ డెలివరీ</p>
+        </div>
+      </div>
+      <div class="timeline-card">
+        <div class="time-icon">🏛️</div>
+        <div class="time-details">
+          <h4 id="td3-title">మంత్లీ బిజినెస్ & పొలిటికల్ ప్యాకేజీలు</h4>
+          <p id="td3-time">ఆర్డర్ రాగానే రెగ్యులర్ డైలీ అప్‌డేట్స్</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Working Hours Card -->
+    <div class="hours-card">
+      <div class="hours-row">
+        <span class="hours-day" id="h-week">సోమవారం – శనివారం:</span>
+        <span class="hours-time">09:00 AM – 09:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day" id="h-sun">ఆదివారం:</span>
+        <span class="hours-time">10:00 AM – 04:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day" id="h-wa">WhatsApp సపోర్ట్:</span>
+        <span class="hours-time" style="color: #25d366;">24/7 అందుబాటులో ఉంది</span>
+      </div>
+    </div>
   </div>
 
   <!-- Switch Tabs (Business / Politics) -->
@@ -601,11 +709,9 @@
     </div>
   </div>
 
-  <!-- 3-Tier Packages (Basic, Normal, Premium) -->
+  <!-- 3-Tier Packages -->
   <h2 class="section-title" id="t-plans-heading">🏷️ సర్వీస్ ప్యాకేజీలు</h2>
   <div class="pricing-wrap" id="pricing">
-    
-    <!-- 1. Basic Plan -->
     <div class="pricing-card">
       <div class="plan-name" id="p1-name">బేసిక్ ప్లాన్ (Basic Plan)</div>
       <div class="plan-price" id="p1-price">₹1,999 <span style="font-size:0.85rem; color:#94a3b8;">/ నెల</span></div>
@@ -613,12 +719,11 @@
         <li>✓ 6 హై-క్వాలిటీ సోషల్ మీడియా పోస్టర్లు</li>
         <li>✓ 1 AI ప్రమోషన్ రీల్</li>
         <li>✓ WhatsApp స్టేటస్ బ్యానర్లు</li>
-        <li>✓ బేసిక్ బ్రాండింగ్ సపోర్ట్</li>
+        <li>✓ 24 గంటల్లో ఫాస్ట్ సపోర్ట్</li>
       </ul>
       <a href="https://wa.me/919951336425?text=Hello%20BAIDIGITAL,%20I%20want%20Basic%20Plan%20(₹1,999)" class="plan-btn" id="p1-btn" style="background: #334155;">బేసిక్ ప్లాన్ ఎంచుకోండి</a>
     </div>
 
-    <!-- 2. Normal Plan -->
     <div class="pricing-card normal">
       <div class="plan-badge">Most Popular</div>
       <div class="plan-name" id="p2-name">నార్మల్ ప్లాన్ (Normal Plan)</div>
@@ -627,12 +732,11 @@
         <li>✓ 12 ఆకర్షణీయమైన పోస్టర్లు & క్రియేటివ్స్</li>
         <li>✓ 4 AI సినిమాటిక్ ప్రమోషన్ రీల్స్</li>
         <li>✓ AI వాయిస్‌ఓవర్ & ట్రెండింగ్ మ్యూజిక్</li>
-        <li>✓ గూగుల్ బిజినెస్ & లోకల్ మార్కెటింగ్</li>
+        <li>✓ వీక్లీ ప్రమోషన్ షెడ్యూల్</li>
       </ul>
       <a href="https://wa.me/919951336425?text=Hello%20BAIDIGITAL,%20I%20want%20Normal%20Plan%20(₹4,999)" class="plan-btn" id="p2-btn">నార్మల్ ప్లాన్ బుక్ చేయండి</a>
     </div>
 
-    <!-- 3. Premium Plan -->
     <div class="pricing-card premium">
       <div class="plan-badge" style="background:#a855f7;">VIP Executive</div>
       <div class="plan-name" id="p3-name">ప్రీమియం ప్లాన్ (Premium Plan)</div>
@@ -641,14 +745,13 @@
         <li>✓ డైలీ విషెస్ & పొలిటికల్ / బిజినెస్ పోస్టర్లు</li>
         <li>✓ వీక్లీ 3 పవర్ ఫుల్ స్పీచ్ / బ్రాండ్ రీల్స్</li>
         <li>✓ నియోజకవర్గ & లోకల్ టార్గెటెడ్ యాడ్స్ బూస్టింగ్</li>
-        <li>✓ సోషల్ మీడియా పూర్తి నిర్వహణ & వార్ రూమ్</li>
+        <li>✓ 24/7 సోషల్ మీడియా వార్ రూమ్</li>
       </ul>
       <a href="https://wa.me/919951336425?text=Hello%20BAIDIGITAL,%20I%20want%20Premium%20Plan%20(₹14,999)" class="plan-btn" id="p3-btn" style="background:#a855f7;">ప్రీమియం ప్లాన్ తీసుకోండి</a>
     </div>
-
   </div>
 
-  <!-- Quick Inquiry Form -->
+  <!-- Quick Inquiry Form with Delivery Urgency -->
   <h2 class="section-title" id="t-form-heading">📝 క్విక్ ఆర్డర్ & ఎంక్వైరీ ఫారమ్</h2>
   <div class="form-box" id="inquiry">
     <form id="inquiryForm" onsubmit="sendWhatsApp(event)">
@@ -675,12 +778,21 @@
         </select>
       </div>
       <div class="form-group">
+        <label id="lbl-timeframe">ప్రాజెక్ట్ ఎన్ని రోజుల్లో పూర్తి కావాలి? (Delivery Needed In):</label>
+        <select id="custTimeline">
+          <option>అత్యవసరం (24 గంటల్లో - Express Delivery)</option>
+          <option>2 - 3 రోజుల్లో (Normal Delivery)</option>
+          <option>వారం రోజుల్లో (Standard Delivery)</option>
+          <option>మంత్లీ కాంట్రాక్ట్ (Monthly Ongoing)</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label id="lbl-msg">మీ సందేశం / అవసరాలు (Message):</label>
         <textarea id="custMsg" rows="3" placeholder="మీకు కావలసిన వివరాలు ఇక్కడ రాయండి..."></textarea>
       </div>
       <button type="submit" class="form-submit-btn" id="btn-submit">
         <svg style="width:20px; height:20px; fill:#fff;" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.227-.556-1.585-.658-2.613-2.28-2.692-2.387-.079-.107-.648-.862-.648-1.644 0-.783.411-1.168.556-1.326.144-.159.313-.198.418-.198.106 0 .211.002.302.008.097.006.228-.037.357.272.132.318.45 1.096.49 1.176.04.079.066.172.013.278-.053.106-.079.172-.158.265-.08.093-.168.208-.24.279-.08.079-.163.165-.07.324.093.159.412.68 1.002 1.207.76.679 1.401.889 1.599.988.198.099.313.086.429-.047.116-.132.496-.58.628-.779.132-.198.264-.165.443-.099.179.066 1.137.536 1.334.635.198.099.33.146.377.232.048.086.048.502-.096.907z"/></svg>
-        వాట్సాప్‌లో ఆర్డర్ పంపండి 🚀
+        వాట్సాప్‌లో వివరాలు పంపండి 🚀
       </button>
     </form>
   </div>
@@ -762,10 +874,21 @@
         fName: "రాసూరి భాస్కర్",
         fRole: "ఫౌండర్ & డిజిటల్ క్యాంపెయిన్ స్ట్రాటజిస్ట్",
         fBio: "వ్యాపారాలు మరియు రాజకీయ నాయకులకు ఆధునిక AI టెక్నాలజీతో కూడిన అత్యుత్తమ డిజిటల్ ప్రమోషన్ అందించడమే మా లక్ష్యం.",
+        timeHeading: "⏰ ప్రాజెక్ట్ డెలివరీ & బిజినెస్ టైమింగ్స్",
+        td1Title: "AI ప్రమోషన్ రీల్స్ & షార్ట్స్",
+        td1Time: "కేవలం 24 - 48 గంటల్లో కంప్లీట్",
+        td2Title: "సోషల్ మీడియా పోస్టర్లు & బ్యానర్లు",
+        td2Time: "12 - 24 గంటల్లో ఫాస్ట్ డెలివరీ",
+        td3Title: "మంత్లీ బిజినెస్ & పొలిటికల్ ప్యాకేజీలు",
+        td3Time: "ఆర్డర్ రాగానే రెగ్యులర్ డైలీ అప్‌డేట్స్",
+        hWeek: "సోమవారం – శనివారం:",
+        hSun: "ఆదివారం:",
+        hWa: "WhatsApp సపోర్ట్:",
         tabBiz: "🏢 బిజినెస్ సొల్యూషన్స్",
         tabPol: "🏛️ పొలిటికల్ ప్రమోషన్",
         mTitle: "మెనూ & సెట్టింగ్స్",
         mFnd: "👑 ఫౌండర్ ప్రొఫైల్ (Founder)",
+        mTime: "⏰ వర్కింగ్ అవర్స్ & డెలివరీ (Timings)",
         mServ: "⚡ సర్వీసెస్ (Services)",
         mPlans: "🏷️ ప్యాకేజీలు (Plans)",
         mInq: "📝 క్విక్ ఎంక్వైరీ (Inquiry Form)",
@@ -773,23 +896,24 @@
         plansHeading: "🏷️ సర్వీస్ ప్యాకేజీలు",
         p1Name: "బేసిక్ ప్లాన్ (Basic Plan)",
         p1Price: "₹1,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ నెల</span>",
-        p1Features: "<li>✓ 6 హై-క్వాలిటీ సోషల్ మీడియా పోస్టర్లు</li><li>✓ 1 AI ప్రమోషన్ రీల్</li><li>✓ WhatsApp స్టేటస్ బ్యానర్లు</li><li>✓ బేసిక్ బ్రాండింగ్ సపోర్ట్</li>",
+        p1Features: "<li>✓ 6 హై-క్వాలిటీ సోషల్ మీడియా పోస్టర్లు</li><li>✓ 1 AI ప్రమోషన్ రీల్</li><li>✓ WhatsApp స్టేటస్ బ్యానర్లు</li><li>✓ 24 గంటల్లో ఫాస్ట్ సపోర్ట్</li>",
         p1Btn: "బేసిక్ ప్లాన్ ఎంచుకోండి",
         p2Name: "నార్మల్ ప్లాన్ (Normal Plan)",
         p2Price: "₹4,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ నెల</span>",
-        p2Features: "<li>✓ 12 ఆకర్షణీయమైన పోస్టర్లు & క్రియేటివ్స్</li><li>✓ 4 AI సినిమాటిక్ ప్రమోషన్ రీల్స్</li><li>✓ AI వాయిస్‌ఓవర్ & ట్రెండింగ్ మ్యూజిక్</li><li>✓ గూగుల్ బిజినెస్ & లోకల్ మార్కెటింగ్</li>",
+        p2Features: "<li>✓ 12 ఆకర్షణీయమైన పోస్టర్లు & క్రియేటివ్స్</li><li>✓ 4 AI సినిమాటిక్ ప్రమోషన్ రీల్స్</li><li>✓ AI వాయిస్‌ఓవర్ & ట్రెండింగ్ మ్యూజిక్</li><li>✓ వీక్లీ ప్రమోషన్ షెడ్యూల్</li>",
         p2Btn: "నార్మల్ ప్లాన్ బుక్ చేయండి",
         p3Name: "ప్రీమియం ప్లాన్ (Premium Plan)",
         p3Price: "₹14,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ నెల</span>",
-        p3Features: "<li>✓ డైలీ విషెస్ & పొలిటికల్ / బిజినెస్ పోస్టర్లు</li><li>✓ వీక్లీ 3 పవర్ ఫుల్ స్పీచ్ / బ్రాండ్ రీల్స్</li><li>✓ నియోజకవర్గ & లోకల్ టార్గెటెడ్ యాడ్స్ బూస్టింగ్</li><li>✓ సోషల్ మీడియా పూర్తి నిర్వహణ & వార్ రూమ్</li>",
+        p3Features: "<li>✓ డైలీ విషెస్ & పొలిటికల్ / బిజినెస్ పోస్టర్లు</li><li>✓ వీక్లీ 3 పవర్ ఫుల్ స్పీచ్ / బ్రాండ్ రీల్స్</li><li>✓ నియోజకవర్గ & లోకల్ టార్గెటెడ్ యాడ్స్ బూస్టింగ్</li><li>✓ 24/7 సోషల్ మీడియా వార్ రూమ్</li>",
         p3Btn: "ప్రీమియం ప్లాన్ తీసుకోండి",
         formHeading: "📝 క్విక్ ఆర్డర్ & ఎంక్వైరీ ఫారమ్",
         lblName: "మీ పేరు (Name):",
         lblPhone: "ఫోన్ నంబర్ (Mobile Number):",
         lblBiz: "వ్యాపారం / రాజకీయ హోదా (Role/Business):",
         lblPlan: "కావాల్సిన ప్లాన్ (Select Plan):",
+        lblTimeframe: "ప్రాజెక్ట్ ఎన్ని రోజుల్లో పూర్తి కావాలి? (Delivery Needed In):",
         lblMsg: "మీ సందేశం / అవసరాలు (Message):",
-        btnSubmit: "వాట్సాప్‌లో ఆర్డర్ పంపండి 🚀",
+        btnSubmit: "వాట్సాప్‌లో వివరాలు పంపండి 🚀",
         socHeading: "మా అధికారిక సోషల్ మీడియా లింకులు",
         socSub: "ఒక్క క్లిక్‌తో మాతో కనెక్ట్ అవ్వండి:",
         stickyWa: "WhatsApp లో మాట్లాడండి"
@@ -802,34 +926,46 @@
         fName: "Raasuri Bhaskar",
         fRole: "Founder & Digital Campaign Strategist",
         fBio: "Empowering businesses and public leaders with cutting-edge AI creative marketing and viral campaign narratives.",
+        timeHeading: "⏰ Project Delivery Timelines & Business Hours",
+        td1Title: "AI Promotion Reels & Shorts",
+        td1Time: "Completed in 24 - 48 Hours",
+        td2Title: "Social Media Posters & Creatives",
+        td2Time: "Fast Delivery in 12 - 24 Hours",
+        td3Title: "Monthly Biz & Political Campaigns",
+        td3Time: "Immediate Start & Regular Daily Outputs",
+        hWeek: "Monday – Saturday:",
+        hSun: "Sunday:",
+        hWa: "WhatsApp Support:",
         tabBiz: "🏢 Business Solutions",
         tabPol: "🏛️ Political Campaigns",
         mTitle: "Menu & Settings",
         mFnd: "👑 Founder Profile",
+        mTime: "⏰ Business Hours & Delivery",
         mServ: "⚡ Services",
-        mPlans: "🏷️️ Pricing Plans",
+        mPlans: "🏷️ Pricing Plans",
         mInq: "📝 Quick Inquiry Form",
         mSoc: "🌐 Social Media Links",
         plansHeading: "🏷️ Service Pricing Packages",
         p1Name: "Basic Plan",
         p1Price: "₹1,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ Month</span>",
-        p1Features: "<li>✓ 6 High-Quality Social Media Posters</li><li>✓ 1 AI Cinematic Promo Reel</li><li>✓ WhatsApp Status Creatives</li><li>✓ Basic Branding Support</li>",
+        p1Features: "<li>✓ 6 High-Quality Social Media Posters</li><li>✓ 1 AI Cinematic Promo Reel</li><li>✓ WhatsApp Status Creatives</li><li>✓ Fast 24h Support</li>",
         p1Btn: "Choose Basic Plan",
         p2Name: "Normal Plan",
         p2Price: "₹4,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ Month</span>",
-        p2Features: "<li>✓ 12 Attractive Posters & Creatives</li><li>✓ 4 AI Cinematic Promo Reels</li><li>✓ AI Voiceover & Trending Audio</li><li>✓ Google Business & Local Promotion</li>",
+        p2Features: "<li>✓ 12 Attractive Posters & Creatives</li><li>✓ 4 AI Cinematic Promo Reels</li><li>✓ AI Voiceover & Trending Audio</li><li>✓ Weekly Promotion Schedule</li>",
         p2Btn: "Book Normal Plan",
         p3Name: "Premium VIP Plan",
         p3Price: "₹14,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ Month</span>",
-        p3Features: "<li>✓ Daily Wishes & Political/Biz Posters</li><li>✓ Weekly 3 Powerful Speech/Brand Reels</li><li>✓ Constituency & Local Paid Ads Boosting</li><li>✓ Full Social Media Management & War Room</li>",
+        p3Features: "<li>✓ Daily Wishes & Political/Biz Posters</li><li>✓ Weekly 3 Powerful Speech/Brand Reels</li><li>✓ Constituency & Local Paid Ads Boosting</li><li>✓ 24/7 Social Media War Room</li>",
         p3Btn: "Get Premium VIP Plan",
         formHeading: "📝 Quick Order & Inquiry Form",
         lblName: "Your Name:",
         lblPhone: "Phone Number:",
         lblBiz: "Business / Political Role:",
         lblPlan: "Select Plan:",
+        lblTimeframe: "Project Delivery Urgency:",
         lblMsg: "Your Message / Needs:",
-        btnSubmit: "Send Order on WhatsApp 🚀",
+        btnSubmit: "Send Details on WhatsApp 🚀",
         socHeading: "Our Official Social Links",
         socSub: "Connect with us instantly:",
         stickyWa: "Chat on WhatsApp"
@@ -848,10 +984,21 @@
       document.getElementById('f-name').innerText = d.fName;
       document.getElementById('f-role').innerText = d.fRole;
       document.getElementById('f-bio').innerText = d.fBio;
+      document.getElementById('t-time-heading').innerText = d.timeHeading;
+      document.getElementById('td1-title').innerText = d.td1Title;
+      document.getElementById('td1-time').innerText = d.td1Time;
+      document.getElementById('td2-title').innerText = d.td2Title;
+      document.getElementById('td2-time').innerText = d.td2Time;
+      document.getElementById('td3-title').innerText = d.td3Title;
+      document.getElementById('td3-time').innerText = d.td3Time;
+      document.getElementById('h-week').innerText = d.hWeek;
+      document.getElementById('h-sun').innerText = d.hSun;
+      document.getElementById('h-wa').innerText = d.hWa;
       document.getElementById('tab-biz').innerText = d.tabBiz;
       document.getElementById('tab-pol').innerText = d.tabPol;
       document.getElementById('m-title').innerText = d.mTitle;
       document.getElementById('m-fnd').innerText = d.mFnd;
+      document.getElementById('m-time').innerText = d.mTime;
       document.getElementById('m-serv').innerText = d.mServ;
       document.getElementById('m-plans').innerText = d.mPlans;
       document.getElementById('m-inq').innerText = d.mInq;
@@ -874,6 +1021,7 @@
       document.getElementById('lbl-phone').innerText = d.lblPhone;
       document.getElementById('lbl-biz').innerText = d.lblBiz;
       document.getElementById('lbl-plan').innerText = d.lblPlan;
+      document.getElementById('lbl-timeframe').innerText = d.lblTimeframe;
       document.getElementById('lbl-msg').innerText = d.lblMsg;
       document.getElementById('btn-submit').innerHTML = `<svg style="width:20px; height:20px; fill:#fff;" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.227-.556-1.585-.658-2.613-2.28-2.692-2.387-.079-.107-.648-.862-.648-1.644 0-.783.411-1.168.556-1.326.144-.159.313-.198.418-.198.106 0 .211.002.302.008.097.006.228-.037.357.272.132.318.45 1.096.49 1.176.04.079.066.172.013.278-.053.106-.079.172-.158.265-.08.093-.168.208-.24.279-.08.079-.163.165-.07.324.093.159.412.68 1.002 1.207.76.679 1.401.889 1.599.988.198.099.313.086.429-.047.116-.132.496-.58.628-.779.132-.198.264-.165.443-.099.179.066 1.137.536 1.334.635.198.099.33.146.377.232.048.086.048.502-.096.907z"/></svg> ${d.btnSubmit}`;
       document.getElementById('t-soc-heading').innerText = d.socHeading;
@@ -881,20 +1029,22 @@
       document.getElementById('btn-sticky-wa').innerText = d.stickyWa;
     }
 
-    // WhatsApp Inquiry Form Submission
+    // WhatsApp Inquiry Form Submission with Timeframe
     function sendWhatsApp(event) {
       event.preventDefault();
       var name = document.getElementById('custName').value;
       var phone = document.getElementById('custPhone').value;
       var biz = document.getElementById('custBusiness').value;
       var service = document.getElementById('custService').value;
+      var timeline = document.getElementById('custTimeline').value;
       var msg = document.getElementById('custMsg').value;
 
-      var text = "🚀 *BAIDIGITAL కొత్త ఎంక్వైరీ ఆర్డర్:*%0A%0A" +
+      var text = "🚀 *BAIDIGITAL కొత్త ఆర్డర్ & ఎంక్వైరీ:*%0A%0A" +
                  "👤 *పేరు:* " + encodeURIComponent(name) + "%0A" +
                  "📱 *మొబైల్:* " + encodeURIComponent(phone) + "%0A" +
                  "🏢 *బిజినెస్/హోదా:* " + encodeURIComponent(biz) + "%0A" +
                  "📦 *ఎంచుకున్న ప్లాన్:* " + encodeURIComponent(service) + "%0A" +
+                 "⏱️ *డెలివరీ సమయం:* " + encodeURIComponent(timeline) + "%0A" +
                  "💬 *సందేశం:* " + encodeURIComponent(msg);
 
       window.open("https://wa.me/919951336425?text=" + text, "_blank");
