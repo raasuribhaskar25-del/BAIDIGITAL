@@ -3,18 +3,20 @@
   "short_name": "BAIDIGITAL",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#070a12",
-  "theme_color": "#070a12",
+  "background_color": "#030712",
+  "theme_color": "#030712",
   "icons": [
     {
-      "src": "file_000000008d8882119d20de75ce2c4347.png",
+      "src": "logo.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "file_000000008d8882119d20de75ce2c4347.png",
+      "src": "logo.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
