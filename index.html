@@ -638,7 +638,7 @@
   </div>
 
   <!-- Dynamic Pricing Section -->
-  <h2 class="section-title" id="t-plans-heading">🏷️️ బిజినెస్ మార్కెటింగ్ ప్యాకేజీలు</h2>
+  <h2 class="section-title" id="t-plans-heading">🏷️ బిజినెస్ మార్కెటింగ్ ప్యాకేజీలు</h2>
   <div class="pricing-wrap" id="pricing">
     
     <div class="pricing-card">
@@ -743,7 +743,7 @@
         <div class="time-icon">🏛️</div>
         <div class="time-details">
           <h4 id="td3-title">మంత్లీ బిజినెస్ & పొలిటికల్ ప్యాకేజీలు</h4>
-          <p id="td3-time">ఆర్డర్ రాగానే రెగ్యులర్ డైలీ అప్‌డేట్స్</p>
+          <p id="td3-time">ఆర్డర్ రాగానే రెగ్యులర్ డైలీ అప్‌‌డేట్స్</p>
         </div>
       </div>
     </div>
@@ -758,8 +758,8 @@
         <span class="hours-time">10:00 AM – 04:00 PM</span>
       </div>
       <div class="hours-row">
-        <span id="h-wa">WhatsApp సపోర్ట్:</span>
-        <span class="hours-time" style="color: #25d366;">24/7 అందుబాటులో ఉంది</span>
+        <span id="h-wa-label">WhatsApp Support:</span>
+        <span class="hours-time" style="color: #25d366;" id="h-wa-val">24/7 అందుబాటులో ఉంది</span>
       </div>
     </div>
   </div>
@@ -783,8 +783,8 @@
       <div class="form-group">
         <label id="lbl-cat">కావాల్సిన సర్వీస్ కేటగిరీ:</label>
         <select id="custCategory" onchange="updateFormPlans()">
-          <option value="business">🏢 బిజినెస్ సొల్యూషన్స్</option>
-          <option value="political">🏛️ పొలిటికల్ ప్రమోషన్</option>
+          <option value="business" id="opt-cat-biz">🏢 బిజినెస్ సొల్యూషన్స్</option>
+          <option value="political" id="opt-cat-pol">🏛️ పొలిటికల్ ప్రమోషన్</option>
         </select>
       </div>
       <div class="form-group">
@@ -798,9 +798,9 @@
       <div class="form-group">
         <label id="lbl-timeframe">డెలివరీ సమయం:</label>
         <select id="custTimeline">
-          <option>అత్యవసరం (24 గంటల్లో - Express Delivery)</option>
-          <option>2 - 3 రోజుల్లో (Normal Delivery)</option>
-          <option>మంత్లీ కాంట్రాక్ట్ (Monthly Ongoing)</option>
+          <option id="opt-t1">అత్యవసరం (24 గంటల్లో - Express Delivery)</option>
+          <option id="opt-t2">2 - 3 రోజుల్లో (Normal Delivery)</option>
+          <option id="opt-t3">మంత్లీ కాంట్రాక్ట్ (Monthly Ongoing)</option>
         </select>
       </div>
       <div class="form-group">
@@ -877,7 +877,8 @@
         td3Time: "ఆర్డర్ రాగానే రెగ్యులర్ డైలీ అప్‌డేట్స్",
         hWeek: "సోమవారం – శనివారం:",
         hSun: "ఆదివారం:",
-        hWa: "WhatsApp సపోర్ట్:",
+        hWaLabel: "WhatsApp Support:",
+        hWaVal: "24/7 అందుబాటులో ఉంది",
         mTitle: "మెనూ & సెట్టింగ్స్",
         mServ: "⚡ సర్వీసెస్ & కేటగిరీస్",
         mBrochure: "📄 డిజిటల్ బ్రోచర్",
@@ -888,12 +889,21 @@
         mSoc: "🌐 సోషల్ మీడియా",
         formHeading: "📝 క్విక్ ఆర్డర్ & ఎంక్వైరీ ఫారమ్",
         lblName: "మీ పేరు (Name):",
+        namePh: "మీ పేరు నమోదు చేయండి",
         lblPhone: "ఫోన్ నంబర్ (Mobile Number):",
-        lblBiz: "వ్యాపారం / రాజకీయ హోదా (Role/Business):",
+        phonePh: "మీ మొబైల్ నంబర్",
+        lblBiz: "వ్యాపారం / రాజకీయ హోదా (Business/Political Role):",
+        bizPh: "ఉదా: రెస్టారెంట్ లేదా నియోజకవర్గ నాయకుడు",
         lblCat: "కావాల్సిన సర్వీస్ కేటగిరీ:",
+        optCatBiz: "🏢 బిజినెస్ సొల్యూషన్స్",
+        optCatPol: "🏛️ పొలిటికల్ ప్రమోషన్",
         lblPlan: "ఎంచుకున్న ప్లాన్:",
         lblTimeframe: "డెలివరీ సమయం:",
+        optT1: "అత్యవసరం (24 గంటల్లో - Express Delivery)",
+        optT2: "2 - 3 రోజుల్లో (Normal Delivery)",
+        optT3: "మంత్లీ కాంట్రాక్ట్ (Monthly Ongoing)",
         lblMsg: "మీ సందేశం / అవసరాలు (Message):",
+        msgPh: "మీకు కావలసిన వివరాలు రాయండి...",
         btnSubmit: "వాట్సాప్‌లో వివరాలు పంపండి 🚀",
         socHeading: "మా అధికారిక సోషల్ మీడియా లింకులు",
         socSub: "ఒక్క క్లిక్‌తో మాతో కనెక్ట్ అవ్వండి:",
@@ -920,23 +930,33 @@
         td3Time: "Immediate Start & Regular Daily Outputs",
         hWeek: "Monday – Saturday:",
         hSun: "Sunday:",
-        hWa: "WhatsApp Support:",
+        hWaLabel: "WhatsApp Support:",
+        hWaVal: "Available 24/7",
         mTitle: "Menu & Settings",
         mServ: "⚡ Services & Categories",
         mBrochure: "📄 Digital Brochure",
         mFnd: "👑 Founder Profile",
         mTime: "⏰ Business Hours & Delivery",
-        mPlans: "🏷️ Pricing Plans",
+        mPlans: "🏷️️ Pricing Plans",
         mInq: "📝 Quick Order Form",
         mSoc: "🌐 Social Media Links",
         formHeading: "📝 Quick Order & Inquiry Form",
         lblName: "Your Name:",
+        namePh: "Enter your full name",
         lblPhone: "Phone Number:",
+        phonePh: "Enter your phone number",
         lblBiz: "Business / Political Role:",
+        bizPh: "e.g., Restaurant Owner or Political Leader",
         lblCat: "Required Service Category:",
+        optCatBiz: "🏢 Business Solutions",
+        optCatPol: "🏛️ Political Campaigns",
         lblPlan: "Selected Plan:",
         lblTimeframe: "Project Delivery Urgency:",
+        optT1: "Urgent (Within 24 Hours - Express)",
+        optT2: "Within 2 - 3 Days (Standard)",
+        optT3: "Monthly Ongoing Contract",
         lblMsg: "Your Message / Needs:",
+        msgPh: "Write your specific requirements...",
         btnSubmit: "Send Details on WhatsApp 🚀",
         socHeading: "Our Official Social Links",
         socSub: "Connect with us instantly:",
@@ -982,7 +1002,8 @@
       document.getElementById('td3-time').innerText = d.td3Time;
       document.getElementById('h-week').innerText = d.hWeek;
       document.getElementById('h-sun').innerText = d.hSun;
-      document.getElementById('h-wa').innerText = d.hWa;
+      document.getElementById('h-wa-label').innerText = d.hWaLabel;
+      document.getElementById('h-wa-val').innerText = d.hWaVal;
       document.getElementById('m-title').innerText = d.mTitle;
       document.getElementById('m-serv').innerText = d.mServ;
       document.getElementById('m-brochure').innerText = d.mBrochure;
@@ -992,13 +1013,24 @@
       document.getElementById('m-inq').innerText = d.mInq;
       document.getElementById('m-soc').innerText = d.mSoc;
       document.getElementById('t-form-heading').innerText = d.formHeading;
+      
+      // Form fields and placeholders
       document.getElementById('lbl-name').innerText = d.lblName;
+      document.getElementById('custName').placeholder = d.namePh;
       document.getElementById('lbl-phone').innerText = d.lblPhone;
+      document.getElementById('custPhone').placeholder = d.phonePh;
       document.getElementById('lbl-biz').innerText = d.lblBiz;
+      document.getElementById('custBusiness').placeholder = d.bizPh;
       document.getElementById('lbl-cat').innerText = d.lblCat;
+      document.getElementById('opt-cat-biz').innerText = d.optCatBiz;
+      document.getElementById('opt-cat-pol').innerText = d.optCatPol;
       document.getElementById('lbl-plan').innerText = d.lblPlan;
       document.getElementById('lbl-timeframe').innerText = d.lblTimeframe;
+      document.getElementById('opt-t1').innerText = d.optT1;
+      document.getElementById('opt-t2').innerText = d.optT2;
+      document.getElementById('opt-t3').innerText = d.optT3;
       document.getElementById('lbl-msg').innerText = d.lblMsg;
+      document.getElementById('custMsg').placeholder = d.msgPh;
       document.getElementById('btn-submit').innerText = d.btnSubmit;
       document.getElementById('t-soc-heading').innerText = d.socHeading;
       document.getElementById('t-soc-sub').innerText = d.socSub;
@@ -1057,7 +1089,7 @@
             </div>
           `;
         } else {
-          heading.innerText = "🏷️ Business Marketing Packages";
+          heading.innerText = "🏷️️ Business Marketing Packages";
           document.getElementById('p1-name').innerText = "Business Starter (Basic)";
           document.getElementById('p1-price').innerHTML = "₹1,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ Month</span>";
           document.getElementById('p1-features').innerHTML = "<li>✓ 6 Offer & Product Sales Posters</li><li>✓ 1 AI Promo Reel</li><li>✓ WhatsApp Status Creatives</li><li>✓ Fast 24h Delivery</li>";
