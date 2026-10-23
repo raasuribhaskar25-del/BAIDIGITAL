@@ -1,41 +1,59 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAIDIGITAL</title>
+    <title>BAIDIGITAL - Digital Growth Partner</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             color: #333;
             text-align: center;
         }
         header {
-            background-color: #007bff;
+            background-color: #0066cc;
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
         }
         .lang-selector {
-            margin: 15px 0;
+            margin-top: 15px;
         }
         .lang-selector select {
-            padding: 5px 10px;
-            font-size: 16px;
+            padding: 6px 12px;
+            font-size: 15px;
+            border-radius: 4px;
+            border: none;
         }
-        .content {
-            padding: 50px 20px;
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .service-box {
+            background: white;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         footer {
             margin-top: 50px;
             padding: 20px;
-            background-color: #333;
+            background-color: #222;
             color: white;
         }
         a {
-            color: #007bff;
+            color: #0066cc;
             text-decoration: none;
         }
     </style>
@@ -43,11 +61,12 @@
 <body>
 
     <header>
-        <h1 id="main-title">Welcome to BAIDIGITAL</h1>
+        <h1 id="main-title">BAIDIGITAL</h1>
+        <p id="sub-title">Your Digital Growth Partner</p>
         
-        <!-- భాషలను మార్చుకోవడానికి (Language Selector) డ్రాప్‌డౌన్ -->
+        <!-- భాషల మార్పు కోసం డ్రాప్‌డౌನ್ -->
         <div class="lang-selector">
-            <label for="language" style="color: white; font-weight: bold;">Language / भाषा / ಭಾಷೆ: </label>
+            <label for="language" style="font-weight: bold;">Language / भाषा / ಭಾಷೆ: </label>
             <select id="language" onchange="changeLanguage()">
                 <option value="en">English</option>
                 <option value="hi">हिन्दी (Hindi)</option>
@@ -56,38 +75,96 @@
         </div>
     </header>
 
-    <div class="content">
-        <h2 id="sub-title">Your Digital Growth Partner</h2>
-        <p id="desc">We provide the best digital solutions for your business.</p>
-        
-        <h3>Contact Us</h3>
+    <div class="container">
+        <h2 id="about-heading">Welcome to Our Agency</h2>
+        <p id="about-desc">We provide the best digital solutions to grow your business online.</p>
+
+        <h2 id="services-heading" style="margin-top: 40px;">Our Services</h2>
+        <div class="services">
+            <div class="service-box">
+                <h3 id="s1-title">Web Development</h3>
+                <p id="s1-desc">Modern and responsive websites for your business.</p>
+            </div>
+            <div class="service-box">
+                <h3 id="s2-title">Digital Marketing</h3>
+                <p id="s2-desc">Grow your brand reach with expert marketing strategies.</p>
+            </div>
+            <div class="service-box">
+                <h3 id="s3-title">SEO Optimization</h3>
+                <p id="s3-desc">Rank higher on Google and get more customers.</p>
+            </div>
+        </div>
+
+        <h2 id="contact-heading" style="margin-top: 40px;">Contact Us</h2>
         <p>Email: <a href="mailto:connect@baidigital.in">connect@baidigital.in</a></p>
     </div>
 
     <footer>
-        <p>&copy; 2026 BAIDIGITAL. All rights reserved.</p>
+        <p id="footer-text">&copy; 2026 BAIDIGITAL. All rights reserved.</p>
     </footer>
 
-    <!-- భాషలను మార్చడానికి చిన్న జావాస్క్రిప్ట్ కోడ్ -->
     <script>
         function changeLanguage() {
             const lang = document.getElementById("language").value;
+            
             const mainTitle = document.getElementById("main-title");
             const subTitle = document.getElementById("sub-title");
-            const desc = document.getElementById("desc");
+            const aboutHeading = document.getElementById("about-heading");
+            const aboutDesc = document.getElementById("about-desc");
+            const servicesHeading = document.getElementById("services-heading");
+            
+            const s1Title = document.getElementById("s1-title");
+            const s1Desc = document.getElementById("s1-desc");
+            const s2Title = document.getElementById("s2-title");
+            const s2Desc = document.getElementById("s2-desc");
+            const s3Title = document.getElementById("s3-title");
+            const s3Desc = document.getElementById("s3-desc");
+            const contactHeading = document.getElementById("contact-heading");
 
             if (lang === "hi") {
-                mainTitle.innerText = "BAIDIGITAL में आपका स्वागत है";
+                mainTitle.innerText = "BAIDIGITAL";
                 subTitle.innerText = "आपका डिजिटल ग्रोथ पार्टनर";
-                desc.innerText = "हम आपके व्यवसाय के लिए सर्वोत्तम डिजिटल समाधान प्रदान करते हैं।";
+                aboutHeading.innerText = "हमारी एजेंसी में आपका स्वागत है";
+                aboutDesc.innerText, aboutDesc.innerText = "हम आपके व्यवसाय को ऑनलाइन बढ़ाने के लिए सर्वोत्तम डिजिटल समाधान प्रदान करते हैं।";
+                servicesHeading.innerText = "हमारी सेवाएं";
+                
+                s1Title.innerText = "वेब डेवलपमेंट";
+                s1Desc.innerText = "आपके व्यवसाय के लिए आधुनिक और रिस्पॉन्सिव वेबसाइट्स।";
+                s2Title.innerText = "डिजिटल मार्केटिंग";
+                s2Desc.innerText = "विशेषज्ञ मार्केटिंग रणनीतियों के साथ अपने ब्रांड का विस्तार करें।";
+                s3Title.innerText = "एसईओ ऑप्टिमाइजेशन";
+                s3Desc.innerText = "गूगल पर उच्च रैंक प्राप्त करें और अधिक ग्राहक पाएं।";
+                contactHeading.innerText = "संपर्क करें";
+
             } else if (lang === "kn") {
-                mainTitle.innerText = "BAIDIGITAL ಗೆ ಸ್ವಾಗತ";
+                mainTitle.innerText = "BAIDIGITAL";
                 subTitle.innerText = "ನಿಮ್ಮ ಡಿಜಿಟಲ್ ಬೆಳವಣಿಗೆಯ ಪಾಲುದಾರ";
-                desc.innerText = "ನಾವು ನಿಮ್ಮ ವ್ಯಾಪಾರಕ್ಕಾಗಿ ಅತ್ಯುತ್ತಮ ಡಿಜಿಟಲ್ ಪರಿಹಾರಗಳನ್ನು ಒದಗಿಸುತ್ತೇವೆ.";
+                aboutHeading.innerText, aboutHeading.innerText = "ನಮ್ಮ ಏಜೆನ್ಸಿಗೆ ಸ್ವಾಗತ";
+                aboutDesc.innerText = "ನಿಮ್ಮ ವ್ಯಾಪಾರವನ್ನು ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಬೆಳೆಸಲು ನಾವು ಉತ್ತಮ ಡಿಜಿಟಲ್ ಪರಿಹಾರಗಳನ್ನು ಒದಗಿಸುತ್ತೇವೆ.";
+                servicesHeading.innerText = "ನಮ್ಮ ಸೇವೆಗಳು";
+                
+                s1Title.innerText = "ವೆಬ್ ಡೆವಲಪ್ಮೆಂಟ್";
+                s1Desc.innerText = "ನಿಮ್ಮ ವ್ಯಾಪಾರಕ್ಕಾಗಿ ಆಧುನಿಕ ಮತ್ತು ಸುಂದರವಾದ ವೆಬ್‌ಸೈಟ್‌ಗಳು.";
+                s2Title.innerText = "ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್";
+                s2Desc.innerText, s2Desc.innerText = "ತಜ್ಞರ ಮಾರ್ಕೆಟಿಂಗ್ ತಂತ್ರಗಳೊಂದಿಗೆ ನಿಮ್ಮ ಬ್ರ್ಯಾಂಡ್ ಅನ್ನು ಬೆಳೆಸಿಕೊಳ್ಳಿ.";
+                s3Title.innerText = "ಎಸ್‌ಇಒ ಆಪ್ಟಿಮೈಸೇಶನ್";
+                s3Desc.innerText = "ಗೂಗಲ್‌ನಲ್ಲಿ ಉನ್ನತ ಸ್ಥಾನ ಪಡೆಯಿರಿ ಮತ್ತು ಹೆಚ್ಚಿನ ಗ್ರಾಹಕರನ್ನು ಗಳಿಸಿ.";
+                contactHeading.innerText = "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ";
+
             } else {
-                mainTitle.innerText = "Welcome to BAIDIGITAL";
+                mainTitle.innerText = "BAIDIGITAL";
                 subTitle.innerText = "Your Digital Growth Partner";
-                desc.innerText = "We provide the best digital solutions for your business.";
+                aboutHeading.innerText = "Welcome to Our Agency";
+                aboutDesc.innerText = "We provide the best digital solutions to grow your business online.";
+                servicesHeading.innerText = "Our Services";
+                
+                s1Title.innerText = "Web Development";
+                s1Desc.innerText = "Modern and responsive websites for your business.";
+                s2Title.innerText = "Digital Marketing";
+                s2Desc.innerText = "Grow your brand reach with expert marketing strategies.";
+                s3Title.innerText = "SEO Optimization";
+                s3Desc.innerText = "Rank higher on Google and get more customers.";
+                contactHeading.innerText = "Contact Us";
             }
         }
     </script>
