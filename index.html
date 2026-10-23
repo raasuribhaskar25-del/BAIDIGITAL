@@ -1,623 +1,1238 @@
- 
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html lang="te">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BAIDIGITAL | AI & Digital Marketing</title>
-<meta name="description" content="BAIDIGITAL - AI Video Creation, Digital Marketing, Business Promotions and Political Campaign Services.">
-<style>
-:root{--bg:#08111f;--panel:#101e32;--gold:#f5c451;--white:#f8fafc;--muted:#b9c5d6;--green:#25d366;--blue:#2878ff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--white);line-height:1.6}
-a{color:inherit;text-decoration:none}
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-.topbar{background:#050b14;padding:10px 4%;display:flex;justify-content:flex-end;align-items:center;gap:7px;flex-wrap:wrap}
-.lang-btn{background:#17263a;color:white;border:1px solid #3a4a60;border-radius:8px;padding:7px 11px}
-.lang-btn.active{background:var(--gold);color:#111;border-color:var(--gold);font-weight:bold}
-header{padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #26354a;position:sticky;top:0;background:#08111ff2;backdrop-filter:blur(10px);z-index:20}
-.brand{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:900;letter-spacing:1px}
-.brand img{width:48px;height:48px;object-fit:contain;border-radius:10px}
-.brand span{color:var(--gold)}
-.menu-btn{background:#17263a;color:white;border:1px solid #34445b;border-radius:9px;padding:8px 13px}
-.drawer{display:none;padding:15px 5%;background:#101e32;gap:15px;flex-wrap:wrap}
-.drawer.open{display:flex}
-.drawer a{color:var(--gold)}
-.hero{padding:65px 6% 55px;text-align:center;background:radial-gradient(ellipse at top,#203957 0%,#08111f 68%)}
-.eyebrow{color:var(--gold);font-weight:bold;letter-spacing:2px;text-transform:uppercase}
-h1{font-size:clamp(32px,6vw,62px);line-height:1.15;margin:16px auto;max-width:900px}
-.hero p{max-width:720px;margin:18px auto;color:var(--muted);font-size:18px}
-.btn{display:inline-block;border:0;border-radius:10px;padding:12px 18px;font-weight:bold;margin:5px}
-.btn-gold{background:var(--gold);color:#111}
-.btn-outline{border:1px solid #718198;color:white;background:transparent}
-.btn-green{background:var(--green);color:#07130a}
-.btn-blue{background:var(--blue);color:white}
-section{padding:45px 5%;scroll-margin-top:90px}
-.section-title{text-align:center;font-size:clamp(25px,4vw,38px);margin:0 0 10px}
-.section-sub{text-align:center;color:var(--muted);margin:0 auto 28px;max-width:750px}
-.tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0}
-.tab{padding:12px 20px;border-radius:10px;border:1px solid #44536a;background:#14243a;color:white}
-.tab.active{background:var(--gold);color:#111;border-color:var(--gold);font-weight:bold}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:var(--panel);border:1px solid #2b3b51;border-radius:16px;padding:22px}
-.card h3{margin-top:0;color:var(--gold)}
-.price{font-size:30px;font-weight:900;margin:12px 0}
-.price small{font-size:13px;color:var(--muted);font-weight:normal}
-.card ul{padding-left:20px;color:var(--muted)}
-.card li{margin:7px 0}
-.card .btn{margin-left:0}
-.featured{border-color:var(--gold);box-shadow:0 0 25px #f5c45112}
-.notice{background:#14243a;border-left:4px solid var(--gold);padding:14px 17px;border-radius:8px;color:var(--muted);margin:18px 0}
-.video-wrap{max-width:800px;margin:20px auto;text-align:center}
-video{width:100%;max-height:480px;background:#03070d;border-radius:15px;border:1px solid #2a3b50}
-.founder{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:center;gap:25px}
-.founder video{max-height:430px}
-.brochure{max-width:900px;margin:auto;background:#fff;color:#172033;padding:28px;border-radius:12px}
-.brochure h2,.brochure h3{color:#132d51}
-.brochure .gold{color:#8a5a00}
-.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{color:var(--muted)}
-.field input,.field select,.field textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #40516a;background:#0a1627;color:white}
-.field textarea{min-height:110px;resize:vertical}
-footer{padding:30px 5%;text-align:center;background:#050b14;color:var(--muted)}
-footer a{color:var(--gold)}
-.float-actions{position:fixed;right:15px;bottom:15px;display:flex;flex-direction:column;gap:10px;z-index:30}
-.float-actions a{padding:12px 15px;border-radius:30px;font-weight:bold;box-shadow:0 5px 18px #0006}
-.whatsapp{background:var(--green);color:#06170b}
-.call{background:var(--blue);color:white}
-.socials{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin:16px 0}
-.socials a{padding:8px 13px;background:#14243a;border-radius:8px}
-.small{font-size:13px;color:var(--muted)}
-@media(max-width:600px){
- header{padding:12px 4%}
- .brand{font-size:19px}
- .brand img{width:40px;height:40px}
- .hero{padding:45px 5%}
- section{padding:35px 4%}
- .brochure{padding:18px}
- .float-actions a{padding:10px 12px;font-size:13px}
-}
-@media print{
- body{background:white;color:#111}
- body *{visibility:hidden}
- #brochure,#brochure *{visibility:visible}
- #brochure{position:absolute;left:0;top:0;width:100%;padding:20px;background:white;color:#111}
- .no-print{display:none!important}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BAIDIGITAL | AI Marketing & Political Campaigns</title>
+  <meta name="description" content="AI బిజినెస్ ప్రమోషన్ మరియు పొలిటికల్ డిజిటల్ క్యాంపెయిన్స్ - A to Z సర్వీసెస్.">
+  
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#030712">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #00d4ff;
+      --secondary: #7928ca;
+      --accent: #25d366;
+      --gold: #fbbf24;
+      --bg-dark: #030712;
+      --card-bg: #0b1120;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 95px;
+      overflow-x: hidden;
+    }
+
+    .top-bar {
+      background: #070d18;
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.78rem;
+    }
+    .lang-switcher {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--primary);
+      color: #000;
+      border-color: var(--primary);
+    }
+
+    header {
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(3, 7, 18, 0.92);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: #000;
+      border: 1.5px solid rgba(0, 212, 255, 0.4);
+    }
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .menu-toggle-btn {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: none;
+    }
+    .menu-drawer {
+      position: fixed;
+      top: 0;
+      right: -280px;
+      width: 280px;
+      height: 100%;
+      background: #090e1a;
+      border-left: 1px solid rgba(0, 212, 255, 0.2);
+      z-index: 2001;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.3s ease;
+    }
+    .menu-drawer.open {
+      right: 0;
+    }
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .drawer-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    .drawer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .drawer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.98rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero {
+      padding: 24px 20px 16px;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      background: rgba(0, 212, 255, 0.1);
+      color: #00d4ff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .video-stage {
+      max-width: 440px;
+      margin: 0 auto 24px;
+      padding: 0 10px;
+    }
+    .video-frame {
+      background: #000;
+      border-radius: 20px;
+      padding: 6px;
+      border: 2px solid rgba(0, 212, 255, 0.45);
+      box-shadow: 0 12px 35px rgba(0, 212, 255, 0.3), 0 0 20px rgba(168, 85, 247, 0.25);
+      overflow: hidden;
+    }
+    .video-frame video, .video-frame img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      display: block;
+      background: #000;
+    }
+
+    .tab-container {
+      padding: 0 20px;
+      margin-bottom: 20px;
+    }
+    .tab-buttons {
+      display: flex;
+      background: #0f172a;
+      border-radius: 12px;
+      padding: 4px;
+      border: 1px solid var(--card-border);
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #0ea5e9, #6366f1);
+      color: #fff;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-align: center;
+      margin: 32px 0 16px;
+      color: #ffffff;
+    }
+
+    .pricing-wrap {
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .pricing-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid var(--card-border);
+      position: relative;
+    }
+    .pricing-card.normal {
+      border-color: #38bdf8;
+      background: linear-gradient(180deg, rgba(14, 165, 233, 0.1) 0%, #0b1120 100%);
+    }
+    .pricing-card.premium {
+      border-color: #a855f7;
+      background: linear-gradient(180deg, rgba(168, 85, 247, 0.12) 0%, #0b1120 100%);
+    }
+    .plan-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #ec4899;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 10px;
+    }
+    .plan-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+    .plan-price {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin: 8px 0 12px;
+    }
+    .plan-features {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+    .plan-features li {
+      font-size: 0.86rem;
+      color: #cbd5e1;
+      margin-bottom: 7px;
+    }
+    .plan-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      background: #10b981;
+      color: #ffffff;
+    }
+
+    .brochure-section {
+      margin: 30px 20px;
+      background: linear-gradient(145deg, #0b1120, #070d18);
+      border: 2px solid #00d4ff;
+      border-radius: 20px;
+      padding: 24px 18px;
+    }
+    .brochure-header {
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+    .brochure-header h3 {
+      font-size: 1.3rem;
+      color: #00d4ff;
+      font-weight: 800;
+    }
+    .brochure-header p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .brochure-item {
+      background: #030712;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .brochure-item h4 {
+      color: #38bdf8;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .brochure-item h4 span {
+      color: var(--gold);
+    }
+    .brochure-item p {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+    .print-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(135deg, #0ea5e9, #6366f1);
+      color: #fff;
+      font-weight: 700;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.92rem;
+      margin-top: 14px;
+    }
+
+    .founder-card {
+      margin: 0 20px 28px;
+      background: radial-gradient(circle at top, #1e1b4b 0%, #0b1120 100%);
+      border-radius: 20px;
+      padding: 20px;
+      border: 1.5px solid rgba(251, 191, 36, 0.4);
+      text-align: center;
+    }
+    .founder-badge {
+      display: inline-block;
+      background: rgba(251, 191, 36, 0.15);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .founder-video-box {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid rgba(251, 191, 36, 0.35);
+      background: #000;
+      margin-bottom: 14px;
+    }
+    .founder-video-box video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .timeline-wrap {
+      padding: 0 20px;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .timeline-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .time-icon {
+      font-size: 1.8rem;
+    }
+    .time-details h4 {
+      font-size: 0.95rem;
+      color: #fff;
+    }
+    .time-details p {
+      font-size: 0.8rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .hours-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px;
+      margin: 0 20px 24px;
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+
+    .form-box {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 0 20px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+    }
+    .form-group {
+      margin-bottom: 12px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 11px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #030712;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .form-submit-btn {
+      width: 100%;
+      padding: 13px;
+      background: #25d366;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.98rem;
+    }
+
+    .social-section {
+      text-align: center;
+      padding: 30px 20px 10px;
+      margin-top: 25px;
+      border-top: 1px solid var(--card-border);
+    }
+    .social-icons-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .social-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #0f172a;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .social-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+    .btn-wa { color: #25d366; }
+    .btn-call { color: #00d4ff; }
+    .btn-insta { color: #e1306c; }
+    .btn-yt { color: #ff0000; }
+    .btn-fb { color: #1877f2; }
+    .btn-mail { color: #ea4335; }
+
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(3, 7, 18, 0.95);
+      backdrop-filter: blur(14px);
+      padding: 12px 16px;
+      display: flex;
+      gap: 10px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      z-index: 1000;
+    }
+    .whatsapp-btn {
+      flex: 1;
+      background: #25d366;
+      color: #ffffff;
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .call-btn {
+      background: #1e293b;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
 </head>
 <body>
 
-<div class="topbar">
-  <button class="lang-btn active" data-lang="te" onclick="setLanguage('te')">తెలుగు</button>
-  <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">English</button>
-  <button class="lang-btn" data-lang="kn" onclick="setLanguage('kn')">ಕನ್ನಡ</button>
-  <button class="lang-btn" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
-</div>
-
-<header>
-  <a class="brand" href="#home">
-    <img src="logo.png" alt="BAIDIGITAL Logo" onerror="this.style.display='none'">
-    <div>BAI<span>DIGITAL</span></div>
-  </a>
-  <button class="menu-btn" id="menuButton" onclick="toggleMenu()">☰ <span data-i18n="menu">Menu</span></button>
-</header>
-
-<nav class="drawer" id="drawer">
-  <a href="#home" data-i18n="home" onclick="closeMenu()">Home</a>
-  <a href="#services" data-i18n="services" onclick="closeMenu()">Services</a>
-  <a href="#pricing" data-i18n="pricing" onclick="closeMenu()">Packages</a>
-  <a href="#founder" data-i18n="founder" onclick="closeMenu()">Founder</a>
-  <a href="#brochure" data-i18n="brochure" onclick="closeMenu()">Brochure</a>
-  <a href="#contact" data-i18n="contact" onclick="closeMenu()">Contact</a>
-</nav>
-
-<main>
-<section class="hero" id="home">
-  <div class="eyebrow">AI • Creativity • Digital Growth</div>
-  <h1 data-i18n="heroTitle">మీ వ్యాపారానికి డిజిటల్ ప్రపంచంలో కొత్త గుర్తింపు</h1>
-  <p data-i18n="heroDesc">AI వీడియోలు, సోషల్ మీడియా మార్కెటింగ్ మరియు క్రియేటివ్ ప్రమోషన్స్‌తో మీ బ్రాండ్‌ను మరింత మందికి చేరవేయండి.</p>
-  <a class="btn btn-gold" href="#services" data-i18n="explore">మా సేవలను చూడండి</a>
-  <a class="btn btn-outline" href="#contact" data-i18n="getQuote">ధర వివరాలు పొందండి</a>
-  <div class="video-wrap">
-    <video controls playsinline preload="metadata" poster="logo.png">
-      <source src="gemini_generated_video_a3bef7d7.mp4" type="video/mp4">
-    </video>
-  </div>
-  <p class="small" data-i18n="videoHint">వీడియో ప్లే కాకపోతే, ఫైల్ పేరును మరియు అదే ఫోల్డర్‌లో ఉందో లేదో తనిఖీ చేయండి.</p>
-</section>
-
-<section id="services">
-  <h2 class="section-title" data-i18n="serviceTitle">మా సేవలు</h2>
-  <p class="section-sub" data-i18n="serviceDesc">మీ అవసరానికి తగిన డిజిటల్ ప్రమోషన్ సేవను ఎంచుకోండి.</p>
-  <div class="tabs">
-    <button class="tab active" id="businessTab" onclick="setCategory('business')" data-i18n="business">Business Services</button>
-    <button class="tab" id="politicalTab" onclick="setCategory('political')" data-i18n="political">Political Campaign Services</button>
-  </div>
-  <div class="grid" id="serviceCards"></div>
-</section>
-
-<section id="pricing">
-  <h2 class="section-title" data-i18n="pricingTitle">ప్యాకేజీలు & ధరలు</h2>
-  <p class="section-sub" data-i18n="pricingDesc">మీ అవసరానికి తగిన ప్యాకేజీని ఎంచుకుని WhatsApp ద్వారా వివరాలు అడగండి.</p>
-  <div class="grid" id="pricingCards"></div>
-  <p class="notice" data-i18n="priceNotice">ధరలు ప్రారంభ ధరలు మాత్రమే. పని పరిమాణం, వీడియోల సంఖ్య, ప్రకటనల బడ్జెట్ ఆధారంగా తుది ధర మారవచ్చు.</p>
-</section>
-
-<section id="showreel">
-  <h2 class="section-title" data-i18n="showreelTitle">Creative Video Showcase</h2>
-  <p class="section-sub" data-i18n="showreelDesc">BAIDIGITAL వీడియో ప్రదర్శన.</p>
-  <div class="grid">
-    <div class="card">
-      <h3 data-i18n="videoOne">3D Logo Video</h3>
-      <video controls playsinline preload="metadata">
-        <source src="logo_3d.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="card">
-      <h3 data-i18n="videoTwo">Founder Introduction</h3>
-      <video controls playsinline preload="metadata">
-        <source src="founder_video.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="card">
-      <h3 data-i18n="videoThree">Name Video</h3>
-      <video controls playsinline preload="metadata">
-        <source src="bhaskar_name.mp4" type="video/mp4">
-      </video>
+  <div class="top-bar">
+    <span style="color: var(--text-muted); font-size: 0.72rem;" id="t-top-tag">🌐 Official Digital Agency</span>
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btn-te" onclick="setLanguage('te')">తెలుగు</button>
+      <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">English</button>
     </div>
   </div>
-</section>
 
-<section id="founder">
-  <h2 class="section-title" data-i18n="founderTitle">Meet the Founder</h2>
-  <div class="founder">
-    <div>
-      <div class="eyebrow" data-i18n="founderBadge">Our Vision</div>
-      <h2 id="founderName">Bhaskar</h2>
-      <h3 id="founderRole">Founder • BAIDIGITAL</h3>
-      <p id="founderBio">AI tools and digital marketing ద్వారా వ్యాపారాలకు క్రియేటివ్ ప్రమోషన్ పరిష్కారాలు అందించడమే మా లక్ష్యం.</p>
-      <a class="btn btn-gold" href="#contact" data-i18n="contactFounder">Contact Us</a>
+  <header>
+    <div class="brand-wrap">
+      <img src="logo.png" alt="BAIDIGITAL Logo" class="header-logo">
+      <div class="brand-title">BAIDIGITAL</div>
     </div>
-    <div class="video-wrap">
-      <video controls playsinline preload="metadata">
-        <source src="founder_video.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
+    <button class="menu-toggle-btn" onclick="toggleMenu()" title="Menu">☰</button>
+  </header>
 
-<section id="brochure">
-  <h2 class="section-title no-print" data-i18n="brochureTitle">BAIDIGITAL Brochure</h2>
-  <p class="section-sub no-print" data-i18n="brochureDesc">బ్రోచర్‌ను ప్రింట్ చేయండి లేదా PDFగా సేవ్ చేసుకోండి.</p>
-  <div class="brochure" id="brochureContent">
-    <h2>BAI<span class="gold">DIGITAL</span></h2>
-    <h3 data-i18n="brochureHeading">AI & Digital Marketing Services</h3>
-    <p data-i18n="brochureIntro">మీ వ్యాపారాన్ని ఆన్‌లైన్‌లో ప్రమోట్ చేయడానికి క్రియేటివ్ డిజిటల్ పరిష్కారాలు.</p>
-    <hr>
-    <h3 data-i18n="brochureServices">మా సేవలు</h3>
-    <ul>
-      <li data-i18n="bService1">AI Cinematic Promotional Videos</li>
-      <li data-i18n="bService2">Social Media Marketing</li>
-      <li data-i18n="bService3">Posters, Reels and Creative Ads</li>
-      <li data-i18n="bService4">Business Branding and Digital Promotion</li>
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <div class="menu-drawer" id="menuDrawer">
+    <div class="drawer-header">
+      <h3 style="font-size: 1.1rem; color: #fff;" id="m-title">మెనూ & సెట్టింగ్స్</h3>
+      <button class="drawer-close" onclick="toggleMenu()">✕</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#services" onclick="toggleMenu()" id="m-serv">⚡ సర్వీసెస్ & కేటగిరీస్</a></li>
+      <li><a href="#brochure" onclick="toggleMenu()" id="m-brochure">📄 డిజిటల్ బ్రోచర్</a></li>
+      <li><a href="#founder" onclick="toggleMenu()" id="m-fnd">👑 ఫౌండర్ ప్రొఫైల్</a></li>
+      <li><a href="#timings" onclick="toggleMenu()" id="m-time">⏰ డెలివరీ & టైమింగ్స్</a></li>
+      <li><a href="#pricing" onclick="toggleMenu()" id="m-plans">🏷️ ప్యాకేజీలు</a></li>
+      <li><a href="#inquiry" onclick="toggleMenu()" id="m-inq">📝 ఆర్డర్ ఫారమ్</a></li>
+      <li><a href="#social" onclick="toggleMenu()" id="m-soc">🌐 సోషల్ మీడియా</a></li>
     </ul>
-    <h3 data-i18n="brochureContact">సంప్రదించండి</h3>
-    <p>Email: connect@baidigital.in</p>
-    <p>WhatsApp: +91 94922 55151</p>
-    <p>Call: +91 77029 08818</p>
-    <p class="small">BAIDIGITAL • AI • Creativity • Digital Growth</p>
   </div>
-  <div class="tabs no-print">
-    <button class="btn btn-gold" onclick="window.print()" data-i18n="printBtn">Print / Save PDF</button>
-    <button class="btn btn-outline" onclick="downloadBrochure()" data-i18n="downloadBtn">Download Brochure HTML</button>
-  </div>
-</section>
 
-<section id="contact">
-  <h2 class="section-title" data-i18n="contactTitle">మమ్మల్ని సంప్రదించండి</h2>
-  <p class="section-sub" data-i18n="contactDesc">మీ వివరాలు పంపండి. మీ అవసరానికి తగిన సేవ గురించి మాట్లాడుకుందాం.</p>
-  <div class="card">
-    <form id="inquiryForm">
-      <div class="form-grid">
-        <div class="field">
-          <label for="customerName" data-i18n="nameLabel">మీ పేరు</label>
-          <input id="customerName" name="name" required placeholder="Your name">
-        </div>
-        <div class="field">
-          <label for="customerPhone" data-i18n="phoneLabel">మొబైల్ నంబర్</label>
-          <input id="customerPhone" name="phone" type="tel" required placeholder="Your phone number">
-        </div>
-        <div class="field">
-          <label for="customerCategory" data-i18n="categoryLabel">సేవ రకం</label>
-          <select id="customerCategory" name="category">
-            <option value="Business" data-i18n="businessOption">Business Promotion</option>
-            <option value="Political" data-i18n="politicalOption">Political Campaign</option>
-            <option value="AI Video" data-i18n="aiOption">AI Video Creation</option>
-            <option value="Social Media" data-i18n="socialOption">Social Media Marketing</option>
-            <option value="Other" data-i18n="otherOption">Other</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="customerPackage" data-i18n="packageLabel">ప్యాకేజీ</label>
-          <select id="customerPackage" name="package">
-            <option value="Not selected">Select a package</option>
-          </select>
+  <section class="hero">
+    <div class="hero-tag" id="t-tag">Next-Gen AI & Political Media</div>
+    <h1 id="t-title">వ్యాపారాలు & రాజకీయాలకు<br>AI పవర్డ్ ప్రమోషన్</h1>
+    <p id="t-subtitle">AI వీడియోలు, సినిమాటిక్ రీల్స్, సోషల్ మీడియా క్యాంపెయిన్స్ ద్వారా కస్టమర్లు మరియు ప్రజల్లో తిరుగులేని బ్రాండ్ నిర్మించండి.</p>
+
+    <div class="video-stage">
+      <div class="video-frame">
+        <video autoplay loop muted playsinline preload="metadata" poster="logo.png">
+          <source src="gemini_generated_video_a3bef7d7.mp4" type="video/mp4">
+          <source src="logo_3d.mp4" type="video/mp4">
+          <img src="logo.png" alt="BAIDIGITAL Logo">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <div class="tab-container" id="services">
+    <div class="tab-buttons">
+      <button class="tab-btn active" id="tab-biz" onclick="switchCategory('business')">🏢 బిజినెస్ సొల్యూషన్స్</button>
+      <button class="tab-btn" id="tab-pol" onclick="switchCategory('political')">🏛️ పొలిటికల్ ప్రమోషన్</button>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="t-plans-heading">🏷️ బిజినెస్ మార్కెటింగ్ ప్యాకేజీలు</h2>
+  <div class="pricing-wrap" id="pricing">
+    
+    <div class="pricing-card">
+      <div class="plan-name" id="p1-name">బిజినెస్ స్టార్టర్ (Basic)</div>
+      <div class="plan-price" id="p1-price">₹1,999 <span style="font-size:0.85rem; color:#94a3b8;">/ నెల</span></div>
+      <ul class="plan-features" id="p1-features">
+        <li>✓ 6 ఆఫర్ & ప్రోడక్ట్ సేల్స్ పోస్టర్లు</li>
+        <li>✓ 1 AI ప్రమోషన్ వీడియో రీల్</li>
+        <li>✓ WhatsApp స్టేటస్ & క్యాటలాగ్ డిజైన్స్</li>
+        <li>✓ 24 గంటల్లో ఫాస్ట్ డెలివరీ</li>
+      </ul>
+      <a href="https://wa.me/919492255151?text=Hello%20BAIDIGITAL,%20I%20want%20Basic%20Plan" class="plan-btn" id="p1-btn" style="background: #334155;">ఈ ప్లాన్ ఎంచుకోండి</a>
+    </div>
+
+    <div class="pricing-card normal">
+      <div class="plan-badge" id="p2-badge">Most Popular</div>
+      <div class="plan-name" id="p2-name">బిజినెస్ గ్రోత్ (Normal)</div>
+      <div class="plan-price" id="p2-price">₹4,999 <span style="font-size:0.85rem; color:#94a3b8;">/ నెల</span></div>
+      <ul class="plan-features" id="p2-features">
+        <li>✓ 12 ఆకర్షణీయమైన బ్రాండ్ పోస్టర్లు</li>
+        <li>✓ 4 AI సినిమాటిక్ ప్రోడక్ట్ రీల్స్</li>
+        <li>✓ లోకల్ కస్టమర్ టార్గెటెడ్ యాడ్స్ సెటప్</li>
+        <li>✓ వీక్లీ ప్రమోషన్ షెడ్యూల్</li>
+      </ul>
+      <a href="https://wa.me/919492255151?text=Hello%20BAIDIGITAL,%20I%20want%20Normal%20Plan" class="plan-btn" id="p2-btn">ఈ ప్లాన్ బుక్ చేయండి</a>
+    </div>
+
+    <div class="pricing-card premium">
+      <div class="plan-badge" id="p3-badge" style="background:#a855f7;">VIP Executive</div>
+      <div class="plan-name" id="p3-name">కంప్లీట్ బ్రాండింగ్ (VIP)</div>
+      <div class="plan-price" id="p3-price">₹14,999 <span style="font-size:0.85rem; color:#94a3b8;">/ నెల</span></div>
+      <ul class="plan-features" id="p3-features">
+        <li>✓ డైలీ బిజినెస్ & ఆఫర్ పోస్టర్లు</li>
+        <li>✓ వీక్లీ 3 హై-ఎండ్ AI వీడియో కమర్షియల్స్</li>
+        <li>✓ Instagram & Facebook ఫుల్ మేనేజ్మెంట్</li>
+        <li>✓ లీడ్స్ & సేల్స్ బూస్టింగ్ క్యాంపెయిన్స్</li>
+      </ul>
+      <a href="https://wa.me/919492255151?text=Hello%20BAIDIGITAL,%20I%20want%20VIP%20Plan" class="plan-btn" id="p3-btn" style="background:#a855f7;">ఈ ప్లాన్ తీసుకోండి</a>
+    </div>
+
+  </div>
+
+  <div class="brochure-section" id="brochure">
+    <div class="brochure-header">
+      <h3 id="br-title">📄 అధికారిక డిజిటల్ బ్రోచర్</h3>
+      <p id="br-sub">బిజినెస్ మార్కెటింగ్ సర్వీసుల పూర్తి వివరాలు</p>
+    </div>
+
+    <div id="brochure-content">
+      <div class="brochure-item">
+        <h4>బిజినెస్ స్టార్టర్ ప్లాన్ <span>₹1,999/నెల</span></h4>
+        <p>• 6 ఆఫర్ & సేల్స్ పోస్టర్లు • 1 AI రీల్ • WhatsApp బిజినెస్ సపోర్ట్</p>
+      </div>
+      <div class="brochure-item" style="border-color: rgba(56, 189, 248, 0.4);">
+        <h4>బిజినెస్ గ్రోత్ ప్యాకేజ్ <span>₹4,999/నెల</span></h4>
+        <p>• 12 క్రియేటివ్ పోస్టర్లు • 4 AI ప్రమోషన్ రీల్స్ • లోకల్ కస్టమర్ రీచ్</p>
+      </div>
+      <div class="brochure-item" style="border-color: rgba(168, 85, 247, 0.4);">
+        <h4>VIP బ్రాండింగ్ సొల్యూషన్ <span>₹14,999/నెల</span></h4>
+        <p>• డైలీ పోస్టర్లు • 12 AI వీడియోలు • ఫుల్ సోషల్ మీడియా మేనేజ్మెంట్</p>
+      </div>
+    </div>
+
+    <button onclick="window.print()" class="print-btn" id="btn-print">📥 బ్రోచర్ ప్రింట్ / PDF సేవ్ చేయండి</button>
+  </div>
+
+  <div class="founder-card" id="founder">
+    <div class="founder-badge" id="f-badge">Leadership & Vision</div>
+    <div class="founder-video-box">
+      <video autoplay loop muted playsinline preload="metadata" poster="logo.png">
+        <source src="founder_video.mp4" type="video/mp4">
+        <source src="bhaskar_name.mp4" type="video/mp4">
+        <img src="logo.png" alt="Founder Logo">
+      </video>
+    </div>
+    <h3 id="f-name">రాసూరి భాస్కర్</h3>
+    <div class="role" id="f-role" style="color: var(--gold); font-weight: 600; margin-bottom: 8px;">ఫౌండర్ & డిజిటల్ క్యాంపెయిన్ స్ట్రాటజిస్ట్</div>
+    <p id="f-bio" style="font-size: 0.84rem; color: var(--text-muted);">వ్యాపారాలు మరియు రాజకీయ నాయకులకు ఆధునిక AI టెక్నాలజీతో కూడిన అత్యుత్తమ డిజిటల్ ప్రమోషన్ అందించడమే మా లక్ష్యం.</p>
+  </div>
+
+  <div id="timings">
+    <h2 class="section-title" id="t-time-heading">⏰ ప్రాజెక్ట్ డెలివరీ & బిజినెస్ టైమింగ్స్</h2>
+    <div class="timeline-wrap">
+      <div class="timeline-card">
+        <div class="time-icon">⚡</div>
+        <div class="time-details">
+          <h4 id="td1-title">AI ప్రమోషన్ రీల్స్ & షార్ట్స్</h4>
+          <p id="td1-time">కేవలం 24 - 48 గంటల్లో కంప్లీట్</p>
         </div>
       </div>
-      <div class="field" style="margin-top:14px">
-        <label for="customerMessage" data-i18n="messageLabel">మీ అవసరం</label>
-        <textarea id="customerMessage" name="message" placeholder="Tell us what you need"></textarea>
+      <div class="timeline-card">
+        <div class="time-icon">🎨</div>
+        <div class="time-details">
+          <h4 id="td2-title">సోషల్ మీడియా పోస్టర్లు & బ్యానర్లు</h4>
+          <p id="td2-time">12 - 24 గంటల్లో ఫాస్ట్ డెలివరీ</p>
+        </div>
       </div>
-      <button class="btn btn-green" type="submit" data-i18n="submitBtn">WhatsApp ద్వారా Inquiry పంపండి</button>
-      <p class="small" data-i18n="formNotice">ఈ ఫారమ్ మీ వివరాలను WhatsApp సందేశంగా తెరుస్తుంది. పంపడానికి WhatsAppలో Send నొక్కండి.</p>
+      <div class="timeline-card">
+        <div class="time-icon">🏛️</div>
+        <div class="time-details">
+          <h4 id="td3-title">మంత్లీ బిజినెస్ & పొలిటికల్ ప్యాకేజీలు</h4>
+          <p id="td3-time">ఆర్డర్ రాగానే రెగ్యులర్ డైలీ అప్‌డేట్స్</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hours-card">
+      <div class="hours-row">
+        <span id="h-week">సోమవారం – శనివారం:</span>
+        <span class="hours-time">09:00 AM – 09:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span id="h-sun">ఆదివారం:</span>
+        <span class="hours-time">10:00 AM – 04:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span id="h-wa-label">WhatsApp Support:</span>
+        <span class="hours-time" style="color: #25d366;" id="h-wa-val">24/7 అందుబాటులో ఉంది</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="t-form-heading">📝 క్విక్ ఆర్డర్ & ఎంక్వైరీ ఫారమ్</h2>
+  <div class="form-box" id="inquiry">
+    <form id="inquiryForm" onsubmit="sendWhatsApp(event)">
+      <div class="form-group">
+        <label id="lbl-name">మీ పేరు (Name):</label>
+        <input type="text" id="custName" placeholder="మీ పేరు నమోదు చేయండి" required>
+      </div>
+      <div class="form-group">
+        <label id="lbl-phone">ఫోన్ నంబర్ (Mobile Number):</label>
+        <input type="tel" id="custPhone" placeholder="మీ మొబైల్ నంబర్" required>
+      </div>
+      <div class="form-group">
+        <label id="lbl-biz">వ్యాపారం / రాజకీయ హోదా (Business/Political Role):</label>
+        <input type="text" id="custBusiness" placeholder="ఉదా: రెస్టారెంట్ లేదా నియోజకవర్గ నాయకుడు" required>
+      </div>
+      <div class="form-group">
+        <label id="lbl-cat">కావాల్సిన సర్వీస్ కేటగిరీ:</label>
+        <select id="custCategory" onchange="updateFormPlans()">
+          <option value="business" id="opt-cat-biz">🏢 బిజినెస్ సొల్యూషన్స్</option>
+          <option value="political" id="opt-cat-pol">🏛️ పొలిటికల్ ప్రమోషన్</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label id="lbl-plan">ఎంచుకున్న ప్లాన్:</label>
+        <select id="custService">
+          <option>బిజినెస్ స్టార్టర్ (₹1,999 / నెల)</option>
+          <option>బిజినెస్ గ్రోత్ (₹4,999 / నెల)</option>
+          <option>కంప్లీట్ బ్రాండింగ్ VIP (₹14,999 / నెల)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label id="lbl-timeframe">డెలివరీ సమయం:</label>
+        <select id="custTimeline">
+          <option id="opt-t1">అత్యవసరం (24 గంటల్లో - Express Delivery)</option>
+          <option id="opt-t2">2 - 3 రోజుల్లో (Normal Delivery)</option>
+          <option id="opt-t3">మంత్లీ కాంట్రాక్ట్ (Monthly Ongoing)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label id="lbl-msg">మీ సందేశం / అవసరాలు (Message):</label>
+        <textarea id="custMsg" rows="3" placeholder="మీకు కావలసిన వివరాలు రాయండి..."></textarea>
+      </div>
+      <button type="submit" class="form-submit-btn" id="btn-submit">
+        వాట్సాప్‌లో వివరాలు పంపండి 🚀
+      </button>
     </form>
   </div>
 
-  <div class="grid" style="margin-top:20px">
-    <div class="card">
-      <h3 data-i18n="emailHeading">Email</h3>
-      <p><a href="mailto:connect@baidigital.in">connect@baidigital.in</a></p>
-      <a class="btn btn-outline" href="mailto:connect@baidigital.in" data-i18n="emailBtn">Send Email</a>
+  <div class="social-section" id="social">
+    <h3 style="font-size: 1.1rem; color: #fff; margin-bottom: 4px;" id="t-soc-heading">మా అధికారిక సోషల్ మీడియా లింకులు</h3>
+    <p style="font-size: 0.8rem; color: var(--text-muted);" id="t-soc-sub">ఒక్క క్లిక్‌తో మాతో కనెక్ట్ అవ్వండి:</p>
+    <div class="social-icons-grid">
+      <a href="https://wa.me/919492255151" target="_blank" class="social-btn btn-wa" title="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.227-.556-1.585-.658-2.613-2.28-2.692-2.387-.079-.107-.648-.862-.648-1.644 0-.783.411-1.168.556-1.326.144-.159.313-.198.418-.198.106 0 .211.002.302.008.097.006.228-.037.357.272.132.318.45 1.096.49 1.176.04.079.066.172.013.278-.053.106-.079.172-.158.265-.08.093-.168.208-.24.279-.08.079-.163.165-.07.324.093.159.412.68 1.002 1.207.76.679 1.401.889 1.599.988.198.099.313.086.429-.047.116-.132.496-.58.628-.779.132-.198.264-.165.443-.099.179.066 1.137.536 1.334.635.198.099.33.146.377.232.048.086.048.502-.096.907z"/></svg>
+      </a>
+      <a href="tel:+917702908818" class="social-btn btn-call" title="Call Now">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      </a>
+      <!-- Instagram Direct Link -->
+      <a href="https://www.instagram.com/baidigital.in/" target="_blank" class="social-btn btn-insta" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://m.youtube.com/@baidigital_in" target="_blank" class="social-btn btn-yt" title="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+      <a href="https://fb.com/baidigital.in" target="_blank" class="social-btn btn-fb" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="mailto:raasuribhaskar25@gmail.com" class="social-btn btn-mail" title="Email Us">
+        <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.272H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L12 9.545l8.073-6.052C21.69 2.279 24 3.434 24 5.457z"/></svg>
+      </a>
     </div>
-    <div class="card">
-      <h3 data-i18n="whatsappHeading">WhatsApp</h3>
-      <p>+91 94922 55151</p>
-      <a class="btn btn-green" href="https://wa.me/919492255151" target="_blank" rel="noopener" data-i18n="whatsappBtn">Chat on WhatsApp</a>
-    </div>
-    <div class="card">
-      <h3 data-i18n="callHeading">Call Us</h3>
-      <p>+91 77029 08818</p>
-      <a class="btn btn-blue" href="tel:+917702908818" data-i18n="callBtn">Call Now</a>
+    <div style="font-size: 0.72rem; color: #64748b; margin-top: 18px;">
+      © 2026 BAIDIGITAL Agency. All Rights Reserved.
     </div>
   </div>
 
-  <div class="socials">
-    <!-- మీ అసలు Social Media URLs ఉంటే క్రింది # స్థానంలో వాటిని పెట్టండి -->
-    <a href="#" target="_blank" rel="noopener">YouTube</a>
-    <a href="#" target="_blank" rel="noopener">Instagram</a>
-    <a href="#" target="_blank" rel="noopener">Facebook</a>
+  <div class="sticky-bar">
+    <a href="https://wa.me/919492255151?text=Hello%20BAIDIGITAL,%20I%20need%20services" class="whatsapp-btn">
+      <span id="btn-sticky-wa">WhatsApp లో మాట్లాడండి</span>
+    </a>
+    <a href="tel:+917702908818" class="call-btn" title="Call Now">
+      <svg style="width:20px; height:20px; fill:#00d4ff;" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
   </div>
-</section>
-</main>
 
-<footer>
-  <p><strong>BAI<span style="color:var(--gold)">DIGITAL</span></strong></p>
-  <p data-i18n="footerText">AI & Digital Marketing Services</p>
-  <p>Email: <a href="mailto:connect@baidigital.in">connect@baidigital.in</a></p>
-  <p>© <span id="year"></span> BAIDIGITAL. <span data-i18n="rights">All rights reserved.</span></p>
-</footer>
+  <script>
+    let currentCategory = 'business';
+    let currentLang = 'te';
 
-<div class="float-actions">
-  <a class="whatsapp" href="https://wa.me/919492255151" target="_blank" rel="noopener">☏ WhatsApp</a>
-  <a class="call" href="tel:+917702908818">☎ Call</a>
-</div>
+    const langData = {
+      te: {
+        topTag: "🌐 Official Digital Agency",
+        tag: "Next-Gen AI & Political Media",
+        title: "వ్యాపారాలు & రాజకీయాలకు<br>AI పవర్డ్ ప్రమోషన్",
+        subtitle: "AI వీడియోలు, సినిమాటిక్ రీల్స్, సోషల్ మీడియా క్యాంపెయిన్స్ ద్వారా కస్టమర్లు మరియు ప్రజల్లో తిరుగులేని బ్రాండ్ నిర్మించండి.",
+        tabBiz: "🏢 బిజినెస్ సొల్యూషన్స్",
+        tabPol: "🏛️ పొలిటికల్ ప్రమోషన్",
+        fBadge: "LEADERSHIP & VISION",
+        fName: "రాసూరి భాస్కర్",
+        fRole: "ఫౌండర్ & డిజిటల్ క్యాంపెయిన్ స్ట్రాటజిస్ట్",
+        fBio: "వ్యాపారాలు మరియు రాజకీయ నాయకులకు ఆధునిక AI టెక్నాలజీతో కూడిన అత్యుత్తమ డిజిటల్ ప్రమోషన్ అందించడమే మా లక్ష్యం.",
+        timeHeading: "⏰ ప్రాజెక్ట్ డెలివరీ & బిజినెస్ టైమింగ్స్",
+        td1Title: "AI ప్రమోషన్ రీల్స్ & షార్ట్స్",
+        td1Time: "కేవలం 24 - 48 గంటల్లో కంప్లీట్",
+        td2Title: "సోషల్ మీడియా పోస్టర్లు & బ్యానర్లు",
+        td2Time: "12 - 24 గంటల్లో ఫాస్ట్ డెలివరీ",
+        td3Title: "మంత్లీ బిజినెస్ & పొలిటికల్ ప్యాకేజీలు",
+        td3Time: "ఆర్డర్ రాగానే రెగ్యులర్ డైలీ అప్‌డేట్స్",
+        hWeek: "సోమవారం – శనివారం:",
+        hSun: "ఆదివారం:",
+        hWaLabel: "WhatsApp Support:",
+        hWaVal: "24/7 అందుబాటులో ఉంది",
+        mTitle: "మెనూ & సెట్టింగ్స్",
+        mServ: "⚡ సర్వీసెస్ & కేటగిరీస్",
+        mBrochure: "📄 డిజిటల్ బ్రోచర్",
+        mFnd: "👑 ఫౌండర్ ప్రొఫైల్",
+        mTime: "⏰ డెలివరీ & టైమింగ్స్",
+        mPlans: "🏷️ ప్యాకేజీలు",
+        mInq: "📝 ఆర్డర్ ఫారమ్",
+        mSoc: "🌐 సోషల్ మీడియా",
+        formHeading: "📝 క్విక్ ఆర్డర్ & ఎంక్వైరీ ఫారమ్",
+        lblName: "మీ పేరు (Name):",
+        namePh: "మీ పేరు నమోదు చేయండి",
+        lblPhone: "ఫోన్ నంబర్ (Mobile Number):",
+        phonePh: "మీ మొబైల్ నంబర్",
+        lblBiz: "వ్యాపారం / రాజకీయ హోదా (Business/Political Role):",
+        bizPh: "ఉదా: రెస్టారెంట్ లేదా నియోజకవర్గ నాయకుడు",
+        lblCat: "కావాల్సిన సర్వీస్ కేటగిరీ:",
+        optCatBiz: "🏢 బిజినెస్ సొల్యూషన్స్",
+        optCatPol: "🏛️ పొలిటికల్ ప్రమోషన్",
+        lblPlan: "ఎంచుకున్న ప్లాన్:",
+        lblTimeframe: "డెలివరీ సమయం:",
+        optT1: "అత్యవసరం (24 గంటల్లో - Express Delivery)",
+        optT2: "2 - 3 రోజుల్లో (Normal Delivery)",
+        optT3: "మంత్లీ కాంట్రాక్ట్ (Monthly Ongoing)",
+        lblMsg: "మీ సందేశం / అవసరాలు (Message):",
+        msgPh: "మీకు కావలసిన వివరాలు రాయండి...",
+        btnSubmit: "వాట్సాప్‌లో వివరాలు పంపండి 🚀",
+        socHeading: "మా అధికారిక సోషల్ మీడియా లింకులు",
+        socSub: "ఒక్క క్లిక్‌తో మాతో కనెక్ట్ అవ్వండి:",
+        stickyWa: "WhatsApp లో మాట్లాడండి",
+        btnPrint: "📥 బ్రోచర్ ప్రింట్ / PDF సేవ్ చేయండి"
+      },
+      en: {
+        topTag: "🌐 Official Digital Agency",
+        tag: "Next-Gen AI & Political Media Agency",
+        title: "AI Powered Promotion for<br>Business & Politics",
+        subtitle: "Attract customers and voters with AI cinematic reels, trending videos, and strategic digital campaigns.",
+        tabBiz: "🏢 Business Solutions",
+        tabPol: "🏛️ Political Campaigns",
+        fBadge: "LEADERSHIP & VISION",
+        fName: "Raasuri Bhaskar",
+        fRole: "Founder & Digital Campaign Strategist",
+        fBio: "Empowering businesses and public leaders with cutting-edge AI creative marketing and viral campaign narratives.",
+        timeHeading: "⏰ Project Delivery Timelines & Business Hours",
+        td1Title: "AI Promotion Reels & Shorts",
+        td1Time: "Completed in 24 - 48 Hours",
+        td2Title: "Social Media Posters & Creatives",
+        td2Time: "Fast Delivery in 12 - 24 Hours",
+        td3Title: "Monthly Biz & Political Campaigns",
+        td3Time: "Immediate Start & Regular Daily Outputs",
+        hWeek: "Monday – Saturday:",
+        hSun: "Sunday:",
+        hWaLabel: "WhatsApp Support:",
+        hWaVal: "Available 24/7",
+        mTitle: "Menu & Settings",
+        mServ: "⚡ Services & Categories",
+        mBrochure: "📄 Digital Brochure",
+        mFnd: "👑 Founder Profile",
+        mTime: "⏰ Business Hours & Delivery",
+        mPlans: "🏷️ Pricing Plans",
+        mInq: "📝 Quick Order Form",
+        mSoc: "🌐 Social Media Links",
+        formHeading: "📝 Quick Order & Inquiry Form",
+        lblName: "Your Name:",
+        namePh: "Enter your full name",
+        lblPhone: "Phone Number:",
+        phonePh: "Enter your phone number",
+        lblBiz: "Business / Political Role:",
+        bizPh: "e.g., Restaurant Owner or Political Leader",
+        lblCat: "Required Service Category:",
+        optCatBiz: "🏢 Business Solutions",
+        optCatPol: "🏛️ Political Campaigns",
+        lblPlan: "Selected Plan:",
+        lblTimeframe: "Project Delivery Urgency:",
+        optT1: "Urgent (Within 24 Hours - Express)",
+        optT2: "Within 2 - 3 Days (Standard)",
+        optT3: "Monthly Ongoing Contract",
+        lblMsg: "Your Message / Needs:",
+        msgPh: "Write your specific requirements...",
+        btnSubmit: "Send Details on WhatsApp 🚀",
+        socHeading: "Our Official Social Links",
+        socSub: "Connect with us instantly:",
+        stickyWa: "Chat on WhatsApp",
+        btnPrint: "📥 Print Brochure / Save PDF"
+      }
+    };
 
-<script>
-const PHONE = "919492255151";
+    function toggleMenu() {
+      const drawer = document.getElementById('menuDrawer');
+      const overlay = document.getElementById('menuOverlay');
+      if (drawer.classList.contains('open')) {
+        drawer.classList.remove('open');
+        overlay.style.display = 'none';
+      } else {
+        drawer.classList.add('open');
+        overlay.style.display = 'block';
+      }
+    }
 
-const translations = {
-te:{
-menu:"మెనూ",home:"హోమ్",services:"సేవలు",pricing:"ప్యాకేజీలు",founder:"ఫౌండర్",brochure:"బ్రోచర్",contact:"సంప్రదించండి",
-heroTitle:"మీ వ్యాపారానికి డిజిటల్ ప్రపంచంలో కొత్త గుర్తింపు",
-heroDesc:"AI వీడియోలు, సోషల్ మీడియా మార్కెటింగ్ మరియు క్రియేటివ్ ప్రమోషన్స్‌తో మీ బ్రాండ్‌ను మరింత మందికి చేరవేయండి.",
-explore:"మా సేవలను చూడండి",getQuote:"ధర వివరాలు పొందండి",
-videoHint:"వీడియో ప్లే కాకపోతే, ఫైల్ పేరును మరియు అదే ఫోల్డర్‌లో ఉందో లేదో తనిఖీ చేయండి.",
-serviceTitle:"మా సేవలు",serviceDesc:"మీ అవసరానికి తగిన డిజిటల్ ప్రమోషన్ సేవను ఎంచుకోండి.",
-business:"వ్యాపార సేవలు",political:"రాజకీయ ప్రచార సేవలు",
-pricingTitle:"ప్యాకేజీలు & ధరలు",pricingDesc:"మీ అవసరానికి తగిన ప్యాకేజీని ఎంచుకుని WhatsApp ద్వారా వివరాలు అడగండి.",
-priceNotice:"ధరలు ప్రారంభ ధరలు మాత్రమే. పని పరిమాణం, వీడియోల సంఖ్య, ప్రకటనల బడ్జెట్ ఆధారంగా తుది ధర మారవచ్చు.",
-showreelTitle:"క్రియేటివ్ వీడియో ప్రదర్శన",showreelDesc:"BAIDIGITAL వీడియో ప్రదర్శన.",
-videoOne:"3D లోగో వీడియో",videoTwo:"ఫౌండర్ పరిచయం",videoThree:"పేరు వీడియో",
-founderTitle:"మా ఫౌండర్",founderBadge:"మా లక్ష్యం",contactFounder:"సంప్రదించండి",
-brochureTitle:"BAIDIGITAL బ్రోచర్",brochureDesc:"బ్రోచర్‌ను ప్రింట్ చేయండి లేదా PDFగా సేవ్ చేసుకోండి.",
-brochureHeading:"AI & డిజిటల్ మార్కెటింగ్ సేవలు",brochureIntro:"మీ వ్యాపారాన్ని ఆన్‌లైన్‌లో ప్రమోట్ చేయడానికి క్రియేటివ్ డిజిటల్ పరిష్కారాలు.",
-brochureServices:"మా సేవలు",bService1:"AI సినిమాటిక్ ప్రమోషనల్ వీడియోలు",bService2:"సోషల్ మీడియా మార్కెటింగ్",bService3:"పోస్టర్లు, రీల్స్ మరియు క్రియేటివ్ యాడ్స్",bService4:"బిజినెస్ బ్రాండింగ్ మరియు డిజిటల్ ప్రమోషన్",brochureContact:"సంప్రదించండి",
-printBtn:"ప్రింట్ / PDF సేవ్",downloadBtn:"బ్రోచర్ HTML డౌన్‌లోడ్",
-contactTitle:"మమ్మల్ని సంప్రదించండి",contactDesc:"మీ వివరాలు పంపండి. మీ అవసరానికి తగిన సేవ గురించి మాట్లాడుకుందాం.",
-nameLabel:"మీ పేరు",phoneLabel:"మొబైల్ నంబర్",categoryLabel:"సేవ రకం",packageLabel:"ప్యాకేజీ",messageLabel:"మీ అవసరం",
-businessOption:"వ్యాపార ప్రమోషన్",politicalOption:"రాజకీయ ప్రచారం",aiOption:"AI వీడియో తయారీ",socialOption:"సోషల్ మీడియా మార్కెటింగ్",otherOption:"ఇతర సేవ",
-submitBtn:"WhatsApp ద్వారా Inquiry పంపండి",formNotice:"ఈ ఫారమ్ మీ వివరాలను WhatsApp సందేశంగా తెరుస్తుంది. పంపడానికి WhatsAppలో Send నొక్కండి.",
-emailHeading:"ఈమెయిల్",emailBtn:"ఈమెయిల్ పంపండి",whatsappHeading:"వాట్సాప్",whatsappBtn:"WhatsApp చాట్",callHeading:"ఫోన్ కాల్",callBtn:"ఇప్పుడే కాల్ చేయండి",
-footerText:"AI & డిజిటల్ మార్కెటింగ్ సేవలు",rights:"అన్ని హక్కులు ప్రత్యేకించబడ్డాయి.",
-plans:["స్టార్టర్","గ్రోత్","ప్రీమియం","కస్టమ్"],features:["సోషల్ మీడియా ప్రాథమిక సహాయం","క్రియేటివ్ పోస్టర్లు మరియు ప్రమోషన్","వీడియోలు మరియు డిజిటల్ ప్రమోషన్","మీ అవసరానికి అనుగుణంగా"],
-ask:"వివరాలు అడగండి",choose:"ఎంచుకోండి",from:"నుండి",serviceBusiness:"వ్యాపార ప్రమోషన్",servicePolitical:"రాజకీయ ప్రచారం"
-},
-en:{
-menu:"Menu",home:"Home",services:"Services",pricing:"Packages",founder:"Founder",brochure:"Brochure",contact:"Contact",
-heroTitle:"Give Your Business a New Identity in the Digital World",
-heroDesc:"Reach more customers with AI videos, social media marketing and creative promotions.",
-explore:"Explore Services",getQuote:"Get a Quote",videoHint:"If a video does not play, check that its filename is correct and that it is in the same folder.",
-serviceTitle:"Our Services",serviceDesc:"Choose a digital promotion service for your needs.",
-business:"Business Services",political:"Political Campaign Services",
-pricingTitle:"Packages & Pricing",pricingDesc:"Choose a package and ask for details through WhatsApp.",
-priceNotice:"Prices are starting estimates. Final pricing may vary by scope, number of videos and advertising budget.",
-showreelTitle:"Creative Video Showcase",showreelDesc:"BAIDIGITAL video showcase.",
-videoOne:"3D Logo Video",videoTwo:"Founder Introduction",videoThree:"Name Video",
-founderTitle:"Meet the Founder",founderBadge:"Our Vision",contactFounder:"Contact Us",
-brochureTitle:"BAIDIGITAL Brochure",brochureDesc:"Print the brochure or save it as a PDF.",
-brochureHeading:"AI & Digital Marketing Services",brochureIntro:"Creative digital solutions to promote your business online.",
-brochureServices:"Our Services",bService1:"AI Cinematic Promotional Videos",bService2:"Social Media Marketing",bService3:"Posters, Reels and Creative Ads",bService4:"Business Branding and Digital Promotion",brochureContact:"Contact Us",
-printBtn:"Print / Save PDF",downloadBtn:"Download Brochure HTML",
-contactTitle:"Contact Us",contactDesc:"Send your details and tell us what service you need.",
-nameLabel:"Your Name",phoneLabel:"Mobile Number",categoryLabel:"Service Type",packageLabel:"Package",messageLabel:"Your Requirement",
-businessOption:"Business Promotion",politicalOption:"Political Campaign",aiOption:"AI Video Creation",socialOption:"Social Media Marketing",otherOption:"Other",
-submitBtn:"Send Inquiry via WhatsApp",formNotice:"This form opens your details as a WhatsApp message. Press Send in WhatsApp to submit it.",
-emailHeading:"Email",emailBtn:"Send Email",whatsappHeading:"WhatsApp",whatsappBtn:"Chat on WhatsApp",callHeading:"Call Us",callBtn:"Call Now",
-footerText:"AI & Digital Marketing Services",rights:"All rights reserved.",
-plans:["Starter","Growth","Premium","Custom"],features:["Basic social media support","Creative posters and promotion","Videos and digital promotion","Tailored to your requirements"],
-ask:"Enquire Now",choose:"Select",from:"From",serviceBusiness:"Business Promotion",servicePolitical:"Political Campaign"
-},
-kn:{
-menu:"ಮೆನು",home:"ಮುಖಪುಟ",services:"ಸೇವೆಗಳು",pricing:"ಪ್ಯಾಕೇಜುಗಳು",founder:"ಸ್ಥಾಪಕರು",brochure:"ಬ್ರೋಶರ್",contact:"ಸಂಪರ್ಕಿಸಿ",
-heroTitle:"ನಿಮ್ಮ ವ್ಯವಹಾರಕ್ಕೆ ಡಿಜಿಟಲ್ ಜಗತ್ತಿನಲ್ಲಿ ಹೊಸ ಗುರುತು",
-heroDesc:"AI ವೀಡಿಯೊಗಳು, ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಮಾರ್ಕೆಟಿಂಗ್ ಮತ್ತು ಸೃಜನಾತ್ಮಕ ಪ್ರಚಾರಗಳ ಮೂಲಕ ಹೆಚ್ಚು ಗ್ರಾಹಕರನ್ನು ತಲುಪಿರಿ.",
-explore:"ಸೇವೆಗಳನ್ನು ನೋಡಿ",getQuote:"ಬೆಲೆ ತಿಳಿಯಿರಿ",videoHint:"ವೀಡಿಯೊ ಪ್ಲೇ ಆಗದಿದ್ದರೆ ಫೈಲ್ ಹೆಸರು ಮತ್ತು ಫೋಲ್ಡರ್ ಪರಿಶೀಲಿಸಿ.",
-serviceTitle:"ನಮ್ಮ ಸೇವೆಗಳು",serviceDesc:"ನಿಮ್ಮ ಅಗತ್ಯಕ್ಕೆ ತಕ್ಕ ಡಿಜಿಟಲ್ ಪ್ರಚಾರ ಸೇವೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ.",
-business:"ವ್ಯಾಪಾರ ಸೇವೆಗಳು",political:"ರಾಜಕೀಯ ಪ್ರಚಾರ ಸೇವೆಗಳು",
-pricingTitle:"ಪ್ಯಾಕೇಜುಗಳು ಮತ್ತು ಬೆಲೆ",pricingDesc:"ಪ್ಯಾಕೇಜ್ ಆಯ್ಕೆಮಾಡಿ WhatsApp ಮೂಲಕ ವಿವರಗಳನ್ನು ಕೇಳಿ.",
-priceNotice:"ಇವು ಆರಂಭಿಕ ಬೆಲೆಗಳು. ಕೆಲಸದ ಪ್ರಮಾಣ ಮತ್ತು ಜಾಹೀರಾತು ಬಜೆಟ್‌ನಿಂದ ಅಂತಿಮ ಬೆಲೆ ಬದಲಾಗಬಹುದು.",
-showreelTitle:"ಸೃಜನಾತ್ಮಕ ವೀಡಿಯೊ ಪ್ರದರ್ಶನ",showreelDesc:"BAIDIGITAL ವೀಡಿಯೊ ಪ್ರದರ್ಶನ.",
-videoOne:"3D ಲೋಗೋ ವೀಡಿಯೊ",videoTwo:"ಸ್ಥಾಪಕರ ಪರಿಚಯ",videoThree:"ಹೆಸರಿನ ವೀಡಿಯೊ",
-founderTitle:"ನಮ್ಮ ಸ್ಥಾಪಕರು",founderBadge:"ನಮ್ಮ ದೃಷ್ಟಿ",contactFounder:"ಸಂಪರ್ಕಿಸಿ",
-brochureTitle:"BAIDIGITAL ಬ್ರೋಶರ್",brochureDesc:"ಬ್ರೋಶರ್ ಪ್ರಿಂಟ್ ಮಾಡಿ ಅಥವಾ PDF ಆಗಿ ಉಳಿಸಿ.",
-brochureHeading:"AI ಮತ್ತು ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ಸೇವೆಗಳು",brochureIntro:"ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಪ್ರಚಾರ ಮಾಡಲು ಡಿಜಿಟಲ್ ಪರಿಹಾರಗಳು.",
-brochureServices:"ನಮ್ಮ ಸೇವೆಗಳು",bService1:"AI ಸಿನಿಮಾಟಿಕ್ ಪ್ರಚಾರ ವೀಡಿಯೊಗಳು",bService2:"ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಮಾರ್ಕೆಟಿಂಗ್",bService3:"ಪೋಸ್ಟರ್‌ಗಳು, ರೀಲ್ಸ್ ಮತ್ತು ಜಾಹೀರಾತುಗಳು",bService4:"ಬ್ರ್ಯಾಂಡಿಂಗ್ ಮತ್ತು ಡಿಜಿಟಲ್ ಪ್ರಚಾರ",brochureContact:"ಸಂಪರ್ಕಿಸಿ",
-printBtn:"ಪ್ರಿಂಟ್ / PDF ಉಳಿಸಿ",downloadBtn:"ಬ್ರೋಶರ್ HTML ಡೌನ್‌ಲೋಡ್",
-contactTitle:"ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",contactDesc:"ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಕಳುಹಿಸಿ; ಅಗತ್ಯವಿರುವ ಸೇವೆಯ ಬಗ್ಗೆ ಚರ್ಚಿಸೋಣ.",
-nameLabel:"ನಿಮ್ಮ ಹೆಸರು",phoneLabel:"ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",categoryLabel:"ಸೇವೆಯ ಪ್ರಕಾರ",packageLabel:"ಪ್ಯಾಕೇಜ್",messageLabel:"ನಿಮ್ಮ ಅಗತ್ಯ",
-businessOption:"ವ್ಯಾಪಾರ ಪ್ರಚಾರ",politicalOption:"ರಾಜಕೀಯ ಪ್ರಚಾರ",aiOption:"AI ವೀಡಿಯೊ ರಚನೆ",socialOption:"ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಮಾರ್ಕೆಟಿಂಗ್",otherOption:"ಇತರೆ",
-submitBtn:"WhatsApp ಮೂಲಕ ವಿಚಾರಣೆ ಕಳುಹಿಸಿ",formNotice:"ಈ ಫಾರ್ಮ್ ನಿಮ್ಮ ವಿವರಗಳನ್ನು WhatsApp ಸಂದೇಶವಾಗಿ ತೆರೆಯುತ್ತದೆ. ಕಳುಹಿಸಲು Send ಒತ್ತಿರಿ.",
-emailHeading:"ಇಮೇಲ್",emailBtn:"ಇಮೇಲ್ ಕಳುಹಿಸಿ",whatsappHeading:"WhatsApp",whatsappBtn:"WhatsApp ಚಾಟ್",callHeading:"ಕರೆ ಮಾಡಿ",callBtn:"ಈಗ ಕರೆ ಮಾಡಿ",
-footerText:"AI ಮತ್ತು ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ಸೇವೆಗಳು",rights:"ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
-plans:["ಸ್ಟಾರ್ಟರ್","ಗ್ರೋತ್","ಪ್ರೀಮಿಯಂ","ಕಸ್ಟಮ್"],features:["ಮೂಲಭೂತ ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಸಹಾಯ","ಸೃಜನಾತ್ಮಕ ಪೋಸ್ಟರ್ ಮತ್ತು ಪ್ರಚಾರ","ವೀಡಿಯೊಗಳು ಮತ್ತು ಡಿಜಿಟಲ್ ಪ್ರಚಾರ","ನಿಮ್ಮ ಅಗತ್ಯಕ್ಕೆ ತಕ್ಕಂತೆ"],
-ask:"ವಿವರ ಕೇಳಿ",choose:"ಆಯ್ಕೆಮಾಡಿ",from:"ಇಂದ",serviceBusiness:"ವ್ಯಾಪಾರ ಪ್ರಚಾರ",servicePolitical:"ರಾಜಕೀಯ ಪ್ರಚಾರ"
-},
-hi:{
-menu:"मेन्यू",home:"होम",services:"सेवाएँ",pricing:"पैकेज",founder:"संस्थापक",brochure:"ब्रोशर",contact:"संपर्क",
-heroTitle:"अपने व्यवसाय को डिजिटल दुनिया में नई पहचान दें",
-heroDesc:"AI वीडियो, सोशल मीडिया मार्केटिंग और क्रिएटिव प्रमोशन से अधिक ग्राहकों तक पहुँचें।",
-explore:"सेवाएँ देखें",getQuote:"कीमत पूछें",videoHint:"वीडियो न चले तो फ़ाइल का नाम और फ़ोल्डर जाँचें।",
-serviceTitle:"हमारी सेवाएँ",serviceDesc:"अपनी ज़रूरत के अनुसार डिजिटल प्रमोशन सेवा चुनें।",
-business:"बिज़नेस सेवाएँ",political:"राजनीतिक अभियान सेवाएँ",
-pricingTitle:"पैकेज और कीमतें",pricingDesc:"पैकेज चुनें और WhatsApp पर जानकारी पूछें।",
-priceNotice:"ये शुरुआती कीमतें हैं। काम और विज्ञापन बजट के अनुसार अंतिम कीमत बदल सकती है।",
-showreelTitle:"क्रिएटिव वीडियो शोकेस",showreelDesc:"BAIDIGITAL वीडियो शोकेस।",
-videoOne:"3D लोगो वीडियो",videoTwo:"संस्थापक परिचय",videoThree:"नाम वीडियो",
-founderTitle:"हमारे संस्थापक",founderBadge:"हमारा लक्ष्य",contactFounder:"संपर्क करें",
-brochureTitle:"BAIDIGITAL ब्रोशर",brochureDesc:"ब्रोशर प्रिंट करें या PDF के रूप में सेव करें।",
-brochureHeading:"AI और डिजिटल मार्केटिंग सेवाएँ",brochureIntro:"अपने व्यवसाय को ऑनलाइन प्रमोट करने के लिए क्रिएटिव डिजिटल समाधान।",
-brochureServices:"हमारी सेवाएँ",bService1:"AI सिनेमैटिक प्रमोशनल वीडियो",bService2:"सोशल मीडिया मार्केटिंग",bService3:"पोस्टर, रील्स और क्रिएटिव विज्ञापन",bService4:"बिज़नेस ब्रांडिंग और डिजिटल प्रमोशन",brochureContact:"संपर्क करें",
-printBtn:"प्रिंट / PDF सेव करें",downloadBtn:"ब्रोशर HTML डाउनलोड",
-contactTitle:"हमसे संपर्क करें",contactDesc:"अपनी जानकारी भेजें और अपनी ज़रूरत बताएं।",
-nameLabel:"आपका नाम",phoneLabel:"मोबाइल नंबर",categoryLabel:"सेवा का प्रकार",packageLabel:"पैकेज",messageLabel:"आपकी ज़रूरत",
-businessOption:"बिज़नेस प्रमोशन",politicalOption:"राजनीतिक अभियान",aiOption:"AI वीडियो बनाना",socialOption:"सोशल मीडिया मार्केटिंग",otherOption:"अन्य",
-submitBtn:"WhatsApp से पूछताछ भेजें",formNotice:"यह फ़ॉर्म आपकी जानकारी WhatsApp संदेश में खोलेगा। भेजने के लिए WhatsApp में Send दबाएँ।",
-emailHeading:"ईमेल",emailBtn:"ईमेल भेजें",whatsappHeading:"WhatsApp",whatsappBtn:"WhatsApp चैट",callHeading:"कॉल करें",callBtn:"अभी कॉल करें",
-footerText:"AI और डिजिटल मार्केटिंग सेवाएँ",rights:"सर्वाधिकार सुरक्षित।",
-plans:["स्टार्टर","ग्रोथ","प्रीमियम","कस्टम"],features:["बुनियादी सोशल मीडिया सहायता","क्रिएटिव पोस्टर और प्रमोशन","वीडियो और डिजिटल प्रमोशन","आपकी ज़रूरत के अनुसार"],
-ask:"जानकारी पूछें",choose:"चुनें",from:"से",serviceBusiness:"बिज़नेस प्रमोशन",servicePolitical:"राजनीतिक अभियान"
-}
-};
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.getElementById('btn-te').classList.toggle('active', lang === 'te');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      const d = langData[lang];
 
-/* Update the amounts below to match your actual service rates. */
-const packageData = {
- business: [
-  {key:"Starter",price:"₹999",features:["1 promotional creative","Basic social media guidance","WhatsApp support"]},
-  {key:"Growth",price:"₹2,999",features:["Creative posters and reels","Content planning","Social media support"]},
-  {key:"Premium",price:"₹5,999",features:["AI promotional video","Creative campaign support","Brand promotion planning"]},
-  {key:"Custom",price:"Custom",features:["Tailored service selection","Custom video and design scope","Quote based on requirements"]}
- ],
- political: [
-  {key:"Starter Campaign",price:"₹1,999",features:["Campaign poster design","Basic social media creatives","Campaign content guidance"]},
-  {key:"Growth Campaign",price:"₹4,999",features:["Multiple campaign creatives","Reels and short-video planning","Social media content support"]},
-  {key:"Premium Campaign",price:"₹9,999",features:["AI campaign video concepts","Creative campaign package","Content and branding support"]},
-  {key:"Custom Campaign",price:"Custom",features:["Tailored campaign requirements","Custom content and design scope","Quote based on requirements"]}
- ]
-};
+      document.getElementById('t-top-tag').innerText = d.topTag;
+      document.getElementById('t-tag').innerText = d.tag;
+      document.getElementById('t-title').innerHTML = d.title;
+      document.getElementById('t-subtitle').innerText = d.subtitle;
+      document.getElementById('tab-biz').innerText = d.tabBiz;
+      document.getElementById('tab-pol').innerText = d.tabPol;
+      document.getElementById('f-badge').innerText = d.fBadge;
+      document.getElementById('f-name').innerText = d.fName;
+      document.getElementById('f-role').innerText = d.fRole;
+      document.getElementById('f-bio').innerText = d.fBio;
+      document.getElementById('t-time-heading').innerText = d.timeHeading;
+      document.getElementById('td1-title').innerText = d.td1Title;
+      document.getElementById('td1-time').innerText = d.td1Time;
+      document.getElementById('td2-title').innerText = d.td2Title;
+      document.getElementById('td2-time').innerText = d.td2Time;
+      document.getElementById('td3-title').innerText = d.td3Title;
+      document.getElementById('td3-time').innerText = d.td3Time;
+      document.getElementById('h-week').innerText = d.hWeek;
+      document.getElementById('h-sun').innerText = d.hSun;
+      document.getElementById('h-wa-label').innerText = d.hWaLabel;
+      document.getElementById('h-wa-val').innerText = d.hWaVal;
+      document.getElementById('m-title').innerText = d.mTitle;
+      document.getElementById('m-serv').innerText = d.mServ;
+      document.getElementById('m-brochure').innerText = d.mBrochure;
+      document.getElementById('m-fnd').innerText = d.mFnd;
+      document.getElementById('m-time').innerText = d.mTime;
+      document.getElementById('m-plans').innerText = d.mPlans;
+      document.getElementById('m-inq').innerText = d.mInq;
+      document.getElementById('m-soc').innerText = d.mSoc;
+      document.getElementById('t-form-heading').innerText = d.formHeading;
+      
+      document.getElementById('lbl-name').innerText = d.lblName;
+      document.getElementById('custName').placeholder = d.namePh;
+      document.getElementById('lbl-phone').innerText = d.lblPhone;
+      document.getElementById('custPhone').placeholder = d.phonePh;
+      document.getElementById('lbl-biz').innerText = d.lblBiz;
+      document.getElementById('custBusiness').placeholder = d.bizPh;
+      document.getElementById('lbl-cat').innerText = d.lblCat;
+      document.getElementById('opt-cat-biz').innerText = d.optCatBiz;
+      document.getElementById('opt-cat-pol').innerText = d.optCatPol;
+      document.getElementById('lbl-plan').innerText = d.lblPlan;
+      document.getElementById('lbl-timeframe').innerText = d.lblTimeframe;
+      document.getElementById('opt-t1').innerText = d.optT1;
+      document.getElementById('opt-t2').innerText = d.optT2;
+      document.getElementById('opt-t3').innerText = d.optT3;
+      document.getElementById('lbl-msg').innerText = d.lblMsg;
+      document.getElementById('custMsg').placeholder = d.msgPh;
+      document.getElementById('btn-submit').innerText = d.btnSubmit;
+      document.getElementById('t-soc-heading').innerText = d.socHeading;
+      document.getElementById('t-soc-sub').innerText = d.socSub;
+      document.getElementById('btn-sticky-wa').innerText = d.stickyWa;
+      document.getElementById('btn-print').innerText = d.btnPrint;
 
-let currentLanguage = "te";
-let currentCategory = "business";
+      renderCategoryContent();
+    }
 
-function setLanguage(lang){
- if(!translations[lang]) return;
- currentLanguage = lang;
- document.documentElement.lang = lang;
- const t = translations[lang];
+    function switchCategory(type) {
+      currentCategory = type;
+      document.getElementById('tab-biz').classList.toggle('active', type === 'business');
+      document.getElementById('tab-pol').classList.toggle('active', type === 'political');
+      document.getElementById('custCategory').value = type;
+      renderCategoryContent();
+    }
 
- document.querySelectorAll("[data-i18n]").forEach(el=>{
-   const key = el.getAttribute("data-i18n");
-   if(t[key] !== undefined) el.textContent = t[key];
- });
+    function renderCategoryContent() {
+      const heading = document.getElementById('t-plans-heading');
+      const brTitle = document.getElementById('br-title');
+      const brSub = document.getElementById('br-sub');
+      const brContent = document.getElementById('brochure-content');
 
- document.querySelectorAll(".lang-btn").forEach(btn=>{
-   btn.classList.toggle("active",btn.dataset.lang === lang);
- });
+      if (currentCategory === 'business') {
+        if (currentLang === 'te') {
+          heading.innerText = "🏷️ బిజినెస్ మార్కెటింగ్ ప్యాకేజీలు";
+          document.getElementById('p1-name').innerText = "బిజినెస్ స్టార్టర్ (Basic)";
+          document.getElementById('p1-price').innerHTML = "₹1,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ నెల</span>";
+          document.getElementById('p1-features').innerHTML = "<li>✓ 6 ఆఫర్ & ప్రోడక్ట్ సేల్స్ పోస్టర్లు</li><li>✓ 1 AI ప్రమోషన్ వీడియో రీల్</li><li>✓ WhatsApp స్టేటస్ & క్యాటలాగ్ డిజైన్స్</li><li>✓ 24 గంటల్లో ఫాస్ట్ డెలివరీ</li>";
+          document.getElementById('p1-btn').innerText = "ఈ ప్లాన్ ఎంచుకోండి";
 
- renderCards();
- renderPricing();
- updatePackageSelect();
-}
+          document.getElementById('p2-name').innerText = "బిజినెస్ గ్రోత్ (Normal)";
+          document.getElementById('p2-price').innerHTML = "₹4,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ నెల</span>";
+          document.getElementById('p2-features').innerHTML = "<li>✓ 12 ఆకర్షణీయమైన బ్రాండ్ పోస్టర్లు</li><li>✓ 4 AI సినిమాటిక్ ప్రోడక్ట్ రీల్స్</li><li>✓ లోకల్ కస్టమర్ టార్గెటెడ్ యాడ్స్ సెటప్</li><li>✓ వీక్లీ ప్రమోషన్ షెడ్యూల్</li>";
+          document.getElementById('p2-btn').innerText = "ఈ ప్లాన్ బుక్ చేయండి";
 
-function toggleMenu(){
- document.getElementById("drawer").classList.toggle("open");
-}
-function closeMenu(){
- document.getElementById("drawer").classList.remove("open");
-}
+          document.getElementById('p3-name').innerText = "కంప్లీట్ బ్రాండింగ్ (VIP)";
+          document.getElementById('p3-price').innerHTML = "₹14,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ నెల</span>";
+          document.getElementById('p3-features').innerHTML = "<li>✓ డైలీ బిజినెస్ & ఆఫర్ పోస్టర్లు</li><li>✓ వీక్లీ 3 హై-ఎండ్ AI వీడియో కమర్షియల్స్</li><li>✓ Instagram & Facebook ఫుల్ మేనేజ్మెంట్</li><li>✓ లీడ్స్ & సేల్స్ బూస్టింగ్ క్యాంపెయిన్స్</li>";
+          document.getElementById('p3-btn').innerText = "ఈ ప్లాన్ తీసుకోండి";
 
-function setCategory(category){
- currentCategory = category;
- document.getElementById("businessTab").classList.toggle("active",category === "business");
- document.getElementById("politicalTab").classList.toggle("active",category === "political");
- renderCards();
- renderPricing();
- updatePackageSelect();
-}
+          brTitle.innerText = "📄 అధికారిక డిజిటల్ బ్రోచర్";
+          brSub.innerText = "బిజినెస్ మార్కెటింగ్ సర్వీసుల పూర్తి వివరాలు";
+          brContent.innerHTML = `
+            <div class="brochure-item">
+              <h4>బిజినెస్ స్టార్టర్ ప్లాన్ <span>₹1,999/నెల</span></h4>
+              <p>• 6 ఆఫర్ & సేల్స్ పోస్టర్లు • 1 AI రీల్ • WhatsApp బిజినెస్ సపోర్ట్</p>
+            </div>
+            <div class="brochure-item" style="border-color: rgba(56, 189, 248, 0.4);">
+              <h4>బిజినెస్ గ్రోత్ ప్యాకేజ్ <span>₹4,999/నెల</span></h4>
+              <p>• 12 క్రియేటివ్ పోస్టర్లు • 4 AI ప్రమోషన్ రీల్స్ • లోకల్ కస్టమర్ రీచ్</p>
+            </div>
+            <div class="brochure-item" style="border-color: rgba(168, 85, 247, 0.4);">
+              <h4>VIP బ్రాండింగ్ సొల్యూషన్ <span>₹14,999/నెల</span></h4>
+              <p>• డైలీ పోస్టర్లు • 12 AI వీడియోలు • ఫుల్ సోషల్ మీడియా మేనేజ్మెంట్</p>
+            </div>
+          `;
+        } else {
+          heading.innerText = "🏷️ Business Marketing Packages";
+          document.getElementById('p1-name').innerText = "Business Starter (Basic)";
+          document.getElementById('p1-price').innerHTML = "₹1,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ Month</span>";
+          document.getElementById('p1-features').innerHTML = "<li>✓ 6 Offer & Product Sales Posters</li><li>✓ 1 AI Promo Reel</li><li>✓ WhatsApp Status Creatives</li><li>✓ Fast 24h Delivery</li>";
+          document.getElementById('p1-btn').innerText = "Choose Starter Plan";
 
-function renderCards(){
- const t = translations[currentLanguage];
- const items = currentCategory === "business"
- ? [
-   ["AI Video Creation","Create cinematic AI promotional videos for products and businesses."],
-   ["Social Media Marketing","Plan posts, captions, hashtags and content for social platforms."],
-   ["Creative Posters & Reels","Promotional designs and short-form video content."],
-   ["Digital Branding","Creative content to improve your business identity."]
- ]
- : [
-   ["Campaign Creatives","Design campaign posters and digital promotional content."],
-   ["AI Campaign Videos","Create AI-assisted campaign video concepts."],
-   ["Social Media Content","Plan campaign posts, captions and short videos."],
-   ["Campaign Branding","Maintain a consistent campaign visual identity."]
- ];
+          document.getElementById('p2-name').innerText = "Business Growth (Normal)";
+          document.getElementById('p2-price').innerHTML = "₹4,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ Month</span>";
+          document.getElementById('p2-features').innerHTML = "<li>✓ 12 High-Converting Posters</li><li>✓ 4 AI Cinematic Promo Reels</li><li>✓ Local Customer Ads Setup</li><li>✓ Weekly Promotion Calendar</li>";
+          document.getElementById('p2-btn').innerText = "Book Growth Plan";
 
- const descriptions = {
-  te:[
-   ["AI వీడియో తయారీ","వ్యాపారాలు మరియు ఉత్పత్తుల కోసం సినిమాటిక్ AI ప్రమోషనల్ వీడియోలు."],
-   ["సోషల్ మీడియా మార్కెటింగ్","పోస్టులు, క్యాప్షన్లు, హ్యాష్‌ట్యాగ్స్ మరియు కంటెంట్ ప్లానింగ్."],
-   ["క్రియేటివ్ పోస్టర్లు & రీల్స్","ప్రమోషనల్ డిజైన్లు మరియు చిన్న వీడియోలు."],
-   ["డిజిటల్ బ్రాండింగ్","మీ వ్యాపార గుర్తింపును పెంచే క్రియేటివ్ కంటెంట్."]
-  ],
-  kn:[
-   ["AI ವೀಡಿಯೊ ರಚನೆ","ವ್ಯಾಪಾರ ಮತ್ತು ಉತ್ಪನ್ನಗಳಿಗಾಗಿ AI ಪ್ರಚಾರ ವೀಡಿಯೊಗಳು."],
-   ["ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಮಾರ್ಕೆಟಿಂಗ್","ಪೋಸ್ಟ್‌ಗಳು, ಕ್ಯಾಪ್ಷನ್‌ಗಳು ಮತ್ತು ಹ್ಯಾಶ್‌ಟ್ಯಾಗ್ ಯೋಜನೆ."],
-   ["ಪೋಸ್ಟರ್‌ಗಳು ಮತ್ತು ರೀಲ್ಸ್","ಪ್ರಚಾರ ವಿನ್ಯಾಸಗಳು ಮತ್ತು ಚಿಕ್ಕ ವೀಡಿಯೊಗಳು."],
-   ["ಡಿಜಿಟಲ್ ಬ್ರ್ಯಾಂಡಿಂಗ್","ವ್ಯವಹಾರದ ಗುರುತನ್ನು ಹೆಚ್ಚಿಸುವ ಸೃಜನಾತ್ಮಕ ವಿಷಯ."]
-  ],
-  hi:[
-   ["AI वीडियो निर्माण","व्यवसायों और उत्पादों के लिए AI प्रमोशनल वीडियो।"],
-   ["सोशल मीडिया मार्केटिंग","पोस्ट, कैप्शन, हैशटैग और कंटेंट प्लानिंग।"],
-   ["क्रिएटिव पोस्टर और रील्स","प्रमोशनल डिज़ाइन और छोटे वीडियो।"],
-   ["डिजिटल ब्रांडिंग","आपके व्यवसाय की पहचान बढ़ाने वाला कंटेंट।"]
-  ],
-  en:descriptions
- };
+          document.getElementById('p3-name').innerText = "Complete Branding (VIP)";
+          document.getElementById('p3-price').innerHTML = "₹14,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ Month</span>";
+          document.getElementById('p3-features').innerHTML = "<li>✓ Daily Business & Festive Creatives</li><li>✓ Weekly 3 High-End AI Video Ads</li><li>✓ Complete Meta Page Management</li><li>✓ Lead Generation Boosting</li>";
+          document.getElementById('p3-btn').innerText = "Get VIP Plan";
 
- const data = currentLanguage === "en" ? items : descriptions[currentLanguage][currentCategory==="business"?0:0] && (
-   currentLanguage === "te" ? descriptions.te : currentLanguage === "kn" ? descriptions.kn : descriptions.hi
- );
+          brTitle.innerText = "📄 Official Business Brochure";
+          brSub.innerText = "Comprehensive Details of Business Solutions";
+          brContent.innerHTML = `
+            <div class="brochure-item">
+              <h4>Business Starter <span>₹1,999/mo</span></h4>
+              <p>• 6 Posters • 1 AI Video • WhatsApp Status Pack</p>
+            </div>
+            <div class="brochure-item" style="border-color: rgba(56, 189, 248, 0.4);">
+              <h4>Business Growth <span>₹4,999/mo</span></h4>
+              <p>• 12 Posters • 4 AI Reels • Local Ads Targeting</p>
+            </div>
+            <div class="brochure-item" style="border-color: rgba(168, 85, 247, 0.4);">
+              <h4>Complete Branding VIP <span>₹14,999/mo</span></h4>
+              <p>• Daily Posters • 12 AI Videos • Full Account Management</p>
+            </div>
+          `;
+        }
+      } else {
+        if (currentLang === 'te') {
+          heading.innerText = "🏛️ పొలిటికల్ డిజిటల్ క్యాంపెయిన్ ప్యాకేజీలు";
+          document.getElementById('p1-name').innerText = "లీడర్ ప్లాన్ (Basic)";
+          document.getElementById('p1-price').innerHTML = "₹2,499 <span style='font-size:0.85rem; color:#94a3b8;'>/ నెల</span>";
+          document.getElementById('p1-features').innerHTML = "<li>✓ 8 పండుగ & జన్మదిన శుభాకాంక్షల పోస్టర్లు</li><li>✓ 1 పవర్ ఫుల్ పొలిటికల్ స్పీచ్ రీల్</li><li>✓ పార్టీ లోగో & ఫోటోలతో హై-క్వాలిటీ డిజైన్</li><li>✓ WhatsApp గ్రూప్స్ & స్టేటస్ బ్యానర్లు</li>";
+          document.getElementById('p1-btn').innerText = "లీడర్ ప్లాన్ ఎంచుకోండి";
 
- let cards = "";
- items.forEach((item,i)=>{
-   let title = item[0], desc = item[1];
-   if(currentLanguage !== "en"){
-     const localized = descriptions[currentLanguage];
-     const offset = currentCategory === "business" ? 0 : 0;
-     if(localized && localized[i]){title=localized[i][0];desc=localized[i][1];}
-   }
-   cards += `<article class="card"><h3>${escapeHtml(title)}</h3><p>${escapeHtml(desc)}</p><a class="btn btn-gold" href="#contact" onclick="selectService('${currentCategory}')">${escapeHtml(t.ask)}</a></article>`;
- });
- document.getElementById("serviceCards").innerHTML = cards;
-}
+          document.getElementById('p2-name').innerText = "క్యాంపెయిన్ ప్రో (Normal)";
+          document.getElementById('p2-price').innerHTML = "₹6,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ నెల</span>";
+          document.getElementById('p2-features').innerHTML = "<li>✓ 16 ఈవెంట్ & డైలీ పొలిటికల్ పోస్టర్లు</li><li>✓ 4 AI వాయిస్‌ఓవర్ స్పీచ్ & ఈవెంట్ రీల్స్</li><li>✓ సేవా కార్యక్రమాలు & అభివృద్ధి హైలైట్స్</li><li>✓ నియోజకవర్గ స్థాయి డిజిటల్ ప్రమోషన్</li>";
+          document.getElementById('p2-btn').innerText = "క్యాంపెయిన్ ప్రో బుక్ చేయండి";
 
-function renderPricing(){
- const t = translations[currentLanguage];
- const plans = packageData[currentCategory];
- const localizedFeatures = {
-  te:["సోషల్ మీడియా ప్రాథమిక సహాయం","క్రియేటివ్ పోస్టర్లు మరియు ప్రమోషన్","వీడియోలు మరియు డిజిటల్ ప్రమోషన్","మీ అవసరానికి అనుగుణంగా"],
-  en:["Basic social media support","Creative posters and promotion","Videos and digital promotion","Tailored to your requirements"],
-  kn:["ಮೂಲಭೂತ ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಸಹಾಯ","ಸೃಜನಾತ್ಮಕ ಪೋಸ್ಟರ್ ಮತ್ತು ಪ್ರಚಾರ","ವೀಡಿಯೊಗಳು ಮತ್ತು ಡಿಜಿಟಲ್ ಪ್ರಚಾರ","ನಿಮ್ಮ ಅಗತ್ಯಕ್ಕೆ ತಕ್ಕಂತೆ"],
-  hi:["बुनियादी सोशल मीडिया सहायता","क्रिएटिव पोस्टर और प्रमोशन","वीडियो और डिजिटल प्रमोशन","आपकी ज़रूरत के अनुसार"]
- };
- const localizedNames = {
-  te:["స్టార్టర్","గ్రోత్","ప్రీమియం","కస్టమ్"],
-  en:["Starter","Growth","Premium","Custom"],
-  kn:["ಸ್ಟಾರ್ಟರ್","ಗ್ರೋತ್","ಪ್ರೀಮಿಯಂ","ಕಸ್ಟಮ್"],
-  hi:["स्टार्टर","ग्रोथ","प्रीमियम","कस्टम"]
- };
- document.getElementById("pricingCards").innerHTML = plans.map((p,i)=>{
-   const features = p.features.map((f,j)=>`<li>${escapeHtml(localizedFeatures[currentLanguage][j] || f)}</li>`).join("");
-   const title = localizedNames[currentLanguage][i];
-   const price = p.price === "Custom" ? (currentLanguage==="te"?"కస్టమ్ ధర":currentLanguage==="kn"?"ವಿಶೇಷ ಬೆಲೆ":currentLanguage==="hi"?"कस्टम कीमत":"Custom Price") : p.price;
-   return `<article class="card ${i===2?'featured':''}">
-    <h3>${escapeHtml(title)}</h3>
-    <div class="price">${escapeHtml(price)} ${p.price==="Custom"?"":" "}<small>${p.price==="Custom"?"":(currentLanguage==="te"?"నుండి":currentLanguage==="kn"?"ಇಂದ":currentLanguage==="hi"?"से":"starting")}</small></div>
-    <ul>${features}</ul>
-    <button class="btn btn-gold" onclick="choosePackage('${escapeJs(p.key)}')">${escapeHtml(t.choose)}</button>
-    <button class="btn btn-outline" onclick="enquirePackage('${escapeJs(p.key)}')">${escapeHtml(t.ask)}</button>
-   </article>`;
- }).join("");
-}
+          document.getElementById('p3-name').innerText = "వార్ రూమ్ ఎగ్జిక్యూటివ్ (VIP)";
+          document.getElementById('p3-price').innerHTML = "₹19,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ నెల</span>";
+          document.getElementById('p3-features').innerHTML = "<li>✓ డైలీ పొలిటికల్ పోస్టర్లు & ప్రెస్ నోట్స్</li><li>✓ వీక్లీ 3 వైరల్ రీల్స్ (ప్రసంగాలు & ఈవెంట్లు)</li><li>✓ బూత్ లెవల్ టార్గెటెడ్ Meta Ads బూస్టింగ్</li><li>✓ 24/7 సోషల్ మీడియా రెస్పాన్స్ వార్ రూమ్</li>";
+          document.getElementById('p3-btn').innerText = "వార్ రూమ్ VIP తీసుకోండి";
 
-function updatePackageSelect(){
- const select = document.getElementById("customerPackage");
- const t = translations[currentLanguage];
- select.innerHTML = `<option value="Not selected">${escapeHtml(t.choose)}...</option>`;
- packageData[currentCategory].forEach(p=>{
-  const opt = document.createElement("option");
-  opt.value = p.key;
-  opt.textContent = p.key + " - " + p.price;
-  select.appendChild(opt);
- });
- document.getElementById("customerCategory").value = currentCategory === "business" ? "Business" : "Political";
-}
+          brTitle.innerText = "🏛️ అధికారిక పొలిటికల్ బ్రోచర్";
+          brSub.innerText = "రాజకీయ ప్రమోషన్ & వార్ రూమ్ సర్వీసుల పూర్తి వివరాలు";
+          brContent.innerHTML = `
+            <div class="brochure-item">
+              <h4>లీడర్ ప్యాకేజ్ (Basic) <span>₹2,499/నెల</span></h4>
+              <p>• 8 శుభాకాంక్షల పోస్టర్లు • 1 స్పీచ్ రీల్ • WhatsApp షేరింగ్ బ్యానర్లు</p>
+            </div>
+            <div class="brochure-item" style="border-color: rgba(56, 189, 248, 0.4);">
+              <h4>క్యాంపెయిన్ ప్రో (Normal) <span>₹6,999/నెల</span></h4>
+              <p>• 16 ఈవెంట్ పోస్టర్లు • 4 స్పీచ్ & వర్క్ రీల్స్ • నియోజకవర్గ ప్రమోషన్</p>
+            </div>
+            <div class="brochure-item" style="border-color: rgba(168, 85, 247, 0.4);">
+              <h4>వార్ రూమ్ ఎగ్జిక్యూటివ్ (VIP) <span>₹19,999/నెల</span></h4>
+              <p>• డైలీ పోస్టర్లు • బూత్ లెవల్ యాడ్స్ • 24/7 వార్ రూమ్ & కౌంటర్ పీఆర్</p>
+            </div>
+          `;
+        } else {
+          heading.innerText = "🏛️ Political Campaign Packages";
+          document.getElementById('p1-name').innerText = "Leader Plan (Basic)";
+          document.getElementById('p1-price').innerHTML = "₹2,499 <span style='font-size:0.85rem; color:#94a3b8;'>/ Month</span>";
+          document.getElementById('p1-features').innerHTML = "<li>✓ 8 Festive & Birthday Wish Posters</li><li>✓ 1 Powerful Political Speech Reel</li><li>✓ Party Branding & Logo Creatives</li><li>✓ WhatsApp Status & Group Assets</li>";
+          document.getElementById('p1-btn').innerText = "Choose Leader Plan";
 
-function choosePackage(key){
- document.getElementById("customerPackage").value = key;
- document.getElementById("contact").scrollIntoView({behavior:"smooth"});
-}
-function enquirePackage(key){
- choosePackage(key);
- document.getElementById("customerMessage").value = "I would like to know more about the " + key + " package.";
-}
-function selectService(category){
- document.getElementById("customerCategory").value = category === "business" ? "Business" : "Political";
-}
+          document.getElementById('p2-name').innerText = "Campaign Pro (Normal)";
+          document.getElementById('p2-price').innerHTML = "₹6,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ Month</span>";
+          document.getElementById('p2-features').innerHTML = "<li>✓ 16 Event & Agenda Posters</li><li>✓ 4 AI Speech & Groundwork Reels</li><li>✓ Public Works & Initiative Highlights</li><li>✓ Constituency-Wide Online Reach</li>";
+          document.getElementById('p2-btn').innerText = "Book Campaign Pro";
 
-function escapeHtml(value){
- return String(value).replace(/[&<>"']/g, ch=>({
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
- }[ch]));
-}
-function escapeJs(value){
- return String(value).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
-}
+          document.getElementById('p3-name').innerText = "War Room Executive (VIP)";
+          document.getElementById('p3-price').innerHTML = "₹19,999 <span style='font-size:0.85rem; color:#94a3b8;'>/ Month</span>";
+          document.getElementById('p3-features').innerHTML = "<li>✓ Daily Political Posts & Statements</li><li>✓ Weekly 3 Viral Speech / Event Reels</li><li>✓ Booth-Level Targeted Meta Ads</li><li>✓ 24/7 Rapid Response Digital War Room</li>";
+          document.getElementById('p3-btn').innerText = "Get War Room VIP";
 
-document.getElementById("inquiryForm").addEventListener("submit",function(event){
- event.preventDefault();
- const t = translations[currentLanguage];
- const name = document.getElementById("customerName").value.trim();
- const phone = document.getElementById("customerPhone").value.trim();
- const category = document.getElementById("customerCategory").value;
- const selectedPackage = document.getElementById("customerPackage").value;
- const message = document.getElementById("customerMessage").value.trim();
+          brTitle.innerText = "🏛️ Official Political Brochure";
+          brSub.innerText = "Strategic Campaign & War Room Deliverables";
+          brContent.innerHTML = `
+            <div class="brochure-item">
+              <h4>Leader Package <span>₹2,499/mo</span></h4>
+              <p>• 8 Wishes Posters • 1 Speech Reel • WhatsApp Kit</p>
+            </div>
+            <div class="brochure-item" style="border-color: rgba(56, 189, 248, 0.4);">
+              <h4>Campaign Pro <span>₹6,999/mo</span></h4>
+              <p>• 16 Event Posters • 4 Speech Reels • Constituency Reach</p>
+            </div>
+            <div class="brochure-item" style="border-color: rgba(168, 85, 247, 0.4);">
+              <h4>War Room Executive VIP <span>₹19,999/mo</span></h4>
+              <p>• Daily Posts • Booth Ads • 24/7 Digital Counter PR</p>
+            </div>
+          `;
+        }
+      }
+      updateFormPlans();
+    }
 
- if(!name || !phone){
-  alert(currentLanguage==="te"?"దయచేసి పేరు మరియు మొబైల్ నంబర్ నమోదు చేయండి.":"Please enter your name and phone number.");
-  return;
- }
+    function updateFormPlans() {
+      const cat = document.getElementById('custCategory').value;
+      const planSelect = document.getElementById('custService');
+      if (cat === 'business') {
+        planSelect.innerHTML = (currentLang === 'te') ? `
+          <option>బిజినెస్ స్టార్టర్ (₹1,999 / నెల)</option>
+          <option>బిజినెస్ గ్రోత్ (₹4,999 / నెల)</option>
+          <option>కంప్లీట్ బ్రాండింగ్ VIP (₹14,999 / నెల)</option>
+          <option>AI వీడియోస్ మాత్రమే</option>
+        ` : `
+          <option>Business Starter (₹1,999 / mo)</option>
+          <option>Business Growth (₹4,999 / mo)</option>
+          <option>Complete Branding VIP (₹14,999 / mo)</option>
+          <option>AI Videos Only</option>
+        `;
+      } else {
+        planSelect.innerHTML = (currentLang === 'te') ? `
+          <option>లీడర్ ప్లాన్ (₹2,499 / నెల)</option>
+          <option>క్యాంపెయిన్ ప్రో (₹6,999 / నెల)</option>
+          <option>వార్ రూమ్ ఎగ్జిక్యూటివ్ VIP (₹19,999 / నెల)</option>
+          <option>పొలిటికల్ రీల్స్ మాత్రమే</option>
+        ` : `
+          <option>Leader Plan (₹2,499 / mo)</option>
+          <option>Campaign Pro (₹6,999 / mo)</option>
+          <option>War Room Executive VIP (₹19,999 / mo)</option>
+          <option>Political Reels Only</option>
+        `;
+      }
+    }
 
- const textMessage =
-  "BAIDIGITAL Website Inquiry\n"+
-  "Name: "+name+"\n"+
-  "Phone: "+phone+"\n"+
-  "Service: "+category+"\n"+
-  "Package: "+selectedPackage+"\n"+
-  "Requirement: "+(message || "Not specified");
+    function sendWhatsApp(event) {
+      event.preventDefault();
+      var name = document.getElementById('custName').value;
+      var phone = document.getElementById('custPhone').value;
+      var biz = document.getElementById('custBusiness').value;
+      var cat = document.getElementById('custCategory').value;
+      var service = document.getElementById('custService').value;
+      var timeline = document.getElementById('custTimeline').value;
+      var msg = document.getElementById('custMsg').value;
 
- window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(textMessage),"_blank","noopener");
-});
+      var text = "🚀 *BAIDIGITAL Order & Inquiry:*%0A%0A" +
+                 "👤 *Name:* " + encodeURIComponent(name) + "%0A" +
+                 "📱 *Mobile:* " + encodeURIComponent(phone) + "%0A" +
+                 "🏢 *Business/Role:* " + encodeURIComponent(biz) + "%0A" +
+                 "📌 *Category:* " + encodeURIComponent(cat) + "%0A" +
+                 "📦 *Plan:* " + encodeURIComponent(service) + "%0A" +
+                 "⏱️ *Timeline:* " + encodeURIComponent(timeline) + "%0A" +
+                 "💬 *Message:* " + encodeURIComponent(msg);
 
-function downloadBrochure(){
- const brochure = document.getElementById("brochureContent").outerHTML;
- const styles = `<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BAIDIGITAL Brochure</title><style>body{font-family:Arial,sans-serif;padding:24px;color:#172033}h2,h3{color:#132d51}.gold{color:#8a5a00}</style>`;
- const html = `<!DOCTYPE html><html><head>${styles}</head><body>${brochure}</body></html>`;
- const blob = new Blob([html],{type:"text/html;charset=utf-8"});
- const url = URL.createObjectURL(blob);
- const a = document.createElement("a");
- a.href = url;
- a.download = "baidigital-brochure.html";
- document.body.appendChild(a);
- a.click();
- a.remove();
- URL.revokeObjectURL(url);
-}
-
-document.getElementById("year").textContent = new Date().getFullYear();
-setLanguage("te");
-</script>
+      window.open("https://wa.me/919492255151?text=" + text, "_blank");
+    }
+  </script>
 </body>
 </html>
