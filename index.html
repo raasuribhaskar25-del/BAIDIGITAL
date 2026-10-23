@@ -1,172 +1,623 @@
  
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BAIDIGITAL | Digital Marketing & AI Services</title>
-<meta name="description" content="BAIDIGITAL offers digital marketing, AI video creation, social media marketing and poster design services.">
+<title>BAIDIGITAL | AI & Digital Marketing</title>
+<meta name="description" content="BAIDIGITAL - AI Video Creation, Digital Marketing, Business Promotions and Political Campaign Services.">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,"Noto Sans Kannada","Noto Sans Devanagari",sans-serif;background:#081225;color:#fff;line-height:1.6}
-header{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;background:#101d35}
-.logo{font-size:27px;font-weight:900;color:#38d9ff}
-.languages{display:flex;gap:6px;flex-wrap:wrap}
-.languages button{padding:7px 10px;border:1px solid #38d9ff;background:transparent;color:#fff;border-radius:7px;cursor:pointer}
-.languages button.active,.languages button:hover{background:#38d9ff;color:#081225}
-.hero{text-align:center;padding:85px 20px 75px;background:linear-gradient(135deg,#101d35,#123b63,#101225)}
-.hero h1{font-size:clamp(32px,6vw,55px);line-height:1.2;margin-bottom:20px}
-.hero h1 span{color:#38d9ff}
-.hero p{max-width:700px;margin:0 auto 25px;color:#e0e8f5;font-size:18px}
-.btn{display:inline-block;padding:12px 22px;margin:6px;border-radius:8px;background:#38d9ff;color:#061225;text-decoration:none;font-weight:bold}
-.btn.secondary{background:transparent;color:#fff;border:1px solid #38d9ff}
-section{padding:55px 7%}
-.section-title{text-align:center;font-size:30px;margin-bottom:28px;color:#38d9ff}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#111f38;border:1px solid #233c5e;border-radius:14px;padding:24px}
-.card .emoji{font-size:35px}
-.card h3{margin:12px 0;color:#38d9ff}
-.card p{color:#d3dbea}
-.about{text-align:center;max-width:850px;margin:auto}
-.about p{color:#d3dbea}
-.contact{background:#101d35;text-align:center}
-.contact p{margin:10px 0;color:#e0e8f5}
-footer{text-align:center;padding:20px;color:#aab7cb;background:#06101f}
-a{overflow-wrap:anywhere}
+:root{--bg:#08111f;--panel:#101e32;--gold:#f5c451;--white:#f8fafc;--muted:#b9c5d6;--green:#25d366;--blue:#2878ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--white);line-height:1.6}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.topbar{background:#050b14;padding:10px 4%;display:flex;justify-content:flex-end;align-items:center;gap:7px;flex-wrap:wrap}
+.lang-btn{background:#17263a;color:white;border:1px solid #3a4a60;border-radius:8px;padding:7px 11px}
+.lang-btn.active{background:var(--gold);color:#111;border-color:var(--gold);font-weight:bold}
+header{padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #26354a;position:sticky;top:0;background:#08111ff2;backdrop-filter:blur(10px);z-index:20}
+.brand{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:900;letter-spacing:1px}
+.brand img{width:48px;height:48px;object-fit:contain;border-radius:10px}
+.brand span{color:var(--gold)}
+.menu-btn{background:#17263a;color:white;border:1px solid #34445b;border-radius:9px;padding:8px 13px}
+.drawer{display:none;padding:15px 5%;background:#101e32;gap:15px;flex-wrap:wrap}
+.drawer.open{display:flex}
+.drawer a{color:var(--gold)}
+.hero{padding:65px 6% 55px;text-align:center;background:radial-gradient(ellipse at top,#203957 0%,#08111f 68%)}
+.eyebrow{color:var(--gold);font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(32px,6vw,62px);line-height:1.15;margin:16px auto;max-width:900px}
+.hero p{max-width:720px;margin:18px auto;color:var(--muted);font-size:18px}
+.btn{display:inline-block;border:0;border-radius:10px;padding:12px 18px;font-weight:bold;margin:5px}
+.btn-gold{background:var(--gold);color:#111}
+.btn-outline{border:1px solid #718198;color:white;background:transparent}
+.btn-green{background:var(--green);color:#07130a}
+.btn-blue{background:var(--blue);color:white}
+section{padding:45px 5%;scroll-margin-top:90px}
+.section-title{text-align:center;font-size:clamp(25px,4vw,38px);margin:0 0 10px}
+.section-sub{text-align:center;color:var(--muted);margin:0 auto 28px;max-width:750px}
+.tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0}
+.tab{padding:12px 20px;border-radius:10px;border:1px solid #44536a;background:#14243a;color:white}
+.tab.active{background:var(--gold);color:#111;border-color:var(--gold);font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid #2b3b51;border-radius:16px;padding:22px}
+.card h3{margin-top:0;color:var(--gold)}
+.price{font-size:30px;font-weight:900;margin:12px 0}
+.price small{font-size:13px;color:var(--muted);font-weight:normal}
+.card ul{padding-left:20px;color:var(--muted)}
+.card li{margin:7px 0}
+.card .btn{margin-left:0}
+.featured{border-color:var(--gold);box-shadow:0 0 25px #f5c45112}
+.notice{background:#14243a;border-left:4px solid var(--gold);padding:14px 17px;border-radius:8px;color:var(--muted);margin:18px 0}
+.video-wrap{max-width:800px;margin:20px auto;text-align:center}
+video{width:100%;max-height:480px;background:#03070d;border-radius:15px;border:1px solid #2a3b50}
+.founder{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:center;gap:25px}
+.founder video{max-height:430px}
+.brochure{max-width:900px;margin:auto;background:#fff;color:#172033;padding:28px;border-radius:12px}
+.brochure h2,.brochure h3{color:#132d51}
+.brochure .gold{color:#8a5a00}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #40516a;background:#0a1627;color:white}
+.field textarea{min-height:110px;resize:vertical}
+footer{padding:30px 5%;text-align:center;background:#050b14;color:var(--muted)}
+footer a{color:var(--gold)}
+.float-actions{position:fixed;right:15px;bottom:15px;display:flex;flex-direction:column;gap:10px;z-index:30}
+.float-actions a{padding:12px 15px;border-radius:30px;font-weight:bold;box-shadow:0 5px 18px #0006}
+.whatsapp{background:var(--green);color:#06170b}
+.call{background:var(--blue);color:white}
+.socials{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin:16px 0}
+.socials a{padding:8px 13px;background:#14243a;border-radius:8px}
+.small{font-size:13px;color:var(--muted)}
 @media(max-width:600px){
- header{justify-content:center;text-align:center}
- .hero{padding:60px 16px}
- section{padding:42px 18px}
- .section-title{font-size:26px}
+ header{padding:12px 4%}
+ .brand{font-size:19px}
+ .brand img{width:40px;height:40px}
+ .hero{padding:45px 5%}
+ section{padding:35px 4%}
+ .brochure{padding:18px}
+ .float-actions a{padding:10px 12px;font-size:13px}
+}
+@media print{
+ body{background:white;color:#111}
+ body *{visibility:hidden}
+ #brochure,#brochure *{visibility:visible}
+ #brochure{position:absolute;left:0;top:0;width:100%;padding:20px;background:white;color:#111}
+ .no-print{display:none!important}
 }
 </style>
 </head>
 <body>
 
+<div class="topbar">
+  <button class="lang-btn active" data-lang="te" onclick="setLanguage('te')">తెలుగు</button>
+  <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">English</button>
+  <button class="lang-btn" data-lang="kn" onclick="setLanguage('kn')">ಕನ್ನಡ</button>
+  <button class="lang-btn" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
+</div>
+
 <header>
-  <div class="logo">BAIDIGITAL</div>
-  <div class="languages">
-    <button class="active" onclick="setLang('te',this)">తెలుగు</button>
-    <button onclick="setLang('en',this)">English</button>
-    <button onclick="setLang('kn',this)">ಕನ್ನಡ</button>
-    <button onclick="setLang('hi',this)">हिन्दी</button>
-  </div>
+  <a class="brand" href="#home">
+    <img src="logo.png" alt="BAIDIGITAL Logo" onerror="this.style.display='none'">
+    <div>BAI<span>DIGITAL</span></div>
+  </a>
+  <button class="menu-btn" id="menuButton" onclick="toggleMenu()">☰ <span data-i18n="menu">Menu</span></button>
 </header>
 
+<nav class="drawer" id="drawer">
+  <a href="#home" data-i18n="home" onclick="closeMenu()">Home</a>
+  <a href="#services" data-i18n="services" onclick="closeMenu()">Services</a>
+  <a href="#pricing" data-i18n="pricing" onclick="closeMenu()">Packages</a>
+  <a href="#founder" data-i18n="founder" onclick="closeMenu()">Founder</a>
+  <a href="#brochure" data-i18n="brochure" onclick="closeMenu()">Brochure</a>
+  <a href="#contact" data-i18n="contact" onclick="closeMenu()">Contact</a>
+</nav>
+
 <main>
-<section class="hero">
-  <h1 data-i="heroTitle">మీ వ్యాపారానికి <span>డిజిటల్ శక్తి</span></h1>
-  <p data-i="heroDesc">AI మరియు డిజిటల్ మార్కెటింగ్‌తో మీ వ్యాపారాన్ని ఆన్‌లైన్‌లో మరింత మందికి చేరవేయండి.</p>
-  <a class="btn" href="mailto:connect@baidigital.in" data-i="contactBtn">మమ్మల్ని సంప్రదించండి</a>
-  <a class="btn secondary" href="#services" data-i="servicesBtn">మా సేవలు</a>
+<section class="hero" id="home">
+  <div class="eyebrow">AI • Creativity • Digital Growth</div>
+  <h1 data-i18n="heroTitle">మీ వ్యాపారానికి డిజిటల్ ప్రపంచంలో కొత్త గుర్తింపు</h1>
+  <p data-i18n="heroDesc">AI వీడియోలు, సోషల్ మీడియా మార్కెటింగ్ మరియు క్రియేటివ్ ప్రమోషన్స్‌తో మీ బ్రాండ్‌ను మరింత మందికి చేరవేయండి.</p>
+  <a class="btn btn-gold" href="#services" data-i18n="explore">మా సేవలను చూడండి</a>
+  <a class="btn btn-outline" href="#contact" data-i18n="getQuote">ధర వివరాలు పొందండి</a>
+  <div class="video-wrap">
+    <video controls playsinline preload="metadata" poster="logo.png">
+      <source src="gemini_generated_video_a3bef7d7.mp4" type="video/mp4">
+    </video>
+  </div>
+  <p class="small" data-i18n="videoHint">వీడియో ప్లే కాకపోతే, ఫైల్ పేరును మరియు అదే ఫోల్డర్‌లో ఉందో లేదో తనిఖీ చేయండి.</p>
 </section>
 
 <section id="services">
-  <h2 class="section-title" data-i="servicesTitle">మా సేవలు</h2>
-  <div class="services">
-    <article class="card">
-      <div class="emoji">📱</div>
-      <h3 data-i="s1Title">సోషల్ మీడియా మార్కెటింగ్</h3>
-      <p data-i="s1Desc">Facebook, Instagram మరియు ఇతర సోషల్ మీడియా ప్లాట్‌ఫారమ్‌లలో మీ వ్యాపారాన్ని ప్రమోట్ చేయండి.</p>
-    </article>
-    <article class="card">
-      <div class="emoji">🤖</div>
-      <h3 data-i="s2Title">AI వీడియో క్రియేషన్</h3>
-      <p data-i="s2Desc">మీ వ్యాపారం కోసం ఆకర్షణీయమైన AI వీడియోలు మరియు సినిమాటిక్ ప్రమోషన్లు రూపొందించండి.</p>
-    </article>
-    <article class="card">
-      <div class="emoji">🎨</div>
-      <h3 data-i="s3Title">పోస్టర్ & అడ్వర్టైజ్‌మెంట్ డిజైన్</h3>
-      <p data-i="s3Desc">మీ బ్రాండ్ కోసం ఆకర్షణీయమైన పోస్టర్లు, ప్రకటనలు మరియు ప్రమోషనల్ క్రియేటివ్స్.</p>
-    </article>
-    <article class="card">
-      <div class="emoji">📈</div>
-      <h3 data-i="s4Title">డిజిటల్ మార్కెటింగ్</h3>
-      <p data-i="s4Desc">మీ బ్రాండ్ గుర్తింపును పెంచి, కొత్త కస్టమర్లను చేరుకోవడానికి డిజిటల్ మార్కెటింగ్ సేవలు.</p>
-    </article>
+  <h2 class="section-title" data-i18n="serviceTitle">మా సేవలు</h2>
+  <p class="section-sub" data-i18n="serviceDesc">మీ అవసరానికి తగిన డిజిటల్ ప్రమోషన్ సేవను ఎంచుకోండి.</p>
+  <div class="tabs">
+    <button class="tab active" id="businessTab" onclick="setCategory('business')" data-i18n="business">Business Services</button>
+    <button class="tab" id="politicalTab" onclick="setCategory('political')" data-i18n="political">Political Campaign Services</button>
+  </div>
+  <div class="grid" id="serviceCards"></div>
+</section>
+
+<section id="pricing">
+  <h2 class="section-title" data-i18n="pricingTitle">ప్యాకేజీలు & ధరలు</h2>
+  <p class="section-sub" data-i18n="pricingDesc">మీ అవసరానికి తగిన ప్యాకేజీని ఎంచుకుని WhatsApp ద్వారా వివరాలు అడగండి.</p>
+  <div class="grid" id="pricingCards"></div>
+  <p class="notice" data-i18n="priceNotice">ధరలు ప్రారంభ ధరలు మాత్రమే. పని పరిమాణం, వీడియోల సంఖ్య, ప్రకటనల బడ్జెట్ ఆధారంగా తుది ధర మారవచ్చు.</p>
+</section>
+
+<section id="showreel">
+  <h2 class="section-title" data-i18n="showreelTitle">Creative Video Showcase</h2>
+  <p class="section-sub" data-i18n="showreelDesc">BAIDIGITAL వీడియో ప్రదర్శన.</p>
+  <div class="grid">
+    <div class="card">
+      <h3 data-i18n="videoOne">3D Logo Video</h3>
+      <video controls playsinline preload="metadata">
+        <source src="logo_3d.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="card">
+      <h3 data-i18n="videoTwo">Founder Introduction</h3>
+      <video controls playsinline preload="metadata">
+        <source src="founder_video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="card">
+      <h3 data-i18n="videoThree">Name Video</h3>
+      <video controls playsinline preload="metadata">
+        <source src="bhaskar_name.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 </section>
 
-<section>
-  <div class="about">
-    <h2 class="section-title" data-i="aboutTitle">BAIDIGITAL గురించి</h2>
-    <p data-i="aboutDesc">AI టూల్స్ మరియు డిజిటల్ మార్కెటింగ్ సహాయంతో చిన్న వ్యాపారాలు, స్థానిక షాపులు మరియు బ్రాండ్లు ఆన్‌లైన్‌లో ఎదగడానికి BAIDIGITAL సహకరిస్తుంది.</p>
+<section id="founder">
+  <h2 class="section-title" data-i18n="founderTitle">Meet the Founder</h2>
+  <div class="founder">
+    <div>
+      <div class="eyebrow" data-i18n="founderBadge">Our Vision</div>
+      <h2 id="founderName">Bhaskar</h2>
+      <h3 id="founderRole">Founder • BAIDIGITAL</h3>
+      <p id="founderBio">AI tools and digital marketing ద్వారా వ్యాపారాలకు క్రియేటివ్ ప్రమోషన్ పరిష్కారాలు అందించడమే మా లక్ష్యం.</p>
+      <a class="btn btn-gold" href="#contact" data-i18n="contactFounder">Contact Us</a>
+    </div>
+    <div class="video-wrap">
+      <video controls playsinline preload="metadata">
+        <source src="founder_video.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <h2 class="section-title" data-i="contactTitle">మీ వ్యాపారాన్ని ప్రమోట్ చేయాలనుకుంటున్నారా?</h2>
-  <p data-i="contactDesc">మీ అవసరాలను మాకు తెలియజేయండి. మాట్లాడుకుందాం!</p>
-  <p><strong>Email:</strong> <a style="color:#38d9ff" href="mailto:connect@baidigital.in">connect@baidigital.in</a></p>
-  <a class="btn" href="mailto:connect@baidigital.in" data-i="emailBtn">ఇమెయిల్ పంపండి</a>
+<section id="brochure">
+  <h2 class="section-title no-print" data-i18n="brochureTitle">BAIDIGITAL Brochure</h2>
+  <p class="section-sub no-print" data-i18n="brochureDesc">బ్రోచర్‌ను ప్రింట్ చేయండి లేదా PDFగా సేవ్ చేసుకోండి.</p>
+  <div class="brochure" id="brochureContent">
+    <h2>BAI<span class="gold">DIGITAL</span></h2>
+    <h3 data-i18n="brochureHeading">AI & Digital Marketing Services</h3>
+    <p data-i18n="brochureIntro">మీ వ్యాపారాన్ని ఆన్‌లైన్‌లో ప్రమోట్ చేయడానికి క్రియేటివ్ డిజిటల్ పరిష్కారాలు.</p>
+    <hr>
+    <h3 data-i18n="brochureServices">మా సేవలు</h3>
+    <ul>
+      <li data-i18n="bService1">AI Cinematic Promotional Videos</li>
+      <li data-i18n="bService2">Social Media Marketing</li>
+      <li data-i18n="bService3">Posters, Reels and Creative Ads</li>
+      <li data-i18n="bService4">Business Branding and Digital Promotion</li>
+    </ul>
+    <h3 data-i18n="brochureContact">సంప్రదించండి</h3>
+    <p>Email: connect@baidigital.in</p>
+    <p>WhatsApp: +91 94922 55151</p>
+    <p>Call: +91 77029 08818</p>
+    <p class="small">BAIDIGITAL • AI • Creativity • Digital Growth</p>
+  </div>
+  <div class="tabs no-print">
+    <button class="btn btn-gold" onclick="window.print()" data-i18n="printBtn">Print / Save PDF</button>
+    <button class="btn btn-outline" onclick="downloadBrochure()" data-i18n="downloadBtn">Download Brochure HTML</button>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title" data-i18n="contactTitle">మమ్మల్ని సంప్రదించండి</h2>
+  <p class="section-sub" data-i18n="contactDesc">మీ వివరాలు పంపండి. మీ అవసరానికి తగిన సేవ గురించి మాట్లాడుకుందాం.</p>
+  <div class="card">
+    <form id="inquiryForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="customerName" data-i18n="nameLabel">మీ పేరు</label>
+          <input id="customerName" name="name" required placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="customerPhone" data-i18n="phoneLabel">మొబైల్ నంబర్</label>
+          <input id="customerPhone" name="phone" type="tel" required placeholder="Your phone number">
+        </div>
+        <div class="field">
+          <label for="customerCategory" data-i18n="categoryLabel">సేవ రకం</label>
+          <select id="customerCategory" name="category">
+            <option value="Business" data-i18n="businessOption">Business Promotion</option>
+            <option value="Political" data-i18n="politicalOption">Political Campaign</option>
+            <option value="AI Video" data-i18n="aiOption">AI Video Creation</option>
+            <option value="Social Media" data-i18n="socialOption">Social Media Marketing</option>
+            <option value="Other" data-i18n="otherOption">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="customerPackage" data-i18n="packageLabel">ప్యాకేజీ</label>
+          <select id="customerPackage" name="package">
+            <option value="Not selected">Select a package</option>
+          </select>
+        </div>
+      </div>
+      <div class="field" style="margin-top:14px">
+        <label for="customerMessage" data-i18n="messageLabel">మీ అవసరం</label>
+        <textarea id="customerMessage" name="message" placeholder="Tell us what you need"></textarea>
+      </div>
+      <button class="btn btn-green" type="submit" data-i18n="submitBtn">WhatsApp ద్వారా Inquiry పంపండి</button>
+      <p class="small" data-i18n="formNotice">ఈ ఫారమ్ మీ వివరాలను WhatsApp సందేశంగా తెరుస్తుంది. పంపడానికి WhatsAppలో Send నొక్కండి.</p>
+    </form>
+  </div>
+
+  <div class="grid" style="margin-top:20px">
+    <div class="card">
+      <h3 data-i18n="emailHeading">Email</h3>
+      <p><a href="mailto:connect@baidigital.in">connect@baidigital.in</a></p>
+      <a class="btn btn-outline" href="mailto:connect@baidigital.in" data-i18n="emailBtn">Send Email</a>
+    </div>
+    <div class="card">
+      <h3 data-i18n="whatsappHeading">WhatsApp</h3>
+      <p>+91 94922 55151</p>
+      <a class="btn btn-green" href="https://wa.me/919492255151" target="_blank" rel="noopener" data-i18n="whatsappBtn">Chat on WhatsApp</a>
+    </div>
+    <div class="card">
+      <h3 data-i18n="callHeading">Call Us</h3>
+      <p>+91 77029 08818</p>
+      <a class="btn btn-blue" href="tel:+917702908818" data-i18n="callBtn">Call Now</a>
+    </div>
+  </div>
+
+  <div class="socials">
+    <!-- మీ అసలు Social Media URLs ఉంటే క్రింది # స్థానంలో వాటిని పెట్టండి -->
+    <a href="#" target="_blank" rel="noopener">YouTube</a>
+    <a href="#" target="_blank" rel="noopener">Instagram</a>
+    <a href="#" target="_blank" rel="noopener">Facebook</a>
+  </div>
 </section>
 </main>
 
 <footer>
-  © <span id="year"></span> BAIDIGITAL. <span data-i="footer">అన్ని హక్కులు ప్రత్యేకించబడ్డాయి.</span>
+  <p><strong>BAI<span style="color:var(--gold)">DIGITAL</span></strong></p>
+  <p data-i18n="footerText">AI & Digital Marketing Services</p>
+  <p>Email: <a href="mailto:connect@baidigital.in">connect@baidigital.in</a></p>
+  <p>© <span id="year"></span> BAIDIGITAL. <span data-i18n="rights">All rights reserved.</span></p>
 </footer>
 
+<div class="float-actions">
+  <a class="whatsapp" href="https://wa.me/919492255151" target="_blank" rel="noopener">☏ WhatsApp</a>
+  <a class="call" href="tel:+917702908818">☎ Call</a>
+</div>
+
 <script>
+const PHONE = "919492255151";
+
 const translations = {
 te:{
-heroTitle:'మీ వ్యాపారానికి <span>డిజిటల్ శక్తి</span>',
-heroDesc:'AI మరియు డిజిటల్ మార్కెటింగ్‌తో మీ వ్యాపారాన్ని ఆన్‌లైన్‌లో మరింత మందికి చేరవేయండి.',
-contactBtn:'మమ్మల్ని సంప్రదించండి',servicesBtn:'మా సేవలు',
-servicesTitle:'మా సేవలు',
-s1Title:'సోషల్ మీడియా మార్కెటింగ్',s1Desc:'Facebook, Instagram మరియు ఇతర సోషల్ మీడియా ప్లాట్‌ఫారమ్‌లలో మీ వ్యాపారాన్ని ప్రమోట్ చేయండి.',
-s2Title:'AI వీడియో క్రియేషన్',s2Desc:'మీ వ్యాపారం కోసం ఆకర్షణీయమైన AI వీడియోలు మరియు సినిమాటిక్ ప్రమోషన్లు రూపొందించండి.',
-s3Title:'పోస్టర్ & అడ్వర్టైజ్‌మెంట్ డిజైన్',s3Desc:'మీ బ్రాండ్ కోసం ఆకర్షణీయమైన పోస్టర్లు, ప్రకటనలు మరియు ప్రమోషనల్ క్రియేటివ్స్.',
-s4Title:'డిజిటల్ మార్కెటింగ్',s4Desc:'మీ బ్రాండ్ గుర్తింపును పెంచి, కొత్త కస్టమర్లను చేరుకోవడానికి డిజిటల్ మార్కెటింగ్ సేవలు.',
-aboutTitle:'BAIDIGITAL గురించి',aboutDesc:'AI టూల్స్ మరియు డిజిటల్ మార్కెటింగ్ సహాయంతో చిన్న వ్యాపారాలు, స్థానిక షాపులు మరియు బ్రాండ్లు ఆన్‌లైన్‌లో ఎదగడానికి BAIDIGITAL సహకరిస్తుంది.',
-contactTitle:'మీ వ్యాపారాన్ని ప్రమోట్ చేయాలనుకుంటున్నారా?',contactDesc:'మీ అవసరాలను మాకు తెలియజేయండి. మాట్లాడుకుందాం!',emailBtn:'ఇమెయిల్ పంపండి',footer:'అన్ని హక్కులు ప్రత్యేకించబడ్డాయి.'
+menu:"మెనూ",home:"హోమ్",services:"సేవలు",pricing:"ప్యాకేజీలు",founder:"ఫౌండర్",brochure:"బ్రోచర్",contact:"సంప్రదించండి",
+heroTitle:"మీ వ్యాపారానికి డిజిటల్ ప్రపంచంలో కొత్త గుర్తింపు",
+heroDesc:"AI వీడియోలు, సోషల్ మీడియా మార్కెటింగ్ మరియు క్రియేటివ్ ప్రమోషన్స్‌తో మీ బ్రాండ్‌ను మరింత మందికి చేరవేయండి.",
+explore:"మా సేవలను చూడండి",getQuote:"ధర వివరాలు పొందండి",
+videoHint:"వీడియో ప్లే కాకపోతే, ఫైల్ పేరును మరియు అదే ఫోల్డర్‌లో ఉందో లేదో తనిఖీ చేయండి.",
+serviceTitle:"మా సేవలు",serviceDesc:"మీ అవసరానికి తగిన డిజిటల్ ప్రమోషన్ సేవను ఎంచుకోండి.",
+business:"వ్యాపార సేవలు",political:"రాజకీయ ప్రచార సేవలు",
+pricingTitle:"ప్యాకేజీలు & ధరలు",pricingDesc:"మీ అవసరానికి తగిన ప్యాకేజీని ఎంచుకుని WhatsApp ద్వారా వివరాలు అడగండి.",
+priceNotice:"ధరలు ప్రారంభ ధరలు మాత్రమే. పని పరిమాణం, వీడియోల సంఖ్య, ప్రకటనల బడ్జెట్ ఆధారంగా తుది ధర మారవచ్చు.",
+showreelTitle:"క్రియేటివ్ వీడియో ప్రదర్శన",showreelDesc:"BAIDIGITAL వీడియో ప్రదర్శన.",
+videoOne:"3D లోగో వీడియో",videoTwo:"ఫౌండర్ పరిచయం",videoThree:"పేరు వీడియో",
+founderTitle:"మా ఫౌండర్",founderBadge:"మా లక్ష్యం",contactFounder:"సంప్రదించండి",
+brochureTitle:"BAIDIGITAL బ్రోచర్",brochureDesc:"బ్రోచర్‌ను ప్రింట్ చేయండి లేదా PDFగా సేవ్ చేసుకోండి.",
+brochureHeading:"AI & డిజిటల్ మార్కెటింగ్ సేవలు",brochureIntro:"మీ వ్యాపారాన్ని ఆన్‌లైన్‌లో ప్రమోట్ చేయడానికి క్రియేటివ్ డిజిటల్ పరిష్కారాలు.",
+brochureServices:"మా సేవలు",bService1:"AI సినిమాటిక్ ప్రమోషనల్ వీడియోలు",bService2:"సోషల్ మీడియా మార్కెటింగ్",bService3:"పోస్టర్లు, రీల్స్ మరియు క్రియేటివ్ యాడ్స్",bService4:"బిజినెస్ బ్రాండింగ్ మరియు డిజిటల్ ప్రమోషన్",brochureContact:"సంప్రదించండి",
+printBtn:"ప్రింట్ / PDF సేవ్",downloadBtn:"బ్రోచర్ HTML డౌన్‌లోడ్",
+contactTitle:"మమ్మల్ని సంప్రదించండి",contactDesc:"మీ వివరాలు పంపండి. మీ అవసరానికి తగిన సేవ గురించి మాట్లాడుకుందాం.",
+nameLabel:"మీ పేరు",phoneLabel:"మొబైల్ నంబర్",categoryLabel:"సేవ రకం",packageLabel:"ప్యాకేజీ",messageLabel:"మీ అవసరం",
+businessOption:"వ్యాపార ప్రమోషన్",politicalOption:"రాజకీయ ప్రచారం",aiOption:"AI వీడియో తయారీ",socialOption:"సోషల్ మీడియా మార్కెటింగ్",otherOption:"ఇతర సేవ",
+submitBtn:"WhatsApp ద్వారా Inquiry పంపండి",formNotice:"ఈ ఫారమ్ మీ వివరాలను WhatsApp సందేశంగా తెరుస్తుంది. పంపడానికి WhatsAppలో Send నొక్కండి.",
+emailHeading:"ఈమెయిల్",emailBtn:"ఈమెయిల్ పంపండి",whatsappHeading:"వాట్సాప్",whatsappBtn:"WhatsApp చాట్",callHeading:"ఫోన్ కాల్",callBtn:"ఇప్పుడే కాల్ చేయండి",
+footerText:"AI & డిజిటల్ మార్కెటింగ్ సేవలు",rights:"అన్ని హక్కులు ప్రత్యేకించబడ్డాయి.",
+plans:["స్టార్టర్","గ్రోత్","ప్రీమియం","కస్టమ్"],features:["సోషల్ మీడియా ప్రాథమిక సహాయం","క్రియేటివ్ పోస్టర్లు మరియు ప్రమోషన్","వీడియోలు మరియు డిజిటల్ ప్రమోషన్","మీ అవసరానికి అనుగుణంగా"],
+ask:"వివరాలు అడగండి",choose:"ఎంచుకోండి",from:"నుండి",serviceBusiness:"వ్యాపార ప్రమోషన్",servicePolitical:"రాజకీయ ప్రచారం"
 },
 en:{
-heroTitle:'Give Your Business <span>Digital Power</span>',
-heroDesc:'Reach more customers online with AI and digital marketing.',
-contactBtn:'Contact Us',servicesBtn:'Our Services',servicesTitle:'Our Services',
-s1Title:'Social Media Marketing',s1Desc:'Promote your business on Facebook, Instagram and other social media platforms.',
-s2Title:'AI Video Creation',s2Desc:'Create engaging AI videos and cinematic promotions for your business.',
-s3Title:'Poster & Advertisement Design',s3Desc:'Attractive posters, advertisements and promotional creatives for your brand.',
-s4Title:'Digital Marketing',s4Desc:'Digital marketing services to grow brand awareness and reach new customers.',
-aboutTitle:'About BAIDIGITAL',aboutDesc:'BAIDIGITAL helps small businesses, local shops and brands grow online with AI tools and digital marketing.',
-contactTitle:'Ready to Promote Your Business?',contactDesc:'Tell us what you need. Let’s talk!',emailBtn:'Send an Email',footer:'All rights reserved.'
+menu:"Menu",home:"Home",services:"Services",pricing:"Packages",founder:"Founder",brochure:"Brochure",contact:"Contact",
+heroTitle:"Give Your Business a New Identity in the Digital World",
+heroDesc:"Reach more customers with AI videos, social media marketing and creative promotions.",
+explore:"Explore Services",getQuote:"Get a Quote",videoHint:"If a video does not play, check that its filename is correct and that it is in the same folder.",
+serviceTitle:"Our Services",serviceDesc:"Choose a digital promotion service for your needs.",
+business:"Business Services",political:"Political Campaign Services",
+pricingTitle:"Packages & Pricing",pricingDesc:"Choose a package and ask for details through WhatsApp.",
+priceNotice:"Prices are starting estimates. Final pricing may vary by scope, number of videos and advertising budget.",
+showreelTitle:"Creative Video Showcase",showreelDesc:"BAIDIGITAL video showcase.",
+videoOne:"3D Logo Video",videoTwo:"Founder Introduction",videoThree:"Name Video",
+founderTitle:"Meet the Founder",founderBadge:"Our Vision",contactFounder:"Contact Us",
+brochureTitle:"BAIDIGITAL Brochure",brochureDesc:"Print the brochure or save it as a PDF.",
+brochureHeading:"AI & Digital Marketing Services",brochureIntro:"Creative digital solutions to promote your business online.",
+brochureServices:"Our Services",bService1:"AI Cinematic Promotional Videos",bService2:"Social Media Marketing",bService3:"Posters, Reels and Creative Ads",bService4:"Business Branding and Digital Promotion",brochureContact:"Contact Us",
+printBtn:"Print / Save PDF",downloadBtn:"Download Brochure HTML",
+contactTitle:"Contact Us",contactDesc:"Send your details and tell us what service you need.",
+nameLabel:"Your Name",phoneLabel:"Mobile Number",categoryLabel:"Service Type",packageLabel:"Package",messageLabel:"Your Requirement",
+businessOption:"Business Promotion",politicalOption:"Political Campaign",aiOption:"AI Video Creation",socialOption:"Social Media Marketing",otherOption:"Other",
+submitBtn:"Send Inquiry via WhatsApp",formNotice:"This form opens your details as a WhatsApp message. Press Send in WhatsApp to submit it.",
+emailHeading:"Email",emailBtn:"Send Email",whatsappHeading:"WhatsApp",whatsappBtn:"Chat on WhatsApp",callHeading:"Call Us",callBtn:"Call Now",
+footerText:"AI & Digital Marketing Services",rights:"All rights reserved.",
+plans:["Starter","Growth","Premium","Custom"],features:["Basic social media support","Creative posters and promotion","Videos and digital promotion","Tailored to your requirements"],
+ask:"Enquire Now",choose:"Select",from:"From",serviceBusiness:"Business Promotion",servicePolitical:"Political Campaign"
 },
 kn:{
-heroTitle:'ನಿಮ್ಮ ವ್ಯವಹಾರಕ್ಕೆ <span>ಡಿಜಿಟಲ್ ಶಕ್ತಿ</span>',
-heroDesc:'AI ಮತ್ತು ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ಮೂಲಕ ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಹೆಚ್ಚು ಗ್ರಾಹಕರಿಗೆ ತಲುಪಿಸಿ.',
-contactBtn:'ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ',servicesBtn:'ನಮ್ಮ ಸೇವೆಗಳು',servicesTitle:'ನಮ್ಮ ಸೇವೆಗಳು',
-s1Title:'ಸೋಷಿಯಲ್ ಮೀಡಿಯಾ ಮಾರ್ಕೆಟಿಂಗ್',s1Desc:'Facebook, Instagram ಮತ್ತು ಇತರ ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮಗಳಲ್ಲಿ ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಪ್ರಚಾರ ಮಾಡಿ.',
-s2Title:'AI ವೀಡಿಯೊ ನಿರ್ಮಾಣ',s2Desc:'ನಿಮ್ಮ ವ್ಯವಹಾರಕ್ಕಾಗಿ ಆಕರ್ಷಕ AI ವೀಡಿಯೊಗಳು ಮತ್ತು ಸಿನಿಮಾಟಿಕ್ ಪ್ರಚಾರಗಳನ್ನು ರಚಿಸಿ.',
-s3Title:'ಪೋಸ್ಟರ್ ಮತ್ತು ಜಾಹೀರಾತು ವಿನ್ಯಾಸ',s3Desc:'ನಿಮ್ಮ ಬ್ರ್ಯಾಂಡ್‌ಗಾಗಿ ಆಕರ್ಷಕ ಪೋಸ್ಟರ್‌ಗಳು ಮತ್ತು ಜಾಹೀರಾತು ವಿನ್ಯಾಸಗಳು.',
-s4Title:'ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್',s4Desc:'ಬ್ರ್ಯಾಂಡ್ ಗುರುತನ್ನು ಹೆಚ್ಚಿಸಲು ಮತ್ತು ಹೊಸ ಗ್ರಾಹಕರನ್ನು ತಲುಪಲು ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ಸೇವೆಗಳು.',
-aboutTitle:'BAIDIGITAL ಬಗ್ಗೆ',aboutDesc:'AI ಟೂಲ್‌ಗಳು ಮತ್ತು ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ಮೂಲಕ ಸಣ್ಣ ವ್ಯಾಪಾರಗಳು, ಸ್ಥಳೀಯ ಅಂಗಡಿಗಳು ಮತ್ತು ಬ್ರ್ಯಾಂಡ್‌ಗಳು ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಬೆಳೆಯಲು BAIDIGITAL ಸಹಾಯ ಮಾಡುತ್ತದೆ.',
-contactTitle:'ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಪ್ರಚಾರ ಮಾಡಲು ಸಿದ್ಧರಿದ್ದೀರಾ?',contactDesc:'ನಿಮ್ಮ ಅಗತ್ಯಗಳನ್ನು ನಮಗೆ ತಿಳಿಸಿ. ಮಾತನಾಡೋಣ!',emailBtn:'ಇಮೇಲ್ ಕಳುಹಿಸಿ',footer:'ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.'
+menu:"ಮೆನು",home:"ಮುಖಪುಟ",services:"ಸೇವೆಗಳು",pricing:"ಪ್ಯಾಕೇಜುಗಳು",founder:"ಸ್ಥಾಪಕರು",brochure:"ಬ್ರೋಶರ್",contact:"ಸಂಪರ್ಕಿಸಿ",
+heroTitle:"ನಿಮ್ಮ ವ್ಯವಹಾರಕ್ಕೆ ಡಿಜಿಟಲ್ ಜಗತ್ತಿನಲ್ಲಿ ಹೊಸ ಗುರುತು",
+heroDesc:"AI ವೀಡಿಯೊಗಳು, ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಮಾರ್ಕೆಟಿಂಗ್ ಮತ್ತು ಸೃಜನಾತ್ಮಕ ಪ್ರಚಾರಗಳ ಮೂಲಕ ಹೆಚ್ಚು ಗ್ರಾಹಕರನ್ನು ತಲುಪಿರಿ.",
+explore:"ಸೇವೆಗಳನ್ನು ನೋಡಿ",getQuote:"ಬೆಲೆ ತಿಳಿಯಿರಿ",videoHint:"ವೀಡಿಯೊ ಪ್ಲೇ ಆಗದಿದ್ದರೆ ಫೈಲ್ ಹೆಸರು ಮತ್ತು ಫೋಲ್ಡರ್ ಪರಿಶೀಲಿಸಿ.",
+serviceTitle:"ನಮ್ಮ ಸೇವೆಗಳು",serviceDesc:"ನಿಮ್ಮ ಅಗತ್ಯಕ್ಕೆ ತಕ್ಕ ಡಿಜಿಟಲ್ ಪ್ರಚಾರ ಸೇವೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ.",
+business:"ವ್ಯಾಪಾರ ಸೇವೆಗಳು",political:"ರಾಜಕೀಯ ಪ್ರಚಾರ ಸೇವೆಗಳು",
+pricingTitle:"ಪ್ಯಾಕೇಜುಗಳು ಮತ್ತು ಬೆಲೆ",pricingDesc:"ಪ್ಯಾಕೇಜ್ ಆಯ್ಕೆಮಾಡಿ WhatsApp ಮೂಲಕ ವಿವರಗಳನ್ನು ಕೇಳಿ.",
+priceNotice:"ಇವು ಆರಂಭಿಕ ಬೆಲೆಗಳು. ಕೆಲಸದ ಪ್ರಮಾಣ ಮತ್ತು ಜಾಹೀರಾತು ಬಜೆಟ್‌ನಿಂದ ಅಂತಿಮ ಬೆಲೆ ಬದಲಾಗಬಹುದು.",
+showreelTitle:"ಸೃಜನಾತ್ಮಕ ವೀಡಿಯೊ ಪ್ರದರ್ಶನ",showreelDesc:"BAIDIGITAL ವೀಡಿಯೊ ಪ್ರದರ್ಶನ.",
+videoOne:"3D ಲೋಗೋ ವೀಡಿಯೊ",videoTwo:"ಸ್ಥಾಪಕರ ಪರಿಚಯ",videoThree:"ಹೆಸರಿನ ವೀಡಿಯೊ",
+founderTitle:"ನಮ್ಮ ಸ್ಥಾಪಕರು",founderBadge:"ನಮ್ಮ ದೃಷ್ಟಿ",contactFounder:"ಸಂಪರ್ಕಿಸಿ",
+brochureTitle:"BAIDIGITAL ಬ್ರೋಶರ್",brochureDesc:"ಬ್ರೋಶರ್ ಪ್ರಿಂಟ್ ಮಾಡಿ ಅಥವಾ PDF ಆಗಿ ಉಳಿಸಿ.",
+brochureHeading:"AI ಮತ್ತು ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ಸೇವೆಗಳು",brochureIntro:"ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಪ್ರಚಾರ ಮಾಡಲು ಡಿಜಿಟಲ್ ಪರಿಹಾರಗಳು.",
+brochureServices:"ನಮ್ಮ ಸೇವೆಗಳು",bService1:"AI ಸಿನಿಮಾಟಿಕ್ ಪ್ರಚಾರ ವೀಡಿಯೊಗಳು",bService2:"ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಮಾರ್ಕೆಟಿಂಗ್",bService3:"ಪೋಸ್ಟರ್‌ಗಳು, ರೀಲ್ಸ್ ಮತ್ತು ಜಾಹೀರಾತುಗಳು",bService4:"ಬ್ರ್ಯಾಂಡಿಂಗ್ ಮತ್ತು ಡಿಜಿಟಲ್ ಪ್ರಚಾರ",brochureContact:"ಸಂಪರ್ಕಿಸಿ",
+printBtn:"ಪ್ರಿಂಟ್ / PDF ಉಳಿಸಿ",downloadBtn:"ಬ್ರೋಶರ್ HTML ಡೌನ್‌ಲೋಡ್",
+contactTitle:"ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",contactDesc:"ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಕಳುಹಿಸಿ; ಅಗತ್ಯವಿರುವ ಸೇವೆಯ ಬಗ್ಗೆ ಚರ್ಚಿಸೋಣ.",
+nameLabel:"ನಿಮ್ಮ ಹೆಸರು",phoneLabel:"ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",categoryLabel:"ಸೇವೆಯ ಪ್ರಕಾರ",packageLabel:"ಪ್ಯಾಕೇಜ್",messageLabel:"ನಿಮ್ಮ ಅಗತ್ಯ",
+businessOption:"ವ್ಯಾಪಾರ ಪ್ರಚಾರ",politicalOption:"ರಾಜಕೀಯ ಪ್ರಚಾರ",aiOption:"AI ವೀಡಿಯೊ ರಚನೆ",socialOption:"ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಮಾರ್ಕೆಟಿಂಗ್",otherOption:"ಇತರೆ",
+submitBtn:"WhatsApp ಮೂಲಕ ವಿಚಾರಣೆ ಕಳುಹಿಸಿ",formNotice:"ಈ ಫಾರ್ಮ್ ನಿಮ್ಮ ವಿವರಗಳನ್ನು WhatsApp ಸಂದೇಶವಾಗಿ ತೆರೆಯುತ್ತದೆ. ಕಳುಹಿಸಲು Send ಒತ್ತಿರಿ.",
+emailHeading:"ಇಮೇಲ್",emailBtn:"ಇಮೇಲ್ ಕಳುಹಿಸಿ",whatsappHeading:"WhatsApp",whatsappBtn:"WhatsApp ಚಾಟ್",callHeading:"ಕರೆ ಮಾಡಿ",callBtn:"ಈಗ ಕರೆ ಮಾಡಿ",
+footerText:"AI ಮತ್ತು ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ಸೇವೆಗಳು",rights:"ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
+plans:["ಸ್ಟಾರ್ಟರ್","ಗ್ರೋತ್","ಪ್ರೀಮಿಯಂ","ಕಸ್ಟಮ್"],features:["ಮೂಲಭೂತ ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಸಹಾಯ","ಸೃಜನಾತ್ಮಕ ಪೋಸ್ಟರ್ ಮತ್ತು ಪ್ರಚಾರ","ವೀಡಿಯೊಗಳು ಮತ್ತು ಡಿಜಿಟಲ್ ಪ್ರಚಾರ","ನಿಮ್ಮ ಅಗತ್ಯಕ್ಕೆ ತಕ್ಕಂತೆ"],
+ask:"ವಿವರ ಕೇಳಿ",choose:"ಆಯ್ಕೆಮಾಡಿ",from:"ಇಂದ",serviceBusiness:"ವ್ಯಾಪಾರ ಪ್ರಚಾರ",servicePolitical:"ರಾಜಕೀಯ ಪ್ರಚಾರ"
 },
 hi:{
-heroTitle:'अपने व्यवसाय को दें <span>डिजिटल शक्ति</span>',
-heroDesc:'AI और डिजिटल मार्केटिंग से अपने व्यवसाय को ऑनलाइन अधिक ग्राहकों तक पहुँचाएँ।',
-contactBtn:'हमसे संपर्क करें',servicesBtn:'हमारी सेवाएँ',servicesTitle:'हमारी सेवाएँ',
-s1Title:'सोशल मीडिया मार्केटिंग',s1Desc:'Facebook, Instagram और अन्य सोशल मीडिया प्लेटफॉर्म पर अपने व्यवसाय का प्रचार करें।',
-s2Title:'AI वीडियो निर्माण',s2Desc:'अपने व्यवसाय के लिए आकर्षक AI वीडियो और सिनेमैटिक प्रमोशन बनाएँ।',
-s3Title:'पोस्टर और विज्ञापन डिज़ाइन',s3Desc:'अपने ब्रांड के लिए आकर्षक पोस्टर, विज्ञापन और प्रचार सामग्री बनाएँ।',
-s4Title:'डिजिटल मार्केटिंग',s4Desc:'ब्रांड की पहचान बढ़ाने और नए ग्राहकों तक पहुँचने के लिए डिजिटल मार्केटिंग सेवाएँ।',
-aboutTitle:'BAIDIGITAL के बारे में',aboutDesc:'BAIDIGITAL, AI टूल्स और डिजिटल मार्केटिंग की मदद से छोटे व्यवसायों, स्थानीय दुकानों और ब्रांडों को ऑनलाइन आगे बढ़ने में मदद करता है।',
-contactTitle:'क्या आप अपने व्यवसाय का प्रचार करना चाहते हैं?',contactDesc:'अपनी ज़रूरतें हमें बताएँ। आइए बात करें!',emailBtn:'ईमेल भेजें',footer:'सर्वाधिकार सुरक्षित।'
+menu:"मेन्यू",home:"होम",services:"सेवाएँ",pricing:"पैकेज",founder:"संस्थापक",brochure:"ब्रोशर",contact:"संपर्क",
+heroTitle:"अपने व्यवसाय को डिजिटल दुनिया में नई पहचान दें",
+heroDesc:"AI वीडियो, सोशल मीडिया मार्केटिंग और क्रिएटिव प्रमोशन से अधिक ग्राहकों तक पहुँचें।",
+explore:"सेवाएँ देखें",getQuote:"कीमत पूछें",videoHint:"वीडियो न चले तो फ़ाइल का नाम और फ़ोल्डर जाँचें।",
+serviceTitle:"हमारी सेवाएँ",serviceDesc:"अपनी ज़रूरत के अनुसार डिजिटल प्रमोशन सेवा चुनें।",
+business:"बिज़नेस सेवाएँ",political:"राजनीतिक अभियान सेवाएँ",
+pricingTitle:"पैकेज और कीमतें",pricingDesc:"पैकेज चुनें और WhatsApp पर जानकारी पूछें।",
+priceNotice:"ये शुरुआती कीमतें हैं। काम और विज्ञापन बजट के अनुसार अंतिम कीमत बदल सकती है।",
+showreelTitle:"क्रिएटिव वीडियो शोकेस",showreelDesc:"BAIDIGITAL वीडियो शोकेस।",
+videoOne:"3D लोगो वीडियो",videoTwo:"संस्थापक परिचय",videoThree:"नाम वीडियो",
+founderTitle:"हमारे संस्थापक",founderBadge:"हमारा लक्ष्य",contactFounder:"संपर्क करें",
+brochureTitle:"BAIDIGITAL ब्रोशर",brochureDesc:"ब्रोशर प्रिंट करें या PDF के रूप में सेव करें।",
+brochureHeading:"AI और डिजिटल मार्केटिंग सेवाएँ",brochureIntro:"अपने व्यवसाय को ऑनलाइन प्रमोट करने के लिए क्रिएटिव डिजिटल समाधान।",
+brochureServices:"हमारी सेवाएँ",bService1:"AI सिनेमैटिक प्रमोशनल वीडियो",bService2:"सोशल मीडिया मार्केटिंग",bService3:"पोस्टर, रील्स और क्रिएटिव विज्ञापन",bService4:"बिज़नेस ब्रांडिंग और डिजिटल प्रमोशन",brochureContact:"संपर्क करें",
+printBtn:"प्रिंट / PDF सेव करें",downloadBtn:"ब्रोशर HTML डाउनलोड",
+contactTitle:"हमसे संपर्क करें",contactDesc:"अपनी जानकारी भेजें और अपनी ज़रूरत बताएं।",
+nameLabel:"आपका नाम",phoneLabel:"मोबाइल नंबर",categoryLabel:"सेवा का प्रकार",packageLabel:"पैकेज",messageLabel:"आपकी ज़रूरत",
+businessOption:"बिज़नेस प्रमोशन",politicalOption:"राजनीतिक अभियान",aiOption:"AI वीडियो बनाना",socialOption:"सोशल मीडिया मार्केटिंग",otherOption:"अन्य",
+submitBtn:"WhatsApp से पूछताछ भेजें",formNotice:"यह फ़ॉर्म आपकी जानकारी WhatsApp संदेश में खोलेगा। भेजने के लिए WhatsApp में Send दबाएँ।",
+emailHeading:"ईमेल",emailBtn:"ईमेल भेजें",whatsappHeading:"WhatsApp",whatsappBtn:"WhatsApp चैट",callHeading:"कॉल करें",callBtn:"अभी कॉल करें",
+footerText:"AI और डिजिटल मार्केटिंग सेवाएँ",rights:"सर्वाधिकार सुरक्षित।",
+plans:["स्टार्टर","ग्रोथ","प्रीमियम","कस्टम"],features:["बुनियादी सोशल मीडिया सहायता","क्रिएटिव पोस्टर और प्रमोशन","वीडियो और डिजिटल प्रमोशन","आपकी ज़रूरत के अनुसार"],
+ask:"जानकारी पूछें",choose:"चुनें",from:"से",serviceBusiness:"बिज़नेस प्रमोशन",servicePolitical:"राजनीतिक अभियान"
 }
 };
 
-function setLang(lang,button){
-  document.documentElement.lang=lang;
-  document.querySelectorAll('[data-i]').forEach(el=>{
-    const key=el.getAttribute('data-i');
-    if(translations[lang][key]!==undefined){
-      el.innerHTML=translations[lang][key];
-    }
-  });
-  document.querySelectorAll('.languages button').forEach(btn=>btn.classList.remove('active'));
-  button.classList.add('active');
+/* Update the amounts below to match your actual service rates. */
+const packageData = {
+ business: [
+  {key:"Starter",price:"₹999",features:["1 promotional creative","Basic social media guidance","WhatsApp support"]},
+  {key:"Growth",price:"₹2,999",features:["Creative posters and reels","Content planning","Social media support"]},
+  {key:"Premium",price:"₹5,999",features:["AI promotional video","Creative campaign support","Brand promotion planning"]},
+  {key:"Custom",price:"Custom",features:["Tailored service selection","Custom video and design scope","Quote based on requirements"]}
+ ],
+ political: [
+  {key:"Starter Campaign",price:"₹1,999",features:["Campaign poster design","Basic social media creatives","Campaign content guidance"]},
+  {key:"Growth Campaign",price:"₹4,999",features:["Multiple campaign creatives","Reels and short-video planning","Social media content support"]},
+  {key:"Premium Campaign",price:"₹9,999",features:["AI campaign video concepts","Creative campaign package","Content and branding support"]},
+  {key:"Custom Campaign",price:"Custom",features:["Tailored campaign requirements","Custom content and design scope","Quote based on requirements"]}
+ ]
+};
+
+let currentLanguage = "te";
+let currentCategory = "business";
+
+function setLanguage(lang){
+ if(!translations[lang]) return;
+ currentLanguage = lang;
+ document.documentElement.lang = lang;
+ const t = translations[lang];
+
+ document.querySelectorAll("[data-i18n]").forEach(el=>{
+   const key = el.getAttribute("data-i18n");
+   if(t[key] !== undefined) el.textContent = t[key];
+ });
+
+ document.querySelectorAll(".lang-btn").forEach(btn=>{
+   btn.classList.toggle("active",btn.dataset.lang === lang);
+ });
+
+ renderCards();
+ renderPricing();
+ updatePackageSelect();
 }
-document.getElementById('year').textContent=new Date().getFullYear();
+
+function toggleMenu(){
+ document.getElementById("drawer").classList.toggle("open");
+}
+function closeMenu(){
+ document.getElementById("drawer").classList.remove("open");
+}
+
+function setCategory(category){
+ currentCategory = category;
+ document.getElementById("businessTab").classList.toggle("active",category === "business");
+ document.getElementById("politicalTab").classList.toggle("active",category === "political");
+ renderCards();
+ renderPricing();
+ updatePackageSelect();
+}
+
+function renderCards(){
+ const t = translations[currentLanguage];
+ const items = currentCategory === "business"
+ ? [
+   ["AI Video Creation","Create cinematic AI promotional videos for products and businesses."],
+   ["Social Media Marketing","Plan posts, captions, hashtags and content for social platforms."],
+   ["Creative Posters & Reels","Promotional designs and short-form video content."],
+   ["Digital Branding","Creative content to improve your business identity."]
+ ]
+ : [
+   ["Campaign Creatives","Design campaign posters and digital promotional content."],
+   ["AI Campaign Videos","Create AI-assisted campaign video concepts."],
+   ["Social Media Content","Plan campaign posts, captions and short videos."],
+   ["Campaign Branding","Maintain a consistent campaign visual identity."]
+ ];
+
+ const descriptions = {
+  te:[
+   ["AI వీడియో తయారీ","వ్యాపారాలు మరియు ఉత్పత్తుల కోసం సినిమాటిక్ AI ప్రమోషనల్ వీడియోలు."],
+   ["సోషల్ మీడియా మార్కెటింగ్","పోస్టులు, క్యాప్షన్లు, హ్యాష్‌ట్యాగ్స్ మరియు కంటెంట్ ప్లానింగ్."],
+   ["క్రియేటివ్ పోస్టర్లు & రీల్స్","ప్రమోషనల్ డిజైన్లు మరియు చిన్న వీడియోలు."],
+   ["డిజిటల్ బ్రాండింగ్","మీ వ్యాపార గుర్తింపును పెంచే క్రియేటివ్ కంటెంట్."]
+  ],
+  kn:[
+   ["AI ವೀಡಿಯೊ ರಚನೆ","ವ್ಯಾಪಾರ ಮತ್ತು ಉತ್ಪನ್ನಗಳಿಗಾಗಿ AI ಪ್ರಚಾರ ವೀಡಿಯೊಗಳು."],
+   ["ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಮಾರ್ಕೆಟಿಂಗ್","ಪೋಸ್ಟ್‌ಗಳು, ಕ್ಯಾಪ್ಷನ್‌ಗಳು ಮತ್ತು ಹ್ಯಾಶ್‌ಟ್ಯಾಗ್ ಯೋಜನೆ."],
+   ["ಪೋಸ್ಟರ್‌ಗಳು ಮತ್ತು ರೀಲ್ಸ್","ಪ್ರಚಾರ ವಿನ್ಯಾಸಗಳು ಮತ್ತು ಚಿಕ್ಕ ವೀಡಿಯೊಗಳು."],
+   ["ಡಿಜಿಟಲ್ ಬ್ರ್ಯಾಂಡಿಂಗ್","ವ್ಯವಹಾರದ ಗುರುತನ್ನು ಹೆಚ್ಚಿಸುವ ಸೃಜನಾತ್ಮಕ ವಿಷಯ."]
+  ],
+  hi:[
+   ["AI वीडियो निर्माण","व्यवसायों और उत्पादों के लिए AI प्रमोशनल वीडियो।"],
+   ["सोशल मीडिया मार्केटिंग","पोस्ट, कैप्शन, हैशटैग और कंटेंट प्लानिंग।"],
+   ["क्रिएटिव पोस्टर और रील्स","प्रमोशनल डिज़ाइन और छोटे वीडियो।"],
+   ["डिजिटल ब्रांडिंग","आपके व्यवसाय की पहचान बढ़ाने वाला कंटेंट।"]
+  ],
+  en:descriptions
+ };
+
+ const data = currentLanguage === "en" ? items : descriptions[currentLanguage][currentCategory==="business"?0:0] && (
+   currentLanguage === "te" ? descriptions.te : currentLanguage === "kn" ? descriptions.kn : descriptions.hi
+ );
+
+ let cards = "";
+ items.forEach((item,i)=>{
+   let title = item[0], desc = item[1];
+   if(currentLanguage !== "en"){
+     const localized = descriptions[currentLanguage];
+     const offset = currentCategory === "business" ? 0 : 0;
+     if(localized && localized[i]){title=localized[i][0];desc=localized[i][1];}
+   }
+   cards += `<article class="card"><h3>${escapeHtml(title)}</h3><p>${escapeHtml(desc)}</p><a class="btn btn-gold" href="#contact" onclick="selectService('${currentCategory}')">${escapeHtml(t.ask)}</a></article>`;
+ });
+ document.getElementById("serviceCards").innerHTML = cards;
+}
+
+function renderPricing(){
+ const t = translations[currentLanguage];
+ const plans = packageData[currentCategory];
+ const localizedFeatures = {
+  te:["సోషల్ మీడియా ప్రాథమిక సహాయం","క్రియేటివ్ పోస్టర్లు మరియు ప్రమోషన్","వీడియోలు మరియు డిజిటల్ ప్రమోషన్","మీ అవసరానికి అనుగుణంగా"],
+  en:["Basic social media support","Creative posters and promotion","Videos and digital promotion","Tailored to your requirements"],
+  kn:["ಮೂಲಭೂತ ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಸಹಾಯ","ಸೃಜನಾತ್ಮಕ ಪೋಸ್ಟರ್ ಮತ್ತು ಪ್ರಚಾರ","ವೀಡಿಯೊಗಳು ಮತ್ತು ಡಿಜಿಟಲ್ ಪ್ರಚಾರ","ನಿಮ್ಮ ಅಗತ್ಯಕ್ಕೆ ತಕ್ಕಂತೆ"],
+  hi:["बुनियादी सोशल मीडिया सहायता","क्रिएटिव पोस्टर और प्रमोशन","वीडियो और डिजिटल प्रमोशन","आपकी ज़रूरत के अनुसार"]
+ };
+ const localizedNames = {
+  te:["స్టార్టర్","గ్రోత్","ప్రీమియం","కస్టమ్"],
+  en:["Starter","Growth","Premium","Custom"],
+  kn:["ಸ್ಟಾರ್ಟರ್","ಗ್ರೋತ್","ಪ್ರೀಮಿಯಂ","ಕಸ್ಟಮ್"],
+  hi:["स्टार्टर","ग्रोथ","प्रीमियम","कस्टम"]
+ };
+ document.getElementById("pricingCards").innerHTML = plans.map((p,i)=>{
+   const features = p.features.map((f,j)=>`<li>${escapeHtml(localizedFeatures[currentLanguage][j] || f)}</li>`).join("");
+   const title = localizedNames[currentLanguage][i];
+   const price = p.price === "Custom" ? (currentLanguage==="te"?"కస్టమ్ ధర":currentLanguage==="kn"?"ವಿಶೇಷ ಬೆಲೆ":currentLanguage==="hi"?"कस्टम कीमत":"Custom Price") : p.price;
+   return `<article class="card ${i===2?'featured':''}">
+    <h3>${escapeHtml(title)}</h3>
+    <div class="price">${escapeHtml(price)} ${p.price==="Custom"?"":" "}<small>${p.price==="Custom"?"":(currentLanguage==="te"?"నుండి":currentLanguage==="kn"?"ಇಂದ":currentLanguage==="hi"?"से":"starting")}</small></div>
+    <ul>${features}</ul>
+    <button class="btn btn-gold" onclick="choosePackage('${escapeJs(p.key)}')">${escapeHtml(t.choose)}</button>
+    <button class="btn btn-outline" onclick="enquirePackage('${escapeJs(p.key)}')">${escapeHtml(t.ask)}</button>
+   </article>`;
+ }).join("");
+}
+
+function updatePackageSelect(){
+ const select = document.getElementById("customerPackage");
+ const t = translations[currentLanguage];
+ select.innerHTML = `<option value="Not selected">${escapeHtml(t.choose)}...</option>`;
+ packageData[currentCategory].forEach(p=>{
+  const opt = document.createElement("option");
+  opt.value = p.key;
+  opt.textContent = p.key + " - " + p.price;
+  select.appendChild(opt);
+ });
+ document.getElementById("customerCategory").value = currentCategory === "business" ? "Business" : "Political";
+}
+
+function choosePackage(key){
+ document.getElementById("customerPackage").value = key;
+ document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+function enquirePackage(key){
+ choosePackage(key);
+ document.getElementById("customerMessage").value = "I would like to know more about the " + key + " package.";
+}
+function selectService(category){
+ document.getElementById("customerCategory").value = category === "business" ? "Business" : "Political";
+}
+
+function escapeHtml(value){
+ return String(value).replace(/[&<>"']/g, ch=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ }[ch]));
+}
+function escapeJs(value){
+ return String(value).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+}
+
+document.getElementById("inquiryForm").addEventListener("submit",function(event){
+ event.preventDefault();
+ const t = translations[currentLanguage];
+ const name = document.getElementById("customerName").value.trim();
+ const phone = document.getElementById("customerPhone").value.trim();
+ const category = document.getElementById("customerCategory").value;
+ const selectedPackage = document.getElementById("customerPackage").value;
+ const message = document.getElementById("customerMessage").value.trim();
+
+ if(!name || !phone){
+  alert(currentLanguage==="te"?"దయచేసి పేరు మరియు మొబైల్ నంబర్ నమోదు చేయండి.":"Please enter your name and phone number.");
+  return;
+ }
+
+ const textMessage =
+  "BAIDIGITAL Website Inquiry\n"+
+  "Name: "+name+"\n"+
+  "Phone: "+phone+"\n"+
+  "Service: "+category+"\n"+
+  "Package: "+selectedPackage+"\n"+
+  "Requirement: "+(message || "Not specified");
+
+ window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(textMessage),"_blank","noopener");
+});
+
+function downloadBrochure(){
+ const brochure = document.getElementById("brochureContent").outerHTML;
+ const styles = `<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BAIDIGITAL Brochure</title><style>body{font-family:Arial,sans-serif;padding:24px;color:#172033}h2,h3{color:#132d51}.gold{color:#8a5a00}</style>`;
+ const html = `<!DOCTYPE html><html><head>${styles}</head><body>${brochure}</body></html>`;
+ const blob = new Blob([html],{type:"text/html;charset=utf-8"});
+ const url = URL.createObjectURL(blob);
+ const a = document.createElement("a");
+ a.href = url;
+ a.download = "baidigital-brochure.html";
+ document.body.appendChild(a);
+ a.click();
+ a.remove();
+ URL.revokeObjectURL(url);
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+setLanguage("te");
 </script>
 </body>
 </html>
