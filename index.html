@@ -1,551 +1,172 @@
- <!DOCTYPE html>
+ 
+<!DOCTYPE html>
 <html lang="te">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>BAIDIGITAL | AI Marketing & Political Campaigns</title>
-  <meta name="description" content="AI బిజినెస్ ప్రమోషన్ మరియు పొలిటికల్ డిజిటల్ క్యాంపెయిన్స్ - A to Z సర్వీసెస్.">
-  
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#030712">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAIDIGITAL | Digital Marketing & AI Services</title>
+<meta name="description" content="BAIDIGITAL offers digital marketing, AI video creation, social media marketing and poster design services.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,"Noto Sans Kannada","Noto Sans Devanagari",sans-serif;background:#081225;color:#fff;line-height:1.6}
+header{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;background:#101d35}
+.logo{font-size:27px;font-weight:900;color:#38d9ff}
+.languages{display:flex;gap:6px;flex-wrap:wrap}
+.languages button{padding:7px 10px;border:1px solid #38d9ff;background:transparent;color:#fff;border-radius:7px;cursor:pointer}
+.languages button.active,.languages button:hover{background:#38d9ff;color:#081225}
+.hero{text-align:center;padding:85px 20px 75px;background:linear-gradient(135deg,#101d35,#123b63,#101225)}
+.hero h1{font-size:clamp(32px,6vw,55px);line-height:1.2;margin-bottom:20px}
+.hero h1 span{color:#38d9ff}
+.hero p{max-width:700px;margin:0 auto 25px;color:#e0e8f5;font-size:18px}
+.btn{display:inline-block;padding:12px 22px;margin:6px;border-radius:8px;background:#38d9ff;color:#061225;text-decoration:none;font-weight:bold}
+.btn.secondary{background:transparent;color:#fff;border:1px solid #38d9ff}
+section{padding:55px 7%}
+.section-title{text-align:center;font-size:30px;margin-bottom:28px;color:#38d9ff}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#111f38;border:1px solid #233c5e;border-radius:14px;padding:24px}
+.card .emoji{font-size:35px}
+.card h3{margin:12px 0;color:#38d9ff}
+.card p{color:#d3dbea}
+.about{text-align:center;max-width:850px;margin:auto}
+.about p{color:#d3dbea}
+.contact{background:#101d35;text-align:center}
+.contact p{margin:10px 0;color:#e0e8f5}
+footer{text-align:center;padding:20px;color:#aab7cb;background:#06101f}
+a{overflow-wrap:anywhere}
+@media(max-width:600px){
+ header{justify-content:center;text-align:center}
+ .hero{padding:60px 16px}
+ section{padding:42px 18px}
+ .section-title{font-size:26px}
+}
+</style>
+</head>
+<body>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<header>
+  <div class="logo">BAIDIGITAL</div>
+  <div class="languages">
+    <button class="active" onclick="setLang('te',this)">తెలుగు</button>
+    <button onclick="setLang('en',this)">English</button>
+    <button onclick="setLang('kn',this)">ಕನ್ನಡ</button>
+    <button onclick="setLang('hi',this)">हिन्दी</button>
+  </div>
+</header>
 
-  <style>
-    :root {
-      --primary: #00d4ff;
-      --secondary: #7928ca;
-      --accent: #25d366;
-      --gold: #fbbf24;
-      --bg-dark: #030712;
-      --card-bg: #0b1120;
-      --card-border: rgba(255, 255, 255, 0.08);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-    }
+<main>
+<section class="hero">
+  <h1 data-i="heroTitle">మీ వ్యాపారానికి <span>డిజిటల్ శక్తి</span></h1>
+  <p data-i="heroDesc">AI మరియు డిజిటల్ మార్కెటింగ్‌తో మీ వ్యాపారాన్ని ఆన్‌లైన్‌లో మరింత మందికి చేరవేయండి.</p>
+  <a class="btn" href="mailto:connect@baidigital.in" data-i="contactBtn">మమ్మల్ని సంప్రదించండి</a>
+  <a class="btn secondary" href="#services" data-i="servicesBtn">మా సేవలు</a>
+</section>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      -webkit-tap-highlight-color: transparent;
-    }
+<section id="services">
+  <h2 class="section-title" data-i="servicesTitle">మా సేవలు</h2>
+  <div class="services">
+    <article class="card">
+      <div class="emoji">📱</div>
+      <h3 data-i="s1Title">సోషల్ మీడియా మార్కెటింగ్</h3>
+      <p data-i="s1Desc">Facebook, Instagram మరియు ఇతర సోషల్ మీడియా ప్లాట్‌ఫారమ్‌లలో మీ వ్యాపారాన్ని ప్రమోట్ చేయండి.</p>
+    </article>
+    <article class="card">
+      <div class="emoji">🤖</div>
+      <h3 data-i="s2Title">AI వీడియో క్రియేషన్</h3>
+      <p data-i="s2Desc">మీ వ్యాపారం కోసం ఆకర్షణీయమైన AI వీడియోలు మరియు సినిమాటిక్ ప్రమోషన్లు రూపొందించండి.</p>
+    </article>
+    <article class="card">
+      <div class="emoji">🎨</div>
+      <h3 data-i="s3Title">పోస్టర్ & అడ్వర్టైజ్‌మెంట్ డిజైన్</h3>
+      <p data-i="s3Desc">మీ బ్రాండ్ కోసం ఆకర్షణీయమైన పోస్టర్లు, ప్రకటనలు మరియు ప్రమోషనల్ క్రియేటివ్స్.</p>
+    </article>
+    <article class="card">
+      <div class="emoji">📈</div>
+      <h3 data-i="s4Title">డిజిటల్ మార్కెటింగ్</h3>
+      <p data-i="s4Desc">మీ బ్రాండ్ గుర్తింపును పెంచి, కొత్త కస్టమర్లను చేరుకోవడానికి డిజిటల్ మార్కెటింగ్ సేవలు.</p>
+    </article>
+  </div>
+</section>
 
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding-bottom: 95px;
-      overflow-x: hidden;
-    }
+<section>
+  <div class="about">
+    <h2 class="section-title" data-i="aboutTitle">BAIDIGITAL గురించి</h2>
+    <p data-i="aboutDesc">AI టూల్స్ మరియు డిజిటల్ మార్కెటింగ్ సహాయంతో చిన్న వ్యాపారాలు, స్థానిక షాపులు మరియు బ్రాండ్లు ఆన్‌లైన్‌లో ఎదగడానికి BAIDIGITAL సహకరిస్తుంది.</p>
+  </div>
+</section>
 
-    .top-bar {
-      background: #070d18;
-      padding: 8px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      font-size: 0.78rem;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .lang-switcher {
-      display: flex;
-      gap: 5px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .lang-btn {
-      background: transparent;
-      border: 1px solid rgba(0, 212, 255, 0.3);
-      color: var(--text-muted);
-      padding: 3px 8px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.72rem;
-      font-weight: 700;
-      transition: all 0.2s;
-    }
-    .lang-btn.active {
-      background: var(--primary);
-      color: #000;
-      border-color: var(--primary);
-    }
+<section class="contact" id="contact">
+  <h2 class="section-title" data-i="contactTitle">మీ వ్యాపారాన్ని ప్రమోట్ చేయాలనుకుంటున్నారా?</h2>
+  <p data-i="contactDesc">మీ అవసరాలను మాకు తెలియజేయండి. మాట్లాడుకుందాం!</p>
+  <p><strong>Email:</strong> <a style="color:#38d9ff" href="mailto:connect@baidigital.in">connect@baidigital.in</a></p>
+  <a class="btn" href="mailto:connect@baidigital.in" data-i="emailBtn">ఇమెయిల్ పంపండి</a>
+</section>
+</main>
 
-    header {
-      padding: 12px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(3, 7, 18, 0.92);
-      backdrop-filter: blur(14px);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--card-border);
-    }
-    .brand-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .header-logo {
-      width: 38px;
-      height: 38px;
-      border-radius: 8px;
-      object-fit: contain;
-      background: #000;
-      border: 1.5px solid rgba(0, 212, 255, 0.4);
-    }
-    .brand-title {
-      font-size: 1.25rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #00d4ff, #a855f7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .menu-toggle-btn {
-      background: #0f172a;
-      border: 1px solid var(--card-border);
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1.1rem;
-    }
+<footer>
+  © <span id="year"></span> BAIDIGITAL. <span data-i="footer">అన్ని హక్కులు ప్రత్యేకించబడ్డాయి.</span>
+</footer>
 
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(5px);
-      z-index: 2000;
-      display: none;
-    }
-    .menu-drawer {
-      position: fixed;
-      top: 0;
-      right: -280px;
-      width: 280px;
-      height: 100%;
-      background: #090e1a;
-      border-left: 1px solid rgba(0, 212, 255, 0.2);
-      z-index: 2001;
-      padding: 24px 20px;
-      display: flex;
-      flex-direction: column;
-      transition: right 0.3s ease;
-      overflow-y: auto;
-    }
-    .menu-drawer.open {
-      right: 0;
-    }
-    .drawer-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--card-border);
-    }
-    .drawer-close {
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 1.4rem;
-      cursor: pointer;
-    }
-    .drawer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .drawer-links a {
-      color: #cbd5e1;
-      text-decoration: none;
-      font-size: 0.98rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+<script>
+const translations = {
+te:{
+heroTitle:'మీ వ్యాపారానికి <span>డిజిటల్ శక్తి</span>',
+heroDesc:'AI మరియు డిజిటల్ మార్కెటింగ్‌తో మీ వ్యాపారాన్ని ఆన్‌లైన్‌లో మరింత మందికి చేరవేయండి.',
+contactBtn:'మమ్మల్ని సంప్రదించండి',servicesBtn:'మా సేవలు',
+servicesTitle:'మా సేవలు',
+s1Title:'సోషల్ మీడియా మార్కెటింగ్',s1Desc:'Facebook, Instagram మరియు ఇతర సోషల్ మీడియా ప్లాట్‌ఫారమ్‌లలో మీ వ్యాపారాన్ని ప్రమోట్ చేయండి.',
+s2Title:'AI వీడియో క్రియేషన్',s2Desc:'మీ వ్యాపారం కోసం ఆకర్షణీయమైన AI వీడియోలు మరియు సినిమాటిక్ ప్రమోషన్లు రూపొందించండి.',
+s3Title:'పోస్టర్ & అడ్వర్టైజ్‌మెంట్ డిజైన్',s3Desc:'మీ బ్రాండ్ కోసం ఆకర్షణీయమైన పోస్టర్లు, ప్రకటనలు మరియు ప్రమోషనల్ క్రియేటివ్స్.',
+s4Title:'డిజిటల్ మార్కెటింగ్',s4Desc:'మీ బ్రాండ్ గుర్తింపును పెంచి, కొత్త కస్టమర్లను చేరుకోవడానికి డిజిటల్ మార్కెటింగ్ సేవలు.',
+aboutTitle:'BAIDIGITAL గురించి',aboutDesc:'AI టూల్స్ మరియు డిజిటల్ మార్కెటింగ్ సహాయంతో చిన్న వ్యాపారాలు, స్థానిక షాపులు మరియు బ్రాండ్లు ఆన్‌లైన్‌లో ఎదగడానికి BAIDIGITAL సహకరిస్తుంది.',
+contactTitle:'మీ వ్యాపారాన్ని ప్రమోట్ చేయాలనుకుంటున్నారా?',contactDesc:'మీ అవసరాలను మాకు తెలియజేయండి. మాట్లాడుకుందాం!',emailBtn:'ఇమెయిల్ పంపండి',footer:'అన్ని హక్కులు ప్రత్యేకించబడ్డాయి.'
+},
+en:{
+heroTitle:'Give Your Business <span>Digital Power</span>',
+heroDesc:'Reach more customers online with AI and digital marketing.',
+contactBtn:'Contact Us',servicesBtn:'Our Services',servicesTitle:'Our Services',
+s1Title:'Social Media Marketing',s1Desc:'Promote your business on Facebook, Instagram and other social media platforms.',
+s2Title:'AI Video Creation',s2Desc:'Create engaging AI videos and cinematic promotions for your business.',
+s3Title:'Poster & Advertisement Design',s3Desc:'Attractive posters, advertisements and promotional creatives for your brand.',
+s4Title:'Digital Marketing',s4Desc:'Digital marketing services to grow brand awareness and reach new customers.',
+aboutTitle:'About BAIDIGITAL',aboutDesc:'BAIDIGITAL helps small businesses, local shops and brands grow online with AI tools and digital marketing.',
+contactTitle:'Ready to Promote Your Business?',contactDesc:'Tell us what you need. Let’s talk!',emailBtn:'Send an Email',footer:'All rights reserved.'
+},
+kn:{
+heroTitle:'ನಿಮ್ಮ ವ್ಯವಹಾರಕ್ಕೆ <span>ಡಿಜಿಟಲ್ ಶಕ್ತಿ</span>',
+heroDesc:'AI ಮತ್ತು ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ಮೂಲಕ ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಹೆಚ್ಚು ಗ್ರಾಹಕರಿಗೆ ತಲುಪಿಸಿ.',
+contactBtn:'ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ',servicesBtn:'ನಮ್ಮ ಸೇವೆಗಳು',servicesTitle:'ನಮ್ಮ ಸೇವೆಗಳು',
+s1Title:'ಸೋಷಿಯಲ್ ಮೀಡಿಯಾ ಮಾರ್ಕೆಟಿಂಗ್',s1Desc:'Facebook, Instagram ಮತ್ತು ಇತರ ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮಗಳಲ್ಲಿ ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಪ್ರಚಾರ ಮಾಡಿ.',
+s2Title:'AI ವೀಡಿಯೊ ನಿರ್ಮಾಣ',s2Desc:'ನಿಮ್ಮ ವ್ಯವಹಾರಕ್ಕಾಗಿ ಆಕರ್ಷಕ AI ವೀಡಿಯೊಗಳು ಮತ್ತು ಸಿನಿಮಾಟಿಕ್ ಪ್ರಚಾರಗಳನ್ನು ರಚಿಸಿ.',
+s3Title:'ಪೋಸ್ಟರ್ ಮತ್ತು ಜಾಹೀರಾತು ವಿನ್ಯಾಸ',s3Desc:'ನಿಮ್ಮ ಬ್ರ್ಯಾಂಡ್‌ಗಾಗಿ ಆಕರ್ಷಕ ಪೋಸ್ಟರ್‌ಗಳು ಮತ್ತು ಜಾಹೀರಾತು ವಿನ್ಯಾಸಗಳು.',
+s4Title:'ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್',s4Desc:'ಬ್ರ್ಯಾಂಡ್ ಗುರುತನ್ನು ಹೆಚ್ಚಿಸಲು ಮತ್ತು ಹೊಸ ಗ್ರಾಹಕರನ್ನು ತಲುಪಲು ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ಸೇವೆಗಳು.',
+aboutTitle:'BAIDIGITAL ಬಗ್ಗೆ',aboutDesc:'AI ಟೂಲ್‌ಗಳು ಮತ್ತು ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ಮೂಲಕ ಸಣ್ಣ ವ್ಯಾಪಾರಗಳು, ಸ್ಥಳೀಯ ಅಂಗಡಿಗಳು ಮತ್ತು ಬ್ರ್ಯಾಂಡ್‌ಗಳು ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಬೆಳೆಯಲು BAIDIGITAL ಸಹಾಯ ಮಾಡುತ್ತದೆ.',
+contactTitle:'ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಪ್ರಚಾರ ಮಾಡಲು ಸಿದ್ಧರಿದ್ದೀರಾ?',contactDesc:'ನಿಮ್ಮ ಅಗತ್ಯಗಳನ್ನು ನಮಗೆ ತಿಳಿಸಿ. ಮಾತನಾಡೋಣ!',emailBtn:'ಇಮೇಲ್ ಕಳುಹಿಸಿ',footer:'ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.'
+},
+hi:{
+heroTitle:'अपने व्यवसाय को दें <span>डिजिटल शक्ति</span>',
+heroDesc:'AI और डिजिटल मार्केटिंग से अपने व्यवसाय को ऑनलाइन अधिक ग्राहकों तक पहुँचाएँ।',
+contactBtn:'हमसे संपर्क करें',servicesBtn:'हमारी सेवाएँ',servicesTitle:'हमारी सेवाएँ',
+s1Title:'सोशल मीडिया मार्केटिंग',s1Desc:'Facebook, Instagram और अन्य सोशल मीडिया प्लेटफॉर्म पर अपने व्यवसाय का प्रचार करें।',
+s2Title:'AI वीडियो निर्माण',s2Desc:'अपने व्यवसाय के लिए आकर्षक AI वीडियो और सिनेमैटिक प्रमोशन बनाएँ।',
+s3Title:'पोस्टर और विज्ञापन डिज़ाइन',s3Desc:'अपने ब्रांड के लिए आकर्षक पोस्टर, विज्ञापन और प्रचार सामग्री बनाएँ।',
+s4Title:'डिजिटल मार्केटिंग',s4Desc:'ब्रांड की पहचान बढ़ाने और नए ग्राहकों तक पहुँचने के लिए डिजिटल मार्केटिंग सेवाएँ।',
+aboutTitle:'BAIDIGITAL के बारे में',aboutDesc:'BAIDIGITAL, AI टूल्स और डिजिटल मार्केटिंग की मदद से छोटे व्यवसायों, स्थानीय दुकानों और ब्रांडों को ऑनलाइन आगे बढ़ने में मदद करता है।',
+contactTitle:'क्या आप अपने व्यवसाय का प्रचार करना चाहते हैं?',contactDesc:'अपनी ज़रूरतें हमें बताएँ। आइए बात करें!',emailBtn:'ईमेल भेजें',footer:'सर्वाधिकार सुरक्षित।'
+}
+};
 
-    .hero {
-      padding: 24px 20px 16px;
-      text-align: center;
+function setLang(lang,button){
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i]').forEach(el=>{
+    const key=el.getAttribute('data-i');
+    if(translations[lang][key]!==undefined){
+      el.innerHTML=translations[lang][key];
     }
-    .hero-tag {
-      display: inline-block;
-      font-size: 0.78rem;
-      background: rgba(0, 212, 255, 0.1);
-      color: #00d4ff;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-weight: 700;
-      border: 1px solid rgba(0, 212, 255, 0.25);
-      margin-bottom: 12px;
-    }
-    .hero h1 {
-      font-size: 1.85rem;
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 10px;
-      background: linear-gradient(to right, #ffffff, #cbd5e1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero p {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    .video-stage {
-      max-width: 440px;
-      margin: 0 auto 24px;
-      padding: 0 10px;
-    }
-    .video-frame {
-      background: #000;
-      border-radius: 20px;
-      padding: 6px;
-      border: 2px solid rgba(0, 212, 255, 0.45);
-      box-shadow: 0 12px 35px rgba(0, 212, 255, 0.3), 0 0 20px rgba(168, 85, 247, 0.25);
-      overflow: hidden;
-    }
-    .video-frame video, .video-frame img {
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
-      display: block;
-      background: #000;
-    }
-
-    .tab-container {
-      padding: 0 20px;
-      margin-bottom: 20px;
-    }
-    .tab-buttons {
-      display: flex;
-      background: #0f172a;
-      border-radius: 12px;
-      padding: 4px;
-      border: 1px solid var(--card-border);
-    }
-    .tab-btn {
-      flex: 1;
-      padding: 12px;
-      text-align: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-      border: none;
-      background: transparent;
-      color: var(--text-muted);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .tab-btn.active {
-      background: linear-gradient(135deg, #0ea5e9, #6366f1);
-      color: #fff;
-    }
-
-    .section-title {
-      font-size: 1.3rem;
-      font-weight: 800;
-      text-align: center;
-      margin: 32px 0 16px;
-      color: #ffffff;
-    }
-
-    .pricing-wrap {
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .pricing-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 20px;
-      border: 1px solid var(--card-border);
-      position: relative;
-    }
-    .pricing-card.normal {
-      border-color: #38bdf8;
-      background: linear-gradient(180deg, rgba(14, 165, 233, 0.1) 0%, #0b1120 100%);
-    }
-    .pricing-card.premium {
-      border-color: #a855f7;
-      background: linear-gradient(180deg, rgba(168, 85, 247, 0.12) 0%, #0b1120 100%);
-    }
-    .plan-badge {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      background: #ec4899;
-      color: #fff;
-      font-size: 0.65rem;
-      font-weight: 800;
-      padding: 4px 8px;
-      border-radius: 10px;
-    }
-    .plan-name {
-      font-size: 1.15rem;
-      font-weight: 800;
-    }
-    .plan-price {
-      font-size: 1.7rem;
-      font-weight: 800;
-      color: #38bdf8;
-      margin: 8px 0 12px;
-    }
-    .plan-features {
-      list-style: none;
-      margin-bottom: 16px;
-    }
-    .plan-features li {
-      font-size: 0.86rem;
-      color: #cbd5e1;
-      margin-bottom: 7px;
-    }
-    .plan-btn {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 12px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-decoration: none;
-      background: #10b981;
-      color: #ffffff;
-    }
-
-    .brochure-section {
-      margin: 30px 20px;
-      background: linear-gradient(145deg, #0b1120, #070d18);
-      border: 2px solid #00d4ff;
-      border-radius: 20px;
-      padding: 24px 18px;
-    }
-    .brochure-header {
-      text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 14px;
-      margin-bottom: 18px;
-    }
-    .brochure-header h3 {
-      font-size: 1.3rem;
-      color: #00d4ff;
-      font-weight: 800;
-    }
-    .brochure-header p {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-    .brochure-item {
-      background: #030712;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 12px;
-    }
-    .brochure-item h4 {
-      color: #38bdf8;
-      font-size: 0.95rem;
-      margin-bottom: 4px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-    .brochure-item h4 span {
-      color: var(--gold);
-    }
-    .brochure-item p {
-      font-size: 0.82rem;
-      color: #cbd5e1;
-    }
-    .print-btn {
-      display: block;
-      width: 100%;
-      text-align: center;
-      background: linear-gradient(135deg, #0ea5e9, #6366f1);
-      color: #fff;
-      font-weight: 700;
-      padding: 12px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.92rem;
-      margin-top: 14px;
-    }
-
-    .founder-card {
-      margin: 0 20px 28px;
-      background: radial-gradient(circle at top, #1e1b4b 0%, #0b1120 100%);
-      border-radius: 20px;
-      padding: 20px;
-      border: 1.5px solid rgba(251, 191, 36, 0.4);
-      text-align: center;
-    }
-    .founder-badge {
-      display: inline-block;
-      background: rgba(251, 191, 36, 0.15);
-      color: var(--gold);
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 4px 12px;
-      border-radius: 20px;
-      margin-bottom: 12px;
-    }
-    .founder-video-box {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 2px solid rgba(251, 191, 36, 0.35);
-      background: #000;
-      margin-bottom: 14px;
-    }
-    .founder-video-box video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .timeline-wrap {
-      padding: 0 20px;
-      display: grid;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .timeline-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(0, 212, 255, 0.2);
-      border-radius: 14px;
-      padding: 16px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .time-icon {
-      font-size: 1.8rem;
-    }
-    .time-details h4 {
-      font-size: 0.95rem;
-      color: #fff;
-    }
-    .time-details p {
-      font-size: 0.8rem;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .hours-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 18px;
-      margin: 0 20px 24px;
-    }
-    .hours-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.85rem;
-    }
-    .hours-row:last-child {
-      border-bottom: none;
-    }
-
-    .form-box {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 20px;
-      margin: 0 20px;
-      border: 1px solid rgba(0, 212, 255, 0.3);
-    }
-    .form-group {
-      margin-bottom: 12px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-bottom: 5px;
-    }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%;
-      padding: 11px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: #030712;
-      color: #fff;
-      font-size: 0.9rem;
-    }
-    .form-submit-btn {
-      width: 100%;
-      padding: 13px;
-      background: #25d366;
-      color: #fff;
-      font-weight: 700;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.98rem;
-    }
-
-    .social-section {
-      text-align: center;
-      padding: 30px 20px 10px;
-      margin-top: 25px;
-      border-top: 1px solid var(--card-border);
-    }
-    .social-icons-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-      margin-top: 16px;
-    }
-    .social-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: #0f172a;
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-    }
-    .social-btn svg {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-    }
-    .btn-wa { color: #25d366; }
-    .btn-call { color: #00d4ff; }
-    .btn-insta { color: #e1306c; }
-    .btn-yt { color: #ff0000; }
-    .btn-fb { color: #1877f2; }
-    .btn-mail { color: #ea4335; }
-
-    .sticky-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 
+  });
+  document.querySelectorAll('.languages button').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active');
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
