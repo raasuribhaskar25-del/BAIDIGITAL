@@ -1,262 +1,185 @@
- 
+
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio | BAI DIGITAL</title>
-<meta name="description" content="BAI DIGITAL creative portfolio">
+
 <style>
-:root{
---bg:#030712;--panel:#101a2c;--line:#263247;
---cyan:#00d4ff;--muted:#aab7ca;--white:#f8fafc;
-}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
-margin:0;background:radial-gradient(ellipse at top,#10233b 0,#030712 48%);
-color:var(--white);font-family:Arial,sans-serif;line-height:1.6;
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#071426;
+ color:#fff;
 }
 header{
-padding:16px 6%;display:flex;justify-content:space-between;
-align-items:center;border-bottom:1px solid var(--line);
-background:#070d18ef;position:sticky;top:0;z-index:5;
+ padding:18px;
+ background:#0c2038;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ flex-wrap:wrap;
+ gap:12px;
 }
-.brand{font-weight:900;font-size:22px;color:var(--cyan);text-decoration:none}
-.header-right{display:flex;align-items:center;gap:10px}
-.lang-btn,.back{
-padding:8px 12px;border:1px solid #334155;border-radius:9px;
-background:#101a2c;color:#dbeafe;text-decoration:none;
-font-size:13px;cursor:pointer;
+.logo{font-size:23px;font-weight:bold;color:#00d9ff}
+nav a{color:white;text-decoration:none;margin:8px}
+button{
+ background:#00c9ef;
+ color:#061426;
+ border:0;
+ padding:9px 14px;
+ border-radius:6px;
+ font-weight:bold;
+ cursor:pointer;
 }
-.lang-btn.active{background:var(--cyan);color:#00111b;border-color:var(--cyan)}
-.back:hover{border-color:var(--cyan);color:var(--cyan)}
-main{max-width:1150px;margin:auto;padding:58px 20px 65px}
-.tag{text-align:center;color:var(--cyan);letter-spacing:3px;font-size:12px;font-weight:bold}
-h1{text-align:center;font-size:clamp(38px,7vw,62px);line-height:1.1;margin:12px 0}
-.intro{text-align:center;color:var(--muted);max-width:720px;margin:0 auto 38px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.hero{text-align:center;padding:45px 15px}
+h1{color:#00d9ff}
+h2{color:#00d9ff;text-align:center;margin:35px 0 20px}
+.container{max-width:1100px;margin:auto;padding:15px}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+ gap:20px;
+}
 .card{
-border:1px solid var(--line);border-radius:18px;overflow:hidden;
-background:linear-gradient(160deg,#142238,#0b1220);transition:.2s;
+ background:#102943;
+ border:1px solid #1b4563;
+ border-radius:12px;
+ overflow:hidden;
 }
-.card:hover{transform:translateY(-4px);border-color:#1689a7;box-shadow:0 14px 35px #0006}
-.card img{display:block;width:100%;height:310px;object-fit:cover;background:#0b1220}
-.content{padding:19px 20px 21px}
-.kicker{font-size:11px;color:var(--cyan);letter-spacing:1.8px;font-weight:bold;text-transform:uppercase}
-.content h2{font-size:21px;margin:5px 0 7px}
-.content p{margin:0;color:var(--muted);font-size:14px}
-.pill{display:inline-block;margin-top:13px;padding:5px 10px;border:1px solid #24506a;border-radius:30px;color:#b9efff;font-size:11px}
-.creative-approach{
-margin:65px 0 35px;padding:35px 24px;border:1px solid #24506a;
-border-radius:20px;background:linear-gradient(145deg,#10243b,#080f1d);text-align:center;
+.card img,.card video{
+ width:100%;
+ display:block;
 }
-.creative-approach h2{font-size:clamp(28px,5vw,38px);margin:10px 0}
-.creative-approach .description{max-width:700px;margin:0 auto 30px;color:var(--muted)}
-.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
-.approach-card{padding:22px 18px;border:1px solid var(--line);border-radius:14px;background:#0b1525}
-.approach-card span{color:var(--cyan);font-size:13px;font-weight:bold;letter-spacing:2px}
-.approach-card h3{font-size:18px;margin:10px 0 7px}
-.approach-card p{color:var(--muted);font-size:13px;margin:0}
-.note{text-align:center;margin:30px auto 0;padding:15px 18px;border:1px dashed #1689a7;border-radius:12px;color:#cbd5e1;font-size:13px;max-width:850px}
-footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:#94a3b8;font-size:13px}
-@media(max-width:650px){
-header{padding:14px 5%}.brand{font-size:19px}
-main{padding:40px 15px 48px}
-.grid{grid-template-columns:1fr;gap:17px}
-.card img{height:auto;max-height:460px}
-.content{padding:16px}.content h2{font-size:19px}
-.approach-grid{grid-template-columns:1fr}
-.creative-approach{padding:28px 17px}
-.header-right{gap:5px}.lang-btn,.back{padding:7px 8px;font-size:11px}
+.card img{height:260px;object-fit:cover}
+.card video{background:#000}
+.card h3{text-align:center;padding:12px;margin:0}
+.description{text-align:center;color:#cbd5e1}
+footer{
+ text-align:center;
+ padding:25px;
+ margin-top:40px;
+ background:#0c2038;
+ color:#cbd5e1;
 }
-@media(min-width:900px){.card img{height:350px}}
 </style>
 </head>
+
 <body>
 
 <header>
-<a class="brand" href="index.html">BAI DIGITAL</a>
-<div class="header-right">
-<button class="lang-btn" id="teBtn" onclick="setLanguage('te')">తెలుగు</button>
-<button class="lang-btn" id="enBtn" onclick="setLanguage('en')">English</button>
-<a class="back" href="index.html" data-i18n="home">← Home</a>
-</div>
+ <div class="logo">BAI DIGITAL</div>
+ <nav>
+  <a href="index.html">Home</a>
+  <button onclick="setLanguage('en')">English</button>
+  <button onclick="setLanguage('te')">తెలుగు</button>
+ </nav>
 </header>
 
-<main>
-<div class="tag" data-i18n="tag">OUR CREATIVE WORK</div>
-<h1 data-i18n="title">Creative Portfolio</h1>
-<p class="intro" data-i18n="intro">
-AI-powered visual concepts, cinematic storytelling and digital advertising creativity by BAI DIGITAL.
-</p>
-
-<section class="grid">
-
-<article class="card">
-<img src="ai-campaign-arrival.png" alt="Helicopter Grand Entry" loading="lazy">
-<div class="content">
-<div class="kicker" data-i18n="k1">AI Cinematic Concept</div>
-<h2 data-i18n="h1">Helicopter Grand Entry</h2>
-<p data-i18n="p1">A cinematic visual concept featuring a grand helicopter entry.</p>
-<span class="pill" data-i18n="b1">AI Visual Creation</span>
-</div>
-</article>
-
-<article class="card">
-<img src="file_0000000071b48211ab4477cac6eb8b51.png" alt="Skydiving Experience" loading="lazy">
-<div class="content">
-<div class="kicker" data-i18n="k2">AI Video Concept</div>
-<h2 data-i18n="h2">Skydiving Experience</h2>
-<p data-i18n="p2">A visual concept showcasing the sky, clouds and skydiving experience.</p>
-<span class="pill" data-i18n="b2">Cinematic Storytelling</span>
-</div>
-</article>
-
-<article class="card">
-<img src="file_00000000527c81f88c866634073d481d.png" alt="Luxury SUV Lifestyle" loading="lazy">
-<div class="content">
-<div class="kicker" data-i18n="k3">Lifestyle Campaign</div>
-<h2 data-i18n="h3">Luxury SUV Lifestyle</h2>
-<p data-i18n="p3">A premium promotional creative featuring a luxury SUV.</p>
-<span class="pill" data-i18n="b3">Brand Promotion</span>
-</div>
-</article>
-
-<article class="card">
-<img src="file_00000000ea24821181576662bf65042f.png" alt="Thar Roxx Feature" loading="lazy">
-<div class="content">
-<div class="kicker" data-i18n="k4">Automotive Creative</div>
-<h2 data-i18n="h4">Thar Roxx Feature</h2>
-<p data-i18n="p4">An automotive advertising concept highlighting the vehicle.</p>
-<span class="pill" data-i18n="b4">Automotive Advertising</span>
-</div>
-</article>
-
-<article class="card">
-<img src="file_00000000b90c8211ab3071fc420b2506.png" alt="Private Jet Arrival" loading="lazy">
-<div class="content">
-<div class="kicker" data-i18n="k5">Premium Travel Concept</div>
-<h2 data-i18n="h5">Private Jet Arrival</h2>
-<p data-i18n="p5">A cinematic concept highlighting a private jet and executive arrival.</p>
-<span class="pill" data-i18n="b5">AI Creative Design</span>
-</div>
-</article>
-
+<section class="hero">
+ <h1 data-en="Our Creative Portfolio" data-te="మా క్రియేటివ్ పోర్ట్‌ఫోలియో">Our Creative Portfolio</h1>
+ <p data-en="Creative Digital Marketing | AI Videos | Advertising"
+ data-te="క్రియేటివ్ డిజిటల్ మార్కెటింగ్ | AI వీడియోలు | ప్రకటనలు">
+ Creative Digital Marketing | AI Videos | Advertising
+ </p>
 </section>
 
-<section class="creative-approach">
-<div class="tag" data-i18n="approach">MY CREATIVE APPROACH</div>
-<h2 data-i18n="impact">Ideas Into Impact</h2>
-<p class="description" data-i18n="desc">
-Our approach is to provide every business with unique ideas, attractive designs and engaging storytelling.
-</p>
+<main class="container">
 
-<div class="approach-grid">
-<div class="approach-card">
-<span>01</span>
-<h3 data-i18n="c1">Creative Ideas</h3>
-<p data-i18n="cp1">Fresh concepts and innovative ideas suited to every brand.</p>
-</div>
-<div class="approach-card">
-<span>02</span>
-<h3 data-i18n="c2">Visual Design</h3>
-<p data-i18n="cp2">Attractive posters, advertisements and digital creatives.</p>
-</div>
-<div class="approach-card">
-<span>03</span>
-<h3 data-i18n="c3">Video Storytelling</h3>
-<p data-i18n="cp3">Brand promotion through cinematic videos and promotional stories.</p>
-</div>
-</div>
-</section>
+<h2 data-en="Image Creations" data-te="ఇమేజ్ క్రియేషన్స్">Image Creations</h2>
 
-<p class="note" data-i18n="note">
-Note: The creatives displayed on this page are AI-generated concept creatives created by BAI DIGITAL.
-</p>
+<div class="grid">
+
+<div class="card">
+ <img src="ai-campaign-arrival.png" alt="Helicopter Grand Entry">
+ <h3 data-en="Helicopter Grand Entry" data-te="హెలికాప్టర్ గ్రాండ్ ఎంట్రీ">Helicopter Grand Entry</h3>
+</div>
+
+<div class="card">
+ <img src="file_0000000071b48211ab4477cac6eb8b51.png" alt="Skydiving Experience">
+ <h3 data-en="Skydiving Experience" data-te="స్కైడైవింగ్ అనుభవం">Skydiving Experience</h3>
+</div>
+
+<div class="card">
+ <img src="file_00000000527c81f88c866634073d481d.png" alt="Luxury SUV Lifestyle">
+ <h3 data-en="Luxury SUV Lifestyle" data-te="లగ్జరీ SUV లైఫ్‌స్టైల్">Luxury SUV Lifestyle</h3>
+</div>
+
+<div class="card">
+ <img src="file_00000000ea24821181576662bf65042f.png" alt="Thar Roxx Feature">
+ <h3 data-en="Thar Roxx Feature" data-te="థార్ రాక్స్ ఫీచర్">Thar Roxx Feature</h3>
+</div>
+
+<div class="card">
+ <img src="file_00000000b90c8211ab3071fc420b2506.png" alt="Private Jet Arrival">
+ <h3 data-en="Private Jet Arrival" data-te="ప్రైవేట్ జెట్ ఎంట్రీ">Private Jet Arrival</h3>
+</div>
+
+</div>
+
+<h2 data-en="Our Video Creations" data-te="మా వీడియో క్రియేషన్స్">Our Video Creations</h2>
+
+<div class="grid">
+
+<div class="card">
+ <video controls playsinline preload="metadata">
+  <source src="154380473_1794978764686133.mp4" type="video/mp4">
+  Your browser does not support video.
+ </video>
+ <h3 data-en="Creative Video 1" data-te="క్రియేటివ్ వీడియో 1">Creative Video 1</h3>
+</div>
+
+<div class="card">
+ <video controls playsinline preload="metadata">
+  <source src="508228052_1794978765021438.mp4" type="video/mp4">
+  Your browser does not support video.
+ </video>
+ <h3 data-en="Creative Video 2" data-te="క్రియేటివ్ వీడియో 2">Creative Video 2</h3>
+</div>
+
+</div>
+
+<h2 data-en="Our Creative Approach" data-te="మా క్రియేటివ్ విధానం">Our Creative Approach</h2>
+
+<div class="grid">
+ <div class="card">
+  <h3 data-en="Creative Strategy" data-te="క్రియేటివ్ వ్యూహం">Creative Strategy</h3>
+  <p class="description" data-en="Ideas designed to attract attention."
+  data-te="ప్రేక్షకుల దృష్టిని ఆకర్షించే ఆలోచనలు.">Ideas designed to attract attention.</p>
+ </div>
+
+ <div class="card">
+  <h3 data-en="Digital Marketing" data-te="డిజిటల్ మార్కెటింగ్">Digital Marketing</h3>
+  <p class="description" data-en="Helping businesses grow online."
+  data-te="బిజినెస్‌లు ఆన్‌లైన్‌లో ఎదగడానికి సహాయం.">Helping businesses grow online.</p>
+ </div>
+
+ <div class="card">
+  <h3 data-en="Brand Promotion" data-te="బ్రాండ్ ప్రమోషన్">Brand Promotion</h3>
+  <p class="description" data-en="Building brand awareness and visibility."
+  data-te="బ్రాండ్ గుర్తింపు మరియు ప్రచారాన్ని పెంచడం.">Building brand awareness and visibility.</p>
+ </div>
+</div>
+
 </main>
 
-<footer data-i18n="footer">© BAI DIGITAL · Creative Digital Solutions</footer>
+<footer>
+ © 2026 BAI DIGITAL. All Rights Reserved.
+</footer>
 
 <script>
-const translations = {
-en:{
-home:"← Home",tag:"OUR CREATIVE WORK",title:"Creative Portfolio",
-intro:"AI-powered visual concepts, cinematic storytelling and digital advertising creativity by BAI DIGITAL.",
-k1:"AI Cinematic Concept",h1:"Helicopter Grand Entry",p1:"A cinematic visual concept featuring a grand helicopter entry.",b1:"AI Visual Creation",
-k2:"AI Video Concept",h2:"Skydiving Experience",p2:"A visual concept showcasing the sky, clouds and skydiving experience.",b2:"Cinematic Storytelling",
-k3:"Lifestyle Campaign",h3:"Luxury SUV Lifestyle",p3:"A premium promotional creative featuring a luxury SUV.",b3:"Brand Promotion",
-k4:"Automotive Creative",h4:"Thar Roxx Feature",p4:"An automotive advertising concept highlighting the vehicle.",b4:"Automotive Advertising",
-k5:"Premium Travel Concept",h5:"Private Jet Arrival",p5:"A cinematic concept highlighting a private jet and executive arrival.",b5:"AI Creative Design",
-approach:"MY CREATIVE APPROACH",impact:"Ideas Into Impact",
-desc:"Our approach is to provide every business with unique ideas, attractive designs and engaging storytelling.",
-c1:"Creative Ideas",cp1:"Fresh concepts and innovative ideas suited to every brand.",
-c2:"Visual Design",cp2:"Attractive posters, advertisements and digital creatives.",
-c3:"Video Storytelling",cp3:"Brand promotion through cinematic videos and promotional stories.",
-note:"Note: The creatives displayed on this page are AI-generated concept creatives created by BAI DIGITAL.",
-footer:"© BAI DIGITAL · Creative Digital Solutions"
-},
-te:{
-home:"← హోమ్",tag:"మా సృజనాత్మక పనులు",title:"మా క్రియేటివ్ పోర్ట్‌ఫోలియో",
-intro:"BAI DIGITAL రూపొందించిన AI విజువల్ కాన్సెప్ట్‌లు, సినిమాటిక్ కథనాలు మరియు డిజిటల్ ప్రకటనల క్రియేటివ్స్.",
-k1:"AI సినిమాటిక్ కాన్సెప్ట్",h1:"హెలికాప్టర్ గ్రాండ్ ఎంట్రీ",p1:"హెలికాప్టర్ గ్రాండ్ ఎంట్రీతో రూపొందించిన సినిమాటిక్ విజువల్ కాన్సెప్ట్.",b1:"AI విజువల్ క్రియేషన్",
-k2:"AI వీడియో కాన్సెప్ట్",h2:"స్కైడైవింగ్ అనుభవం",p2:"ఆకాశం, మేఘాలు మరియు స్కైడైవింగ్ అనుభూతిని చూపించే విజువల్ కాన్సెప్ట్.",b2:"సినిమాటిక్ స్టోరీటెల్లింగ్",
-k3:"లైఫ్‌స్టైల్ క్యాంపెయిన్",h3:"లగ్జరీ SUV లైఫ్‌స్టైల్",p3:"లగ్జరీ SUVతో రూపొందించిన ప్రీమియం ప్రచార క్రియేటివ్.",b3:"బ్రాండ్ ప్రమోషన్",
-k4:"ఆటోమోటివ్ క్రియేటివ్",h4:"థార్ రాక్స్ ఫీచర్",p4:"వాహనాన్ని ప్రధానంగా చూపించే ఆటోమోటివ్ ప్రకటనల కాన్సెప్ట్.",b4:"ఆటోమోటివ్ అడ్వర్టైజింగ్",
-k5:"ప్రీమియం ట్రావెల్ కాన్సెప్ట్",h5:"ప్రైవేట్ జెట్ రాక",p5:"ప్రైవేట్ జెట్ మరియు ఎగ్జిక్యూటివ్ రాకను హైలైట్ చేసే సినిమాటిక్ కాన్సెప్ట్.",b5:"AI క్రియేటివ్ డిజైన్",
-approach:"మా సృజనాత్మక విధానం",impact:"ఆలోచనలతో ప్రభావం",
-desc:"ప్రతి బిజినెస్‌కు ప్రత్యేకమైన ఐడియాలు, ఆకర్షణీయమైన డిజైన్లు మరియు ప్రేక్షకులను ఆకట్టుకునే కథనాలు అందించడమే మా విధానం.",
-c1:"క్రియేటివ్ ఐడియాలు",cp1:"ప్రతి బ్రాండ్‌కు సరిపోయే కొత్త కాన్సెప్ట్‌లు మరియు వినూత్న ఆలోచనలు.",
-c2:"విజువల్ డిజైన్",cp2:"ఆకర్షణీయమైన పోస్టర్లు, ప్రకటనలు మరియు డిజిటల్ క్రియేటివ్స్.",
-c3:"వీడియో స్టోరీటెల్లింగ్",cp3:"సినిమాటిక్ వీడియోలు మరియు ప్రచార కథనాల ద్వారా బ్రాండ్ ప్రమోషన్.",
-note:"గమనిక: ఈ పేజీలో చూపించినవి BAI DIGITAL రూపొందించిన AI-ఆధారిత కాన్సెప్ట్ క్రియేటివ్స్.",
-footer:"© BAI DIGITAL · క్రియేటివ్ డిజిటల్ సొల్యూషన్స్"
-}
-};
-
 function setLanguage(lang){
-if(!translations[lang]) lang="te";
-document.documentElement.lang=lang;
-document.querySelectorAll("[data-i18n]").forEach(el=>{
-const key=el.getAttribute("data-i18n");
-if(translations[lang][key]) el.textContent=translations[lang][key];
-});
-document.getElementById("teBtn").classList.toggle("active",lang==="te");
-document.getElementById("enBtn").classList.toggle("active",lang==="en");
-try{
-localStorage.setItem("baiLanguage",lang);
-localStorage.setItem("language",lang);
-localStorage.setItem("lang",lang);
-}catch(e){}
+ document.documentElement.lang=lang;
+ document.querySelectorAll("[data-en]").forEach(el=>{
+  el.textContent=el.getAttribute("data-"+lang);
+ });
+ localStorage.setItem("baiLanguage",lang);
 }
-
-function getSavedLanguage(){
-try{
-return localStorage.getItem("baiLanguage") ||
-localStorage.getItem("language") ||
-localStorage.getItem("lang") || "te";
-}catch(e){return "te";}
-}
-setLanguage(getSavedLanguage());
+const savedLanguage=localStorage.getItem("baiLanguage")||"te";
+setLanguage(savedLanguage);
 </script>
- <section style="padding:30px 15px;">
-  <h2 style="text-align:center;">Our Video Creations</h2>
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
-
-    <div>
-      <video controls playsinline preload="metadata" style="width:100%;border-radius:12px;">
-        <source src="1000350457.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <div>
-      <video controls playsinline preload="metadata" style="width:100%;border-radius:12px;">
-        <source src="1000350456.mp4" type="video/mp4">
-      </video>
-    </div>
-
-  </div>
-</section>
 </body>
 </html>
