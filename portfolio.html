@@ -7,90 +7,202 @@
 <title>Portfolio | BAI DIGITAL</title>
 
 <style>
-*{box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#071426;
- color:#fff;
+  font-family:Arial,sans-serif;
+  background:#071525;
+  color:#fff;
+  line-height:1.6;
 }
 header{
- padding:18px;
- background:#0c2038;
- display:flex;
- justify-content:space-between;
- align-items:center;
- flex-wrap:wrap;
- gap:12px;
+  background:#0b2035;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+  border-bottom:1px solid #173c56;
 }
-.logo{font-size:23px;font-weight:bold;color:#00d9ff}
-nav a{color:white;text-decoration:none;margin:8px}
-button{
- background:#00c9ef;
- color:#061426;
- border:0;
- padding:9px 14px;
- border-radius:6px;
- font-weight:bold;
- cursor:pointer;
+.logo{
+  font-size:25px;
+  font-weight:bold;
+  color:#00d5ff;
+  letter-spacing:1px;
 }
-.hero{text-align:center;padding:45px 15px}
-h1{color:#00d9ff}
-h2{color:#00d9ff;text-align:center;margin:35px 0 20px}
-.container{max-width:1100px;margin:auto;padding:15px}
+nav{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+}
+.language{
+  display:flex;
+  gap:7px;
+}
+.language button{
+  background:#172d42;
+  color:#d9e8f3;
+  border:1px solid #38536a;
+  border-radius:25px;
+  padding:9px 13px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.language button.active{
+  background:#00c9ef;
+  color:#061525;
+  border-color:#00c9ef;
+  box-shadow:0 0 12px #00c9ef55;
+}
+.hero{
+  text-align:center;
+  padding:65px 18px 45px;
+  background:linear-gradient(135deg,#0b2035,#073b53);
+}
+.hero h1{
+  font-size:clamp(30px,5vw,48px);
+  color:#00d5ff;
+  margin-bottom:12px;
+}
+.hero p{
+  color:#d1e2ee;
+  max-width:700px;
+  margin:auto;
+}
+.section{
+  padding:45px 6%;
+}
+.section-title{
+  text-align:center;
+  font-size:30px;
+  color:#00d5ff;
+  margin-bottom:10px;
+}
+.section-desc{
+  text-align:center;
+  color:#b9cbd8;
+  margin-bottom:30px;
+}
 .grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
- gap:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
 }
 .card{
- background:#102943;
- border:1px solid #1b4563;
- border-radius:12px;
- overflow:hidden;
- transition:transform .25s,box-shadow .25s;
+  background:#10263b;
+  border:1px solid #1d405a;
+  border-radius:14px;
+  padding:12px;
+  overflow:hidden;
+  transition:.25s;
 }
 .card:hover{
- transform:translateY(-5px);
- box-shadow:0 8px 25px #00c9ef30;
+  transform:translateY(-5px);
+  border-color:#00c9ef;
+  box-shadow:0 8px 25px #0005;
 }
 .card img{
- width:100%;
- height:260px;
- object-fit:cover;
- display:block;
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:9px;
+  cursor:pointer;
+  display:block;
 }
-.video-card{
- position:relative;
- background:#000;
+.card video{
+  width:100%;
+  height:230px;
+  object-fit:contain;
+  background:#000;
+  border-radius:9px;
+  display:block;
 }
-.video-card video{
- width:100%;
- display:block;
- aspect-ratio:9/16;
- object-fit:cover;
- background:#000;
+.card h3{
+  color:#00d5ff;
+  margin:12px 3px 5px;
 }
-.play-label{
- position:absolute;
- top:12px;
- right:12px;
- background:#00c9ef;
- color:#061426;
- padding:7px 12px;
- border-radius:20px;
- font-size:12px;
- font-weight:bold;
- pointer-events:none;
+.card p{
+  color:#c1d0dc;
+  font-size:14px;
+  margin:0 3px 8px;
 }
-.card h3{text-align:center;padding:12px;margin:0}
-.description{text-align:center;color:#cbd5e1;padding:0 12px 12px}
+.view-btn{
+  background:#00c9ef;
+  color:#061525;
+  border:0;
+  border-radius:7px;
+  padding:9px 14px;
+  font-weight:bold;
+  cursor:pointer;
+  margin:10px 3px 3px;
+}
+.approach{
+  background:#0d2237;
+  border:1px solid #1d405a;
+  border-radius:14px;
+  padding:25px;
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+}
+.approach h3{
+  color:#00d5ff;
+  margin-bottom:10px;
+}
 footer{
- text-align:center;
- padding:25px;
- margin-top:40px;
- background:#0c2038;
- color:#cbd5e1;
+  text-align:center;
+  padding:25px 15px;
+  background:#06111e;
+  color:#9eb4c5;
+  border-top:1px solid #173c56;
+}
+
+/* Full-screen viewer */
+.viewer{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(0,0,0,.96);
+  align-items:center;
+  justify-content:center;
+  padding:60px 12px 20px;
+}
+.viewer.open{display:flex}
+.viewer img,.viewer video{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  border-radius:8px;
+}
+.viewer video{
+  width:min(950px,100%);
+  background:#000;
+}
+.close-viewer{
+  position:absolute;
+  top:12px;
+  right:15px;
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:50%;
+  background:#00c9ef;
+  color:#061525;
+  font-size:28px;
+  cursor:pointer;
+}
+@media(max-width:600px){
+  header{justify-content:center;text-align:center}
+  nav{justify-content:center}
+  .section{padding:35px 5%}
+  .card img,.card video{height:210px}
 }
 </style>
 </head>
@@ -98,129 +210,230 @@ footer{
 <body>
 
 <header>
- <div class="logo">BAI DIGITAL</div>
- <nav>
-  <a href="index.html">Home</a>
-  <button onclick="setLanguage('en')">English</button>
-  <button onclick="setLanguage('te')">తెలుగు</button>
- </nav>
+  <div class="logo">BAI DIGITAL</div>
+  <nav>
+    <a href="index.html" data-en="Home" data-te="హోమ్">Home</a>
+    <div class="language">
+      <button id="teBtn" type="button" onclick="setLanguage('te')">
+        <span id="teIcon">○</span> 🇮🇳 తెలుగు
+      </button>
+      <button id="enBtn" type="button" onclick="setLanguage('en')">
+        <span id="enIcon">✓</span> 🇬🇧 English
+      </button>
+    </div>
+  </nav>
 </header>
 
 <section class="hero">
- <h1 data-en="Our Creative Portfolio" data-te="మా క్రియేటివ్ పోర్ట్‌ఫోలియో">Our Creative Portfolio</h1>
- <p data-en="Creative Digital Marketing | AI Videos | Advertising"
- data-te="క్రియేటివ్ డిజిటల్ మార్కెటింగ్ | AI వీడియోలు | ప్రకటనలు">
- Creative Digital Marketing | AI Videos | Advertising
- </p>
+  <h1 data-en="Our Creative Portfolio"
+      data-te="మా క్రియేటివ్ పోర్ట్‌ఫోలియో">
+    Our Creative Portfolio
+  </h1>
+  <p data-en="Creative digital marketing designs, campaigns and video projects by BAI DIGITAL."
+     data-te="BAI DIGITAL రూపొందించిన డిజిటల్ మార్కెటింగ్ డిజైన్లు, క్యాంపెయిన్లు మరియు వీడియో ప్రాజెక్టులు.">
+    Creative digital marketing designs, campaigns and video projects by BAI DIGITAL.
+  </p>
 </section>
 
-<main class="container">
+<section class="section">
+  <h2 class="section-title" data-en="Image Gallery" data-te="ఇమేజ్ గ్యాలరీ">Image Gallery</h2>
+  <p class="section-desc"
+     data-en="Explore our creative design works. Tap an image to view it larger."
+     data-te="మా క్రియేటివ్ డిజైన్లను చూడండి. పెద్దగా చూడటానికి ఇమేజ్‌పై క్లిక్ చేయండి.">
+    Explore our creative design works. Tap an image to view it larger.
+  </p>
 
-<h2 data-en="Image Creations" data-te="ఇమేజ్ క్రియేషన్స్">Image Creations</h2>
+  <div class="grid">
 
-<div class="grid">
+    <div class="card">
+      <img src="ai-campaign-arrival.png" alt="AI Campaign Design" onclick="openImage(this.src)">
+      <h3 data-en="AI Campaign Design" data-te="AI క్యాంపెయిన్ డిజైన్">AI Campaign Design</h3>
+      <p data-en="Creative campaign visual." data-te="క్రియేటివ్ క్యాంపెయిన్ డిజైన్.">Creative campaign visual.</p>
+    </div>
 
-<div class="card">
- <img src="ai-campaign-arrival.png" alt="Helicopter Grand Entry">
- <h3 data-en="Helicopter Grand Entry" data-te="హెలికాప్టర్ గ్రాండ్ ఎంట్రీ">Helicopter Grand Entry</h3>
-</div>
+    <div class="card">
+      <img src="file_0000000071b48211ab4477cac6eb8b51.png" alt="Creative Design 2" onclick="openImage(this.src)">
+      <h3 data-en="Creative Design" data-te="క్రియేటివ్ డిజైన్">Creative Design</h3>
+      <p data-en="Digital promotional artwork." data-te="డిజిటల్ ప్రమోషనల్ డిజైన్.">Digital promotional artwork.</p>
+    </div>
 
-<div class="card">
- <img src="file_0000000071b48211ab4477cac6eb8b51.png" alt="Skydiving Experience">
- <h3 data-en="Skydiving Experience" data-te="స్కైడైవింగ్ అనుభవం">Skydiving Experience</h3>
-</div>
+    <div class="card">
+      <img src="file_00000000527c81f88c866634073d481d.png" alt="Marketing Design" onclick="openImage(this.src)">
+      <h3 data-en="Marketing Design" data-te="మార్కెటింగ్ డిజైన్">Marketing Design</h3>
+      <p data-en="Visual marketing concept." data-te="విజువల్ మార్కెటింగ్ కాన్సెప్ట్.">Visual marketing concept.</p>
+    </div>
 
-<div class="card">
- <img src="file_00000000527c81f88c866634073d481d.png" alt="Luxury SUV Lifestyle">
- <h3 data-en="Luxury SUV Lifestyle" data-te="లగ్జరీ SUV లైఫ్‌స్టైల్">Luxury SUV Lifestyle</h3>
-</div>
+    <div class="card">
+      <img src="file_00000000ea24821181576662bf65042f.png" alt="Advertising Design" onclick="openImage(this.src)">
+      <h3 data-en="Advertising Design" data-te="అడ్వర్టైజింగ్ డిజైన్">Advertising Design</h3>
+      <p data-en="Creative advertising artwork." data-te="క్రియేటివ్ అడ్వర్టైజింగ్ డిజైన్.">Creative advertising artwork.</p>
+    </div>
 
-<div class="card">
- <img src="file_00000000ea24821181576662bf65042f.png" alt="Thar Roxx Feature">
- <h3 data-en="Thar Roxx Feature" data-te="థార్ రాక్స్ ఫీచర్">Thar Roxx Feature</h3>
-</div>
+    <div class="card">
+      <img src="file_00000000b90c8211ab3071fc420b2506.png" alt="Digital Creative" onclick="openImage(this.src)">
+      <h3 data-en="Digital Creative" data-te="డిజిటల్ క్రియేటివ్">Digital Creative</h3>
+      <p data-en="Digital brand presentation." data-te="డిజిటల్ బ్రాండ్ ప్రెజెంటేషన్.">Digital brand presentation.</p>
+    </div>
 
-<div class="card">
- <img src="file_00000000b90c8211ab3071fc420b2506.png" alt="Private Jet Arrival">
- <h3 data-en="Private Jet Arrival" data-te="ప్రైవేట్ జెట్ ఎంట్రీ">Private Jet Arrival</h3>
-</div>
+  </div>
+</section>
 
-</div>
+<section class="section">
+  <h2 class="section-title" data-en="Video Gallery" data-te="వీడియో గ్యాలరీ">Video Gallery</h2>
+  <p class="section-desc"
+     data-en="Watch our video projects."
+     data-te="మా వీడియో ప్రాజెక్టులను చూడండి.">
+    Watch our video projects.
+  </p>
 
-<h2 data-en="Our Video Creations" data-te="మా వీడియో క్రియేషన్స్">Our Video Creations</h2>
+  <div class="grid">
 
-<div class="grid">
+    <div class="card">
+      <video controls playsinline preload="metadata">
+        <source src="154380473_1794978764686133.mp4" type="video/mp4">
+      </video>
+      <h3 data-en="Video Project 1" data-te="వీడియో ప్రాజెక్ట్ 1">Video Project 1</h3>
+      <p data-en="Creative video production." data-te="క్రియేటివ్ వీడియో ప్రొడక్షన్.">Creative video production.</p>
+      <button class="view-btn" onclick="openVideo('154380473_1794978764686133.mp4')" data-en="Open Full Screen" data-te="పూర్తి స్క్రీన్‌లో చూడండి">Open Full Screen</button>
+    </div>
 
-<div class="card">
- <div class="video-card">
-  <span class="play-label">▶ PLAY VIDEO</span>
-  <video controls playsinline preload="metadata">
-   <source src="154380473_1794978764686133.mp4" type="video/mp4">
-  </video>
- </div>
- <h3 data-en="Creative Video 1" data-te="క్రియేటివ్ వీడియో 1">Creative Video 1</h3>
-</div>
+    <div class="card">
+      <video controls playsinline preload="metadata">
+        <source src="508228052_1794978765021438.mp4" type="video/mp4">
+      </video>
+      <h3 data-en="Video Project 2" data-te="వీడియో ప్రాజెక్ట్ 2">Video Project 2</h3>
+      <p data-en="Digital promotional video." data-te="డిజిటల్ ప్రమోషనల్ వీడియో.">Digital promotional video.</p>
+      <button class="view-btn" onclick="openVideo('508228052_1794978765021438.mp4')" data-en="Open Full Screen" data-te="పూర్తి స్క్రీన్‌లో చూడండి">Open Full Screen</button>
+    </div>
 
-<div class="card">
- <div class="video-card">
-  <span class="play-label">▶ PLAY VIDEO</span>
-  <video controls playsinline preload="metadata">
-   <source src="508228052_1794978765021438.mp4" type="video/mp4">
-  </video>
- </div>
- <h3 data-en="Creative Video 2" data-te="క్రియేటివ్ వీడియో 2">Creative Video 2</h3>
-</div>
+    <div class="card">
+      <video controls playsinline preload="metadata">
+        <source src="592457750_1794978648652159.mp4" type="video/mp4">
+      </video>
+      <h3 data-en="Video Project 3" data-te="వీడియో ప్రాజెక్ట్ 3">Video Project 3</h3>
+      <p data-en="Creative brand video." data-te="క్రియేటివ్ బ్రాండ్ వీడియో.">Creative brand video.</p>
+      <button class="view-btn" onclick="openVideo('592457750_1794978648652159.mp4')" data-en="Open Full Screen" data-te="పూర్తి స్క్రీన్‌లో చూడండి">Open Full Screen</button>
+    </div>
 
-<div class="card">
- <div class="video-card">
-  <span class="play-label">▶ PLAY VIDEO</span>
-  <video controls playsinline preload="metadata">
-   <source src="592457750_1794978648652159.mp4" type="video/mp4">
-  </video>
- </div>
- <h3 data-en="Creative Video 3" data-te="క్రియేటివ్ వీడియో 3">Creative Video 3</h3>
-</div>
+  </div>
+</section>
 
-</div>
-
-<h2 data-en="Our Creative Approach" data-te="మా క్రియేటివ్ విధానం">Our Creative Approach</h2>
-
-<div class="grid">
-
-<div class="card">
- <h3 data-en="Creative Strategy" data-te="క్రియేటివ్ వ్యూహం">Creative Strategy</h3>
- <p class="description" data-en="Ideas designed to attract attention."
- data-te="ప్రేక్షకుల దృష్టిని ఆకర్షించే ఆలోచనలు.">Ideas designed to attract attention.</p>
-</div>
-
-<div class="card">
- <h3 data-en="Digital Marketing" data-te="డిజిటల్ మార్కెటింగ్">Digital Marketing</h3>
- <p class="description" data-en="Helping businesses grow online."
- data-te="బిజినెస్‌లు ఆన్‌లైన్‌లో ఎదగడానికి సహాయం.">Helping businesses grow online.</p>
-</div>
-
-<div class="card">
- <h3 data-en="Brand Promotion" data-te="బ్రాండ్ ప్రమోషన్">Brand Promotion</h3>
- <p class="description" data-en="Building brand awareness and visibility."
- data-te="బ్రాండ్ గుర్తింపు మరియు ప్రచారాన్ని పెంచడం.">Building brand awareness and visibility.</p>
-</div>
-
-</div>
-</main>
+<section class="section">
+  <h2 class="section-title" data-en="Our Creative Approach" data-te="మా క్రియేటివ్ విధానం">Our Creative Approach</h2>
+  <div class="approach">
+    <h3 data-en="Ideas Into Digital Impact" data-te="ఆలోచనల నుంచి డిజిటల్ ప్రభావం వరకు">Ideas Into Digital Impact</h3>
+    <p data-en="At BAI DIGITAL, we focus on creative designs, digital campaigns and engaging content to help brands build their online presence."
+       data-te="BAI DIGITALలో క్రియేటివ్ డిజైన్లు, డిజిటల్ క్యాంపెయిన్లు మరియు ఆకట్టుకునే కంటెంట్ ద్వారా బ్రాండ్ల ఆన్‌లైన్ ఉనికిని పెంచడంపై దృష్టి పెడతాము.">
+      At BAI DIGITAL, we focus on creative designs, digital campaigns and engaging content to help brands build their online presence.
+    </p>
+  </div>
+</section>
 
 <footer>
- © 2026 BAI DIGITAL. All Rights Reserved.
+  <p>© 2026 BAI DIGITAL. <span data-en="All Rights Reserved." data-te="అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.">All Rights Reserved.</span></p>
 </footer>
+
+<!-- Full-screen image and video viewer -->
+<div id="viewer" class="viewer" onclick="closeViewer(event)">
+  <button class="close-viewer" type="button" aria-label="Close" onclick="closeViewer(event)">×</button>
+  <img id="viewerImage" alt="Full screen image" style="display:none">
+  <video id="viewerVideo" controls playsinline style="display:none"></video>
+</div>
 
 <script>
 function setLanguage(lang){
- document.documentElement.lang=lang;
- document.querySelectorAll("[data-en]").forEach(el=>{
-  el.textContent=el.getAttribute("data-"+lang);
- });
- localStorage.setItem("baiLanguage",lang);
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-en][data-te]').forEach(function(el){
+    el.textContent = el.getAttribute('data-' + lang);
+  });
+
+  const teBtn = document.getElementById('teBtn');
+  const enBtn = document.getElementById('enBtn');
+
+  teBtn.classList.toggle('active', lang === 'te');
+  enBtn.classList.toggle('active', lang === 'en');
+
+  document.getElementById('teIcon').textContent = lang === 'te' ? '✓' : '○';
+  document.getElementById('enIcon').textContent = lang === 'en' ? '✓' : '○';
+
+  teBtn.setAttribute('aria-pressed', lang === 'te');
+  enBtn.setAttribute('aria-pressed', lang === 'en');
+
+  try{
+    localStorage.setItem('baiLanguage', lang);
+  }catch(error){}
 }
-const savedLanguage=localStorage.getItem("baiLanguage")||"te";
+
+function openImage(src){
+  const viewer = document.getElementById('viewer');
+  const img = document.getElementById('viewerImage');
+  const video = document.getElementById('viewerVideo');
+
+  video.pause();
+  video.removeAttribute('src');
+  video.innerHTML = '';
+  video.style.display = 'none';
+
+  img.src = src;
+  img.style.display = 'block';
+  viewer.classList.add('open');
+}
+
+function openVideo(src){
+  const viewer = document.getElementById('viewer');
+  const img = document.getElementById('viewerImage');
+  const video = document.getElementById('viewerVideo');
+
+  img.removeAttribute('src');
+  img.style.display = 'none';
+
+  video.pause();
+  video.innerHTML = '';
+
+  const source = document.createElement('source');
+  source.src = src;
+  source.type = 'video/mp4';
+  video.appendChild(source);
+
+  video.style.display = 'block';
+  viewer.classList.add('open');
+  video.load();
+  video.play().catch(function(){});
+}
+
+function closeViewer(event){
+  const viewer = document.getElementById('viewer');
+
+  if(event &&
+     event.target !== viewer &&
+     !event.target.classList.contains('close-viewer')){
+    return;
+  }
+
+  const video = document.getElementById('viewerVideo');
+  video.pause();
+  video.removeAttribute('src');
+  video.innerHTML = '';
+  video.load();
+
+  viewer.classList.remove('open');
+}
+
+document.addEventListener('keydown',function(event){
+  if(event.key === 'Escape'){
+    const viewer = document.getElementById('viewer');
+    if(viewer.classList.contains('open')){
+      closeViewer({target:viewer});
+    }
+  }
+});
+
+let savedLanguage = 'en';
+try{
+  savedLanguage = localStorage.getItem('baiLanguage') || 'en';
+}catch(error){}
+
 setLanguage(savedLanguage);
 </script>
 
