@@ -48,15 +48,43 @@ h2{color:#00d9ff;text-align:center;margin:35px 0 20px}
  border:1px solid #1b4563;
  border-radius:12px;
  overflow:hidden;
+ transition:transform .25s,box-shadow .25s;
 }
-.card img,.card video{
+.card:hover{
+ transform:translateY(-5px);
+ box-shadow:0 8px 25px #00c9ef30;
+}
+.card img{
  width:100%;
+ height:260px;
+ object-fit:cover;
  display:block;
 }
-.card img{height:260px;object-fit:cover}
-.card video{background:#000}
+.video-card{
+ position:relative;
+ background:#000;
+}
+.video-card video{
+ width:100%;
+ display:block;
+ aspect-ratio:9/16;
+ object-fit:cover;
+ background:#000;
+}
+.play-label{
+ position:absolute;
+ top:12px;
+ right:12px;
+ background:#00c9ef;
+ color:#061426;
+ padding:7px 12px;
+ border-radius:20px;
+ font-size:12px;
+ font-weight:bold;
+ pointer-events:none;
+}
 .card h3{text-align:center;padding:12px;margin:0}
-.description{text-align:center;color:#cbd5e1}
+.description{text-align:center;color:#cbd5e1;padding:0 12px 12px}
 footer{
  text-align:center;
  padding:25px;
@@ -124,19 +152,33 @@ footer{
 <div class="grid">
 
 <div class="card">
- <video controls playsinline preload="metadata">
-  <source src="154380473_1794978764686133.mp4" type="video/mp4">
-  Your browser does not support video.
- </video>
+ <div class="video-card">
+  <span class="play-label">▶ PLAY VIDEO</span>
+  <video controls playsinline preload="metadata">
+   <source src="154380473_1794978764686133.mp4" type="video/mp4">
+  </video>
+ </div>
  <h3 data-en="Creative Video 1" data-te="క్రియేటివ్ వీడియో 1">Creative Video 1</h3>
 </div>
 
 <div class="card">
- <video controls playsinline preload="metadata">
-  <source src="508228052_1794978765021438.mp4" type="video/mp4">
-  Your browser does not support video.
- </video>
+ <div class="video-card">
+  <span class="play-label">▶ PLAY VIDEO</span>
+  <video controls playsinline preload="metadata">
+   <source src="508228052_1794978765021438.mp4" type="video/mp4">
+  </video>
+ </div>
  <h3 data-en="Creative Video 2" data-te="క్రియేటివ్ వీడియో 2">Creative Video 2</h3>
+</div>
+
+<div class="card">
+ <div class="video-card">
+  <span class="play-label">▶ PLAY VIDEO</span>
+  <video controls playsinline preload="metadata">
+   <source src="592457750_1794978648652159.mp4" type="video/mp4">
+  </video>
+ </div>
+ <h3 data-en="Creative Video 3" data-te="క్రియేటివ్ వీడియో 3">Creative Video 3</h3>
 </div>
 
 </div>
@@ -144,25 +186,26 @@ footer{
 <h2 data-en="Our Creative Approach" data-te="మా క్రియేటివ్ విధానం">Our Creative Approach</h2>
 
 <div class="grid">
- <div class="card">
-  <h3 data-en="Creative Strategy" data-te="క్రియేటివ్ వ్యూహం">Creative Strategy</h3>
-  <p class="description" data-en="Ideas designed to attract attention."
-  data-te="ప్రేక్షకుల దృష్టిని ఆకర్షించే ఆలోచనలు.">Ideas designed to attract attention.</p>
- </div>
 
- <div class="card">
-  <h3 data-en="Digital Marketing" data-te="డిజిటల్ మార్కెటింగ్">Digital Marketing</h3>
-  <p class="description" data-en="Helping businesses grow online."
-  data-te="బిజినెస్‌లు ఆన్‌లైన్‌లో ఎదగడానికి సహాయం.">Helping businesses grow online.</p>
- </div>
-
- <div class="card">
-  <h3 data-en="Brand Promotion" data-te="బ్రాండ్ ప్రమోషన్">Brand Promotion</h3>
-  <p class="description" data-en="Building brand awareness and visibility."
-  data-te="బ్రాండ్ గుర్తింపు మరియు ప్రచారాన్ని పెంచడం.">Building brand awareness and visibility.</p>
- </div>
+<div class="card">
+ <h3 data-en="Creative Strategy" data-te="క్రియేటివ్ వ్యూహం">Creative Strategy</h3>
+ <p class="description" data-en="Ideas designed to attract attention."
+ data-te="ప్రేక్షకుల దృష్టిని ఆకర్షించే ఆలోచనలు.">Ideas designed to attract attention.</p>
 </div>
 
+<div class="card">
+ <h3 data-en="Digital Marketing" data-te="డిజిటల్ మార్కెటింగ్">Digital Marketing</h3>
+ <p class="description" data-en="Helping businesses grow online."
+ data-te="బిజినెస్‌లు ఆన్‌లైన్‌లో ఎదగడానికి సహాయం.">Helping businesses grow online.</p>
+</div>
+
+<div class="card">
+ <h3 data-en="Brand Promotion" data-te="బ్రాండ్ ప్రమోషన్">Brand Promotion</h3>
+ <p class="description" data-en="Building brand awareness and visibility."
+ data-te="బ్రాండ్ గుర్తింపు మరియు ప్రచారాన్ని పెంచడం.">Building brand awareness and visibility.</p>
+</div>
+
+</div>
 </main>
 
 <footer>
