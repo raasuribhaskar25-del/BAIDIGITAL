@@ -26,7 +26,7 @@ section{padding:35px 6%}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
 .card{background:#10263b;padding:12px;border:1px solid #1d405a;border-radius:12px}
 .card img,.card video{width:100%;height:220px;background:#000;border-radius:8px;display:block}
-.card img{object-fit:cover;cursor:pointer}
+.card img{object-fit:contain;cursor:pointer}
 .card video{object-fit:contain}
 h3{color:#00d5ff;margin:12px 0 5px}
 .card p{color:#c1d0dc;font-size:14px}
@@ -59,36 +59,55 @@ section{padding:30px 5%}
 
 <div class="hero">
   <h1 data-en="Our Creative Portfolio" data-te="మా క్రియేటివ్ పోర్ట్‌ఫోలియో">Our Creative Portfolio</h1>
-  <p data-en="Creative Designs, Digital Campaigns & Video Projects"
-     data-te="క్రియేటివ్ డిజైన్లు, డిజిటల్ క్యాంపెయిన్లు మరియు వీడియో ప్రాజెక్టులు">
-     Creative Designs, Digital Campaigns & Video Projects
+  <p data-en="AI Designs, Digital Campaigns & Video Projects"
+     data-te="ఏఐ డిజైన్లు, డిజిటల్ క్యాంపెయిన్లు మరియు వీడియో ప్రాజెక్టులు">
+     AI Designs, Digital Campaigns & Video Projects
   </p>
 </div>
 
+<!-- REAL ESTATE PACKAGES -->
 <section>
-  <h2 class="heading" data-en="Image Gallery" data-te="ఇమేజ్ గ్యాలరీ">Image Gallery</h2>
-  <p class="desc" data-en="Our creative design works" data-te="మా క్రియేటివ్ డిజైన్లు">Our creative design works</p>
-  <div class="grid" id="images"></div>
+  <h2 class="heading" data-en="Real Estate Packages" data-te="రియల్ ఎస్టేట్ ప్యాకేజీలు">Real Estate Packages</h2>
+  <p class="desc" data-en="AI-created real estate advertising designs"
+     data-te="ఏఐ ద్వారా రూపొందించిన రియల్ ఎస్టేట్ ప్రకటన డిజైన్లు">
+     AI-created real estate advertising designs
+  </p>
+  <div class="grid" id="realEstate"></div>
 </section>
 
+<!-- PROMOTIONAL VIDEOS -->
 <section>
-  <h2 class="heading" data-en="Video Gallery" data-te="వీడియో గ్యాలరీ">Video Gallery</h2>
-  <p class="desc" data-en="Our video projects" data-te="మా వీడియో ప్రాజెక్టులు">Our video projects</p>
+  <h2 class="heading" data-en="Promotional Videos" data-te="ప్రమోషనల్ వీడియోలు">Promotional Videos</h2>
+  <p class="desc" data-en="Real Estate Video Projects"
+     data-te="రియల్ ఎస్టేట్ వీడియో ప్రాజెక్టులు">
+     Real Estate Video Projects
+  </p>
   <div class="grid" id="videos"></div>
+</section>
+
+<!-- PERSONAL VIDEOS -->
+<section>
+  <h2 class="heading" data-en="Personal Videos" data-te="పర్సనల్ వీడియోలు">Personal Videos</h2>
+  <p class="desc" data-en="Birthday and special occasion videos"
+     data-te="బర్త్‌డే మరియు ప్రత్యేక సందర్భాల వీడియోలు">
+     Birthday and special occasion videos
+  </p>
+  <div class="grid" id="personalVideos"></div>
 </section>
 
 <section>
   <h2 class="heading" data-en="Our Creative Approach" data-te="మా క్రియేటివ్ విధానం">Our Creative Approach</h2>
   <div class="about">
-    <p data-en="At BAI DIGITAL, we create engaging digital designs, campaigns and videos to help brands grow online."
-       data-te="BAI DIGITALలో బ్రాండ్లు ఆన్‌లైన్‌లో ఎదగడానికి ఆకట్టుకునే డిజిటల్ డిజైన్లు, క్యాంపెయిన్లు మరియు వీడియోలను రూపొందిస్తాము.">
-      At BAI DIGITAL, we create engaging digital designs, campaigns and videos to help brands grow online.
+    <p data-en="At BAI DIGITAL, we create engaging AI-powered digital designs, campaigns and videos to help brands grow online."
+       data-te="BAI DIGITALలో బ్రాండ్లు ఆన్‌లైన్‌లో ఎదగడానికి ఆకట్టుకునే ఏఐ డిజైన్లు, క్యాంపెయిన్లు మరియు వీడియోలను రూపొందిస్తాము.">
+      At BAI DIGITAL, we create engaging AI-powered digital designs, campaigns and videos to help brands grow online.
     </p>
   </div>
 </section>
 
 <footer>© 2026 BAI DIGITAL. All Rights Reserved.</footer>
 
+<!-- FULL SCREEN VIEWER -->
 <div class="viewer" id="viewer" onclick="closeViewer(event)">
   <button class="close" onclick="closeViewer(event)">×</button>
   <img id="bigImage" style="display:none" alt="Full size image">
@@ -99,12 +118,22 @@ section{padding:30px 5%}
 const birthdayVideo =
 "https://res.cloudinary.com/am7iqqns/video/upload/v1795088812/VN20261119_160928.mp4";
 
-const imageFiles=[
-"ai-campaign-arrival.png",
-"file_0000000071b48211ab4477cac6eb8b51.png",
-"file_00000000527c81f88c866634073d481d.png",
-"file_00000000ea24821181576662bf65042f.png",
-"file_00000000b90c8211ab3071fc420b2506.png"
+const realEstatePackages=[
+{
+ title:"Premium Real Estate",
+ telugu:"ప్రీమియం రియల్ ఎస్టేట్",
+ image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092651/file_00000000ed68820b9a05e92f4245c64d.png"
+},
+{
+ title:"Standard Real Estate",
+ telugu:"స్టాండర్డ్ రియల్ ఎస్టేట్",
+ image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092668/file_000000009118820b98107b96421fe8cb.png"
+},
+{
+ title:"Basic Real Estate",
+ telugu:"బేసిక్ రియల్ ఎస్టేట్",
+ image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092684/file_000000005c188211b51cfe051413e123.png"
+}
 ];
 
 const videoFiles=[
@@ -113,42 +142,61 @@ const videoFiles=[
 "592457750_1794978648652159.mp4"
 ];
 
-imageFiles.forEach((file,i)=>{
-  images.innerHTML+=`
+const realEstateEl=document.getElementById("realEstate");
+const videosEl=document.getElementById("videos");
+const personalVideosEl=document.getElementById("personalVideos");
+
+const viewer=document.getElementById("viewer");
+const bigImage=document.getElementById("bigImage");
+const bigVideo=document.getElementById("bigVideo");
+
+// Real Estate Package Images
+realEstatePackages.forEach(item=>{
+  realEstateEl.innerHTML+=`
     <div class="card">
-      <img src="${file}" alt="Portfolio image ${i+1}" onclick="openImage('${file}')">
-      <h3 data-en="Creative Design ${i+1}" data-te="క్రియేటివ్ డిజైన్ ${i+1}">Creative Design ${i+1}</h3>
+      <img src="${item.image}" alt="${item.title}" loading="lazy"
+           onclick="openImage('${item.image}')">
+      <h3 data-en="${item.title}" data-te="${item.telugu}">${item.title}</h3>
+      <p data-en="AI-created demo design by BAI DIGITAL."
+         data-te="BAI DIGITAL రూపొందించిన ఏఐ డెమో డిజైన్.">
+         AI-created demo design by BAI DIGITAL.
+      </p>
     </div>`;
 });
 
+// Real Estate Video Clips
 videoFiles.forEach((file,i)=>{
-  videos.innerHTML+=`
+  videosEl.innerHTML+=`
     <div class="card">
       <video controls playsinline preload="metadata">
         <source src="${file}" type="video/mp4">
+        Your browser does not support HTML video.
       </video>
-      <h3 data-en="Video Project ${i+1}" data-te="వీడియో ప్రాజెక్ట్ ${i+1}">Video Project ${i+1}</h3>
+      <h3 data-en="Real Estate Video Clip ${i+1}"
+          data-te="రియల్ ఎస్టేట్ వీడియో క్లిప్ ${i+1}">
+          Real Estate Video Clip ${i+1}
+      </h3>
       <button class="view" onclick="openVideo('${file}')"
-        data-en="Open Full Screen" data-te="పూర్తి స్క్రీన్‌లో చూడండి">Open Full Screen</button>
+        data-en="Open Full Screen"
+        data-te="పూర్తి స్క్రీన్‌లో చూడండి">Open Full Screen</button>
     </div>`;
 });
 
-// Fourth Video: AI Cinematic Birthday
-videos.innerHTML+=`
+// Personal Birthday Video
+personalVideosEl.innerHTML=`
   <div class="card">
     <video controls playsinline preload="metadata">
       <source src="${birthdayVideo}" type="video/mp4">
       Your browser does not support HTML video.
     </video>
-
     <h3 data-en="AI Cinematic Birthday Video"
-        data-te="ఏఐ సినిమాటిక్ బర్త్‌డే వీడియో">AI Cinematic Birthday Video</h3>
-
-    <p data-en="Premium AI birthday video creation by BAI DIGITAL."
-       data-te="BAI DIGITAL రూపొందించిన ప్రీమియం ఏఐ బర్త్‌డే వీడియో.">
-       Premium AI birthday video creation by BAI DIGITAL.
+        data-te="ఏఐ సినిమాటిక్ బర్త్‌డే వీడియో">
+        AI Cinematic Birthday Video
+    </h3>
+    <p data-en="AI birthday video creation by BAI DIGITAL."
+       data-te="BAI DIGITAL రూపొందించిన ఏఐ బర్త్‌డే వీడియో.">
+       AI birthday video creation by BAI DIGITAL.
     </p>
-
     <button class="view" onclick="openVideo(birthdayVideo)"
       data-en="Open Full Screen"
       data-te="పూర్తి స్క్రీన్‌లో చూడండి">Open Full Screen</button>
@@ -161,8 +209,8 @@ function language(lang){
     el.textContent=el.getAttribute("data-"+lang);
   });
 
-  teBtn.classList.toggle("active",lang==="te");
-  enBtn.classList.toggle("active",lang==="en");
+  document.getElementById("teBtn").classList.toggle("active",lang==="te");
+  document.getElementById("enBtn").classList.toggle("active",lang==="en");
 
   try{localStorage.setItem("baiLanguage",lang)}catch(e){}
 }
@@ -170,7 +218,8 @@ function language(lang){
 function openImage(src){
   bigVideo.pause();
   bigVideo.removeAttribute("src");
-  bigVideo.innerHTML="";
+  bigVideo.load();
+
   bigImage.src=src;
   bigImage.style.display="block";
   bigVideo.style.display="none";
