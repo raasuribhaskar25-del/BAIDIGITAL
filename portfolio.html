@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BAI DIGITAL | Portfolio</title>
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#071525;color:white;font-family:Arial,sans-serif}
@@ -24,8 +25,10 @@ section{padding:35px 6%}
 .desc{text-align:center;color:#b9cbd8;margin-bottom:25px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
 .card{background:#10263b;padding:12px;border:1px solid #1d405a;border-radius:12px}
-.card img,.card video{width:100%;height:220px;object-fit:contain;background:#000;border-radius:8px;display:block}
+.card img,.card video,.card iframe{width:100%;height:220px;background:#000;border-radius:8px;display:block}
 .card img{object-fit:cover;cursor:pointer}
+.card video{object-fit:contain}
+.card iframe{border:0}
 h3{color:#00d5ff;margin:12px 0 5px}
 .card p{color:#c1d0dc;font-size:14px}
 .view{background:#00c9ef;color:#061525}
@@ -35,9 +38,14 @@ footer{text-align:center;background:#06111e;padding:22px;color:#9eb4c5}
 .viewer.open{display:flex}
 .viewer img,.viewer video{max-width:100%;max-height:100%;object-fit:contain}
 .close{position:absolute;right:15px;top:12px;background:#00c9ef;font-size:25px}
-@media(max-width:550px){header{justify-content:center}nav{justify-content:center}section{padding:30px 5%}}
+@media(max-width:550px){
+header{justify-content:center}
+nav{justify-content:center}
+section{padding:30px 5%}
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -51,7 +59,10 @@ footer{text-align:center;background:#06111e;padding:22px;color:#9eb4c5}
 
 <div class="hero">
   <h1 data-en="Our Creative Portfolio" data-te="మా క్రియేటివ్ పోర్ట్‌ఫోలియో">Our Creative Portfolio</h1>
-  <p data-en="Creative Designs, Digital Campaigns & Video Projects" data-te="క్రియేటివ్ డిజైన్లు, డిజిటల్ క్యాంపెయిన్లు మరియు వీడియో ప్రాజెక్టులు">Creative Designs, Digital Campaigns & Video Projects</p>
+  <p data-en="Creative Designs, Digital Campaigns & Video Projects"
+     data-te="క్రియేటివ్ డిజైన్లు, డిజిటల్ క్యాంపెయిన్లు మరియు వీడియో ప్రాజెక్టులు">
+     Creative Designs, Digital Campaigns & Video Projects
+  </p>
 </div>
 
 <section>
@@ -119,6 +130,24 @@ videoFiles.forEach((file,i)=>{
     </div>`;
 });
 
+// Fourth video: AI Cinematic Birthday
+videos.innerHTML+=`
+  <div class="card">
+    <iframe
+      src="https://www.youtube.com/embed/ki3yUBhZw14"
+      title="AI Cinematic Birthday Video | BAI DIGITAL"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+    <h3 data-en="AI Cinematic Birthday Video"
+        data-te="ఏఐ సినిమాటిక్ బర్త్‌డే వీడియో">AI Cinematic Birthday Video</h3>
+    <p data-en="Premium AI birthday video creation by BAI DIGITAL."
+       data-te="BAI DIGITAL రూపొందించిన ప్రీమియం ఏఐ బర్త్‌డే వీడియో.">
+       Premium AI birthday video creation by BAI DIGITAL.
+    </p>
+  </div>`;
+
 function language(lang){
   document.documentElement.lang=lang;
   document.querySelectorAll("[data-en][data-te]").forEach(el=>{
@@ -165,5 +194,6 @@ let saved="en";
 try{saved=localStorage.getItem("baiLanguage")||"en"}catch(e){}
 language(saved);
 </script>
+
 </body>
 </html>
