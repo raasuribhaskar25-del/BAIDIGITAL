@@ -4,10 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <meta name="theme-color" content="#071525">
 <meta name="description" content="BAI DIGITAL - Real Estate Marketing, Creative Designs, Promotional Videos and Digital Campaigns.">
-
 <title>BAI DIGITAL | Creative Portfolio</title>
 
 <style>
@@ -16,18 +14,15 @@
   margin:0;
   padding:0;
 }
-
 html{
   scroll-behavior:smooth;
 }
-
 body{
   background:#071525;
   color:#fff;
   font-family:Arial,sans-serif;
   line-height:1.6;
 }
-
 header{
   padding:16px 6%;
   background:#0b2035;
@@ -41,31 +36,26 @@ header{
   z-index:50;
   border-bottom:1px solid #1d405a;
 }
-
 .logo{
   font-size:25px;
   font-weight:bold;
   color:#00d5ff;
   letter-spacing:1px;
 }
-
 nav{
   display:flex;
   align-items:center;
   gap:15px;
   flex-wrap:wrap;
 }
-
 nav a{
   color:white;
   text-decoration:none;
   font-size:14px;
 }
-
 nav a:hover{
   color:#00d5ff;
 }
-
 button{
   cursor:pointer;
   border:0;
@@ -73,39 +63,33 @@ button{
   padding:10px 15px;
   font-weight:bold;
 }
-
 .lang{
   background:#19344c;
   color:white;
   border:1px solid #456078;
   border-radius:20px;
 }
-
 .lang.active{
   background:#00c9ef;
   color:#061525;
   border-color:#00c9ef;
 }
-
 .hero{
   text-align:center;
   padding:85px 15px;
   background:linear-gradient(135deg,#0b2035,#073b53);
 }
-
 .hero h1{
   color:#00d5ff;
   font-size:clamp(30px,5vw,48px);
   margin-bottom:12px;
 }
-
 .hero p{
   color:#d1e2ee;
   font-size:17px;
   max-width:700px;
   margin:auto;
 }
-
 .hero-btn{
   display:inline-block;
   margin-top:22px;
@@ -116,30 +100,25 @@ button{
   text-decoration:none;
   font-weight:bold;
 }
-
 section{
   padding:55px 6%;
 }
-
 .heading{
   color:#00d5ff;
   text-align:center;
   font-size:30px;
   margin-bottom:10px;
 }
-
 .desc{
   text-align:center;
   color:#b9cbd8;
   margin-bottom:30px;
 }
-
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:22px;
 }
-
 .card{
   background:#10263b;
   padding:14px;
@@ -148,12 +127,10 @@ section{
   overflow:hidden;
   transition:transform .25s,border-color .25s;
 }
-
 .card:hover{
   transform:translateY(-5px);
   border-color:#00d5ff;
 }
-
 .card img{
   width:100%;
   height:230px;
@@ -164,6 +141,7 @@ section{
   cursor:pointer;
 }
 
+/* PROMOTIONAL VIDEOS - ORIGINAL DESIGN */
 .card video{
   width:100%;
   aspect-ratio:9/16;
@@ -174,30 +152,40 @@ section{
   display:block;
 }
 
+/* POLITICAL AND PERSONAL VIDEOS ONLY */
+#politicalVideos .card video,
+#personalVideos .card video{
+  display:block;
+  width:100%;
+  max-width:260px;
+  height:auto;
+  aspect-ratio:9 / 16;
+  max-height:460px;
+  object-fit:contain;
+  margin:0 auto;
+  background:transparent;
+}
+
 h3{
   color:#00d5ff;
   margin:14px 0 6px;
   font-size:19px;
 }
-
 .card p{
   color:#c1d0dc;
   font-size:14px;
   min-height:45px;
 }
-
 .view{
   background:#00c9ef;
   color:#061525;
   margin-top:12px;
   width:100%;
 }
-
 .view:hover,
 .hero-btn:hover{
   background:#fff;
 }
-
 .about{
   text-align:center;
   max-width:850px;
@@ -209,24 +197,20 @@ h3{
   line-height:1.9;
   border:1px solid #1d405a;
 }
-
 .contact{
   text-align:center;
   background:#0b2035;
   padding:40px 20px;
   border-radius:13px;
 }
-
 .contact h2{
   color:#00d5ff;
   margin-bottom:10px;
 }
-
 .contact p{
   color:#c1d0dc;
   margin-bottom:18px;
 }
-
 .contact a{
   display:inline-block;
   padding:12px 22px;
@@ -236,7 +220,6 @@ h3{
   border-radius:7px;
   font-weight:bold;
 }
-
 footer{
   text-align:center;
   background:#06111e;
@@ -246,7 +229,6 @@ footer{
 }
 
 /* FULL SCREEN VIEWER */
-
 .viewer{
   display:none;
   position:fixed;
@@ -257,24 +239,20 @@ footer{
   justify-content:center;
   padding:55px 15px 15px;
 }
-
 .viewer.open{
   display:flex;
 }
-
 .viewer img,
 .viewer video{
   max-width:100%;
   max-height:100%;
   object-fit:contain;
 }
-
 .viewer video{
   width:auto;
   height:auto;
   max-height:90vh;
 }
-
 .close{
   position:absolute;
   right:18px;
@@ -284,7 +262,6 @@ footer{
   font-size:25px;
   padding:5px 15px;
 }
-
 .error{
   display:none;
   color:#ff8b8b;
@@ -293,37 +270,33 @@ footer{
 }
 
 /* MOBILE */
-
 @media(max-width:600px){
-
   header{
     justify-content:center;
   }
-
   nav{
     justify-content:center;
   }
-
   .hero{
     padding:65px 15px;
   }
-
   section{
     padding:38px 5%;
   }
-
   .grid{
     grid-template-columns:1fr;
   }
-
   .card img{
     height:220px;
   }
-
   .card video{
     max-height:450px;
   }
-
+  #politicalVideos .card video,
+  #personalVideos .card video{
+    max-width:260px;
+    max-height:460px;
+  }
   .heading{
     font-size:25px;
   }
@@ -334,596 +307,396 @@ footer{
 <body>
 
 <!-- HEADER -->
-
 <header>
-
   <div class="logo">BAI DIGITAL</div>
-
   <nav>
-
     <a href="index.html"
        data-en="Home"
        data-te="హోమ్">Home</a>
-
     <a href="#portfolio"
        data-en="Portfolio"
        data-te="పోర్ట్‌ఫోలియో">Portfolio</a>
-
     <a href="#contact"
        data-en="Contact"
        data-te="సంప్రదించండి">Contact</a>
-
     <button class="lang"
       id="teBtn"
       onclick="language('te')">తెలుగు</button>
-
     <button class="lang active"
       id="enBtn"
       onclick="language('en')">English</button>
-
   </nav>
-
 </header>
 
 <!-- HERO -->
-
 <div class="hero">
-
   <h1
     data-en="BAI DIGITAL Creative Portfolio"
     data-te="BAI DIGITAL క్రియేటివ్ పోర్ట్‌ఫోలియో">
     BAI DIGITAL Creative Portfolio
   </h1>
-
   <p
     data-en="Creative Designs, Real Estate Marketing, Promotional Videos and Digital Campaigns."
     data-te="క్రియేటివ్ డిజైన్లు, రియల్ ఎస్టేట్ మార్కెటింగ్, ప్రమోషనల్ వీడియోలు మరియు డిజిటల్ క్యాంపెయిన్లు.">
     Creative Designs, Real Estate Marketing, Promotional Videos and Digital Campaigns.
   </p>
-
   <a href="#portfolio"
      class="hero-btn"
      data-en="Explore Our Work"
      data-te="మా పనిని చూడండి">
      Explore Our Work
   </a>
-
 </div>
 
 <!-- REAL ESTATE PACKAGES -->
-
 <section id="portfolio">
-
   <h2 class="heading"
       data-en="Real Estate Packages"
       data-te="రియల్ ఎస్టేట్ ప్యాకేజీలు">
       Real Estate Packages
   </h2>
-
   <p class="desc"
      data-en="Professional AI-Created Real Estate Advertising Designs"
      data-te="ప్రొఫెషనల్ ఏఐ రియల్ ఎస్టేట్ అడ్వర్టైజింగ్ డిజైన్లు">
      Professional AI-Created Real Estate Advertising Designs
   </p>
-
   <div class="grid" id="realEstate"></div>
-
 </section>
 
 <!-- PROMOTIONAL VIDEOS -->
-
 <section>
-
   <h2 class="heading"
       data-en="Promotional Videos"
       data-te="ప్రమోషనల్ వీడియోలు">
       Promotional Videos
   </h2>
-
   <p class="desc"
      data-en="Real Estate Marketing Video Projects"
      data-te="రియల్ ఎస్టేట్ మార్కెటింగ్ వీడియో ప్రాజెక్టులు">
      Real Estate Marketing Video Projects
   </p>
-
   <div class="grid" id="videos"></div>
-
 </section>
 
 <!-- POLITICAL VIDEOS -->
-
 <section>
-
   <h2 class="heading"
       data-en="Political Campaign Videos"
       data-te="రాజకీయ ప్రచార వీడియోలు">
       Political Campaign Videos
   </h2>
-
   <p class="desc"
      data-en="Creative Political Promotional Video Projects"
      data-te="క్రియేటివ్ రాజకీయ ప్రచార వీడియో ప్రాజెక్టులు">
      Creative Political Promotional Video Projects
   </p>
-
   <div class="grid" id="politicalVideos"></div>
-
 </section>
 
 <!-- PERSONAL VIDEOS -->
-
 <section>
-
   <h2 class="heading"
       data-en="Personal Videos"
       data-te="పర్సనల్ వీడియోలు">
       Personal Videos
   </h2>
-
   <p class="desc"
      data-en="Birthday and Special Occasion Videos"
      data-te="బర్త్‌డే మరియు ప్రత్యేక సందర్భాల వీడియోలు">
      Birthday and Special Occasion Videos
   </p>
-
   <div class="grid" id="personalVideos"></div>
-
 </section>
 
 <!-- ABOUT -->
-
 <section>
-
   <h2 class="heading"
       data-en="About BAI DIGITAL"
       data-te="BAI DIGITAL గురించి">
       About BAI DIGITAL
   </h2>
-
   <div class="about">
-
     <p
       data-en="At BAI DIGITAL, we create engaging digital designs, real estate advertisements, promotional videos and creative campaign content. Our goal is to help businesses and organizations build a strong digital presence through creative and effective digital solutions."
       data-te="BAI DIGITALలో మేము ఆకట్టుకునే డిజిటల్ డిజైన్లు, రియల్ ఎస్టేట్ ప్రకటనలు, ప్రమోషనల్ వీడియోలు మరియు క్రియేటివ్ క్యాంపెయిన్ కంటెంట్ రూపొందిస్తాము. వ్యాపారాలు మరియు సంస్థలకు బలమైన డిజిటల్ గుర్తింపును నిర్మించడంలో సహాయపడటం మా లక్ష్యం.">
-
       At BAI DIGITAL, we create engaging digital designs, real estate advertisements, promotional videos and creative campaign content. Our goal is to help businesses and organizations build a strong digital presence through creative and effective digital solutions.
-
     </p>
-
   </div>
-
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact">
-
   <div class="contact">
-
     <h2
       data-en="Let's Work Together"
       data-te="మనమిద్దరం కలిసి పని చేద్దాం">
       Let's Work Together
     </h2>
-
     <p
       data-en="Looking for creative digital marketing solutions? Contact BAI DIGITAL."
       data-te="మీకు క్రియేటివ్ డిజిటల్ మార్కెటింగ్ సేవలు కావాలా? BAI DIGITALను సంప్రదించండి.">
       Looking for creative digital marketing solutions? Contact BAI DIGITAL.
     </p>
-
     <a href="mailto:connect@baidigital.in"
        data-en="Contact Us"
        data-te="మమ్మల్ని సంప్రదించండి">
        Contact Us
     </a>
-
   </div>
-
 </section>
 
 <!-- FOOTER -->
-
 <footer>
-
   <div>© 2026 BAI DIGITAL. All Rights Reserved.</div>
-
   <div
     data-en="Creative Digital Solutions"
     data-te="క్రియేటివ్ డిజిటల్ సొల్యూషన్స్">
     Creative Digital Solutions
   </div>
-
 </footer>
 
 <!-- FULL SCREEN VIEWER -->
-
 <div class="viewer"
      id="viewer"
      onclick="closeViewer(event)">
-
   <button class="close"
           onclick="closeViewer(event)">×</button>
-
   <img id="bigImage"
        style="display:none"
        alt="Full Size Image">
-
   <video id="bigVideo"
          controls
          playsinline
          preload="metadata"
          style="display:none">
   </video>
-
 </div>
 
 <script>
-
 /* REAL ESTATE IMAGES */
-
 const realEstatePackages=[
-
 {
  title:"Basic Real Estate",
  telugu:"బేసిక్ రియల్ ఎస్టేట్",
  image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092651/file_00000000ed68820b9a05e92f4245c64d.png"
 },
-
 {
  title:"Standard Real Estate",
  telugu:"స్టాండర్డ్ రియల్ ఎస్టేట్",
  image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092668/file_000000009118820b98107b96421fe8cb.png"
 },
-
 {
  title:"Premium Real Estate",
  telugu:"ప్రీమియం రియల్ ఎస్టేట్",
  image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092684/file_000000005c188211b51cfe051413e123.png"
 }
-
 ];
 
-
-/* REAL ESTATE VIDEO FILES
-
-IMPORTANT:
-Keep these three MP4 files in the same
-GitHub folder as index.html.
-*/
-
+/* REAL ESTATE VIDEO FILES */
 const videoFiles=[
-
 "154380473_1794978764686133.mp4",
-
 "508228052_1794978765021438.mp4",
-
 "592457750_1794978648652159.mp4"
-
 ];
-
 
 /* OTHER VIDEO LINKS */
-
 const birthdayVideo=
 "https://res.cloudinary.com/am7iqqns/video/upload/v1795088812/VN20261119_160928.mp4";
 
 const politicalVideo=
 "https://res.cloudinary.com/am7iqqns/video/upload/v1795106439/VN20261108_195120.mp4";
 
-
 /* ELEMENTS */
-
 const realEstateEl=document.getElementById("realEstate");
-
 const videosEl=document.getElementById("videos");
-
 const politicalVideosEl=document.getElementById("politicalVideos");
-
 const personalVideosEl=document.getElementById("personalVideos");
-
 const viewer=document.getElementById("viewer");
-
 const bigImage=document.getElementById("bigImage");
-
 const bigVideo=document.getElementById("bigVideo");
 
-
 /* CREATE REAL ESTATE CARDS */
-
 realEstatePackages.forEach(item=>{
-
   realEstateEl.innerHTML+=`
-
     <div class="card">
-
       <img
         src="${item.image}"
         alt="${item.title}"
         loading="lazy"
         onclick="openImage('${item.image}')">
-
       <h3
         data-en="${item.title}"
         data-te="${item.telugu}">
         ${item.title}
       </h3>
-
       <p
         data-en="AI-created demo design by BAI DIGITAL."
         data-te="BAI DIGITAL రూపొందించిన ఏఐ డెమో డిజైన్.">
         AI-created demo design by BAI DIGITAL.
       </p>
-
     </div>
-
   `;
-
 });
 
-
 /* CREATE PROMOTIONAL VIDEO CARDS */
-
 videoFiles.forEach((file,i)=>{
-
   const title="Real Estate Video "+(i+1);
-
   videosEl.innerHTML+=`
-
     <div class="card">
-
       <video controls playsinline preload="metadata">
-
         <source src="./${file}" type="video/mp4">
-
         Your browser does not support HTML video.
-
       </video>
-
       <h3
         data-en="${title}"
         data-te="రియల్ ఎస్టేట్ వీడియో ${i+1}">
         ${title}
       </h3>
-
       <p
         data-en="Real estate promotional video by BAI DIGITAL."
         data-te="BAI DIGITAL రూపొందించిన రియల్ ఎస్టేట్ ప్రమోషనల్ వీడియో.">
         Real estate promotional video by BAI DIGITAL.
       </p>
-
       <button class="view"
         onclick="openVideo('./${file}')"
         data-en="Open Full Screen"
         data-te="పూర్తి స్క్రీన్‌లో చూడండి">
         Open Full Screen
       </button>
-
     </div>
-
   `;
-
 });
 
-
 /* POLITICAL VIDEO */
-
 politicalVideosEl.innerHTML=`
-
   <div class="card">
-
     <video controls playsinline preload="metadata">
-
       <source src="${politicalVideo}" type="video/mp4">
-
       Your browser does not support HTML video.
-
     </video>
-
     <h3
       data-en="Political Campaign Video"
       data-te="రాజకీయ ప్రచార వీడియో">
       Political Campaign Video
     </h3>
-
     <p
       data-en="AI-powered political promotional video by BAI DIGITAL."
       data-te="BAI DIGITAL రూపొందించిన ఏఐ రాజకీయ ప్రచార వీడియో.">
       AI-powered political promotional video by BAI DIGITAL.
     </p>
-
     <button class="view"
       onclick="openVideo(politicalVideo)"
       data-en="Open Full Screen"
       data-te="పూర్తి స్క్రీన్‌లో చూడండి">
       Open Full Screen
     </button>
-
   </div>
-
 `;
 
-
 /* PERSONAL VIDEO */
-
 personalVideosEl.innerHTML=`
-
   <div class="card">
-
     <video controls playsinline preload="metadata">
-
       <source src="${birthdayVideo}" type="video/mp4">
-
       Your browser does not support HTML video.
-
     </video>
-
     <h3
       data-en="AI Cinematic Birthday Video"
       data-te="ఏఐ సినిమాటిక్ బర్త్‌డే వీడియో">
       AI Cinematic Birthday Video
     </h3>
-
     <p
       data-en="Creative birthday video production by BAI DIGITAL."
       data-te="BAI DIGITAL రూపొందించిన క్రియేటివ్ బర్త్‌డే వీడియో.">
       Creative birthday video production by BAI DIGITAL.
     </p>
-
     <button class="view"
       onclick="openVideo(birthdayVideo)"
       data-en="Open Full Screen"
       data-te="పూర్తి స్క్రీన్‌లో చూడండి">
       Open Full Screen
     </button>
-
   </div>
-
 `;
 
-
 /* LANGUAGE SWITCH */
-
 function language(lang){
-
   document.documentElement.lang=lang;
-
   document.querySelectorAll("[data-en][data-te]").forEach(el=>{
-
     el.textContent=el.getAttribute("data-"+lang);
-
   });
-
   document.getElementById("teBtn")
     .classList.toggle("active",lang==="te");
-
   document.getElementById("enBtn")
     .classList.toggle("active",lang==="en");
-
   try{
-
     localStorage.setItem("baiLanguage",lang);
-
   }catch(e){}
-
 }
-
 
 /* OPEN IMAGE */
-
 function openImage(src){
-
   bigVideo.pause();
-
   bigVideo.removeAttribute("src");
-
   bigVideo.load();
-
   bigImage.src=src;
-
   bigImage.style.display="block";
-
   bigVideo.style.display="none";
-
   viewer.classList.add("open");
-
 }
-
 
 /* OPEN VIDEO */
-
 function openVideo(src){
-
   bigImage.removeAttribute("src");
-
   bigImage.style.display="none";
-
   bigVideo.pause();
-
   bigVideo.src=src;
-
   bigVideo.style.display="block";
-
   viewer.classList.add("open");
-
   bigVideo.load();
-
   bigVideo.play().catch(()=>{});
-
 }
 
-
 /* CLOSE VIEWER */
-
 function closeViewer(e){
-
   if(
     e.target!==viewer &&
     !e.target.classList.contains("close")
   ){
     return;
   }
-
   bigVideo.pause();
-
   bigVideo.removeAttribute("src");
-
   bigVideo.load();
-
   bigImage.removeAttribute("src");
-
   viewer.classList.remove("open");
-
 }
 
-
 /* ESCAPE KEY */
-
 document.addEventListener("keydown",e=>{
-
   if(e.key==="Escape" && viewer.classList.contains("open")){
-
     closeViewer({target:viewer});
-
   }
-
 });
-
 
 /* RESTORE SAVED LANGUAGE */
-
 let saved="en";
-
 try{
-
   saved=localStorage.getItem("baiLanguage")||"en";
-
 }catch(e){}
-
 language(saved);
 
-
 /* VIDEO ERROR HANDLING */
-
 document.querySelectorAll("video").forEach(video=>{
-
   video.addEventListener("error",()=>{
-
     const message=document.createElement("p");
-
     message.className="error";
-
     message.textContent=
       "Video could not be loaded. Please check the video file URL.";
-
     video.insertAdjacentElement("afterend",message);
-
     message.style.display="block";
-
   });
-
 });
-
 </script>
 
 </body>
