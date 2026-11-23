@@ -1,4 +1,5 @@
-   <!DOCTYPE html>
+ 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -14,9 +15,7 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: #071525;
@@ -58,9 +57,7 @@ nav a {
   font-size: 14px;
 }
 
-nav a:hover {
-  color: #00d5ff;
-}
+nav a:hover { color: #00d5ff; }
 
 button {
   cursor: pointer;
@@ -112,9 +109,7 @@ button {
   font-weight: bold;
 }
 
-section {
-  padding: 30px 6%;
-}
+section { padding: 30px 6%; }
 
 .heading {
   color: #00d5ff;
@@ -153,7 +148,6 @@ section {
   cursor: pointer;
 }
 
-/* Promotional videos - original design */
 #videos .card video {
   width: 100%;
   aspect-ratio: 9/16;
@@ -164,7 +158,6 @@ section {
   display: block;
 }
 
-/* Political and Personal videos */
 .single-video {
   width: 100%;
   max-width: 320px;
@@ -246,7 +239,6 @@ footer {
   font-size: 14px;
 }
 
-/* Full screen viewer */
 .viewer {
   display: none;
   position: fixed;
@@ -258,9 +250,7 @@ footer {
   padding: 55px 15px 15px;
 }
 
-.viewer.open {
-  display: flex;
-}
+.viewer.open { display: flex; }
 
 .viewer img,
 .viewer video {
@@ -279,33 +269,13 @@ footer {
 }
 
 @media(max-width:600px) {
-  header {
-    justify-content: center;
-  }
-
-  nav {
-    justify-content: center;
-  }
-
-  .hero {
-    padding: 65px 15px;
-  }
-
-  section {
-    padding: 38px 5%;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card img {
-    height: 220px;
-  }
-
-  .heading {
-    font-size: 25px;
-  }
+  header { justify-content: center; }
+  nav { justify-content: center; }
+  .hero { padding: 65px 15px; }
+  section { padding: 38px 5%; }
+  .grid { grid-template-columns: 1fr; }
+  .card img { height: 220px; }
+  .heading { font-size: 25px; }
 }
 </style>
 </head>
@@ -314,11 +284,11 @@ footer {
 
 <header>
   <div class="logo">BAIDIGITAL</div>
- <nav>
-  <a href="index.html" data-en="Home" data-te="హోమ్">Home</a>
-  <button class="lang" id="teBtn" onclick="language('te')">తెలుగు</button>
-  <button class="lang active" id="enBtn" onclick="language('en')">English</button>
-</nav>
+  <nav>
+    <a href="index.html" data-en="Home" data-te="హోమ్">Home</a>
+    <button class="lang" id="teBtn" onclick="language('te')">తెలుగు</button>
+    <button class="lang active" id="enBtn" onclick="language('en')">English</button>
+  </nav>
 </header>
 
 <div class="hero">
@@ -430,8 +400,9 @@ const videoFiles = [
 const birthdayVideo =
 "https://res.cloudinary.com/am7iqqns/video/upload/v1795088812/VN20261119_160928.mp4";
 
+/* NEW POLITICAL VIDEO */
 const politicalVideo =
-"https://res.cloudinary.com/am7iqqns/video/upload/v1795106439/VN20261108_195120.mp4";
+"https://res.cloudinary.com/am7iqqns/video/upload/v1795435696/VID-20261123-WA0132.mp4";
 
 const realEstateEl = document.getElementById("realEstate");
 const videosEl = document.getElementById("videos");
@@ -459,7 +430,7 @@ realEstatePackages.forEach(item => {
   `;
 });
 
-/* Promotional Videos - links and original layout preserved */
+/* Promotional Videos */
 videoFiles.forEach((file, i) => {
   const title = "Real Estate Video " + (i + 1);
   const src = "./" + file;
