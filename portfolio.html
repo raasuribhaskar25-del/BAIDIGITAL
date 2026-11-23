@@ -9,273 +9,84 @@
 <title>BAIDIGITAL | Creative Portfolio</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#071525;color:#fff;font-family:Arial,sans-serif;line-height:1.6}
+
+header{
+padding:16px 6%;background:#0b2035;display:flex;
+justify-content:space-between;align-items:center;
+flex-wrap:wrap;gap:15px;position:sticky;top:0;
+z-index:50;border-bottom:1px solid #1d405a
+}
+.logo{font-size:25px;font-weight:bold;color:#00d5ff}
+nav{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#00d5ff}
+button{cursor:pointer;border:0;border-radius:7px;padding:10px 15px;font-weight:bold}
+.lang{background:#19344c;color:white;border:1px solid #456078;border-radius:20px}
+.lang.active{background:#00c9ef;color:#061525}
+
+.hero{
+text-align:center;padding:85px 15px;
+background:linear-gradient(135deg,#0b2035,#073b53)
+}
+.hero h1{color:#00d5ff;font-size:clamp(30px,5vw,48px);margin-bottom:12px}
+.hero p{color:#d1e2ee;font-size:17px;max-width:700px;margin:auto}
+.hero-btn{
+display:inline-block;margin-top:22px;padding:12px 25px;
+background:#00c9ef;color:#061525;border-radius:7px;
+text-decoration:none;font-weight:bold
 }
 
-html { scroll-behavior: smooth; }
+section{padding:30px 6%}
+.heading{color:#00d5ff;text-align:center;font-size:30px;margin-bottom:10px}
+.desc{text-align:center;color:#b9cbd8;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
 
-body {
-  background: #071525;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+.card{
+background:#10263b;padding:14px;border:1px solid #1d405a;
+border-radius:13px;overflow:hidden
 }
-
-header {
-  padding: 16px 6%;
-  background: #0b2035;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  border-bottom: 1px solid #1d405a;
+.card img{
+width:100%;height:230px;object-fit:cover;background:#06111e;
+border-radius:8px;display:block;cursor:pointer
 }
-
-.logo {
-  font-size: 25px;
-  font-weight: bold;
-  color: #00d5ff;
+#videos .card video{
+width:100%;aspect-ratio:9/16;max-height:420px;
+object-fit:cover;background:#000;border-radius:8px;display:block
 }
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
+.single-video{width:100%;max-width:320px;margin:0 auto}
+.single-video video{
+display:block;width:100%;aspect-ratio:9/16;height:auto;
+object-fit:contain;background:#000;border-radius:8px
 }
+h3{color:#00d5ff;margin:14px 0 6px;font-size:19px}
+.card p{color:#c1d0dc;font-size:14px;min-height:45px}
+.view{background:#00c9ef;color:#061525;margin-top:12px;width:100%}
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
+.about{
+text-align:center;max-width:850px;margin:auto;background:#10263b;
+padding:30px;border-radius:13px;color:#d1e2ee;line-height:1.9
 }
+footer{text-align:center;background:#06111e;padding:25px;color:#9eb4c5;font-size:14px}
 
-nav a:hover { color: #00d5ff; }
-
-button {
-  cursor: pointer;
-  border: 0;
-  border-radius: 7px;
-  padding: 10px 15px;
-  font-weight: bold;
+.viewer{
+display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);
+z-index:100;align-items:center;justify-content:center;padding:55px 15px 15px
 }
+.viewer.open{display:flex}
+.viewer img,.viewer video{max-width:100%;max-height:90vh;object-fit:contain}
+.close{position:absolute;right:18px;top:12px;background:#00c9ef;color:#061525;font-size:25px}
 
-.lang {
-  background: #19344c;
-  color: white;
-  border: 1px solid #456078;
-  border-radius: 20px;
-}
-
-.lang.active {
-  background: #00c9ef;
-  color: #061525;
-}
-
-.hero {
-  text-align: center;
-  padding: 85px 15px;
-  background: linear-gradient(135deg,#0b2035,#073b53);
-}
-
-.hero h1 {
-  color: #00d5ff;
-  font-size: clamp(30px,5vw,48px);
-  margin-bottom: 12px;
-}
-
-.hero p {
-  color: #d1e2ee;
-  font-size: 17px;
-  max-width: 700px;
-  margin: auto;
-}
-
-.hero-btn {
-  display: inline-block;
-  margin-top: 22px;
-  padding: 12px 25px;
-  background: #00c9ef;
-  color: #061525;
-  border-radius: 7px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-section { padding: 30px 6%; }
-
-.heading {
-  color: #00d5ff;
-  text-align: center;
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.desc {
-  text-align: center;
-  color: #b9cbd8;
-  margin-bottom: 30px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-  gap: 22px;
-}
-
-.card {
-  background: #10263b;
-  padding: 14px;
-  border: 1px solid #1d405a;
-  border-radius: 13px;
-  overflow: hidden;
-}
-
-.card img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  background: #06111e;
-  border-radius: 8px;
-  display: block;
-  cursor: pointer;
-}
-
-#videos .card video {
-  width: 100%;
-  aspect-ratio: 9/16;
-  max-height: 420px;
-  object-fit: cover;
-  background: #000;
-  border-radius: 8px;
-  display: block;
-}
-
-.single-video {
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-}
-
-.single-video video {
-  display: block;
-  width: 100%;
-  aspect-ratio: 9/16;
-  height: auto;
-  object-fit: contain;
-  background: #000;
-  border-radius: 8px;
-}
-
-h3 {
-  color: #00d5ff;
-  margin: 14px 0 6px;
-  font-size: 19px;
-}
-
-.card p {
-  color: #c1d0dc;
-  font-size: 14px;
-  min-height: 45px;
-}
-
-.view {
-  background: #00c9ef;
-  color: #061525;
-  margin-top: 12px;
-  width: 100%;
-}
-
-.about {
-  text-align: center;
-  max-width: 850px;
-  margin: auto;
-  background: #10263b;
-  padding: 30px;
-  border-radius: 13px;
-  color: #d1e2ee;
-  line-height: 1.9;
-}
-
-.contact {
-  text-align: center;
-  background: #0b2035;
-  padding: 40px 20px;
-  border-radius: 13px;
-}
-
-.contact h2 {
-  color: #00d5ff;
-  margin-bottom: 10px;
-}
-
-.contact p {
-  color: #c1d0dc;
-  margin-bottom: 18px;
-}
-
-.contact a {
-  display: inline-block;
-  padding: 12px 22px;
-  background: #00c9ef;
-  color: #061525;
-  text-decoration: none;
-  border-radius: 7px;
-  font-weight: bold;
-}
-
-footer {
-  text-align: center;
-  background: #06111e;
-  padding: 25px;
-  color: #9eb4c5;
-  font-size: 14px;
-}
-
-.viewer {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.96);
-  z-index: 100;
-  align-items: center;
-  justify-content: center;
-  padding: 55px 15px 15px;
-}
-
-.viewer.open { display: flex; }
-
-.viewer img,
-.viewer video {
-  max-width: 100%;
-  max-height: 90vh;
-  object-fit: contain;
-}
-
-.close {
-  position: absolute;
-  right: 18px;
-  top: 12px;
-  background: #00c9ef;
-  color: #061525;
-  font-size: 25px;
-}
-
-@media(max-width:600px) {
-  header { justify-content: center; }
-  nav { justify-content: center; }
-  .hero { padding: 65px 15px; }
-  section { padding: 38px 5%; }
-  .grid { grid-template-columns: 1fr; }
-  .card img { height: 220px; }
-  .heading { font-size: 25px; }
+@media(max-width:600px){
+header{justify-content:center}
+nav{justify-content:center}
+.hero{padding:65px 15px}
+section{padding:38px 5%}
+.grid{grid-template-columns:1fr}
+.card img{height:220px}
+.heading{font-size:25px}
 }
 </style>
 </head>
@@ -283,308 +94,234 @@ footer {
 <body>
 
 <header>
-  <div class="logo">BAIDIGITAL</div>
-  <nav>
-    <a href="index.html" data-en="Home" data-te="హోమ్">Home</a>
-    <button class="lang" id="teBtn" onclick="language('te')">తెలుగు</button>
-    <button class="lang active" id="enBtn" onclick="language('en')">English</button>
-  </nav>
+<div class="logo">BAIDIGITAL</div>
+<nav>
+<a href="index.html" data-en="Home" data-te="హోమ్">Home</a>
+<button class="lang" id="teBtn" onclick="language('te')">తెలుగు</button>
+<button class="lang active" id="enBtn" onclick="language('en')">English</button>
+</nav>
 </header>
 
 <div class="hero">
-  <h1 data-en="BAIDIGITAL Creative Portfolio"
-      data-te="BAIDIGITAL క్రియేటివ్ పోర్ట్‌ఫోలియో">
-    BAIDIGITAL Creative Portfolio
-  </h1>
-  <p data-en="Creative Designs, Real Estate Marketing, Promotional Videos and Digital Campaigns."
-     data-te="క్రియేటివ్ డిజైన్లు, రియల్ ఎస్టేట్ మార్కెటింగ్, ప్రమోషనల్ వీడియోలు మరియు డిజిటల్ క్యాంపెయిన్లు.">
-    Creative Designs, Real Estate Marketing, Promotional Videos and Digital Campaigns.
-  </p>
-  <a href="#portfolio" class="hero-btn"
-     data-en="Explore Our Work" data-te="మా పనిని చూడండి">
-    Explore Our Work
-  </a>
+<h1 data-en="BAIDIGITAL Creative Portfolio" data-te="BAIDIGITAL క్రియేటివ్ పోర్ట్‌ఫోలియో">BAIDIGITAL Creative Portfolio</h1>
+<p data-en="Creative Designs, Real Estate Marketing, Promotional Videos and Digital Campaigns."
+data-te="క్రియేటివ్ డిజైన్లు, రియల్ ఎస్టేట్ మార్కెటింగ్, ప్రమోషనల్ వీడియోలు మరియు డిజిటల్ క్యాంపెయిన్లు.">
+Creative Designs, Real Estate Marketing, Promotional Videos and Digital Campaigns.</p>
+<a href="#portfolio" class="hero-btn" data-en="Explore Our Work" data-te="మా పనిని చూడండి">Explore Our Work</a>
 </div>
 
 <section id="portfolio">
-  <h2 class="heading" data-en="Real Estate Packages"
-      data-te="రియల్ ఎస్టేట్ ప్యాకేజీలు">Real Estate Packages</h2>
-  <p class="desc" data-en="Professional AI-Created Real Estate Advertising Designs"
-     data-te="ప్రొఫెషనల్ ఏఐ రియల్ ఎస్టేట్ అడ్వర్టైజింగ్ డిజైన్లు">
-    Professional AI-Created Real Estate Advertising Designs
-  </p>
-  <div class="grid" id="realEstate"></div>
+<h2 class="heading" data-en="Real Estate Packages" data-te="రియల్ ఎస్టేట్ ప్యాకేజీలు">Real Estate Packages</h2>
+<p class="desc" data-en="Professional AI-Created Real Estate Advertising Designs" data-te="ప్రొఫెషనల్ ఏఐ రియల్ ఎస్టేట్ అడ్వర్టైజింగ్ డిజైన్లు">Professional AI-Created Real Estate Advertising Designs</p>
+<div class="grid" id="realEstate"></div>
 </section>
 
 <section>
-  <h2 class="heading" data-en="Promotional Videos"
-      data-te="ప్రమోషనల్ వీడియోలు">Promotional Videos</h2>
-  <p class="desc" data-en="Real Estate Marketing Video Projects"
-     data-te="రియల్ ఎస్టేట్ మార్కెటింగ్ వీడియో ప్రాజెక్టులు">
-    Real Estate Marketing Video Projects
-  </p>
-  <div class="grid" id="videos"></div>
+<h2 class="heading" data-en="Promotional Videos" data-te="ప్రమోషనల్ వీడియోలు">Promotional Videos</h2>
+<p class="desc" data-en="Real Estate Marketing Video Projects" data-te="రియల్ ఎస్టేట్ మార్కెటింగ్ వీడియో ప్రాజెక్టులు">Real Estate Marketing Video Projects</p>
+<div class="grid" id="videos"></div>
 </section>
 
 <section>
-  <h2 class="heading" data-en="Political Campaign Videos"
-      data-te="రాజకీయ ప్రచార వీడియోలు">Political Campaign Videos</h2>
-  <p class="desc" data-en="Creative Political Promotional Video Projects"
-     data-te="క్రియేటివ్ రాజకీయ ప్రచార వీడియో ప్రాజెక్టులు">
-    Creative Political Promotional Video Projects
-  </p>
-  <div id="politicalVideos"></div>
+<h2 class="heading" data-en="Political Campaign Videos" data-te="రాజకీయ ప్రచార వీడియోలు">Political Campaign Videos</h2>
+<p class="desc" data-en="Creative Political Promotional Video Projects" data-te="క్రియేటివ్ రాజకీయ ప్రచార వీడియో ప్రాజెక్టులు">Creative Political Promotional Video Projects</p>
+<div class="grid" id="politicalVideos"></div>
 </section>
 
 <section>
-  <h2 class="heading" data-en="Personal Videos"
-      data-te="పర్సనల్ వీడియోలు">Personal Videos</h2>
-  <p class="desc" data-en="Birthday and Special Occasion Videos"
-     data-te="బర్త్‌డే మరియు ప్రత్యేక సందర్భాల వీడియోలు">
-    Birthday and Special Occasion Videos
-  </p>
-  <div id="personalVideos"></div>
+<h2 class="heading" data-en="Personal Videos" data-te="పర్సనల్ వీడియోలు">Personal Videos</h2>
+<p class="desc" data-en="Birthday and Special Occasion Videos" data-te="బర్త్‌డే మరియు ప్రత్యేక సందర్భాల వీడియోలు">Birthday and Special Occasion Videos</p>
+<div id="personalVideos"></div>
 </section>
 
 <section>
-  <h2 class="heading" data-en="About BAIDIGITAL"
-      data-te="BAIDIGITAL గురించి">About BAIDIGITAL</h2>
-  <div class="about">
-    <p data-en="At BAIDIGITAL, we create engaging digital designs, real estate advertisements, promotional videos and creative campaign content. Our goal is to help businesses and organizations build a strong digital presence through creative and effective digital solutions."
-       data-te="BAIDIGITALలో మేము ఆకట్టుకునే డిజిటల్ డిజైన్లు, రియల్ ఎస్టేట్ ప్రకటనలు, ప్రమోషనల్ వీడియోలు మరియు క్రియేటివ్ క్యాంపెయిన్ కంటెంట్ రూపొందిస్తాము. వ్యాపారాలు మరియు సంస్థలకు బలమైన డిజిటల్ గుర్తింపును నిర్మించడంలో సహాయపడటం మా లక్ష్యం.">
-      At BAIDIGITAL, we create engaging digital designs, real estate advertisements, promotional videos and creative campaign content.
-    </p>
-  </div>
+<h2 class="heading" data-en="About BAIDIGITAL" data-te="BAIDIGITAL గురించి">About BAIDIGITAL</h2>
+<div class="about">
+<p data-en="At BAIDIGITAL, we create engaging digital designs, real estate advertisements, promotional videos and creative campaign content. Our goal is to help businesses and organizations build a strong digital presence through creative and effective digital solutions."
+data-te="BAIDIGITALలో మేము ఆకట్టుకునే డిజిటల్ డిజైన్లు, రియల్ ఎస్టేట్ ప్రకటనలు, ప్రమోషనల్ వీడియోలు మరియు క్రియేటివ్ క్యాంపెయిన్ కంటెంట్ రూపొందిస్తాము. వ్యాపారాలు మరియు సంస్థలకు బలమైన డిజిటల్ గుర్తింపును నిర్మించడంలో సహాయపడటం మా లక్ష్యం.">
+At BAIDIGITAL, we create engaging digital designs, real estate advertisements, promotional videos and creative campaign content.</p>
+</div>
 </section>
 
 <footer>
-  <div>© 2026 BAIDIGITAL. All Rights Reserved.</div>
-  <div data-en="Creative Digital Solutions"
-       data-te="క్రియేటివ్ డిజిటల్ సొల్యూషన్స్">
-    Creative Digital Solutions
-  </div>
+<div>© 2026 BAIDIGITAL. All Rights Reserved.</div>
+<div data-en="Creative Digital Solutions" data-te="క్రియేటివ్ డిజిటల్ సొల్యూషన్స్">Creative Digital Solutions</div>
 </footer>
 
 <div class="viewer" id="viewer" onclick="closeViewer(event)">
-  <button class="close" onclick="closeViewer(event)">×</button>
-  <img id="bigImage" style="display:none" alt="Full Size Image">
-  <video id="bigVideo" controls playsinline preload="metadata"
-         style="display:none"></video>
+<button class="close" onclick="closeViewer(event)">×</button>
+<img id="bigImage" style="display:none" alt="Full Size Image">
+<video id="bigVideo" controls playsinline preload="metadata" style="display:none"></video>
 </div>
 
 <script>
 const realEstatePackages = [
 {
-  title:"Basic Real Estate",
-  telugu:"బేసిక్ రియల్ ఎస్టేట్",
-  image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092651/file_00000000ed68820b9a05e92f4245c64d.png"
+title:"Basic Real Estate",
+telugu:"బేసిక్ రియల్ ఎస్టేట్",
+image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092651/file_00000000ed68820b9a05e92f4245c64d.png"
 },
 {
-  title:"Standard Real Estate",
-  telugu:"స్టాండర్డ్ రియల్ ఎస్టేట్",
-  image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092668/file_000000009118820b98107b96421fe8cb.png"
+title:"Standard Real Estate",
+telugu:"స్టాండర్డ్ రియల్ ఎస్టేట్",
+image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092668/file_000000009118820b98107b96421fe8cb.png"
 },
 {
-  title:"Premium Real Estate",
-  telugu:"ప్రీమియం రియల్ ఎస్టేట్",
-  image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092684/file_000000005c188211b51cfe051413e123.png"
+title:"Premium Real Estate",
+telugu:"ప్రీమియం రియల్ ఎస్టేట్",
+image:"https://res.cloudinary.com/am7iqqns/image/upload/v1795092684/file_000000005c188211b51cfe051413e123.png"
 }
 ];
 
 const videoFiles = [
-  "154380473_1794978764686133.mp4",
-  "508228052_1794978765021438.mp4",
-  "592457750_1794978648652159.mp4"
+"154380473_1794978764686133.mp4",
+"508228052_1794978765021438.mp4",
+"592457750_1794978648652159.mp4"
 ];
 
 const birthdayVideo =
 "https://res.cloudinary.com/am7iqqns/video/upload/v1795088812/VN20261119_160928.mp4";
 
-/* NEW POLITICAL VIDEO */
-const politicalVideo =
-"https://res.cloudinary.com/am7iqqns/video/upload/v1795435696/VID-20261123-WA0132.mp4";
+/* BOTH POLITICAL VIDEOS */
+const politicalVideos = [
+{
+title:"Political Campaign Video 1",
+telugu:"రాజకీయ ప్రచార వీడియో 1",
+url:"https://res.cloudinary.com/am7iqqns/video/upload/v1795106439/VN20261108_195120.mp4"
+},
+{
+title:"Political Campaign Video 2",
+telugu:"రాజకీయ ప్రచార వీడియో 2",
+url:"https://res.cloudinary.com/am7iqqns/video/upload/v1795435696/VID-20261123-WA0132.mp4"
+}
+];
 
-const realEstateEl = document.getElementById("realEstate");
-const videosEl = document.getElementById("videos");
-const politicalVideosEl = document.getElementById("politicalVideos");
-const personalVideosEl = document.getElementById("personalVideos");
+const realEstateEl=document.getElementById("realEstate");
+const videosEl=document.getElementById("videos");
+const politicalVideosEl=document.getElementById("politicalVideos");
+const personalVideosEl=document.getElementById("personalVideos");
 
-const viewer = document.getElementById("viewer");
-const bigImage = document.getElementById("bigImage");
-const bigVideo = document.getElementById("bigVideo");
+const viewer=document.getElementById("viewer");
+const bigImage=document.getElementById("bigImage");
+const bigVideo=document.getElementById("bigVideo");
 
 /* Real Estate */
-realEstatePackages.forEach(item => {
-  realEstateEl.innerHTML += `
-    <div class="card">
-      <img src="${item.image}" alt="${item.title}"
-           loading="lazy" onclick="openImage('${item.image}')">
-      <h3 data-en="${item.title}" data-te="${item.telugu}">
-        ${item.title}
-      </h3>
-      <p data-en="AI-created demo design by BAIDIGITAL."
-         data-te="BAIDIGITAL రూపొందించిన ఏఐ డెమో డిజైన్.">
-        AI-created demo design by BAIDIGITAL.
-      </p>
-    </div>
-  `;
+realEstatePackages.forEach(item=>{
+realEstateEl.innerHTML+=`
+<div class="card">
+<img src="${item.image}" alt="${item.title}" loading="lazy" onclick="openImage('${item.image}')">
+<h3 data-en="${item.title}" data-te="${item.telugu}">${item.title}</h3>
+<p data-en="AI-created demo design by BAIDIGITAL." data-te="BAIDIGITAL రూపొందించిన ఏఐ డెమో డిజైన్.">AI-created demo design by BAIDIGITAL.</p>
+</div>`;
 });
 
 /* Promotional Videos */
-videoFiles.forEach((file, i) => {
-  const title = "Real Estate Video " + (i + 1);
-  const src = "./" + file;
-
-  videosEl.innerHTML += `
-    <div class="card">
-      <video controls playsinline preload="metadata">
-        <source src="${src}" type="video/mp4">
-      </video>
-      <h3 data-en="${title}" data-te="రియల్ ఎస్టేట్ వీడియో ${i+1}">
-        ${title}
-      </h3>
-      <p data-en="Real estate promotional video by BAIDIGITAL."
-         data-te="BAIDIGITAL రూపొందించిన రియల్ ఎస్టేట్ ప్రమోషనల్ వీడియో.">
-        Real estate promotional video by BAIDIGITAL.
-      </p>
-      <button class="view" onclick="openVideo('${src}')"
-              data-en="Open Full Screen" data-te="పూర్తి స్క్రీన్‌లో చూడండి">
-        Open Full Screen
-      </button>
-    </div>
-  `;
+videoFiles.forEach((file,i)=>{
+const title="Real Estate Video "+(i+1);
+const src="./"+file;
+videosEl.innerHTML+=`
+<div class="card">
+<video controls playsinline preload="metadata">
+<source src="${src}" type="video/mp4">
+</video>
+<h3 data-en="${title}" data-te="రియల్ ఎస్టేట్ వీడియో ${i+1}">${title}</h3>
+<p data-en="Real estate promotional video by BAIDIGITAL." data-te="BAIDIGITAL రూపొందించిన రియల్ ఎస్టేట్ ప్రమోషనల్ వీడియో.">Real estate promotional video by BAIDIGITAL.</p>
+<button class="view" onclick="openVideo('${src}')" data-en="Open Full Screen" data-te="పూర్తి స్క్రీన్‌లో చూడండి">Open Full Screen</button>
+</div>`;
 });
 
-/* Political Video */
-politicalVideosEl.innerHTML = `
-  <div class="card single-video">
-    <video controls playsinline preload="metadata">
-      <source src="${politicalVideo}" type="video/mp4">
-    </video>
-    <h3 data-en="Political Campaign Video"
-        data-te="రాజకీయ ప్రచార వీడియో">
-      Political Campaign Video
-    </h3>
-    <p data-en="AI-powered political promotional video by BAIDIGITAL."
-       data-te="BAIDIGITAL రూపొందించిన ఏఐ రాజకీయ ప్రచార వీడియో.">
-      AI-powered political promotional video by BAIDIGITAL.
-    </p>
-    <button class="view" onclick="openVideo(politicalVideo)"
-            data-en="Open Full Screen" data-te="పూర్తి స్క్రీన్‌లో చూడండి">
-      Open Full Screen
-    </button>
-  </div>
-`;
+/* Political Videos - Old and New */
+politicalVideos.forEach(item=>{
+politicalVideosEl.innerHTML+=`
+<div class="card single-video">
+<video controls playsinline preload="metadata">
+<source src="${item.url}" type="video/mp4">
+</video>
+<h3 data-en="${item.title}" data-te="${item.telugu}">${item.title}</h3>
+<p data-en="AI-powered political promotional video by BAIDIGITAL."
+data-te="BAIDIGITAL రూపొందించిన ఏఐ రాజకీయ ప్రచార వీడియో.">
+AI-powered political promotional video by BAIDIGITAL.</p>
+<button class="view" onclick="openVideo('${item.url}')" data-en="Open Full Screen" data-te="పూర్తి స్క్రీన్‌లో చూడండి">Open Full Screen</button>
+</div>`;
+});
 
 /* Personal Video */
-personalVideosEl.innerHTML = `
-  <div class="card single-video">
-    <video controls playsinline preload="metadata">
-      <source src="${birthdayVideo}" type="video/mp4">
-    </video>
-    <h3 data-en="AI Cinematic Birthday Video"
-        data-te="ఏఐ సినిమాటిక్ బర్త్‌డే వీడియో">
-      AI Cinematic Birthday Video
-    </h3>
-    <p data-en="Creative birthday video production by BAIDIGITAL."
-       data-te="BAIDIGITAL రూపొందించిన క్రియేటివ్ బర్త్‌డే వీడియో.">
-      Creative birthday video production by BAIDIGITAL.
-    </p>
-    <button class="view" onclick="openVideo(birthdayVideo)"
-            data-en="Open Full Screen" data-te="పూర్తి స్క్రీన్‌లో చూడండి">
-      Open Full Screen
-    </button>
-  </div>
-`;
+personalVideosEl.innerHTML=`
+<div class="card single-video">
+<video controls playsinline preload="metadata">
+<source src="${birthdayVideo}" type="video/mp4">
+</video>
+<h3 data-en="AI Cinematic Birthday Video" data-te="ఏఐ సినిమాటిక్ బర్త్‌డే వీడియో">AI Cinematic Birthday Video</h3>
+<p data-en="Creative birthday video production by BAIDIGITAL." data-te="BAIDIGITAL రూపొందించిన క్రియేటివ్ బర్త్‌డే వీడియో.">Creative birthday video production by BAIDIGITAL.</p>
+<button class="view" onclick="openVideo(birthdayVideo)" data-en="Open Full Screen" data-te="పూర్తి స్క్రీన్‌లో చూడండి">Open Full Screen</button>
+</div>`;
 
 /* Language */
-function language(lang) {
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll("[data-en][data-te]").forEach(el => {
-    el.textContent = el.getAttribute("data-" + lang);
-  });
-
-  document.getElementById("teBtn").classList.toggle("active", lang === "te");
-  document.getElementById("enBtn").classList.toggle("active", lang === "en");
-
-  try {
-    localStorage.setItem("baiLanguage", lang);
-  } catch(e) {}
+function language(lang){
+document.documentElement.lang=lang;
+document.querySelectorAll("[data-en][data-te]").forEach(el=>{
+el.textContent=el.getAttribute("data-"+lang);
+});
+document.getElementById("teBtn").classList.toggle("active",lang==="te");
+document.getElementById("enBtn").classList.toggle("active",lang==="en");
+try{localStorage.setItem("baiLanguage",lang)}catch(e){}
 }
 
 /* Open Image */
-function openImage(src) {
-  bigVideo.pause();
-  bigVideo.removeAttribute("src");
-  bigVideo.load();
-
-  bigImage.src = src;
-  bigImage.style.display = "block";
-  bigVideo.style.display = "none";
-
-  viewer.classList.add("open");
+function openImage(src){
+bigVideo.pause();
+bigVideo.removeAttribute("src");
+bigVideo.load();
+bigImage.src=src;
+bigImage.style.display="block";
+bigVideo.style.display="none";
+viewer.classList.add("open");
 }
 
 /* Open Video */
-function openVideo(src) {
-  bigImage.removeAttribute("src");
-  bigImage.style.display = "none";
-
-  bigVideo.pause();
-  bigVideo.src = src;
-  bigVideo.style.display = "block";
-
-  viewer.classList.add("open");
-  bigVideo.load();
-  bigVideo.play().catch(() => {});
+function openVideo(src){
+bigImage.removeAttribute("src");
+bigImage.style.display="none";
+bigVideo.pause();
+bigVideo.src=src;
+bigVideo.style.display="block";
+viewer.classList.add("open");
+bigVideo.load();
+bigVideo.play().catch(()=>{});
 }
 
 /* Close Viewer */
-function closeViewer(e) {
-  if (e.target !== viewer &&
-      !e.target.classList.contains("close")) {
-    return;
-  }
-
-  bigVideo.pause();
-  bigVideo.removeAttribute("src");
-  bigVideo.load();
-
-  bigImage.removeAttribute("src");
-  viewer.classList.remove("open");
+function closeViewer(e){
+if(e.target!==viewer&&!e.target.classList.contains("close"))return;
+bigVideo.pause();
+bigVideo.removeAttribute("src");
+bigVideo.load();
+bigImage.removeAttribute("src");
+viewer.classList.remove("open");
 }
 
 /* Escape Key */
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape" && viewer.classList.contains("open")) {
-    closeViewer({target:viewer});
-  }
+document.addEventListener("keydown",e=>{
+if(e.key==="Escape"&&viewer.classList.contains("open")){
+closeViewer({target:viewer});
+}
 });
 
 /* Restore Language */
-let saved = "en";
-
-try {
-  saved = localStorage.getItem("baiLanguage") || "en";
-} catch(e) {}
-
+let saved="en";
+try{saved=localStorage.getItem("baiLanguage")||"en"}catch(e){}
 language(saved);
 
 /* Video Error Handling */
-document.querySelectorAll("video").forEach(video => {
-  video.addEventListener("error", () => {
-    if (video.dataset.errorShown) return;
-
-    video.dataset.errorShown = "true";
-
-    const message = document.createElement("p");
-    message.style.color = "#ff8b8b";
-    message.textContent =
-      "Video could not be loaded. Please check the video URL.";
-
-    video.insertAdjacentElement("afterend", message);
-  });
+document.querySelectorAll("video").forEach(video=>{
+video.addEventListener("error",()=>{
+if(video.dataset.errorShown)return;
+video.dataset.errorShown="true";
+const message=document.createElement("p");
+message.style.color="#ff8b8b";
+message.textContent="Video could not be loaded. Please check the video URL.";
+video.insertAdjacentElement("afterend",message);
+});
 });
 </script>
 
