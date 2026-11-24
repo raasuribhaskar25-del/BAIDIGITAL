@@ -591,6 +591,17 @@
     fill: #EA4335 !important;
     stroke: #EA4335 !important;
 }
+   .theme-toggle-btn {
+  width: 42px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #00d4ff;
+  background: #0f172a;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  margin-right: 10px;
+}
   </style>
 </head>
 <body>
@@ -608,7 +619,9 @@
       <img src="logo.png" alt="BAIDIGITAL Logo" class="header-logo">
       <div class="brand-title">BAIDIGITAL</div>
     </div>
-    <button class="menu-toggle-btn" onclick="toggleMenu()" title="Menu">☰</button>
+    <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()">☀️</button>
+
+<button class="menu-toggle-btn" onclick="toggleMenu()" title="Menu">☰</button>
   </header>
 
   <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
