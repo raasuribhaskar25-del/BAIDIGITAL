@@ -255,7 +255,31 @@ personalVideosEl.innerHTML=`
 <p data-en="Creative birthday video production by BAIDIGITAL." data-te="BAIDIGITAL రూపొందించిన క్రియేటివ్ బర్త్‌డే వీడియో.">Creative birthday video production by BAIDIGITAL.</p>
 <button class="view" onclick="openVideo(birthdayVideo)" data-en="Open Full Screen" data-te="పూర్తి స్క్రీన్‌లో చూడండి">Open Full Screen</button>
 </div>`;
+/* New Personal AI Mass Video */
 
+const personalMassVideo =
+"https://res.cloudinary.com/am7iqqns/video/upload/v1795596730/VN20261125_131523.mp4";
+
+personalVideosEl.innerHTML += `
+<div class="card single-video">
+<video controls playsinline preload="metadata">
+<source src="${personalMassVideo}" type="video/mp4">
+</video>
+<h3 data-en="Personal AI Mass Cinematic Video"
+data-te="పర్సనల్ ఏఐ మాస్ సినిమాటిక్ వీడియో">
+Personal AI Mass Cinematic Video
+</h3>
+<p data-en="AI-powered cinematic video creation by BAIDIGITAL."
+data-te="BAIDIGITAL రూపొందించిన ఏఐ సినిమాటిక్ వీడియో.">
+AI-powered cinematic video creation by BAIDIGITAL.
+</p>
+<button class="view"
+onclick="openVideo(personalMassVideo)"
+data-en="Open Full Screen"
+data-te="పూర్తి స్క్రీన్‌లో చూడండి">
+Open Full Screen
+</button>
+</div>`;
 /* Language */
 function language(lang){
 document.documentElement.lang=lang;
