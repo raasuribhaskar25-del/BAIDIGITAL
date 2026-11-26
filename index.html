@@ -801,14 +801,14 @@
         <input type="text" id="custBusiness" placeholder="ఉదా: రెస్టారెంట్ లేదా నియోజకవర్గ నాయకుడు" required>
       </div>
       <div class="form-group">
-        <label id="lbl-cat">కావాల్సిన సర్వీస్ కేటగిరీ:</label>
+        <label id="lbl-cat" for="custCategory"> కావాల్సిన సర్వీస్ కేటగిరీ:</label>
         <select id="custCategory" onchange="updateFormPlans()">
           <option value="business" id="opt-cat-biz">🏢 బిజినెస్ సొల్యూషన్స్</option>
           <option value="political" id="opt-cat-pol">🏛️ పొలిటికల్ ప్రమోషన్</option>
         </select>
       </div>
       <div class="form-group">
-        <label id="lbl-plan">ఎంచుకున్న ప్లాన్:</label>
+        <label id="lbl-plan" for="custService">ఎంచుకున్న ప్లాన్:</label>
         <select id="custService">
           <option>బిజినెస్ స్టార్టర్ (₹1,999 / నెల)</option>
           <option>బిజినెస్ గ్రోత్ (₹4,999 / నెల)</option>
@@ -816,7 +816,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label id="lbl-timeframe">డెలివరీ సమయం:</label>
+        <label id="lbl-timeframe" for="custTimeline">డెలివరీ సమయం:</label>
         <select id="custTimeline">
           <option id="opt-t1">అత్యవసరం (24 గంటల్లో - Express Delivery)</option>
           <option id="opt-t2">2 - 3 రోజుల్లో (Normal Delivery)</option>
